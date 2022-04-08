@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Desktop environment
+sudo apt-get install i3 polybar rofi feh
+
+# Tools
+sudo apt-get install neovim
+
+# Setting up Alacrity as default terminal
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/alacritty 50
+
+# Select default terminal
+sudo update-alternatives --config x-terminal-emulator

@@ -1,0 +1,14 @@
+#!/bin/bash
+
+# set -eu
+
+# Get the ID for the current DEFAULT_SINK
+default=$(pactl info | grep "Default Sink: " | awk '{ print $3 }')
+speakers="alsa_output.pci-0000_00_1f.3.analog-stereo"
+headphones="alsa_output.usb-Logitech_Logitech_G930_Headset-00.analog-stereo"
+
+if [ "$default" = "$headphones" ]; then
+  pactl set-default-sink $speakers
+else
+  pactl set-default-sink $headphones
+fi
