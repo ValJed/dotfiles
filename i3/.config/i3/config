@@ -171,9 +171,12 @@ bindsym $mod+r mode "resize"
 
 # Assign applications to workspaces
 assign [class="Firefox"] 0
-assign [class="Fish"] 2
+assign [class="Alacritty"] 2
 assign [class="Code"] 3
+assign [class="Slack"] 4
+assign [class="Discord"] 4
 assign [class="Nautilus"] 6
+assign [class="PulseEffects"] 10
 
 for_window [class="Spotify"] move to workspace number 5
 
@@ -211,6 +214,8 @@ client.focused_inactive #E3E3E3 #0F1212 #D3D7CF #D3D7CF   #0F1212
 client.unfocused        #0F1212 #0F1212 #D3D7CF #0F1212   #0F1212
 client.urgent           #2F343A #C9282D #D3D7CF #C9282D   #C9282D
 client.placeholder      #0F1212 #0F1212 #D3D7CF #0F1212   #0F1212
+
+# Desktop specific
 
 set $monitor1 "DP-4"
 set $monitor2 "HDMI-0"
