@@ -16,10 +16,12 @@ alias s "sudo"
 
 # Locations
 alias wp "cd /home/$USER/Documents/workspace/"
-alias pm "cd /home/$USER/Documents/tools/postman/Postman"
 alias pj "cd /home/$USER/Documents/projects/"
+alias dl "cd /home/$USER/Downloads/"
+alias pic "cd /home/$USER/Pictures/"
 
 # Commands
+alias pm "/home/$USER/Documents/tools/postman/Postman"
 alias ngrok "/home/$USER/Documents/tools/ngrok/ngrok"
 alias robo "/home/$USER/Documents/tools/robo3t/bin/robo3t"
 alias proc "ps aux --sort=-%mem | awk 'NR<=10{print $0}'"
@@ -42,7 +44,6 @@ alias gp "git push"
 alias gco "git checkout"
 alias gm "git merge"
 alias gcl "git clone"
-alias gcmsg "git commit -m"
 alias gcp "git cherry-pick"
 alias gd 'git diff'
 alias gdca 'git diff --cached'
@@ -53,6 +54,12 @@ alias gsp='git stash pop'
 alias gr "git reset"
 alias grh "git reset --hard"
 alias gck "git checkout"
+alias gf "git fetch"
+alias gfa "git fetch --all"
+alias ga "git add"
+alias gc "git commit"
+alias gcmsg "git commit -m"
 
+# Updating PATH
 
 set PATH /home/$USER/stagecoach/bin /home/$USER/.local/bin $PATH
