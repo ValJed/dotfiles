@@ -2,6 +2,8 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
+set -g theme_color_scheme terminal-dark
+
 # Basics
 alias egrep 'egrep --color=auto'
 alias fgrep 'fgrep --color=auto'
