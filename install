@@ -1,13 +1,19 @@
 #!/bin/bash
 
 # Desktop environment
-sudo apt-get install i3 polybar rofi feh fonts-font-awesome
+sudo apt-get install i3 polybar rofi feh fonts-font-awesome xinput
 
-# Tools
-sudo apt-get install neovim
+# Terminal tools
+sudo apt-get install alacritty neovim fish
+
+# In the case screen is tearing, check that you use the right graphic card.
+# If needed install anc configure compton.
 
 # Setting up Alacrity as default terminal
 sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/alacritty 50
 
 # Select default terminal
 sudo update-alternatives --config x-terminal-emulator
+
+# Install Fisher
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher

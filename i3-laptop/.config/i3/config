@@ -20,7 +20,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 exec --no-startup-id nm-applet
 exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/planet.jpg
 
-exec_always --no-startup-id "killall polybar; polybar -r default"
+exec --no-startup-id polybar -r default
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
@@ -104,9 +104,6 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-set $monitor1 "DP-4"
-set $monitor2 "HDMI-0"
-
 # switch to workspace
 bindsym $mod+ampersand workspace number $ws1
 bindsym $mod+eacute workspace number $ws2
@@ -165,30 +162,16 @@ mode "resize" {
 
 bindsym $mod+r mode "resize"
 
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-# bar {
-#         status_command i3blocks
-# 	# tray_output primary
-# }
-
-# Assign workspaces to screens
-workspace 1 output $monitor1
-workspace 2 output $monitor2
-workspace 3 output $monitor1
-workspace 4 output $monitor2
-workspace 5 output $monitor2
-
 # Assign applications to workspaces
-assign [class="Firefox"] 0
-assign [class="Fish"] 2
+assign [class="Firefox"] 1
+assign [class="Alacritty"] 2
 assign [class="Code"] 3
 assign [class="Nautilus"] 6
 
 for_window [class="Spotify"] move to workspace number 5
 
 # Spacing windows titles
-for_window [class=".*"] title_format "  %title%"
+for_window [class=".*"] title_format "  %title"
 
 # Media player controls
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -198,7 +181,6 @@ bindsym XF86AudioPrev exec playerctl previous
 
 bindsym $mod+Shift+S exec toggle-sinks
 
-# Screenshots
 # Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
 bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date)"
@@ -221,3 +203,6 @@ client.focused_inactive #E3E3E3 #0F1212 #D3D7CF #D3D7CF   #0F1212
 client.unfocused        #0F1212 #0F1212 #D3D7CF #0F1212   #0F1212
 client.urgent           #2F343A #C9282D #D3D7CF #C9282D   #C9282D
 client.placeholder      #0F1212 #0F1212 #D3D7CF #0F1212   #0F1212
+
+exec --no-startup-id xrandr --output eDP-1-1 --mode 2048x1152
+exec xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput Tapping Enabled" 1
