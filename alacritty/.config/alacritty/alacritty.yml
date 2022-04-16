@@ -1,3 +1,11 @@
+# Running fish, tmux and attach session when opening Alacritty
+shell:
+  program: /usr/bin/fish
+  args:
+    - -l
+    - -c
+    - "tmux attach || tmux new -s main"
+
 colors:
   # Default colors
   primary:
