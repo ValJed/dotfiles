@@ -18,6 +18,7 @@ alias s "sudo"
 
 # Locations
 alias wp "cd /home/$USER/Documents/workspace/"
+alias apo "cd /home/$USER/Documents/workspace/apo/"
 alias pj "cd /home/$USER/Documents/projects/"
 alias dl "cd /home/$USER/Downloads/"
 alias pic "cd /home/$USER/Pictures/"
@@ -61,6 +62,8 @@ alias gfa "git fetch --all"
 alias ga "git add"
 alias gc "git commit"
 alias gcmsg "git commit -m"
+alias gb "git branch"
+alias gbdm "git branch --merged | grep -v \* | xargs git branch -D"
 
 # Updating PATH
 
