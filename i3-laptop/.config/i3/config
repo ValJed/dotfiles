@@ -18,7 +18,7 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/planet.jpg
+exec --no-startup-id feh --bg-scale ~/Pictures/Wallpapers/main.jpg
 
 exec --no-startup-id polybar -r default
 
@@ -208,6 +208,5 @@ client.urgent           #2F343A #C9282D #D3D7CF #C9282D   #C9282D
 client.placeholder      #0F1212 #0F1212 #D3D7CF #0F1212   #0F1212
 
 # Laptop specific
-
 exec --no-startup-id xrandr --output eDP-1-1 --mode 2048x1152
 exec xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput Tapping Enabled" 1
