@@ -1,1 +1,4 @@
 theme = "rose_pine"
+
+[editor]
+auto-completion = true
