@@ -17,3 +17,17 @@ sudo update-alternatives --config x-terminal-emulator
 
 # Install Fisher
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+
+# Install languages support for text editor (Helix)
+
+npm install -g vls # Vue
+
+npm install -g dockerfile-language-server-nodejs # Docker
+
+npm i -g vscode-langservers-extracted # Css Html
+
+npm i -g bash-language-server
+
+npm i -g stylelint-lsp
+
+npm install -g typescript-language-server typescript
