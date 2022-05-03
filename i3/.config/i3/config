@@ -180,6 +180,9 @@ assign [class="PulseEffects"] 10
 
 for_window [class="Spotify"] move to workspace number 5
 
+# Floating Applications
+for_window [class="Calculator"] floating enable
+
 # Spacing windows titles
 for_window [class=".*"] title_format "  %title"
 
