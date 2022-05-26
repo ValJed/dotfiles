@@ -23,15 +23,24 @@ alias pj "cd /home/$USER/Documents/projects/"
 alias dl "cd /home/$USER/Downloads/"
 alias pic "cd /home/$USER/Pictures/"
 
-# Commands
+# Binaries
 alias pm "/home/$USER/Documents/tools/postman/Postman"
 alias ngrok "/home/$USER/Documents/tools/ngrok/ngrok"
 alias robo "/home/$USER/Documents/tools/robo3t/bin/robo3t"
-alias proc "ps aux --sort=-%mem | awk 'NR<=10{print $0}'"
 alias tor "/home/$USER/Documents/tools/tor && ./start-tor-browser.desktop"
 alias dc "/usr/bin/docker-compose"
 alias patator "/home/$USER/Documents/tools/hacking/patator/patator.py"
 alias np "/opt/ops-tools/bin/np"
+
+# Tmux
+alias tm "tmux attach -t main || tmux new -s main"
+alias tu "tmux attach -t utils || tmux new -s utils"
+
+# Commands
+alias proc "ps aux --sort=-%mem | awk 'NR<=10{print $0}'"
+alias cw "cargo watch -c -q -x \"run -q\""
+
+# Rest
 alias GET "lwp-request -m \"GET\""
 alias DELETE "lwp-request -m \"DELETE\""
 alias POST "lwp-request -m \"POST\""
