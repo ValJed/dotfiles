@@ -8,10 +8,10 @@ set -g theme_color_scheme terminal-dark
 alias egrep 'egrep --color=auto'
 alias fgrep 'fgrep --color=auto'
 alias grep 'grep --color=auto'
-alias ll 'ls -CF'
-alias la 'ls -A'
-alias l 'ls -alF'
-alias ls 'ls --color=auto'
+alias l 'exa --icons --long -a'
+alias lt 'exa --icons --long -a -T'
+alias lr 'exa --icons --long -a -R'
+alias lg 'exa --icons --long -a --grid '
 alias n "nvim.appimage"
 alias run "npm run"
 alias s "sudo"
@@ -31,6 +31,7 @@ alias tor "/home/$USER/Documents/tools/tor && ./start-tor-browser.desktop"
 alias dc "/usr/bin/docker-compose"
 alias patator "/home/$USER/Documents/tools/hacking/patator/patator.py"
 alias np "/opt/ops-tools/bin/np"
+alias monero "/home/val/Documents/monero/monero-wallet-gui"
 
 # Tmux
 alias tm "tmux attach -t main || tmux new -s main"
