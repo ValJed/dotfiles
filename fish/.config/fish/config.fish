@@ -17,6 +17,7 @@ alias run "npm run"
 alias s "sudo"
 
 # Locations
+alias doc "cd /home/$USER/Documents"
 alias wp "cd /home/$USER/Documents/workspace/"
 alias apo "cd /home/$USER/Documents/workspace/apo/"
 alias pj "cd /home/$USER/Documents/projects/"
