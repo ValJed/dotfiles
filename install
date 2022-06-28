@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Desktop environment
-sudo apt-get install i3 polybar rofi feh fonts-font-awesome xinput
+sudo apt-get install i3 polybar rofi feh fonts-font-awesome xinput maim xclip
 
 # Terminal tools
 sudo apt-get install alacritty neovim fish
@@ -19,15 +19,4 @@ sudo update-alternatives --config x-terminal-emulator
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 # Install languages support for text editor (Helix)
-
-npm install -g vls # Vue
-
-npm install -g dockerfile-language-server-nodejs # Docker
-
-npm i -g vscode-langservers-extracted # Css Html
-
-npm i -g bash-language-server
-
-npm i -g stylelint-lsp
-
-npm install -g typescript-language-server typescript
+npm install -g vls dockerfile-language-server-nodejs vscode-langservers-extracted bash-language-server stylelint-lsp typescript-language-server typescript
