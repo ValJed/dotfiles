@@ -64,3 +64,16 @@ keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
 keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
+
+keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+-- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
+keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+
+keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+
+-- Navigator
+keymap('n', "<S-Left>", '<CMD>NavigatorLeft<CR>', opts)
+keymap('n', "<S-Right>", '<CMD>NavigatorRight<CR>', opts)
+keymap('n', "<S-Up>", '<CMD>NavigatorUp<CR>', opts)
+keymap('n', "<S-Down>", '<CMD>NavigatorDown<CR>', opts)
+keymap('n', "<S-p>", '<CMD>NavigatorPrevious<CR>', opts)
