@@ -1,5 +1,4 @@
 local opts = { noremap = true, silent = true }
-
 local term_opts = { silent = true }
 
 -- Shorten function name
@@ -77,3 +76,10 @@ keymap("n", "<S-Right>", ":NavigatorRight<cr>", opts)
 keymap("n", "<S-Up>", ":NavigatorUp<cr>", opts)
 keymap("n", "<S-Down>", ":NavigatorDown<cr>", opts)
 keymap("n", "<S-p>", ":NavigatorPrevious<cr>", opts)
+
+-- Bufferline
+keymap("n", "<C-PageUp>", ":BufferLineCyclePrev<cr>", opts)
+keymap("n", "<C-PageDown>", ":BufferLineCycleNext<cr>", opts)
+keymap("n", "<C-S-PageUp>", ":BufferLineMovePrev<cr>", opts)
+keymap("n", "<C-S-PageDown>", ":BufferLineMoveNext<cr>", opts)
+keymap("n", "<C-x>", ":Bdelete<cr>", opts)

@@ -49,6 +49,8 @@ return packer.startup(function(use)
   use 'kyazdani42/nvim-web-devicons'
   use 'kyazdani42/nvim-tree.lua'
   use 'numToStr/Navigator.nvim' -- Navigate between Nvim panes and tmux ones with same bindings
+  use "akinsho/bufferline.nvim"
+  use "moll/vim-bbye"
 
   -- Color scheme
   use "EdenEast/nightfox.nvim"
