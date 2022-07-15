@@ -30,8 +30,8 @@ keymap("n", "<leader>e", ":Lex 30<cr>", opts)
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
-keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
-keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
+keymap("n", "<C-Right>", ":vertical resize -2<CR>", opts)
+keymap("n", "<C-Left>", ":vertical resize +2<CR>", opts)
 
 -- Navigate buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
@@ -72,8 +72,8 @@ keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Navigator
-keymap('n', "<S-Left>", '<CMD>NavigatorLeft<CR>', opts)
-keymap('n', "<S-Right>", '<CMD>NavigatorRight<CR>', opts)
-keymap('n', "<S-Up>", '<CMD>NavigatorUp<CR>', opts)
-keymap('n', "<S-Down>", '<CMD>NavigatorDown<CR>', opts)
-keymap('n', "<S-p>", '<CMD>NavigatorPrevious<CR>', opts)
+keymap('n', "<S-Left>", ":NavigatorLeft<cr>", opts)
+keymap("n", "<S-Right>", ":NavigatorRight<cr>", opts)
+keymap("n", "<S-Up>", ":NavigatorUp<cr>", opts)
+keymap("n", "<S-Down>", ":NavigatorDown<cr>", opts)
+keymap("n", "<S-p>", ":NavigatorPrevious<cr>", opts)
