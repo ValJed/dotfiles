@@ -1,2 +1,2 @@
 -- Configuration
--- require('Navigator').setup()
+require('Navigator').setup()
