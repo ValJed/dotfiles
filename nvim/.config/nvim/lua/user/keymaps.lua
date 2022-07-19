@@ -9,6 +9,9 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Format on save
+vim.cmd [[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]]
+
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -64,9 +67,10 @@ keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
 keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
 keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
-keymap("n", "<leader>f", "<cmd>Telescope find_files<cr>", opts)
+-- Telescope
+keymap("n", "<leader>f", "<cmd>Telescope find_files hidden=true prompt_prefix=🔍<cr>", opts)
 -- keymap("n", "<leader>f", "<cmd>lua require'telescope.builtin'.find_files(require('telescope.themes').get_dropdown({ previewer = false }))<cr>", opts)
-keymap("n", "<c-t>", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>g", "<cmd>Telescope live_grep hidden=true prompt_prefix=🔍<cr>", opts)
 
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
@@ -83,3 +87,23 @@ keymap("n", "<C-PageDown>", ":BufferLineCycleNext<cr>", opts)
 keymap("n", "<C-S-PageUp>", ":BufferLineMovePrev<cr>", opts)
 keymap("n", "<C-S-PageDown>", ":BufferLineMoveNext<cr>", opts)
 keymap("n", "<C-x>", ":Bdelete<cr>", opts)
+
+-- LSP
+keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
+keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
+keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
+keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts)
+-- keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
+keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
+-- keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
+-- keymap("n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
+keymap("n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+keymap(
+  "n",
+  "gl",
+  '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>',
+  opts
+)
+keymap("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
