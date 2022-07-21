@@ -22,4 +22,7 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 npm install -g vls dockerfile-language-server-nodejs vscode-langservers-extracted bash-language-server stylelint-lsp typescript-language-server typescript
 
 # Neovim stuff
-s apt-get install ripgrep eslint_d
+s apt-get install ripgrep
+
+npm i -g eslint_d
+
