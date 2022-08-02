@@ -24,5 +24,5 @@ npm install -g vls dockerfile-language-server-nodejs vscode-langservers-extracte
 # Neovim stuff
 s apt-get install ripgrep python3-pip
 
-npm i -g eslint_d djlint
+npm i -g eslint_d djlint emmet-ls
 
