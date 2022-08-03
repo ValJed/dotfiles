@@ -36,7 +36,7 @@ alias monero "/home/val/Documents/monero/monero-wallet-gui"
 
 # Tmux
 alias tm "tmux attach -t main || tmux new -s main"
-alias tu "tmux attach -t utils || tmux new -s utils"
+alias tc "tmux attach -t utils || tmux new -s code"
 
 # Commands
 alias proc "ps aux --sort=-%mem | awk 'NR<=10{print $0}'"
