@@ -4,7 +4,7 @@
 sudo apt-get install i3 polybar rofi feh fonts-font-awesome xinput maim xclip
 
 # Terminal tools
-sudo apt-get install alacritty neovim fish
+sudo apt-get install alacritty neovim fish lazygit
 
 # In the case screen is tearing, check that you use the right graphic card.
 # If needed install anc configure compton.
