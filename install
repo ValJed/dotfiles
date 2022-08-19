@@ -1,28 +1,29 @@
 #!/bin/bash
 
 # Desktop environment
-sudo apt-get install i3 polybar rofi feh fonts-font-awesome xinput maim xclip
+i3 polybar rofi feh fonts-font-awesome xinput maim xclip
 
 # Terminal tools
-sudo apt-get install alacritty neovim fish lazygit
+alacritty neovim fish lazygit exa bat ripgrep fd tokei procs
 
 # In the case screen is tearing, check that you use the right graphic card.
-# If needed install anc configure compton.
-
-# Setting up Alacrity as default terminal
-sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/local/bin/alacritty 50
-
-# Select default terminal
-sudo update-alternatives --config x-terminal-emulator
+# If needed install and configure compton.
 
 # Install Fisher
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
+# Install Fish plugins
+fisher install jorgebucaran/nvm.fish
+fisher install ilancosman/tide@v5
+
 # Install languages support for text editor (Helix)
 npm install -g vls dockerfile-language-server-nodejs vscode-langservers-extracted bash-language-server stylelint-lsp typescript-language-server typescript
 
-# Neovim stuff
-s apt-get install ripgrep python3-pip
+# Neovim packages
+python3-pip
 
 npm i -g eslint_d djlint emmet-ls
+
+# Fonts 
+sudo cp -r ./fonts/Hack /usr/share/fonts/
 
