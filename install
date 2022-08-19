@@ -24,6 +24,10 @@ python3-pip
 
 npm i -g eslint_d djlint emmet-ls
 
+cargo install stylua
+
+pip install ueberzug
+
 # Fonts 
 sudo cp -r ./fonts/Hack /usr/share/fonts/
 
