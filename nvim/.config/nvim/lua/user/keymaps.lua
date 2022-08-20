@@ -21,6 +21,9 @@ vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]])
 --   term_mode = "t",
 --   command_mode = "c",
 
+-- Basic
+keymap("", "<C-s>", ":w<cr>", opts)
+
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
 keymap("n", "<C-Down>", ":resize -2<CR>", opts)
