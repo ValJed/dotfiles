@@ -77,7 +77,7 @@ alias gb "git branch"
 alias gbdm "git branch --merged | grep -v \* | xargs git branch -D"
 
 # Updates binaries PATH
-set PATH /home/$USER/stagecoach/bin /home/$USER/.local/bin $PATH
+set PATH /home/$USER/.cargo/bin /home/$USER/stagecoach/bin  /home/$USER/.local/bin $PATH
 
 # Adds fish user functions folder path
 set fish_function_path /home/$USER/.config/fish/user_functions $fish_function_path
