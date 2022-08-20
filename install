@@ -17,14 +17,12 @@ fisher install jorgebucaran/nvm.fish
 fisher install ilancosman/tide@v5
 
 # Install languages support for text editor (Helix)
-npm install -g vls dockerfile-language-server-nodejs vscode-langservers-extracted bash-language-server stylelint-lsp typescript-language-server typescript
+npm install -g vls dockerfile-language-server-nodejs vscode-langservers-extracted bash-language-server stylelint-lsp typescript-language-server typescript eslint_d djlint emmet-ls
+
+cargo install stylua
 
 # Neovim packages
 python3-pip
-
-npm i -g eslint_d djlint emmet-ls
-
-cargo install stylua
 
 pip install ueberzug
 
