@@ -10,8 +10,7 @@
 	text-color: #d3d7cf;
 	selbg: #e3e3e3;
 	actbg: #e3e3e3;
-	/* urgbg: #e53935; */
-  urgbg: #34F34F;
+	urgbg: #e53935;
 	winbg: #0F1212;
 
 	selected-normal-foreground: @winbg;
