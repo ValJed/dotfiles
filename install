@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Desktop environment
-i3 polybar rofi feh fonts-font-awesome xinput maim xclip
+i3 i3lock polybar rofi feh xinput maim xclip
 
 # Terminal tools
 alacritty neovim fish lazygit exa bat ripgrep fd tokei procs
