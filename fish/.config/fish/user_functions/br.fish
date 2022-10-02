@@ -1,7 +1,7 @@
 function br
   set --local brightness $argv[1]
 
-  if [ -z  "$brightness"]
+  if [ -z "$brightness" ]
     echo "Set a brightness value"
     return 1
   end
