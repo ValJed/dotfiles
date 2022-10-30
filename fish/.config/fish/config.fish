@@ -12,7 +12,7 @@ alias l 'exa --icons --long -a'
 alias lt 'exa --icons --long -a -T'
 alias lr 'exa --icons --long -a -R'
 alias lg 'exa --icons --long -a --grid '
-alias n "nvim.appimage"
+alias n "nvim"
 alias run "npm run"
 alias s "sudo"
 
