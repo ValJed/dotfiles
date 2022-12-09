@@ -38,6 +38,10 @@ keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "ss", ":split<CR>", opts)
 keymap("n", "sv", ":vsplit<CR>", opts)
 
+-- Moves
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
+
 -- Move line up and down
 --[[ keymap("", "<C-S-K>", ":m .+1<CR>==", opts) ]]
 --[[ keymap("", "<C-S-J>", ":m .-2<CR>==", opts) ]]
