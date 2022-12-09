@@ -26,7 +26,7 @@ alias pic "cd /home/$USER/Pictures/"
 
 # Binaries
 alias pm "/home/$USER/Documents/tools/postman/Postman"
-alias ngrok "/home/$USER/Documents/tools/ngrok/ngrok"
+# alias ngrok "/home/$USER/Documents/tools/ngrok/ngrok"
 alias robo "/home/$USER/Documents/tools/robo3t/bin/robo3t"
 alias tor "/home/$USER/Documents/tools/tor && ./start-tor-browser.desktop"
 alias dc "/usr/bin/docker-compose"
