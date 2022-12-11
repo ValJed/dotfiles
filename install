@@ -16,8 +16,8 @@ curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher install jorgebucaran/nvm.fish
 fisher install ilancosman/tide@v5
 
-# Install languages support for text editor (Helix)
-npm install -g vls dockerfile-language-server-nodejs vscode-langservers-extracted bash-language-server stylelint-lsp typescript-language-server typescript eslint_d djlint emmet-ls
+# Install languages support for text editor (Neovim / Helix)
+npm install -g vls dockerfile-language-server-nodejs vscode-langservers-extracted bash-language-server stylelint-lsp typescript-language-server typescript eslint_d djlint emmet-ls @volar/vue-language-server
 
 cargo install stylua
 

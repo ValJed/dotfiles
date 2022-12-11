@@ -1,5 +1,7 @@
 local M = {}
 
+local clients_with_no_default_formatting = { "tsserver", "sumneko_lua", "volar" }
+
 M.setup = function()
 	local signs = {
 		{ name = "DiagnosticSignError", text = "" },
@@ -60,10 +62,11 @@ local function lsp_highlight_document(client)
 end
 
 M.on_attach = function(client)
-	vim.notify(client.name)
-	if client.name == "tsserver" or client.name == "sumneko_lua" then
-		-- For Neovim 0.8
-		client.server_capabilities.documentFormattingProvider = false
+	for _, name in ipairs(clients_with_no_default_formatting) do
+		if name ~= nil then
+			-- For Neovim 0.8
+			client.server_capabilities.documentFormattingProvider = false
+		end
 	end
 
 	lsp_highlight_document(client)
