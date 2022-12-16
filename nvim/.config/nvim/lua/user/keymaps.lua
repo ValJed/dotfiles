@@ -7,6 +7,16 @@ local keymap = vim.api.nvim_set_keymap
 --Remap space as leader key
 keymap("", "<Space>", "<Nop>", opts)
 
+-- Block arrow keys to force using hjkl
+keymap("n", "<Left>", "<Nop>", opts)
+keymap("n", "<Right>", "<Nop>", opts)
+keymap("n", "<Up>", "<Nop>", opts)
+keymap("n", "<Down>", "<Nop>", opts)
+keymap("v", "<Left>", "<Nop>", opts)
+keymap("v", "<Right>", "<Nop>", opts)
+keymap("v", "<Up>", "<Nop>", opts)
+keymap("v", "<Down>", "<Nop>", opts)
+
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
@@ -105,10 +115,10 @@ keymap("n", "<C-S-PageDown>", ":BufferLineMoveNext<cr>", opts)
 keymap("n", "<C-x>", ":Bdelete<cr>", opts)
 
 -- Git
-keymap("n", "lg", ":LazyGit<cr>", opts)
+keymap("n", "<leader>lg", ":LazyGit<cr>", opts)
 
 -- LSP
-keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts)
+--[[ keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts) ]]
 keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
 keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
 keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
