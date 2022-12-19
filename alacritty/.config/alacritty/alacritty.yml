@@ -1,6 +1,6 @@
 # Running fish, tmux and attach session when opening Alacritty
 shell:
-  program: /usr/bin/fish
+  program: /usr/bin/zsh
   # args:
     # - -l
     # - -c
