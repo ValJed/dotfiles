@@ -21,7 +21,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Format on save
-vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()]])
+vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 
 -- Modes
 --   normal_mode = "n",
@@ -73,15 +73,6 @@ keymap("v", "p", '"_dP', opts)
 -- Move text up and down
 keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
-
--- Terminal --
--- Better terminal navigation
-keymap("t", "<C-h>", "<C-\\><C-N><C-w>h", term_opts)
-keymap("t", "<C-j>", "<C-\\><C-N><C-w>j", term_opts)
-keymap("t", "<C-k>", "<C-\\><C-N><C-w>k", term_opts)
-keymap("t", "<C-l>", "<C-\\><C-N><C-w>l", term_opts)
 
 -- Telescope
 keymap("n", "<leader>f", "<cmd>Telescope find_files hidden=true prompt_prefix=🔍<cr>", opts)
@@ -89,16 +80,16 @@ keymap("n", "<leader>g", "<cmd>Telescope live_grep prompt_prefix=🔍<cr>", opts
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Navigator
--- Better window navigation
-keymap("n", "<S-h>", "<C-w>h", opts)
-keymap("n", "<S-j>", "<C-w>j", opts)
-keymap("n", "<S-l>", "<C-w>l", opts)
-keymap("n", "<S-k>", "<C-w>k", opts)
+--[[ -- Better window navigation ]]
+--[[ keymap("n", "<S-h>", "<C-w>h", opts) ]]
+--[[ keymap("n", "<S-j>", "<C-w>j", opts) ]]
+--[[ keymap("n", "<S-l>", "<C-w>l", opts) ]]
+--[[ keymap("n", "<S-k>", "<C-w>k", opts) ]]
 
-keymap("n", "<S-Left>", ":NavigatorLeft<cr>", opts)
-keymap("n", "<S-Right>", ":NavigatorRight<cr>", opts)
-keymap("n", "<S-Up>", ":NavigatorUp<cr>", opts)
-keymap("n", "<S-Down>", ":NavigatorDown<cr>", opts)
+keymap("n", "<S-h>", ":NavigatorLeft<cr>", opts)
+keymap("n", "<S-l>", ":NavigatorRight<cr>", opts)
+keymap("n", "<S-k>", ":NavigatorUp<cr>", opts)
+keymap("n", "<S-j>", ":NavigatorDown<cr>", opts)
 keymap("n", "<S-p>", ":NavigatorPrevious<cr>", opts)
 
 -- Bufferline
