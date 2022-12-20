@@ -4,14 +4,11 @@
 alias egrep='egrep --color=auto'
 alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
-# alias l='exa --icons --long -a'
-# alias lt='exa --icons --long -a -T'
-# alias lr='exa --icons --long -a -R'
-# alias lg='exa --icons --long -a --grid '
-alias n="nvim"
+alias l='la'
 alias run="npm run"
 alias s="sudo "
-alias cat="bacat"
+alias cat="batcat"
+alias ...="cd ../.."
 
 # Locations
 alias doc="cd /home/$USER/Documents"
@@ -23,7 +20,6 @@ alias pic="cd /home/$USER/Pictures/"
 
 # Binaries
 alias pm="/home/$USER/Documents/tools/postman/Postman"
-# alias ngrok="/home/$USER/Documents/tools/ngrok/ngrok"
 alias robo="/home/$USER/Documents/tools/robo3t/bin/robo3t"
 alias tor="/home/$USER/Documents/tools/tor && ./start-tor-browser.desktop"
 alias dc="/usr/bin/docker-compose"
@@ -48,7 +44,6 @@ alias PATCH="lwp-request -m \"PATCH\""
 alias HEAD="lwp-request -m \"HEAD\""
 
 # GIT commands
-
 alias gl="git pull"
 alias gpr='git pull --rebase'
 alias gp="git push"
