@@ -1,0 +1,19 @@
+#!/bin/bash
+
+brightness=$1;
+
+if [ -z "$brightness" ]; then
+  echo "Set a brightness value"
+  return 1
+fi
+
+connected_screens=$(xrandr -q | grep ' connected');
+
+echo connected_screens;
+
+for conn_screen in $connected_screens
+do
+  screen=$(echo "$conn_screen" | cut -d " " -f1);
+  xrandr --output "$screen" --brightness "$brightness"
+done
+
