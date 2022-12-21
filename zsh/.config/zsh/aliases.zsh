@@ -8,7 +8,9 @@ alias l='la'
 alias run="npm run"
 alias s="sudo "
 alias cat="batcat"
+alias n="nvim"
 alias ...="cd ../.."
+alias ....="cd ../../.."
 
 # Locations
 alias doc="cd /home/$USER/Documents"
