@@ -227,3 +227,5 @@ workspace 2 output $monitor2
 workspace 3 output $monitor1
 workspace 4 output $monitor2
 workspace 5 output $monitor2
+
+bindsym $mod+asterisk exec i3lock -c 000000

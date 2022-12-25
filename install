@@ -9,17 +9,13 @@ alacritty neovim fish lazygit exa bat ripgrep fd tokei procs
 # In the case screen is tearing, check that you use the right graphic card.
 # If needed install and configure compton.
 
-# Install Fisher
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-
-# Install Fish plugins
-fisher install jorgebucaran/nvm.fish
-fisher install ilancosman/tide@v5
-
 # Install languages support for text editor (Neovim / Helix)
 npm install -g vls dockerfile-language-server-nodejs vscode-langservers-extracted bash-language-server stylelint-lsp typescript-language-server typescript eslint_d djlint emmet-ls @volar/vue-language-server
 
 cargo install stylua
+
+# Install zap for zsh config
+sh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.sh)
 
 # Neovim packages
 python3-pip
@@ -29,3 +25,7 @@ pip install ueberzug
 # Fonts 
 sudo cp -r ./fonts/Hack /usr/share/fonts/
 
+# For laptops, create files in /etc/X11/xinit/xinitrc.d folder with scripts
+xrandr --output eDP1 --mode 2048x1152
+
+exec xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput Tapping Enabled" 1
