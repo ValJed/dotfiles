@@ -1,10 +1,9 @@
 local util = require("lspconfig.util")
 
 local function get_typescript_lib()
-	local user = io.popen("whoami"):read("l")
-	local node_version = io.popen("node --version"):read("l")
+  local global_packages_path = io.popen("npm root -g"):read("l")
 
-	return "/home/" .. user .. "/.local/share/nvm/" .. node_version .. "/lib/node_modules/typescript/lib"
+  return global_packages_path .. "/typescript/lib"
 end
 
 local volar_cmd = { "vue-language-server", "--stdio" }
