@@ -1,8 +1,6 @@
 #!/bin/bash
 
 # Basics
-alias egrep='egrep --color=auto'
-alias fgrep='fgrep --color=auto'
 alias grep='grep --color=auto'
 alias l='la'
 alias run="npm run"
@@ -19,6 +17,7 @@ alias apo="cd /home/$USER/Documents/workspace/apo/"
 alias pj="cd /home/$USER/Documents/projects/"
 alias dl="cd /home/$USER/Downloads/"
 alias pic="cd /home/$USER/Pictures/"
+alias dtf="cd ~/.dotfiles/"
 
 # Binaries
 alias pm="/home/$USER/Documents/tools/postman/Postman"
