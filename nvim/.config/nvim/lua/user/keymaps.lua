@@ -61,10 +61,10 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("x", "kj", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
 
--- Visual --
--- Stay in indent mode
-keymap("v", "<", "<gv", opts)
-keymap("v", ">", ">gv", opts)
+-- Indentation --
+keymap("v", "<Tab>", ">gv", opts)
+keymap("v", "<S-Tab>", "<gv", opts)
+keymap("i", "<S-Tab>", "<C-d>", opts)
 
 -- Select and paste
 keymap("v", "p", '"_dP', opts)
@@ -75,8 +75,8 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 
 -- Telescope
-keymap("n", "<leader>f", "<cmd>Telescope find_files hidden=true prompt_prefix=🔍<cr>", opts)
-keymap("n", "<leader>g", "<cmd>Telescope live_grep prompt_prefix=🔍<cr>", opts)
+keymap("n", "<leader>f", ":Telescope find_files hidden=true prompt_prefix=🔍<cr>", opts)
+keymap("n", "<leader>g", ":Telescope live_grep prompt_prefix=🔍<cr>", opts)
 keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
 
 -- Navigator
@@ -110,15 +110,25 @@ keymap("n", "<leader>lg", ":LazyGit<cr>", opts)
 
 -- LSP
 --[[ keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts) ]]
-keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opts)
-keymap("n", "K", "<cmd>lua vim.lsp.buf.hover()<CR>", opts)
-keymap("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts)
---[[ keymap("n", "<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>", opts) ]]
--- keymap("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opts)
-keymap("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opts)
--- keymap("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opts)
--- keymap("n", "<leader>f", "<cmd>lua vim.diagnostic.open_float()<CR>", opts)
-keymap("n", "[d", '<cmd>lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
-keymap("n", "gl", '<cmd>lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)
-keymap("n", "]d", '<cmd>lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
-keymap("n", "<leader>q", "<cmd>lua vim.diagnostic.setloclist()<CR>", opts)
+keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
+keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
+keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
+--[[ keymap("n", "<C-k>", ":lua vim.lsp.buf.signature_help()<CR>", opts) ]]
+-- keymap("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", opts)
+keymap("n", "gr", ":lua vim.lsp.buf.references()<CR>", opts)
+-- keymap("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", opts)
+-- keymap("n", "<leader>f", ":lua vim.diagnostic.open_float()<CR>", opts)
+keymap("n", "[d", ':lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
+keymap("n", "gl", ':lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)
+keymap("n", "]d", ':lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
+keymap("n", "<leader>q", ":lua vim.diagnostic.setloclist()<CR>", opts)
+
+-- Harpoon
+keymap("n", "<C-e>", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
+keymap("n", "<leader>a", ":lua require('harpoon.mark').add_file()<CR>", opts)
+keymap("n", "<leader>&", ":lua require('harpoon.ui').nav_file(1)<CR>", opts)
+keymap("n", "<leader>é", ":lua require('harpoon.ui').nav_file(2)<CR>", opts)
+keymap("n", '<leader>"', ":lua require('harpoon.ui').nav_file(3)<CR>", opts)
+keymap("n", "<leader>'", ":lua require('harpoon.ui').nav_file(4)<CR>", opts)
+keymap("n", "<leader>(", ":lua require('harpoon.ui').nav_file(5)<CR>", opts)
+keymap("n", "<leader>-", ":lua require('harpoon.ui').nav_file(6)<CR>", opts)

@@ -49,8 +49,8 @@ return packer.startup(function(use)
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
 	use("numToStr/Navigator.nvim") -- Navigate between Nvim panes and tmux ones with same bindings
-	use("akinsho/bufferline.nvim")
 	use("moll/vim-bbye")
+	use("ThePrimeagen/harpoon")
 
 	-- Color scheme
 	use("EdenEast/nightfox.nvim")
@@ -63,7 +63,6 @@ return packer.startup(function(use)
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lua")
-	use({ "mtoohey31/cmp-fish", ft = "fish" })
 	use("saecki/crates.nvim")
 	use("mg979/vim-visual-multi") -- multi cursor support
 
