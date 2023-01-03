@@ -16,6 +16,7 @@ configs.setup({
 		"sql",
 		"yaml",
 		"vue",
+		"svelte",
 		"vim",
 		"tsx",
 		"fish",
