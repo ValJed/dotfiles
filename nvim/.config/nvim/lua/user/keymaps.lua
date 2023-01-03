@@ -75,9 +75,10 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 
 -- Telescope
-keymap("n", "<leader>f", ":Telescope find_files hidden=true prompt_prefix=🔍<cr>", opts)
+keymap("n", "<leader>f", ":Telescope find_files prompt_prefix=🔍<cr>", opts)
+keymap("n", "<leader>d", ":Telescope find_files hidden=true prompt_prefix=🔍<cr>", opts)
 keymap("n", "<leader>g", ":Telescope live_grep prompt_prefix=🔍<cr>", opts)
-keymap("n", "<leader>e", ":NvimTreeToggle<cr>", opts)
+keymap("n", "<leader>i", ":NvimTreeToggle<cr>", opts)
 
 -- Navigator
 --[[ -- Better window navigation ]]
@@ -99,11 +100,11 @@ keymap("n", "<S-p>", ":NavigatorPrevious<cr>", opts)
 --[[ keymap("n", "<C-S-l>", ":BufferLineMoveNext<cr>", opts) ]]
 --[[ keymap("n", "<C-x>", ":Bdelete<cr>", opts) ]]
 
-keymap("n", "<C-PageUp>", ":BufferLineCyclePrev<cr>", opts)
-keymap("n", "<C-PageDown>", ":BufferLineCycleNext<cr>", opts)
-keymap("n", "<C-S-PageUp>", ":BufferLineMovePrev<cr>", opts)
-keymap("n", "<C-S-PageDown>", ":BufferLineMoveNext<cr>", opts)
-keymap("n", "<C-x>", ":Bdelete<cr>", opts)
+--[[ keymap("n", "<C-PageUp>", ":BufferLineCyclePrev<cr>", opts) ]]
+--[[ keymap("n", "<C-PageDown>", ":BufferLineCycleNext<cr>", opts) ]]
+--[[ keymap("n", "<C-S-PageUp>", ":BufferLineMovePrev<cr>", opts) ]]
+--[[ keymap("n", "<C-S-PageDown>", ":BufferLineMoveNext<cr>", opts) ]]
+--[[ keymap("n", "<C-x>", ":Bdelete<cr>", opts) ]]
 
 -- Git
 keymap("n", "<leader>lg", ":LazyGit<cr>", opts)
@@ -124,7 +125,7 @@ keymap("n", "]d", ':lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', o
 keymap("n", "<leader>q", ":lua vim.diagnostic.setloclist()<CR>", opts)
 
 -- Harpoon
-keymap("n", "<C-e>", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
+keymap("n", "<leader>e", ":lua require('harpoon.ui').toggle_quick_menu()<CR>", opts)
 keymap("n", "<leader>a", ":lua require('harpoon.mark').add_file()<CR>", opts)
 keymap("n", "<leader>&", ":lua require('harpoon.ui').nav_file(1)<CR>", opts)
 keymap("n", "<leader>é", ":lua require('harpoon.ui').nav_file(2)<CR>", opts)
