@@ -9,6 +9,8 @@ alias cat="bat"
 alias n="nvim"
 alias ...="cd ../.."
 alias ....="cd ../../.."
+alias pn="pnpm"
+alias prun="pnpm run"
 
 # Locations
 alias doc="cd /home/$USER/Documents"
