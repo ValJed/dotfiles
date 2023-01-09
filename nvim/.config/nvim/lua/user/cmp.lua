@@ -15,6 +15,8 @@ luasnip.config.set_config({
 	delete_check_events = "InsertLeave",
 })
 
+luasnip.filetype_extend("typescript", { "javascript" })
+
 --   פּ ﯟ   some other good icons
 local kind_icons = {
 	Text = "",
