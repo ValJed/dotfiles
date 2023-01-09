@@ -110,15 +110,15 @@ keymap("n", "<S-p>", ":NavigatorPrevious<cr>", opts)
 keymap("n", "<leader>lg", ":LazyGit<cr>", opts)
 
 -- LSP
---[[ keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opts) ]]
+
+--[[ keymap("n", "gD", ":lua vim.lsp.buf.declaration()<CR>", opts) ]]
 keymap("n", "gd", ":lua vim.lsp.buf.definition()<CR>", opts)
-keymap("n", "K", ":lua vim.lsp.buf.hover()<CR>", opts)
+keymap("n", "gh", ":lua vim.lsp.buf.hover()<CR>", opts)
 keymap("n", "gi", ":lua vim.lsp.buf.implementation()<CR>", opts)
 --[[ keymap("n", "<C-k>", ":lua vim.lsp.buf.signature_help()<CR>", opts) ]]
 -- keymap("n", "<leader>rn", ":lua vim.lsp.buf.rename()<CR>", opts)
 keymap("n", "gr", ":lua vim.lsp.buf.references()<CR>", opts)
--- keymap("n", "<leader>ca", ":lua vim.lsp.buf.code_action()<CR>", opts)
--- keymap("n", "<leader>f", ":lua vim.diagnostic.open_float()<CR>", opts)
+keymap("n", "gc", ":lua vim.lsp.buf.code_action()<CR>", opts)
 keymap("n", "[d", ':lua vim.diagnostic.goto_prev({ border = "rounded" })<CR>', opts)
 keymap("n", "gl", ':lua vim.diagnostic.open_float({ border = "rounded" })<CR>', opts)
 keymap("n", "]d", ':lua vim.diagnostic.goto_next({ border = "rounded" })<CR>', opts)
