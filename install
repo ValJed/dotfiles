@@ -1,10 +1,13 @@
 #!/bin/bash
 
 # Desktop environment
-i3 i3lock polybar rofi feh xinput maim xclip
+i3 i3lock polybar rofi feh xinput maim xclip tmux zsh
 
 # Terminal tools
-alacritty neovim fish lazygit exa bat ripgrep fd tokei procs
+alacritty neovim fish lazygit exa bat ripgrep fd tokei procs htop
+
+# Apps
+signal-desktop spotify-launcher blueman docker docker-compose
 
 # In the case screen is tearing, check that you use the right graphic card.
 # If needed install and configure compton.
@@ -17,15 +20,29 @@ cargo install stylua
 # Install zap for zsh config
 sh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.sh)
 
-# Neovim packages
-python3-pip
-
-pip install ueberzug
-
 # Fonts 
 sudo cp -r ./fonts/Hack /usr/share/fonts/
+
+# Install nvm by following instructions from here: https://github.com/nvm-sh/nvm
+
+# Install pnpm
+curl -fsSL https://get.pnpm.io/install.sh | sh -
+
+# Install Rust
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+# LAPTOP
 
 # For laptops, create files in /etc/X11/xinit/xinitrc.d folder with scripts
 xrandr --output eDP1 --mode 2048x1152
 
+# May not be needed
 exec xinput set-prop "SYNA2393:00 06CB:7A13 Touchpad" "libinput Tapping Enabled" 1
+
+# DESKTOP
+
+# For desktops manage screen position this way, in same folder as desribed above
+xrandr --output DP-4 --primary --pos 0x0 --output HDMI-0 --pos 1920x0
+
+# Packages
+easyeffects
