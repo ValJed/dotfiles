@@ -42,15 +42,23 @@ packer.init({
 return packer.startup(function(use)
 	-- My plugins here
 	use("wbthomason/packer.nvim") -- Have packer manage itself
-	use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim
+	--[[ use("nvim-lua/popup.nvim") -- An implementation of the Popup API from vim in Neovim ]]
 	use("nvim-lua/plenary.nvim") -- Useful lua functions used ny lots of plugins
 	use("windwp/nvim-autopairs") -- Autopairs, integrates with both cmp and treesitter
 	use("numToStr/Comment.nvim") -- Easily comment stuff
 	use("kyazdani42/nvim-web-devicons")
 	use("kyazdani42/nvim-tree.lua")
 	use("numToStr/Navigator.nvim") -- Navigate between Nvim panes and tmux ones with same bindings
-	use("moll/vim-bbye")
+	--[[ use("moll/vim-bbye") ]]
 	use("ThePrimeagen/harpoon")
+	use({
+		"iamcco/markdown-preview.nvim",
+		run = "cd app && npm install",
+		setup = function()
+			vim.g.mkdp_filetypes = { "markdown" }
+		end,
+		ft = { "markdown" },
+	})
 
 	-- Color scheme
 	use("EdenEast/nightfox.nvim")
@@ -75,7 +83,7 @@ return packer.startup(function(use)
 	use("williamboman/nvim-lsp-installer") -- simple to use language server installer
 	use("jose-elias-alvarez/null-ls.nvim")
 
-	-- Telescope
+	--[[ -- Telescope ]]
 	use("nvim-telescope/telescope.nvim")
 	use("nvim-telescope/telescope-media-files.nvim")
 
