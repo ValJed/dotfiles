@@ -9,8 +9,8 @@ export BROWSER="firefox"
 export XDG_CURRENT_DESKTOP="i3"
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
-export PATH=$HOME/stagecoach/bin:$PATH
-export PATH="/opt/ops-tools/bin:$PATH"
+export PATH=/opt/stagecoach/bin:$PATH
+export PATH=/opt/ops-tools/bin:$PATH
 
 export PNPM_HOME="/home/jed/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
