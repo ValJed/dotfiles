@@ -54,6 +54,9 @@ return packer.startup(function(use)
 		end,
 		ft = { "markdown" },
 	})
+	use("folke/which-key.nvim") -- Shows keymaps
+	use("goolord/alpha-nvim") -- Dashboard
+	use("ahmedkhalf/project.nvim") -- Navigate through common projects
 
 	-- Color scheme
 	use("EdenEast/nightfox.nvim")
