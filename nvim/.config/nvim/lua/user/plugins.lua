@@ -56,8 +56,11 @@ return packer.startup(function(use)
 	})
 	use("folke/which-key.nvim") -- Shows keymaps
 	use("goolord/alpha-nvim") -- Dashboard
-	use("ahmedkhalf/project.nvim") -- Navigate through common projects
-
+	use("natecraddock/workspaces.nvim") -- Navigate through common projects
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+	})
 	-- Color scheme
 	use("EdenEast/nightfox.nvim")
 

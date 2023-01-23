@@ -1,4 +1,14 @@
 local M = {}
+local Terminal = require("toggleterm.terminal").Terminal
+local term = Terminal:new({
+	cmd = "zsh",
+	dir = "~/Documents/workspace/",
+	direction = "float",
+	hidden = true,
+	on_open = function(term)
+		vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-q>", "<cmd>close<cr>", { noremap = true, silent = true })
+	end,
+})
 
 function M.smart_quit()
 	local bufnr = vim.api.nvim_get_current_buf()
@@ -15,6 +25,10 @@ function M.smart_quit()
 	else
 		vim.cmd("q!")
 	end
+end
+
+function M.toggle_term()
+	term:toggle()
 end
 
 return M

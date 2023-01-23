@@ -15,8 +15,8 @@ wk.register({
 	["e"] = { ":NvimTreeToggle<cr>", "Explorer" },
 	["m"] = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
 	["a"] = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Show Marked Files" },
-	["q"] = { ":lua require('user.utils.functions').smart_quit()<CR>", "Quit" },
-	["c"] = { ":BufferKill<CR>", "Close Buffer" },
+	["c"] = { ":lua require('user.utils.functions').smart_quit()<cr>", "Close" },
+	["q"] = { ":qa<cr>", "Quit" },
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
 
 	f = {
@@ -36,6 +36,7 @@ wk.register({
 			":lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
 			"Colorscheme with Preview",
 		},
+		w = { ":Telescope workspaces<cr>", "Workspaces" },
 	},
 	g = {
 		name = "Git",
@@ -66,11 +67,11 @@ wk.register({
 	l = {
 		name = "LSP",
 		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		d = { ':lua vim.diagnostic.open_float({ border = "rounded" })<CR>', "Line Diagnostic" },
+		d = { ':lua vim.diagnostic.open_float({ border = "rounded" })<cr>', "Line Diagnostic" },
 		D = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
 		w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-		h = { ":lua vim.lsp.buf.hover()<CR>", "Signature" },
-		r = { ":lua vim.lsp.buf.references()<CR>", "References" },
+		h = { ":lua vim.lsp.buf.hover()<cr>", "Signature" },
+		r = { ":lua vim.lsp.buf.references()<cr>", "References" },
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		I = { "<cmd>Mason<cr>", "Mason Info" },
 		j = {
@@ -91,6 +92,7 @@ wk.register({
 			"Workspace Symbols",
 		},
 		e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
+		n = { ":NullLsInfo<cr>", "Null LS" },
 	},
 	d = {
 		name = "Debug",
@@ -122,6 +124,13 @@ wk.register({
 		h = { ":split<cr>", "Split Horizontally" },
 		v = { ":vsplit<cr>", "Split Vertically" },
 	},
+	w = {
+		name = "Worspaces",
+		a = { ":WorkspacesAdd<cr>", "Adds Workspace" },
+		r = { ":WorkspacesRemove<cr>", "Remove Workspace" },
+		l = { ":WorkspacesList<cr>", "List Workspace" },
+		f = { ":Telescope workspaces<cr>", "Find Workspace" },
+	},
 	T = {
 		name = "Treesitter",
 		i = { ":TSConfigInfo<cr>", "Info" },
@@ -130,7 +139,7 @@ wk.register({
 
 wk.register({
 	d = { ":lua vim.lsp.buf.definition()", "Definition" },
-	i = { ":lua vim.lsp.buf.implementation()<CR>", "Implementation" },
+	i = { ":lua vim.lsp.buf.implementation()<cr>", "Implementation" },
 }, { prefix = "<g>" })
 
 wk.setup()
