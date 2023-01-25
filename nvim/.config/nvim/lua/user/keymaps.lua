@@ -1,5 +1,4 @@
 local opts = { noremap = true, silent = true }
-local term_opts = { silent = true }
 
 -- Shorten function name
 local keymap = vim.api.nvim_set_keymap
@@ -43,8 +42,8 @@ keymap("n", "<C-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-Left>", ":vertical resize -2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<C-h>", ":bprevious<CR>", { silent = true })
-keymap("n", "<C-l>", ":bnext<CR>", { silent = true })
+keymap("n", "<S-h>", ":bprevious<CR>", { silent = true })
+keymap("n", "<S-l>", ":bnext<CR>", { silent = true })
 
 -- Moves
 keymap("n", "<C-d>", "<C-d>zz", opts)
@@ -71,18 +70,13 @@ keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
 keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
 
 -- Navigator
---[[ -- Better window navigation ]]
---[[ keymap("n", "<S-h>", "<C-w>h", opts) ]]
---[[ keymap("n", "<S-j>", "<C-w>j", opts) ]]
---[[ keymap("n", "<S-l>", "<C-w>l", opts) ]]
---[[ keymap("n", "<S-k>", "<C-w>k", opts) ]]
+keymap("n", "<C-h>", ":NavigatorLeft<cr>", opts)
+keymap("n", "<C-l>", ":NavigatorRight<cr>", opts)
+keymap("n", "<C-k>", ":NavigatorUp<cr>", opts)
+keymap("n", "<C-j>", ":NavigatorDown<cr>", opts)
+keymap("n", "<C-p>", ":NavigatorPrevious<cr>", opts)
 
-keymap("n", "<S-h>", ":NavigatorLeft<cr>", opts)
-keymap("n", "<S-l>", ":NavigatorRight<cr>", opts)
-keymap("n", "<S-k>", ":NavigatorUp<cr>", opts)
-keymap("n", "<S-j>", ":NavigatorDown<cr>", opts)
-keymap("n", "<S-p>", ":NavigatorPrevious<cr>", opts)
-
+-- LSP
 keymap("n", "gh", ":lua vim.lsp.buf.hover()<CR>", opts)
 
 -- Harpoon
