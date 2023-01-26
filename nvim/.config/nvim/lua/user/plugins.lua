@@ -61,6 +61,11 @@ return packer.startup(function(use)
 		"akinsho/toggleterm.nvim",
 		tag = "*",
 	})
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	})
+
 	-- Color scheme
 	use("EdenEast/nightfox.nvim")
 
