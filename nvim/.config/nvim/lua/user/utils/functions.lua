@@ -2,8 +2,8 @@ local M = {}
 local Terminal = require("toggleterm.terminal").Terminal
 local term = Terminal:new({
 	cmd = "zsh",
-	dir = "~/Documents/workspace/",
 	direction = "float",
+	autochdir = true,
 	hidden = true,
 	on_open = function(term)
 		vim.api.nvim_buf_set_keymap(term.bufnr, "t", "<C-q>", "<cmd>close<cr>", { noremap = true, silent = true })
