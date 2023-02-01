@@ -105,7 +105,6 @@ cmp.setup({
 				luasnip = "[Snippet]",
 				buffer = "[Buffer]",
 				path = "[Path]",
-				fish = "[Fish]",
 				crates = "[Crates]",
 			})[entry.source.name]
 
@@ -117,7 +116,6 @@ cmp.setup({
 		{ name = "nvim_lsp" },
 		{ name = "buffer" },
 		{ name = "path" },
-		{ name = "fish" },
 		{ name = "crates" },
 	},
 	confirm_opts = {
