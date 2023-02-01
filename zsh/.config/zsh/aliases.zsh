@@ -11,6 +11,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias pn="pnpm"
 alias prun="pnpm run"
+alias cl="clear"
 
 # Locations
 alias doc="cd /home/$USER/Documents"
@@ -32,7 +33,7 @@ alias monero="/home/val/Documents/monero/monero-wallet-gui"
 
 # Tmux
 alias tm="tmux attach -t main || tmux new -s main"
-alias tc="tmux attach -t utils || tmux new -s code"
+alias tc="tmux attach -t code || tmux new -s code"
 alias tk="tmux kill-session -t "
 alias ts="tmux source-file ~/.tmux.conf"
 
