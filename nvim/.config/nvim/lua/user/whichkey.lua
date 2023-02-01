@@ -135,11 +135,19 @@ wk.register({
 		name = "Treesitter",
 		i = { ":TSConfigInfo<cr>", "Info" },
 	},
+	t = {
+		name = "Ctags",
+		t = { ":TagbarToggle<cr>", "Toggle" },
+		c = { ":TagbarClose<cr>", "Close" },
+		j = { ":TagbarJumpNext<cr>", "Next" },
+		k = { ":TagbarJumpPrev<cr>", "previous" },
+	},
 }, { prefix = "<leader>" })
 
 wk.register({
-	d = { ":lua vim.lsp.buf.definition()", "Definition" },
+	d = { ":lua vim.lsp.buf.definition()<cr>", "Definition" },
 	i = { ":lua vim.lsp.buf.implementation()<cr>", "Implementation" },
-}, { prefix = "<g>" })
+	s = { ":lua vim.lsp.buf.hover()<cr>", "Signature" },
+}, { prefix = "g" })
 
 wk.setup()
