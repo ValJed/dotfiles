@@ -12,15 +12,11 @@ null_ls.setup({
 	debug = false,
 	sources = {
 		diagnostics.eslint_d,
-		diagnostics.djlint,
 		diagnostics.stylelint,
 
 		formatting.eslint_d,
 		formatting.stylelint,
 		formatting.stylua,
-
-		-- formatting.djlint,
-		-- formatting.prettier,
-		-- diagnostics.flake8,
+		formatting.djlint,
 	},
 })
