@@ -34,6 +34,9 @@ vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 keymap("n", "<C-s>", ":w<cr>", opts)
 keymap("n", "µ", "£", opts)
 keymap("n", "£", "0", opts)
+keymap("x", "£", "0", opts)
+--[[ keymap("n", "dp", "p", opts) ]]
+--[[ keymap("n", "p", '"0p', opts) ]]
 
 -- Resize with arrows
 keymap("n", "<C-Up>", ":resize +2<CR>", opts)
@@ -53,8 +56,8 @@ keymap("n", "<C-b>", "<C-f>zz", opts)
 
 -- Insert --
 -- Press kj fast to enter
-keymap("x", "kj", "<ESC>", opts)
 keymap("i", "kj", "<ESC>", opts)
+keymap("i", "KJ", "<ESC>", opts)
 
 -- Indentation --
 keymap("v", "<Tab>", ">gv", opts)
