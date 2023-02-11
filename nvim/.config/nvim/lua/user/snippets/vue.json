@@ -1,0 +1,33 @@
+{
+  "Ref": {
+    "prefix": "ref",
+    "body": [
+      "const ${1} = ref(${2})"
+    ],
+    "description": "Ref"
+  },
+
+  "Define Props": {
+    "prefix": "dp",
+    "body": [
+      "const ${1:props} = defineProps({\n\t${2}\n})"
+    ],
+    "description": "Define Props"
+  },
+
+  "Prop": {
+    "prefix": "prop",
+    "body": [
+      "${1}: {\n\ttype: ${2:String},\n\trequired: ${3:true}\n}"
+    ],
+    "description": "Prop"
+  },
+
+  "On Mounted": {
+    "prefix": "om",
+    "body": [
+      "onMounted(() => {\n\t${1}\n})"
+    ],
+    "description": "On Mounted"
+  }
+}

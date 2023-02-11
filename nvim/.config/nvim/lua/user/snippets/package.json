@@ -11,6 +11,18 @@
         ],
         "path": "./javascript.json"
       },
+      {
+        "language": "json",
+        "path": "./json.json"
+      },
+      {
+        "language": "jinja",
+        "path": "./jinja.json"
+      },
+      {
+        "language": "vue",
+        "path": "./vue.json"
+      }
     ]
   }
 }

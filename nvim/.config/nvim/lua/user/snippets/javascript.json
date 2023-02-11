@@ -1,9 +1,176 @@
 {
-  "console log": {
+  "console Log": {
     "prefix": "cl",
     "body": [
       "console.log('${0}', ${0})"
     ],
     "description": "Console log"
   },
+
+  "console Log Show": {
+    "prefix": "cls",
+    "body": [
+      "console.log('=====> ${0:HERE} <=====)"
+    ],
+    "description": "Console Log Show"
+  },
+ "For Each": {
+    "prefix": "fe",
+    "body": [
+      "${1}.forEach((${2}) => {\n\t${3}\n})"
+    ],
+    "description": "For Each"
+  },
+
+ "For Of": {
+    "prefix": "fo",
+    "body": [
+      "for (const ${1} of ${2}) {\n\t${3}\n}"
+    ],
+    "description": "For Of"
+  },
+
+ "For Await Of": {
+    "prefix": "fo",
+    "body": [
+      "for (const ${1} of ${2}) {\n\t${3}\n}"
+    ],
+    "description": "For Await Of"
+  },
+
+ "For In": {
+    "prefix": "fi",
+    "body": [
+      "for (const ${1} in ${2}) {\n\t${3}\n}"
+    ],
+    "description": "For In"
+  },
+
+ "Const": {
+    "prefix": "c",
+    "body": [
+      "const ${1} = ${2}"
+    ],
+    "description": "Const"
+  },
+
+ "Let": {
+    "prefix": "l",
+    "body": [
+      "let ${1} = ${2}"
+    ],
+    "description": "Let"
+  },
+
+ "Function": {
+    "prefix": "fn",
+    "body": [
+      "function ${1} (${2}) {\n\t${3}\n}"
+    ],
+    "description": "Function"
+  },
+
+ "Function Arrow": {
+    "prefix": "fa",
+    "body": [
+      "(${2}) => ${3}"
+    ],
+    "description": "Function Arrow"
+  },
+
+ "Await": {
+    "prefix": "a",
+    "body": [
+      "await ${1}"
+    ],
+    "description": "Await"
+  },
+
+  "Map": {
+    "prefix": "m",
+    "body": [
+      "${1}.map((${2}) => ${2}"
+    ],
+    "description": "Map"
+  },
+
+  "Filter": {
+    "prefix": "f ",
+    "body": [
+      "${1}.filter((${2}) => ${3})"
+    ],
+    "description": "Filter"
+  },
+
+  "Reduce": {
+    "prefix": "r",
+    "body": [
+      "${1}.reduce((${2}, acc) => {\n\t${4}\n}, ${3})"
+    ],
+    "description": "Reduce"
+  },
+
+  "Promise": {
+    "prefix": "p",
+    "body": [
+      "new Promise((resolve, reject) => {\n\t${1}\n})"
+    ],
+    "description": "Promise"
+  },
+
+  "Set Timeout": {
+    "prefix": "st",
+    "body": [
+      "setTimeout(() => {\n\t${2}\n}, ${1})"
+    ],
+    "description": "Set Timeout"
+  },
+
+  "Set Interval": {
+    "prefix": "si",
+    "body": [
+      "setInterval(() => {\n\t${2}\n}, ${1})"
+    ],
+    "description": "Set Interval"
+  },
+
+  "Module Export": {
+    "prefix": "me",
+    "body": [
+      "module.exports = ${1}"
+    ],
+    "description": "Module Export"
+  },
+
+  "Export Default": {
+    "prefix": "ed",
+    "body": [
+      "export default ${1}"
+    ],
+    "description": "Export Default"
+  },
+
+  "Export Const": {
+    "prefix": "ec",
+    "body": [
+      "export const ${1} = ${2}"
+    ],
+    "description": "Export Const"
+  },
+
+  "Try Catch": {
+    "prefix": "tc",
+    "body": [
+      "try {\n\t${1}\ncatch (err) {\n\t}${2}\n}"
+    ],
+    "description": "Try Catch"
+  },
+
+  "Try Catch Finally": {
+    "prefix": "tcf",
+    "body": [
+      "try {\n\t${1}\n} catch (err) {\n\t}${2}\n} finally {\n\t${3}\n}"
+    ],
+    "description": "Try Catch Finally"
+  }
 }
