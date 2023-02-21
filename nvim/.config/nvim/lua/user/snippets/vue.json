@@ -15,6 +15,14 @@
     "description": "Define Props"
   },
 
+  "Define Meta": {
+    "prefix": "dm",
+    "body": [
+      "definePageMeta({\n\t${1}\n})"
+    ],
+    "description": "Define Meta"
+  },
+
   "Prop": {
     "prefix": "prop",
     "body": [
@@ -29,5 +37,13 @@
       "onMounted(() => {\n\t${1}\n})"
     ],
     "description": "On Mounted"
+  },
+
+  "Component": {
+    "prefix": "cc",
+    "body": [
+      "<template>\n\t${1}\n</template>\n\n<script setup>\n\t${2}\n</script>\n\n<style lang=\"scss>\"\n${3}\n</style>"
+    ],
+    "description": "Component"
   }
 }
