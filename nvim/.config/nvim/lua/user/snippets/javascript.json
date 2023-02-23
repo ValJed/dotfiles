@@ -161,7 +161,7 @@
   "Try Catch": {
     "prefix": "tc",
     "body": [
-      "try {\n\t${1}\ncatch (err) {\n\t}${2}\n}"
+      "try {\n\t${1}\n} catch (err) {\n\t${2}\n}"
     ],
     "description": "Try Catch"
   },
@@ -169,7 +169,7 @@
   "Try Catch Finally": {
     "prefix": "tcf",
     "body": [
-      "try {\n\t${1}\n} catch (err) {\n\t}${2}\n} finally {\n\t${3}\n}"
+      "try {\n\t${1}\n} catch (err) {\n\t${2}\n} finally {\n\t${3}\n}"
     ],
     "description": "Try Catch Finally"
   }

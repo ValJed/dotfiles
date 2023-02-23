@@ -65,6 +65,15 @@ return packer.startup(function(use)
 		"nvim-lualine/lualine.nvim",
 		requires = { "kyazdani42/nvim-web-devicons", opt = true },
 	})
+	use({
+		"saecki/crates.nvim",
+		tag = "v0.3.0",
+		requires = { "nvim-lua/plenary.nvim" },
+		config = function()
+			require("crates").setup()
+		end,
+	})
+	use("preservim/tagbar")
 
 	-- Color scheme
 	use("EdenEast/nightfox.nvim")
@@ -100,6 +109,7 @@ return packer.startup(function(use)
 		run = ":TSUpdate",
 	})
 	use("JoosepAlviste/nvim-ts-context-commentstring")
+	use("Glench/Vim-Jinja2-Syntax")
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")

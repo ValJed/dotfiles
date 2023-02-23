@@ -1,5 +1,3 @@
-vim.opt.runtimepath:append("~/Documents/projects/workspaces.nvim")
-
 require("user.options")
 require("user.keymaps")
 require("user.plugins")

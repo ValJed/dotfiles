@@ -35,8 +35,8 @@ keymap("n", "<C-s>", ":w<cr>", opts)
 keymap("x", "<C-s>", "<ESC>:w<cr>", opts)
 
 keymap("n", "µ", "£", opts)
-keymap("n", "£", "0", opts)
-keymap("x", "£", "0", opts)
+--[[ keymap("n", "£", "0", opts) ]]
+--[[ keymap("x", "£", "0", opts) ]]
 --[[ keymap("n", "dp", "p", opts) ]]
 --[[ keymap("n", "p", '"0p', opts) ]]
 
