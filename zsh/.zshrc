@@ -16,6 +16,9 @@ plug "zap-zsh/vim"
 plug "zap-zsh/zap-prompt"
 plug "zap-zsh/exa"
 plug "zsh-users/zsh-syntax-highlighting"
+plug "zsh-users/zsh-completions"
+
+autoload -U compinit && compinit
 
 # keybinds
 bindkey '^ ' autosuggest-accept
