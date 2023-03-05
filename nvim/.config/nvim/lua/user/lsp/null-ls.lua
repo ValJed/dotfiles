@@ -18,5 +18,6 @@ null_ls.setup({
 		formatting.stylelint,
 		formatting.stylua,
 		formatting.djlint,
+		formatting.rustfmt,
 	},
 })
