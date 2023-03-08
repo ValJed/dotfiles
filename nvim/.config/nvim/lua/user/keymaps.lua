@@ -56,6 +56,9 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "<C-f>", "<C-b>zz", opts)
 keymap("n", "<C-b>", "<C-f>zz", opts)
 
+keymap("i", "<C-l>", "<Right>", opts)
+keymap("i", "<C-h>", "<Left>", opts)
+
 -- Insert --
 -- Press kj fast to enter
 keymap("i", "kj", "<ESC>", opts)
