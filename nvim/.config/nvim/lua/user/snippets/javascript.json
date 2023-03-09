@@ -18,7 +18,7 @@
   "Console Dir": {
     "prefix": "cd",
     "body": [
-      "console.dir('${1}', ${1}, { depth: ${2:0} })"
+      "console.dir(${1}, { depth: ${2:0} })"
     ],
     "description": "Console Dir"
   },

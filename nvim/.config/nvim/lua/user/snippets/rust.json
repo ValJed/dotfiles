@@ -1,10 +1,38 @@
 
 {
   "Print Line": {
-    "prefix": "pl",
+    "prefix": "p",
     "body": [
-      "println!(\"${0}: {:?}\", ${0});"
+      "println!(\"<===== ${0.HERE} =====>\");"
     ],
     "description": "Print Line"
+  },
+  "Print Line Data": {
+    "prefix": "pl",
+    "body": [
+      "println!(\"${1}: {:?}\", ${1});"
+    ],
+    "description": "Print Line Data"
+  },
+  "Let": {
+    "prefix": "l",
+    "body": [
+      "let ${1} = ${2};"
+    ],
+    "description": "Let"
+  },
+  "Const": {
+    "prefix": "c",
+    "body": [
+      "const ${1} = ${2};"
+    ],
+    "description": "Const"
+  },
+  "Vec": {
+    "prefix": "v",
+    "body": [
+      "vec![${0}]"
+    ],
+    "description": "Vec"
   }
 }
