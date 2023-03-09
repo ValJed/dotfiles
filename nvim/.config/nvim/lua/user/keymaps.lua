@@ -58,6 +58,8 @@ keymap("n", "<C-b>", "<C-f>zz", opts)
 
 keymap("i", "<C-l>", "<Right>", opts)
 keymap("i", "<C-h>", "<Left>", opts)
+keymap("i", "<C-k>", "<Up>", opts)
+keymap("i", "<C-j>", "<Down>", opts)
 
 -- Insert --
 -- Press kj fast to enter
@@ -95,3 +97,6 @@ keymap("n", "<leader>-", ":lua require('harpoon.ui').nav_file(6)<CR>", opts)
 -- Terminal
 keymap("n", "<C-t>", "<cmd>lua require('user.utils.functions').toggle_term()<cr>", opts)
 keymap("t", "<C-t>", "<cmd>lua require('user.utils.functions').toggle_term()<cr>", opts)
+
+-- Marks
+keymap("n", "!", "`", opts)
