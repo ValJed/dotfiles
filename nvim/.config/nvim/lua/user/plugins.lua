@@ -86,7 +86,6 @@ return packer.startup(function(use)
 	use("saadparwaiz1/cmp_luasnip") -- snippet completions
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-nvim-lua")
-	use("saecki/crates.nvim")
 	use("mg979/vim-visual-multi") -- multi cursor support
 
 	-- snippets
@@ -114,6 +113,10 @@ return packer.startup(function(use)
 	-- Git
 	use("lewis6991/gitsigns.nvim")
 	use("kdheepak/lazygit.nvim")
+
+	-- Debug
+	use("mfussenegger/nvim-dap")
+	use({ "rcarriga/nvim-dap-ui", requires = { "mfussenegger/nvim-dap" } })
 
 	-- Automatically set up the configuration after cloning packer.nvim
 	if PACKER_BOOTSTRAP then

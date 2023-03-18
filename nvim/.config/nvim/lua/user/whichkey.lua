@@ -57,7 +57,7 @@ wk.register({
 		c = { ":Telescope git_commits<cr>", "Checkout commit" },
 		C = {
 			":Telescope git_bcommits<cr>",
-			"Checkout commit(for current file)",
+			"Checkout commit (for current file)",
 		},
 		d = {
 			":Gitsigns diffthis HEAD<cr>",
