@@ -82,7 +82,7 @@
  "Function Arrow": {
     "prefix": "fa",
     "body": [
-      "(${2}) => ${3}"
+      "(${1}) => ${2}"
     ],
     "description": "Function Arrow"
   },
@@ -98,7 +98,7 @@
   "Map": {
     "prefix": "m",
     "body": [
-      "${1}.map((${2}) => ${2}"
+      "${1}.map((${2}) => ${3})"
     ],
     "description": "Map"
   },
@@ -181,5 +181,21 @@
       "try {\n\t${1}\n} catch (err) {\n\t${2}\n} finally {\n\t${3}\n}"
     ],
     "description": "Try Catch Finally"
+  },
+
+  "If": {
+    "prefix": "if",
+    "body": [
+      "if (${1}) {\n\t${2}\n}"
+    ],
+    "description": "If"
+  },
+
+  "If Else": {
+    "prefix": "ife",
+    "body": [
+      "if (${1}) {\n\t${2}\n} else {\n\t${3}\n}"
+    ],
+    "description": "If Else"
   }
 }
