@@ -47,8 +47,8 @@ keymap("n", "<C-S-Right>", ":vertical resize +2<CR>", opts)
 keymap("n", "<C-S-Left>", ":vertical resize -2<CR>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-h>", ":bprevious<CR>", { silent = true })
-keymap("n", "<S-l>", ":bnext<CR>", { silent = true })
+keymap("n", "<S-h>", "<C-o>", { silent = true })
+keymap("n", "<S-l>", "<C-i>", { silent = true })
 
 -- Moves
 keymap("n", "<C-d>", "<C-d>zz", opts)
@@ -65,6 +65,7 @@ keymap("i", "<C-j>", "<Down>", opts)
 -- Press kj fast to enter
 keymap("i", "kj", "<ESC>", opts)
 keymap("i", "KJ", "<ESC>", opts)
+keymap("v", "kj", "<ESC>", opts)
 
 -- Indentation --
 keymap("v", "<Tab>", ">gv", opts)
