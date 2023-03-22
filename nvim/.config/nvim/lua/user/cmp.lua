@@ -17,6 +17,19 @@ luasnip.config.set_config({
 
 luasnip.filetype_extend("typescript", { "javascript" })
 
+vim.api.nvim_create_autocmd("ModeChanged", {
+	pattern = "*",
+	callback = function()
+		if
+			((vim.v.event.old_mode == "s" and vim.v.event.new_mode == "n") or vim.v.event.old_mode == "i")
+			and luasnip.session.current_nodes[vim.api.nvim_get_current_buf()]
+			and not luasnip.session.jump_active
+		then
+			luasnip.unlink_current()
+		end
+	end,
+})
+
 --   פּ ﯟ   some other good icons
 local kind_icons = {
 	Text = "",
@@ -68,12 +81,12 @@ cmp.setup({
 		-- Set `select` to `false` to only confirm explicitly selected items.
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_next_item()
-			elseif luasnip.expandable() then
+			if luasnip.expandable() then
 				luasnip.expand()
 			elseif luasnip.expand_or_jumpable() then
 				luasnip.expand_or_jump()
+			elseif cmp.visible() then
+				cmp.select_next_item()
 			else
 				fallback()
 			end
@@ -82,10 +95,10 @@ cmp.setup({
 			"s",
 		}),
 		["<S-Tab>"] = cmp.mapping(function(fallback)
-			if cmp.visible() then
-				cmp.select_prev_item()
-			elseif luasnip.jumpable(-1) then
+			if luasnip.jumpable(-1) then
 				luasnip.jump(-1)
+			elseif cmp.visible() then
+				cmp.select_prev_item()
 			else
 				fallback()
 			end
