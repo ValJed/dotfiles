@@ -10,7 +10,7 @@
   "console Log Show": {
     "prefix": "cls",
     "body": [
-      "console.log('=====> ${0:HERE} <=====')"
+      "console.log('=====> ${1:HERE} <=====')"
     ],
     "description": "Console Log Show"
   },

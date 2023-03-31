@@ -3,7 +3,7 @@
   "Print Line": {
     "prefix": "p",
     "body": [
-      "println!(\"<===== ${0.HERE} =====>\");"
+      "println!(\"${1:HERE}\");"
     ],
     "description": "Print Line"
   },
