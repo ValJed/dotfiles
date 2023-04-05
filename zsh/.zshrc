@@ -12,7 +12,7 @@ plug "$HOME/.config/zsh/exports.zsh"
 plug "zsh-users/zsh-autosuggestions"
 plug "hlissner/zsh-autopair"
 plug "zap-zsh/supercharge"
-plug "zap-zsh/vim"
+# plug "zap-zsh/vim"
 plug "zap-zsh/zap-prompt"
 plug "zap-zsh/exa"
 plug "zsh-users/zsh-syntax-highlighting"
@@ -23,3 +23,5 @@ autoload -U compinit && compinit
 # keybinds
 bindkey '^ ' autosuggest-accept
 bindkey '^R' history-incremental-search-backward
+
+eval `ssh-agent -s` > /dev/null && ssh-add > /dev/null 2>&1
