@@ -4,6 +4,7 @@
 HISTSIZE=1000000
 SAVEHIST=1000000
 export EDITOR="nvim"
+export SUDO_EDITOR="nvim"
 export TERMINAL="alacrity"
 export BROWSER="firefox"
 export XDG_CURRENT_DESKTOP="i3"

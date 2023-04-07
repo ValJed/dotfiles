@@ -40,6 +40,7 @@ alias ts="tmux source-file ~/.tmux.conf"
 # Commands
 alias proc="ps aux --sort=-%mem | awk 'NR<=10{print $0}"
 alias cw="cargo watch -c -q -x \"run -q\""
+alias sn="sudo -e"
 
 # Rest
 alias GET="lwp-request -m \"GET\""
