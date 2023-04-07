@@ -7,6 +7,17 @@ end
 local formatting = null_ls.builtins.formatting
 -- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
+local prettierd = formatting.prettierd.with({
+	condition = function(utils)
+		return utils.root_has_file({
+			".prettierrc",
+			".prettierrc.yml",
+			".prettierrc.yaml",
+			".prettierrc.json",
+			".prettierrc.toml",
+		})
+	end,
+})
 
 null_ls.setup({
 	debug = false,
@@ -14,6 +25,7 @@ null_ls.setup({
 		diagnostics.eslint_d,
 		diagnostics.stylelint,
 
+		prettierd,
 		formatting.eslint_d,
 		formatting.stylelint,
 		formatting.stylua,
