@@ -3,31 +3,45 @@ if not status_ok then
 	return
 end
 
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/formatting
 local formatting = null_ls.builtins.formatting
--- https://github.com/jose-elias-alvarez/null-ls.nvim/tree/main/lua/null-ls/builtins/diagnostics
 local diagnostics = null_ls.builtins.diagnostics
-local prettierd = formatting.prettierd.with({
+
+local prettierConfig = {
 	condition = function(utils)
 		return utils.root_has_file({
 			".prettierrc",
+			".prettierrc.js",
 			".prettierrc.yml",
 			".prettierrc.yaml",
 			".prettierrc.json",
 			".prettierrc.toml",
 		})
 	end,
-})
+}
+
+local eslintConfig = {
+	condition = function(utils)
+		return utils.root_has_file({
+			".eslintrc",
+			".eslintrc.js",
+			".eslintrc.json",
+		})
+	end,
+}
+
+local stylelintConfig = {
+	filetypes = { "sass", "scss", "css", "less", "vue" },
+}
 
 null_ls.setup({
 	debug = false,
 	sources = {
-		diagnostics.eslint_d,
-		diagnostics.stylelint,
+		diagnostics.eslint_d.with(eslintConfig),
+		diagnostics.stylelint.with(stylelintConfig),
 
-		prettierd,
-		formatting.eslint_d,
-		formatting.stylelint,
+		formatting.prettierd.with(prettierConfig),
+		formatting.eslint_d.with(eslintConfig),
+		formatting.stylelint.with(stylelintConfig),
 		formatting.stylua,
 		formatting.djlint,
 		formatting.rustfmt,
