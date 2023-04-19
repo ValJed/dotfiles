@@ -42,6 +42,16 @@ alias proc="ps aux --sort=-%mem | awk 'NR<=10{print $0}"
 alias cw="cargo watch -c -q -x \"run -q\""
 alias sn="sudo -e"
 
+# Tasks
+alias tls="tasks ls"
+alias tlsc="tasks lsc"
+alias tu="tasks use"
+alias ta="tasks add"
+alias td="tasks done"
+alias trm="tasks rm"
+alias trmc="tasks rmc"
+alias tc="tasks clear"
+
 # Rest
 alias GET="lwp-request -m \"GET\""
 alias DELETE="lwp-request -m \"DELETE\""
