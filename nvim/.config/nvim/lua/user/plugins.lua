@@ -109,6 +109,7 @@ return packer.startup(function(use)
 	})
 	use("JoosepAlviste/nvim-ts-context-commentstring")
 	use("Glench/Vim-Jinja2-Syntax")
+	use("mechatroner/rainbow_csv")
 
 	-- Git
 	use("lewis6991/gitsigns.nvim")
