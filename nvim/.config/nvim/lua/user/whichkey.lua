@@ -15,8 +15,8 @@ wk.register({
 	["e"] = { ":NvimTreeToggle<cr>", "Explorer" },
 	["m"] = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
 	["a"] = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Show Marked Files" },
-	["c"] = { ":lua require('user.utils.functions').smart_quit()<cr>", "Close" },
-	["q"] = { ":qa<cr>", "Quit" },
+	["c"] = { ":lua require('user.utils.functions').smart_close()<cr>", "Close" },
+	["q"] = { ":lua require('user.utils.functions').smart_close(true)<cr>", "Quit" },
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
 
 	f = {
