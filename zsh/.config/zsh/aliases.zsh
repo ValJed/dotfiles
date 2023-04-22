@@ -32,10 +32,10 @@ alias np="/opt/ops-tools/bin/np"
 alias monero="/home/val/Documents/monero/monero-wallet-gui"
 
 # Tmux
-alias tm="tmux attach -t main || tmux new -s main"
-alias tc="tmux attach -t code || tmux new -s code"
-alias tk="tmux kill-session -t "
-alias ts="tmux source-file ~/.tmux.conf"
+alias tmm="tmux attach -t main || tmux new -s main"
+alias tmc="tmux attach -t code || tmux new -s code"
+alias tmk="tmux kill-session -t "
+alias tms="tmux source-file ~/.tmux.conf"
 
 # Commands
 alias proc="ps aux --sort=-%mem | awk 'NR<=10{print $0}"
