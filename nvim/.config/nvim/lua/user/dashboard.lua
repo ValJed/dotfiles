@@ -30,8 +30,6 @@ dashboard.section.header.val = {
 	[[⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⠀⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀]],
 }
 
---[[ dashboard.section.header.opts.hl = "Error" ]]
-
 dashboard.section.buttons.val = {
 	dashboard.button("e", "  New File", ":enew<cr>"),
 	dashboard.button("f", "  Find File", ":Telescope find_files hidden=true<cr>"),
