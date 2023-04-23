@@ -31,6 +31,18 @@ local eslintConfig = {
 
 local stylelintConfig = {
 	filetypes = { "sass", "scss", "css", "less", "vue" },
+	condition = function(utils)
+		return utils.root_has_file({
+			".stylelintrc",
+			".stylelintrc.js",
+			".stylelintrc.cjs",
+			".stylelintrc.json",
+			".stylelintrc.yaml",
+			".stylelintrc.yml",
+			".stylelint.config.cjs",
+			".stylelint.config.js",
+		})
+	end,
 }
 
 null_ls.setup({
