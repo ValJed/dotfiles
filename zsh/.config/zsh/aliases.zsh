@@ -43,14 +43,14 @@ alias cw="cargo watch -c -q -x \"run -q\""
 alias sn="sudo -e"
 
 # Tasks
-alias tls="tasks ls"
-alias tlsc="tasks lsc"
-alias tu="tasks use"
-alias ta="tasks add"
-alias td="tasks done"
-alias trm="tasks rm"
-alias trmc="tasks rmc"
-alias tc="tasks clear"
+alias tkls="tasks ls"
+alias tklsc="tasks lsc"
+alias tku="tasks use"
+alias tka="tasks add"
+alias tkd="tasks done"
+alias tkrm="tasks rm"
+alias tkrmc="tasks rmc"
+alias tkc="tasks clear"
 
 # Rest
 alias GET="lwp-request -m \"GET\""
