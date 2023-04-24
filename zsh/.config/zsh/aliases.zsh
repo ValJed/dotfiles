@@ -39,7 +39,10 @@ alias tms="tmux source-file ~/.tmux.conf"
 
 # Commands
 alias proc="ps aux --sort=-%mem | awk 'NR<=10{print $0}"
-alias cw="cargo watch -c -q -x \"run -q\""
+alias cw="cargo watch -c -q -x"
+alias cwr="cargo watch -c -q -x \"run -q\""
+alias cwb="cargo watch -c -q -x \"build -q\""
+alias cww="cargo watch -i .gitignore -i \"pkg/*\" -s \"wasm-pack build --target web\""
 alias sn="sudo -e"
 
 # Tasks
