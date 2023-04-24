@@ -17,6 +17,7 @@ wk.register({
 	["a"] = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Show Marked Files" },
 	["c"] = { ":lua require('user.utils.functions').smart_close()<cr>", "Close" },
 	["q"] = { ":lua require('user.utils.functions').smart_close(true)<cr>", "Quit" },
+	["p"] = { ":Lazy profile<cr>", "Plugins" },
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
 
 	f = {
@@ -66,12 +67,19 @@ wk.register({
 	},
 	l = {
 		name = "LSP",
-		a = { "<cmd>lua vim.lsp.buf.code_action()<cr>", "Code Action" },
-		d = { ':lua vim.diagnostic.open_float({ border = "rounded" })<cr>', "Line Diagnostic" },
-		D = { "<cmd>Telescope diagnostics bufnr=0 theme=get_ivy<cr>", "Buffer Diagnostics" },
-		w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" },
-		h = { ":lua vim.lsp.buf.hover()<cr>", "Signature" },
+
+		o = { ":Lspsaga outline<cr>", "Outline" },
+		a = { ":Lspsaga code_action<cr>", "Code Action" },
+		d = { ":Lspsaga show_line_diagnostics<cr>", "Line Diagnostic" },
+		D = { ":Lspsaga show_buf_diagnostics<cr>", "Buffer Diagnostics" },
+		w = { ":Lspsaga show_workspace_diagnostics<cr>", "Diagnostics" },
+		h = { ":Lspsaga lsp_finder<cr>", "Signature" },
 		r = { ":lua vim.lsp.buf.references()<cr>", "References" },
+		--[[ a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Action" }, ]]
+		--[[ d = { ':lua vim.diagnostic.open_float({ border = "rounded" })<cr>', "Line Diagnostic" }, ]]
+		--[[ w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" }, ]]
+		--[[ h = { ":lua vim.lsp.buf.hover()<cr>", "Signature" }, ]]
+		--[[ r = { ":lua vim.lsp.buf.references()<cr>", "References" }, ]]
 		i = { "<cmd>LspInfo<cr>", "Info" },
 		I = { "<cmd>Mason<cr>", "Mason Info" },
 		j = {
@@ -85,7 +93,7 @@ wk.register({
 
 		l = { vim.lsp.codelens.run, "CodeLens Action" },
 		q = { vim.diagnostic.setloclist, "Quickfix" },
-		R = { vim.lsp.buf.rename, "Rename" },
+		R = { "Lspsaga rename", "Rename" },
 		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		S = {
 			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
@@ -111,15 +119,15 @@ wk.register({
 		q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
 		U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
 	},
-	p = {
-		name = "Packer",
-		c = { "<cmd>PackerCompile<cr>", "Compile" },
-		i = { "<cmd>PackerInstall<cr>", "Install" },
-		r = { "<cmd>lua require('lvim.plugin-loader').recompile()<cr>", "Re-compile" },
-		s = { "<cmd>PackerSync<cr>", "Sync" },
-		S = { "<cmd>PackerStatus<cr>", "Status" },
-		u = { "<cmd>PackerUpdate<cr>", "Update" },
-	},
+	--[[ p = { ]]
+	--[[ 	name = "Packer", ]]
+	--[[ 	c = { "<cmd>PackerCompile<cr>", "Compile" }, ]]
+	--[[ 	i = { "<cmd>PackerInstall<cr>", "Install" }, ]]
+	--[[ 	r = { "<cmd>lua require('lvim.plugin-loader').recompile()<cr>", "Re-compile" }, ]]
+	--[[ 	s = { "<cmd>PackerSync<cr>", "Sync" }, ]]
+	--[[ 	S = { "<cmd>PackerStatus<cr>", "Status" }, ]]
+	--[[ 	u = { "<cmd>PackerUpdate<cr>", "Update" }, ]]
+	--[[ }, ]]
 	s = {
 		h = { ":split<cr>", "Split Horizontally" },
 		v = { ":vsplit<cr>", "Split Vertically" },

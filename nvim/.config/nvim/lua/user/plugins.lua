@@ -15,8 +15,8 @@ local plugins = {
 	"nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
 	"windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
 	"numToStr/Comment.nvim", -- Easily comment stuff
-	"kyazdani42/nvim-web-devicons",
-	"kyazdani42/nvim-tree.lua",
+	"nvim-tree/nvim-web-devicons",
+	"nvim-tree/nvim-tree.lua",
 	"numToStr/Navigator.nvim", -- Navigate between Nvim panes and tmux ones with same bindings
 	"ThePrimeagen/harpoon",
 	{
@@ -36,7 +36,7 @@ local plugins = {
 	},
 	{
 		"nvim-lualine/lualine.nvim",
-		dependencies = { "kyazdani42/nvim-web-devicons", lazy = true },
+		dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
 	},
 	{
 		"saecki/crates.nvim",
@@ -77,7 +77,6 @@ local plugins = {
 		end,
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
-
 	-- Telescope
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-media-files.nvim",
