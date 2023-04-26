@@ -6,7 +6,22 @@ end
 telescope.load_extension("workspaces")
 
 local actions = require("telescope.actions")
+local state = require("telescope.actions.state")
 
+local commits_picker_config = {
+	mappings = {
+		i = {
+			["<C-y>"] = function()
+				local entry = state.get_selected_entry()
+				for key, value in pairs(entry) do
+					if key == "value" then
+						vim.fn.setreg("+", value)
+					end
+				end
+			end,
+		},
+	},
+}
 telescope.setup({
 	defaults = {
 
@@ -17,6 +32,7 @@ telescope.setup({
 
 		mappings = {
 			i = {
+				["kj"] = actions.close,
 				["<C-n>"] = actions.cycle_history_next,
 				["<C-p>"] = actions.cycle_history_prev,
 
@@ -71,7 +87,7 @@ telescope.setup({
 				["G"] = actions.move_to_bottom,
 
 				["<C-u>"] = actions.preview_scrolling_up,
-				["<C-d>"] = actions.preview_scrolling_down,
+				["C-d>"] = actions.preview_scrolling_down,
 
 				["<PageUp>"] = actions.results_scrolling_up,
 				["<PageDown>"] = actions.results_scrolling_down,
@@ -87,5 +103,7 @@ telescope.setup({
 				i = { ["<cr>"] = actions.git_switch_branch },
 			},
 		},
+		git_commits = commits_picker_config,
+		git_bcommits = commits_picker_config,
 	},
 })

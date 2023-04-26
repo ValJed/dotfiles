@@ -27,6 +27,7 @@ wk.register({
 		t = { ":Telescope live_grep<cr>", "Find text" },
 		c = { ":Telescope colorscheme<cr>", "Colorscheme" },
 		T = { ":Telescope help_tags<cr>", "Find Help" },
+
 		H = { ":Telescope highlights<cr>", "Find highlight groups" },
 		M = { ":Telescope man_pages<cr>", "Man Pages" },
 		r = { ":Telescope oldfiles<cr>", "Open Recent File" },
@@ -43,11 +44,13 @@ wk.register({
 		name = "Git",
 		g = { ":LazyGit<cr>", "LazyGit" },
 		j = { ":Gitsigns next_hunk<cr>", "Next Hunk" },
+
 		k = { ":Gitsigns prev_hunk<cr>", "Prev Hunk" },
-		l = { ":Gitsigns blame_line<cr>", "Blame" },
+		l = { ":Gitsigns blame_line<cr>", "Blame Line" },
 		b = { ":GitBlame<cr>", "Blame" },
 		p = { ":Gitsigns preview_hunk<cr>", "Preview Hunk" },
 		r = { ":Gitsigns reset_hunk<cr>", "Reset Hunk" },
+
 		R = { ":Gitsigns reset_buffer<cr>", "Reset Buffer" },
 		s = { ":Gitsigns stage_hunk<cr>", "Stage Hunk" },
 		u = {
