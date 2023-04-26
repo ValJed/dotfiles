@@ -30,10 +30,7 @@ local plugins = {
 	"folke/which-key.nvim", -- Shows keymaps
 	"goolord/alpha-nvim", -- Dashboard
 	"natecraddock/workspaces.nvim", -- Navigate through common projects
-	{
-		"akinsho/toggleterm.nvim",
-		tag = "*",
-	},
+	"akinsho/toggleterm.nvim",
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
@@ -93,6 +90,7 @@ local plugins = {
 	-- Git
 	"lewis6991/gitsigns.nvim",
 	"kdheepak/lazygit.nvim",
+	"dinhhuy258/git.nvim",
 
 	-- Debug
 	"mfussenegger/nvim-dap",
