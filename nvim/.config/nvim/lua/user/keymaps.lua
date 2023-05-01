@@ -69,6 +69,7 @@ keymap("i", "<S-Tab>", "<C-d>", opts)
 
 -- Select and paste
 keymap("v", "p", '"_dP', opts)
+keymap("x", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down

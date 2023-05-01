@@ -33,7 +33,7 @@ local plugins = {
 	"akinsho/toggleterm.nvim",
 	{
 		"nvim-lualine/lualine.nvim",
-		dependencies = { "nvim-tree/nvim-web-devicons", lazy = true },
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 	{
 		"saecki/crates.nvim",
