@@ -72,7 +72,10 @@ local plugins = {
 		config = function()
 			require("lspsaga").setup()
 		end,
-		dependencies = { "nvim-tree/nvim-web-devicons" },
+		dependencies = {
+			{ "nvim-tree/nvim-web-devicons" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
 	},
 	-- Telescope
 	"nvim-telescope/telescope.nvim",
