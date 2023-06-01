@@ -42,7 +42,7 @@
   "Component": {
     "prefix": "cc",
     "body": [
-      "<template>\n\t${1}\n</template>\n\n<script setup>\n\t${2}\n</script>\n\n<style lang=\"scss>\"\n${3}\n</style>"
+      "<template>\n\t${1}\n</template>\n\n<script setup>\n\t${2}\n</script>\n\n<style lang=\"scss\">\n${3}\n</style>"
     ],
     "description": "Component"
   }
