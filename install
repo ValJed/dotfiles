@@ -24,6 +24,7 @@ sh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.sh)
 sudo cp -r ./fonts/Hack /usr/share/fonts/
 
 # tmux package manager
+# To install tmux TPM packages run prefix + I
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
 
 # Install nvm by following instructions from here: https://github.com/nvm-sh/nvm

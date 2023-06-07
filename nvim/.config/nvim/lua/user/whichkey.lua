@@ -34,6 +34,7 @@ wk.register({
 		R = { ":Telescope registers<cr>", "Registers" },
 		k = { ":Telescope keymaps<cr>", "Keymaps" },
 		C = { ":Telescope commands<cr>", "Commands" },
+		m = { ":Telescope marks<cr>", "Marks" },
 		p = {
 			":lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
 			"Colorscheme with Preview",
