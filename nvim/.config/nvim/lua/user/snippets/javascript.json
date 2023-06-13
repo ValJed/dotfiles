@@ -104,7 +104,7 @@
   },
 
   "Filter": {
-    "prefix": "f ",
+    "prefix": "f",
     "body": [
       "${1}.filter((${2}) => ${3})"
     ],

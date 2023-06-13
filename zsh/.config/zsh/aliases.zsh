@@ -47,6 +47,7 @@ alias sn="sudo -e"
 
 # Tasks
 alias tkls="tasks ls"
+alias tklsa="tasks lsa"
 alias tklsc="tasks lsc"
 alias tku="tasks use"
 alias tka="tasks add"
