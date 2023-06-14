@@ -94,3 +94,7 @@ alias gcmsg="git commit -m"
 alias gb="git branch"
 alias gbd="git branch --delete"
 alias gbdm="git branch --merged | grep -v \* | xargs git branch -D"
+
+# Apostrophe
+alias a3u="node app @apostrophecms/user:add"
+alias a2u="node app apostrophe-users:add"
