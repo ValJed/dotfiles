@@ -50,3 +50,9 @@ xrandr --output DP-4 --primary --pos 0x0 --output HDMI-0 --pos 1920x0
 
 # Packages
 easyeffects
+
+# Neovim
+mkdir ~/Documents/tools
+git clone git@github.com:firefox-devtools/vscode-firefox-debug.git
+npm run install && npm run build
+

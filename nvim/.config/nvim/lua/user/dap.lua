@@ -1,4 +1,5 @@
 local dap = require("dap")
+
 dap.adapters.firefox = {
 	type = "executable",
 	command = "node",
@@ -11,7 +12,7 @@ dap.configurations.vue = {
 		type = "firefox",
 		request = "launch",
 		reAttach = true,
-		url = "http://green-living-plan.localhost:3000/",
+		url = "http://localhost:3000/",
 		webRoot = "${workspaceFolder}",
 		firefoxExecutable = "/usr/bin/firefox",
 	},
@@ -29,7 +30,7 @@ dap.configurations.javascript = {
 		type = "firefox",
 		request = "launch",
 		reAttach = true,
-		url = "http://green-living-plan.localhost:3000/",
+		url = "http://localhost:3000/",
 		webRoot = "${workspaceFolder}",
 		firefoxExecutable = "/usr/bin/firefox",
 	},
