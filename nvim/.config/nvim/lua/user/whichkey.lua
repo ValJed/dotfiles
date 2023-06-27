@@ -25,7 +25,10 @@ wk.register({
 		f = { ":Telescope find_files<cr>", "Find file" },
 		h = { ":Telescope find_files hidden=true<cr>", "Find hidden files" },
 		t = { ":Telescope live_grep<cr>", "Find text" },
-		c = { ":Telescope colorscheme<cr>", "Colorscheme" },
+		c = {
+			":lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
+			"Colorscheme with Preview",
+		},
 		T = { ":Telescope help_tags<cr>", "Find Help" },
 
 		H = { ":Telescope highlights<cr>", "Find highlight groups" },
@@ -35,10 +38,6 @@ wk.register({
 		k = { ":Telescope keymaps<cr>", "Keymaps" },
 		C = { ":Telescope commands<cr>", "Commands" },
 		m = { ":Telescope marks<cr>", "Marks" },
-		p = {
-			":lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
-			"Colorscheme with Preview",
-		},
 		w = { ":Telescope workspaces<cr>", "Workspaces" },
 	},
 	g = {
