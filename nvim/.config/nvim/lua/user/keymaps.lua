@@ -48,8 +48,8 @@ keymap("n", "<S-l>", ":bn<cr>", { silent = true })
 -- Moves
 keymap("n", "<C-d>", "<C-d>zz", opts)
 keymap("n", "<C-u>", "<C-u>zz", opts)
-keymap("n", "<C-f>", "<C-b>zz", opts)
-keymap("n", "<C-b>", "<C-f>zz", opts)
+keymap("n", "<C-f>", "<C-f>zz", opts)
+keymap("n", "<C-b>", "<C-b>zz", opts)
 
 keymap("i", "<C-l>", "<Right>", opts)
 keymap("i", "<C-h>", "<Left>", opts)
