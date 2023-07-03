@@ -4,7 +4,6 @@
 HISTSIZE=1000000
 SAVEHIST=1000000
 
-export KEYTIMEOUT="30"
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 export TERMINAL="alacrity"
@@ -14,6 +13,10 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=/opt/stagecoach/bin:$PATH
 export PATH=/opt/ops-tools/bin:$PATH
+
+# zsh-vi-mode 
+export ZVM_VI_INSERT_ESCAPE_BINDKEY=kj
+export ZVM_KEYTIMEOUT=0.1
 
 export PNPM_HOME="/home/jed/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
