@@ -35,6 +35,12 @@ curl -fsSL https://get.pnpm.io/install.sh | sh -
 # Install Rust
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 
+# Cargo Watch
+cargo install cargo-watch
+
+# for Rust and Web Assembly
+cargo install wasm-pack
+
 # LAPTOP
 
 # For laptops, create files in /etc/X11/xinit/xinitrc.d folder with scripts
