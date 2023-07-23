@@ -50,6 +50,7 @@ null_ls.setup({
 	sources = {
 		diagnostics.eslint_d.with(eslintConfig),
 		diagnostics.stylelint.with(stylelintConfig),
+		diagnostics.shellcheck,
 
 		formatting.prettierd.with(prettierConfig),
 		formatting.eslint_d.with(eslintConfig),
@@ -57,5 +58,6 @@ null_ls.setup({
 		formatting.stylua,
 		formatting.djlint,
 		formatting.rustfmt,
+		formatting.shellcheck,
 	},
 })
