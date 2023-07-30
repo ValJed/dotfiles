@@ -64,19 +64,19 @@ local plugins = {
 
 	-- LSP
 	"neovim/nvim-lspconfig", -- enable LSP
-	"jose-elias-alvarez/null-ls.nvim",
+	--[[ "jose-elias-alvarez/null-ls.nvim", ]]
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
-	{
-		"nvimdev/lspsaga.nvim",
-		config = function()
-			require("lspsaga").setup()
-		end,
-		dependencies = {
-			{ "nvim-tree/nvim-web-devicons" },
-			{ "nvim-treesitter/nvim-treesitter" },
-		},
-	},
+	--[[ { ]]
+	--[[ 	"nvimdev/lspsaga.nvim", ]]
+	--[[ 	config = function() ]]
+	--[[ 		require("lspsaga").setup() ]]
+	--[[ 	end, ]]
+	--[[ 	dependencies = { ]]
+	--[[ 		{ "nvim-tree/nvim-web-devicons" }, ]]
+	--[[ 		{ "nvim-treesitter/nvim-treesitter" }, ]]
+	--[[ 	}, ]]
+	--[[ }, ]]
 	-- Telescope
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-media-files.nvim",

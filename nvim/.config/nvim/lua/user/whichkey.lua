@@ -80,7 +80,7 @@ wk.register({
 		h = { ":Lspsaga lsp_finder<cr>", "Signature" },
 		r = { ":lua vim.lsp.buf.references()<cr>", "References" },
 		--[[ a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Action" }, ]]
-		--[[ d = { ':lua vim.diagnostic.open_float({ border = "rounded" })<cr>', "Line Diagnostic" }, ]]
+		t = { ':lua vim.diagnostic.open_float({ border = "rounded" })<cr>', "Line Diagnostic" },
 		--[[ w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" }, ]]
 		--[[ h = { ":lua vim.lsp.buf.hover()<cr>", "Signature" }, ]]
 		--[[ r = { ":lua vim.lsp.buf.references()<cr>", "References" }, ]]

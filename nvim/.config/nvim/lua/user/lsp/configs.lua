@@ -1,4 +1,16 @@
-local servers = { "jsonls", "tsserver", "html", "emmet_ls", "rust_analyzer", "volar", "tailwindcss" }
+local servers = {
+  "jsonls",
+  "tsserver",
+  "html",
+  "emmet_ls",
+  "rust_analyzer", 
+  "volar", 
+  "tailwindcss", 
+  "eslint",
+  "lua_ls"
+  --[[ "shellcheck", ]]
+  --[[ "lua" ]]
+}
 local lspconfig = require("lspconfig")
 
 require("mason").setup()
