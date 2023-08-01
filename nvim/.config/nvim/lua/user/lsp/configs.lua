@@ -1,13 +1,14 @@
 local servers = {
   "jsonls",
   "tsserver",
-  "html",
+  "html",  
   "emmet_ls",
   "rust_analyzer", 
   "volar", 
   "tailwindcss", 
   "eslint",
-  "lua_ls"
+  "lua_ls",
+  --[[ "stylua" ]]
   --[[ "shellcheck", ]]
   --[[ "lua" ]]
 }

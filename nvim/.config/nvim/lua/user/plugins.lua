@@ -9,6 +9,7 @@ if not vim.loop.fs_stat(lazypath) then
 		lazypath,
 	})
 end
+
 vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
@@ -67,16 +68,19 @@ local plugins = {
 	--[[ "jose-elias-alvarez/null-ls.nvim", ]]
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
-	--[[ { ]]
-	--[[ 	"nvimdev/lspsaga.nvim", ]]
-	--[[ 	config = function() ]]
-	--[[ 		require("lspsaga").setup() ]]
-	--[[ 	end, ]]
-	--[[ 	dependencies = { ]]
-	--[[ 		{ "nvim-tree/nvim-web-devicons" }, ]]
-	--[[ 		{ "nvim-treesitter/nvim-treesitter" }, ]]
-	--[[ 	}, ]]
-	--[[ }, ]]
+  "mhartington/formatter.nvim",
+
+	{
+		"nvimdev/lspsaga.nvim",
+		config = function()
+			require("lspsaga").setup()
+		end,
+		dependencies = {
+			{ "nvim-tree/nvim-web-devicons" },
+			{ "nvim-treesitter/nvim-treesitter" },
+		},
+	},
+
 	-- Telescope
 	"nvim-telescope/telescope.nvim",
 	"nvim-telescope/telescope-media-files.nvim",
