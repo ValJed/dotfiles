@@ -1,16 +1,16 @@
 local servers = {
-  "jsonls",
-  "tsserver",
-  "html",  
-  "emmet_ls",
-  "rust_analyzer", 
-  "volar", 
-  "tailwindcss", 
-  "eslint",
-  "lua_ls",
-  --[[ "stylua" ]]
-  --[[ "shellcheck", ]]
-  --[[ "lua" ]]
+	"jsonls",
+	"tsserver",
+	"html",
+	"emmet_ls",
+	"rust_analyzer",
+	"volar",
+	"tailwindcss",
+	"eslint",
+	"lua_ls",
+	--[[ "stylua" ]]
+	--[[ "shellcheck", ]]
+	--[[ "lua" ]]
 }
 local lspconfig = require("lspconfig")
 

@@ -20,7 +20,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Format on save
-vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
+vim.cmd([[autocmd BufWritePost * FormatWrite]])
 
 -- Modes
 --   normal_mode = "n",
