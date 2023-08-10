@@ -16,8 +16,6 @@ require("formatter").setup({
 			require("formatter.filetypes.javascript").eslint_d,
 		},
 
-		-- Use the special "*" filetype for defining formatter configurations on
-		-- any filetype
 		["*"] = {
 			-- "formatter.filetypes.any" defines default configurations for any
 			-- filetype
