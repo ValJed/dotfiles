@@ -23,7 +23,8 @@ autoload -U compinit && compinit
 # keybinds
 bindkey -M viins 'kj' vi-cmd-mode 
 bindkey '^ ' autosuggest-accept
-bindkey '^R' history-incremental-search-backward 
+bindkey '^r' history-incremental-search-backward 
+bindkey '^R' history-incremental-search-forward 
 
 eval `ssh-agent -s` > /dev/null && ssh-add > /dev/null 2>&1
 
