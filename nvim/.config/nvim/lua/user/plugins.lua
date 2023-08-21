@@ -45,6 +45,12 @@ local plugins = {
 		end,
 	},
 	"preservim/tagbar",
+	{
+		"pocco81/true-zen.nvim",
+		config = function()
+			require("true-zen").setup()
+		end,
+	},
 
 	-- Color scheme
 	"EdenEast/nightfox.nvim",
@@ -68,7 +74,7 @@ local plugins = {
 	--[[ "jose-elias-alvarez/null-ls.nvim", ]]
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
-  "mhartington/formatter.nvim",
+	"mhartington/formatter.nvim",
 
 	{
 		"nvimdev/lspsaga.nvim",

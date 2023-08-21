@@ -96,7 +96,7 @@ keymap("n", "<C-t>", "<cmd>lua require('user.utils.functions').toggle_term()<cr>
 keymap("t", "<C-t>", "<cmd>lua require('user.utils.functions').toggle_term()<cr>", opts)
 
 -- Marks
-keymap("n", "!", "`", opts)
+--[[ keymap("n", "!", "`", opts) ]]
 
 -- Lsp
 keymap("n", "gp", ":Lspsaga peek_definition<cr>", opts)

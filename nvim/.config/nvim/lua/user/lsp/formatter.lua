@@ -16,6 +16,10 @@ require("formatter").setup({
 			require("formatter.filetypes.javascript").eslint_d,
 		},
 
+		vue = {
+			require("formatter.filetypes.javascript").eslint_d,
+		},
+
 		["*"] = {
 			-- "formatter.filetypes.any" defines default configurations for any
 			-- filetype
