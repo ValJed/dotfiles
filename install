@@ -20,7 +20,7 @@ cargo install stylua
 # Install zap for zsh config
 sh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.sh)
 
-# Fonts 
+# Fonts
 sudo cp -r ./fonts/Hack /usr/share/fonts/
 
 # tmux package manager
@@ -40,6 +40,10 @@ cargo install cargo-watch
 
 # for Rust and Web Assembly
 cargo install wasm-pack
+
+# Lauch MDB docker container at startup
+# Create file in /etc/X11/xinit/xinitrc.d containing:
+docker start mdb
 
 # LAPTOP
 
@@ -61,4 +65,3 @@ easyeffects
 mkdir ~/Documents/tools
 git clone git@github.com:firefox-devtools/vscode-firefox-debug.git
 npm run install && npm run build
-
