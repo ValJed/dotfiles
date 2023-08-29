@@ -1,0 +1,37 @@
+#!/usr/bin/env node
+
+const fs = require('fs').promises
+const path = require('path')
+const os = require('os')
+const { exec } = require('child_process')
+
+const BACKUP_FOLDER = process.env.BACKUP_FOLDER || path.join(os.homedir(), 'backups')
+const DB_PATH = process.env.DB_PATH || '/var/lib/couchdb'
+const MAX_BACKUPS = 10
+
+run()
+
+async function run() {
+  const backupFolders = await fs.readdir(BACKUP_FOLDER)
+  const backupNames = backupFolders.map((backup) => backup.replace('.tar.gz', ''))
+
+  await cleanOlderBackup(backupNames)
+
+  const timestamp = Date.now()
+  await exec(`tar -cvf - ${DB_PATH} | gzip > ${BACKUP_FOLDER}/${timestamp}.tar.gz`)
+}
+
+async function cleanOlderBackup(backupNames) {
+  if (backupNames.length >= MAX_BACKUPS) {
+    const olderBackup = backupNames
+      .reduce((acc, file) => parseInt(file, 10) < parseInt(acc, 10) ? file : acc)
+
+    try {
+      await fs.rm(path.join(BACKUP_FOLDER, `${olderBackup}.tar.gz`))
+    } catch (err) {
+      console.error(err)
+    }
+
+    await cleanOlderBackup(backupNames.filter((backup) => backup !== olderBackup))
+  }
+}
