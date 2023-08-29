@@ -77,8 +77,8 @@ wk.register({
 		d = { ":Lspsaga show_line_diagnostics<cr>", "Line Diagnostic" },
 		D = { ":Lspsaga show_buf_diagnostics<cr>", "Buffer Diagnostics" },
 		w = { ":Lspsaga show_workspace_diagnostics<cr>", "Diagnostics" },
-		h = { ":Lspsaga lsp_finder<cr>", "Signature" },
-		r = { ":lua vim.lsp.buf.references()<cr>", "References" },
+		h = { ":Lspsaga finder<cr>", "Signature" },
+		r = { ":Telescope lsp_references<cr>", "References" },
 		--[[ a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Action" }, ]]
 		t = { ':lua vim.diagnostic.open_float({ border = "rounded" })<cr>', "Line Diagnostic" },
 		--[[ w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" }, ]]
