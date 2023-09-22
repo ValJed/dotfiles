@@ -28,3 +28,10 @@ bindkey '^R' history-incremental-search-forward
 
 eval `ssh-agent -s` > /dev/null && ssh-add > /dev/null 2>&1
 
+
+# bun completions
+[ -s "/home/jed/.bun/_bun" ] && source "/home/jed/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
