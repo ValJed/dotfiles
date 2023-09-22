@@ -45,12 +45,7 @@ local plugins = {
 		end,
 	},
 	"preservim/tagbar",
-	{
-		"pocco81/true-zen.nvim",
-		config = function()
-			require("true-zen").setup()
-		end,
-	},
+	"pocco81/true-zen.nvim",
 
 	-- Color scheme
 	"EdenEast/nightfox.nvim",

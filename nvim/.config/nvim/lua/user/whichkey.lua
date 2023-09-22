@@ -154,6 +154,11 @@ wk.register({
 		j = { ":TagbarJumpNext<cr>", "Next" },
 		k = { ":TagbarJumpPrev<cr>", "previous" },
 	},
+
+	z = {
+		name = "Zen",
+		a = { "<cmd>TZAtaraxis<cr>", "Ataraxis" },
+	},
 }, { prefix = "<leader>" })
 
 wk.register({
