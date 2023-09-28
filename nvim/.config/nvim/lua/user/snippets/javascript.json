@@ -40,9 +40,9 @@
   },
 
  "For Await Of": {
-    "prefix": "fo",
+    "prefix": "fao",
     "body": [
-      "for (const ${1} of ${2}) {\n\t${3}\n}"
+      "for await (const ${1} of ${2}) {\n\t${3}\n}"
     ],
     "description": "For Await Of"
   },
@@ -74,7 +74,7 @@
  "Function": {
     "prefix": "fn",
     "body": [
-      "function ${1} (${2}) {\n\t${3}\n}"
+      "function ${1}(${2}) {\n\t${3}\n}"
     ],
     "description": "Function"
   },
