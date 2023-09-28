@@ -46,6 +46,7 @@ local plugins = {
 	},
 	"preservim/tagbar",
 	"pocco81/true-zen.nvim",
+	--[[ "chentoast/marks.nvim", ]]
 
 	-- Color scheme
 	"EdenEast/nightfox.nvim",
@@ -62,7 +63,7 @@ local plugins = {
 
 	-- snippets
 	"L3MON4D3/LuaSnip", --snippet engine
-	"rafamadriz/friendly-snippets", -- a bunch of snippets to use
+	--[[ "rafamadriz/friendly-snippets", -- a bunch of snippets to use ]]
 
 	-- LSP
 	"neovim/nvim-lspconfig", -- enable LSP

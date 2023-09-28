@@ -11,6 +11,7 @@ require("user.comment")
 require("user.gitsigns")
 require("user.git")
 require("user.tree")
+--[[ require("user.marks") ]]
 require("user.navigator")
 require("user.harpoon")
 require("user.whichkey")
