@@ -20,7 +20,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Format on save
-vim.cmd([[autocmd BufWritePost * FormatWrite]])
+vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
 
 -- Modes
 --   normal_mode = "n",
@@ -100,4 +100,7 @@ keymap("t", "<C-t>", "<cmd>lua require('user.utils.functions').toggle_term()<cr>
 
 -- Lsp
 keymap("n", "gp", ":Lspsaga peek_definition<cr>", opts)
-keymap("n", "gd", ":Lspsaga goto_definition<CR>", opts)
+keymap("n", "gd", ":Lspsaga goto_definition<cr>", opts)
+
+-- CMD Line
+--[[ keymap("n", ":", "<cmd>FineCmdline<cr>", opts) ]]

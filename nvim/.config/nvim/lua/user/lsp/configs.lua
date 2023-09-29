@@ -1,4 +1,5 @@
 local servers = {
+	"efm",
 	"jsonls",
 	"tsserver",
 	"html",
@@ -8,9 +9,6 @@ local servers = {
 	"tailwindcss",
 	"eslint",
 	"lua_ls",
-	--[[ "stylua" ]]
-	--[[ "shellcheck", ]]
-	--[[ "lua" ]]
 }
 local lspconfig = require("lspconfig")
 

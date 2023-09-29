@@ -44,9 +44,24 @@ local plugins = {
 			require("crates").setup()
 		end,
 	},
-	"preservim/tagbar",
+	{
+		"folke/noice.nvim",
+		event = "VeryLazy",
+		opts = {
+			-- add any options here
+		},
+		dependencies = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
+			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			--[[ "rcarriga/nvim-notify", ]]
+		},
+	},
+	--[[ "preservim/tagbar", ]]
 	"pocco81/true-zen.nvim",
-	--[[ "chentoast/marks.nvim", ]]
+	"chentoast/marks.nvim",
 
 	-- Color scheme
 	"EdenEast/nightfox.nvim",
@@ -70,7 +85,8 @@ local plugins = {
 	--[[ "jose-elias-alvarez/null-ls.nvim", ]]
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
-	"mhartington/formatter.nvim",
+	"creativenull/efmls-configs-nvim",
+	--[[ "mhartington/formatter.nvim", ]]
 
 	{
 		"nvimdev/lspsaga.nvim",
