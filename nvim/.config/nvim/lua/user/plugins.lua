@@ -63,6 +63,25 @@ local plugins = {
 	"pocco81/true-zen.nvim",
 	"chentoast/marks.nvim",
 
+	-- DB
+	"tpope/vim-dadbod",
+	{
+		"kristijanhusak/vim-dadbod-ui",
+		dependencies = {
+			{ "tpope/vim-dadbod", lazy = true },
+			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+		},
+		cmd = {
+			"DBUI",
+			"DBUIToggle",
+			"DBUIAddConnection",
+			"DBUIFindBuffer",
+		},
+		init = function()
+			-- Your DBUI configuration
+			vim.g.db_ui_use_nerd_fonts = 1
+		end,
+	},
 	-- Color scheme
 	"EdenEast/nightfox.nvim",
 
@@ -82,10 +101,11 @@ local plugins = {
 
 	-- LSP
 	"neovim/nvim-lspconfig", -- enable LSP
-	--[[ "jose-elias-alvarez/null-ls.nvim", ]]
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"creativenull/efmls-configs-nvim",
+
+	--[[ "jose-elias-alvarez/null-ls.nvim", ]]
 	--[[ "mhartington/formatter.nvim", ]]
 
 	{
