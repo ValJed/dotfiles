@@ -107,6 +107,11 @@ wk.register({
 		n = { ":NullLsInfo<cr>", "Null LS" },
 	},
 	d = {
+		name = "DB",
+		t = { "<cmd>DBUIToggle<cr>", "Toggle UI" },
+		b = { "<cmd>DBUIFindBuffer<cr>", "Find Buffer" },
+	},
+	b = {
 		name = "Debug",
 		t = { "<cmd>lua require'dap'.toggle_breakpoint()<cr>", "Toggle Breakpoint" },
 		b = { "<cmd>lua require'dap'.step_back()<cr>", "Step Back" },
