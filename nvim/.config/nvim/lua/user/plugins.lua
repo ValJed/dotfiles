@@ -69,7 +69,7 @@ local plugins = {
 		"kristijanhusak/vim-dadbod-ui",
 		dependencies = {
 			{ "tpope/vim-dadbod", lazy = true },
-			{ "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true },
+			--[[ { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true }, ]]
 		},
 		cmd = {
 			"DBUI",
@@ -108,6 +108,26 @@ local plugins = {
 	--[[ "jose-elias-alvarez/null-ls.nvim", ]]
 	--[[ "mhartington/formatter.nvim", ]]
 
+	-- Telescope
+	"nvim-telescope/telescope.nvim",
+	"nvim-telescope/telescope-media-files.nvim",
+
+	-- Treesitter
+	{
+		"nvim-treesitter/nvim-treesitter",
+		event = { "BufReadPre", "BufNewFile" },
+		build = ":TSUpdate",
+		dependencies = {
+			{ "nvim-treesitter/nvim-treesitter-textobjects" },
+		},
+	},
+	{
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		lazy = true,
+	},
+	"JoosepAlviste/nvim-ts-context-commentstring",
+	"Glench/Vim-Jinja2-Syntax",
+	"mechatroner/rainbow_csv",
 	{
 		"nvimdev/lspsaga.nvim",
 		config = function()
@@ -118,19 +138,6 @@ local plugins = {
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
 	},
-
-	-- Telescope
-	"nvim-telescope/telescope.nvim",
-	"nvim-telescope/telescope-media-files.nvim",
-
-	-- Treesitter
-	{
-		"nvim-treesitter/nvim-treesitter",
-		build = ":TSUpdate",
-	},
-	"JoosepAlviste/nvim-ts-context-commentstring",
-	"Glench/Vim-Jinja2-Syntax",
-	"mechatroner/rainbow_csv",
 
 	-- Git
 	"lewis6991/gitsigns.nvim",
