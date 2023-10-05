@@ -30,7 +30,6 @@ wk.register({
 			"Colorscheme with Preview",
 		},
 		T = { ":Telescope help_tags<cr>", "Find Help" },
-
 		H = { ":Telescope highlights<cr>", "Find highlight groups" },
 		M = { ":Telescope man_pages<cr>", "Man Pages" },
 		r = { ":Telescope oldfiles<cr>", "Open Recent File" },
@@ -44,13 +43,11 @@ wk.register({
 		name = "Git",
 		g = { ":LazyGit<cr>", "LazyGit" },
 		j = { ":Gitsigns next_hunk<cr>", "Next Hunk" },
-
 		k = { ":Gitsigns prev_hunk<cr>", "Prev Hunk" },
 		l = { ":Gitsigns blame_line<cr>", "Blame Line" },
 		b = { ":GitBlame<cr>", "Blame" },
 		p = { ":Gitsigns preview_hunk<cr>", "Preview Hunk" },
 		r = { ":Gitsigns reset_hunk<cr>", "Reset Hunk" },
-
 		R = { ":Gitsigns reset_buffer<cr>", "Reset Buffer" },
 		s = { ":Gitsigns stage_hunk<cr>", "Stage Hunk" },
 		u = {
@@ -71,7 +68,6 @@ wk.register({
 	},
 	l = {
 		name = "LSP",
-
 		o = { ":Lspsaga outline<cr>", "Outline" },
 		a = { ":Lspsaga code_action<cr>", "Code Action" },
 		d = { ":Lspsaga show_line_diagnostics<cr>", "Line Diagnostic" },
@@ -106,6 +102,12 @@ wk.register({
 		e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
 		n = { ":NullLsInfo<cr>", "Null LS" },
 	},
+	--[[ m = { ]]
+	--[[ 	name = "Marks", ]]
+	--[[ 	a = { ":MarksListAll<cr>", "List All" }, ]]
+	--[[ 	b = { ":MarksListBuf<cr>", "List Buffer" }, ]]
+	--[[ 	f = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" }, ]]
+	--[[ }, ]]
 	d = {
 		name = "DB",
 		t = { "<cmd>DBUIToggle<cr>", "Toggle UI" },
@@ -128,15 +130,6 @@ wk.register({
 		q = { "<cmd>lua require'dap'.close()<cr>", "Quit" },
 		U = { "<cmd>lua require'dapui'.toggle({reset = true})<cr>", "Toggle UI" },
 	},
-	--[[ p = { ]]
-	--[[ 	name = "Packer", ]]
-	--[[ 	c = { "<cmd>PackerCompile<cr>", "Compile" }, ]]
-	--[[ 	i = { "<cmd>PackerInstall<cr>", "Install" }, ]]
-	--[[ 	r = { "<cmd>lua require('lvim.plugin-loader').recompile()<cr>", "Re-compile" }, ]]
-	--[[ 	s = { "<cmd>PackerSync<cr>", "Sync" }, ]]
-	--[[ 	S = { "<cmd>PackerStatus<cr>", "Status" }, ]]
-	--[[ 	u = { "<cmd>PackerUpdate<cr>", "Update" }, ]]
-	--[[ }, ]]
 	s = {
 		h = { ":split<cr>", "Split Horizontally" },
 		v = { ":vsplit<cr>", "Split Vertically" },

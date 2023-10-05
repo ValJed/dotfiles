@@ -95,9 +95,6 @@ keymap("n", "<leader>-", ":lua require('harpoon.ui').nav_file(6)<cr>", opts)
 keymap("n", "<C-t>", "<cmd>lua require('user.utils.functions').toggle_term()<cr>", opts)
 keymap("t", "<C-t>", "<cmd>lua require('user.utils.functions').toggle_term()<cr>", opts)
 
--- Marks
---[[ keymap("n", "!", "`", opts) ]]
-
 -- Lsp
 keymap("n", "gp", ":Lspsaga peek_definition<cr>", opts)
 keymap("n", "gd", ":Lspsaga goto_definition<cr>", opts)

@@ -27,5 +27,11 @@ require("marks").setup({
 		-- defaults to false.
 		annotate = false,
 	},
-	mappings = {},
+	mappings = {
+		next = "mj",
+		prev = "mk",
+		preview = "m:",
+		delete_buf = "mdb",
+		delete_line = "mdl",
+	},
 })

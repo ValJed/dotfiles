@@ -36,4 +36,13 @@ configs.setup({
 		enable = true,
 		enable_autocmd = false,
 	},
+	incremental_selection = {
+		enable = true,
+		keymaps = {
+			init_selection = "<C-space>", -- set to `false` to disable one of the mappings
+			node_incremental = "<C-space>",
+			scope_incremental = "<C-s>",
+			node_decremental = "<bs>",
+		},
+	},
 })
