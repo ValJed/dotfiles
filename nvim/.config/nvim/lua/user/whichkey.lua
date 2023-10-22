@@ -70,13 +70,14 @@ wk.register({
 		name = "LSP",
 		o = { ":Lspsaga outline<cr>", "Outline" },
 		a = { ":Lspsaga code_action<cr>", "Code Action" },
-		d = { ":Lspsaga show_line_diagnostics<cr>", "Line Diagnostic" },
+		--[[ d = { ":Lspsaga show_line_diagnostics<cr>", "Line Diagnostic" }, ]]
+		d = { ':lua vim.diagnostic.open_float({ border = "rounded" })<cr>', "Line Diagnostic" },
 		D = { ":Lspsaga show_buf_diagnostics<cr>", "Buffer Diagnostics" },
+		p = { ":Lspsaga peek_definition<cr>", "Peek Definition" },
 		w = { ":Lspsaga show_workspace_diagnostics<cr>", "Diagnostics" },
 		h = { ":Lspsaga finder<cr>", "Signature" },
 		r = { ":Telescope lsp_references<cr>", "References" },
 		--[[ a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Action" }, ]]
-		t = { ':lua vim.diagnostic.open_float({ border = "rounded" })<cr>', "Line Diagnostic" },
 		--[[ w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" }, ]]
 		--[[ h = { ":lua vim.lsp.buf.hover()<cr>", "Signature" }, ]]
 		--[[ r = { ":lua vim.lsp.buf.references()<cr>", "References" }, ]]
@@ -92,15 +93,15 @@ wk.register({
 		},
 
 		l = { vim.lsp.codelens.run, "CodeLens Action" },
-		q = { vim.diagnostic.setloclist, "Quickfix" },
-		R = { "Lspsaga rename", "Rename" },
-		s = { "<cmd>Telescope lsp_document_symbols<cr>", "Document Symbols" },
-		S = {
-			"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>",
-			"Workspace Symbols",
-		},
-		e = { "<cmd>Telescope quickfix<cr>", "Telescope Quickfix" },
-		n = { ":NullLsInfo<cr>", "Null LS" },
+		--[[ q = { vim.diagnostic.setloclist, "Quickfix" }, ]]
+		R = { ":Lspsaga rename<cr>", "Rename" },
+		s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
+		--[[ S = { ]]
+		--[[ 	"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", ]]
+		--[[ 	"Workspace Symbols", ]]
+		--[[ }, ]]
+		e = { ":Telescope quickfix<cr>", "Telescope Quickfix" },
+		--[[ n = { ":NullLsInfo<cr>", "Null LS" }, ]]
 	},
 	--[[ m = { ]]
 	--[[ 	name = "Marks", ]]
