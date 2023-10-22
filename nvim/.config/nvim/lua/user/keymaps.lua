@@ -90,6 +90,9 @@ keymap("n", '<leader>"', ":lua require('harpoon.ui').nav_file(3)<cr>", opts)
 keymap("n", "<leader>'", ":lua require('harpoon.ui').nav_file(4)<cr>", opts)
 keymap("n", "<leader>(", ":lua require('harpoon.ui').nav_file(5)<cr>", opts)
 keymap("n", "<leader>-", ":lua require('harpoon.ui').nav_file(6)<cr>", opts)
+keymap("n", "<leader>è", ":lua require('harpoon.ui').nav_file(7)<cr>", opts)
+keymap("n", "<leader>_", ":lua require('harpoon.ui').nav_file(8)<cr>", opts)
+keymap("n", "<leader>ç", ":lua require('harpoon.ui').nav_file(9)<cr>", opts)
 
 -- Terminal
 keymap("n", "<C-t>", "<cmd>lua require('user.utils.functions').toggle_term()<cr>", opts)
