@@ -43,7 +43,7 @@ dashboard.section.footer.val = {
 	"",
 	"",
 	"",
-	"󰮇  Let's invoke demons, baby  󰮇",
+	"󰮇  Let's invoke demons 󰮇",
 }
 
 alpha.setup(dashboard.opts)
