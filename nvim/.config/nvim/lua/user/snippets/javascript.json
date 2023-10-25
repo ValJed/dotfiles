@@ -87,6 +87,16 @@
     "description": "Function Arrow"
   },
 
+  "Method": {
+    "prefix": "fm",
+    "body": [
+      "${1}(${2}) {",
+      "\t${3}",
+      "}," 
+    ],
+    "description": "Method"
+  },
+
  "Await": {
     "prefix": "a",
     "body": [
@@ -197,5 +207,146 @@
       "if (${1}) {\n\t${2}\n} else {\n\t${3}\n}"
     ],
     "description": "If Else"
+  },
+
+  "Apos Field": {
+    "prefix": "aposField",
+    "body": [
+      "${1}: {",
+      "\tlabel: '${2}',",
+      "\ttype: '${3}',",
+      "\t${4:required: true},",
+      "},"
+    ],
+    "description": "Apos Field"
+  },
+
+  "Apos String Field": {
+    "prefix": "aposString",
+    "body": [
+      "${1}: {",
+      "\tlabel: '${2}',",
+      "\ttype: 'string',",
+      "\t${4:required: true},",
+      "},"
+    ],
+    "description": "Apos String Field"
+  },
+
+  "Apos Boolean Field": {
+    "prefix": "aposBool",
+    "body": [
+      "${1}: {",
+      "\tlabel: '${2}',",
+      "\ttype: 'boolean',",
+      "\t${4:required: true},",
+      "},"
+    ],
+    "description": "Apos Boolean Field"
+  },
+
+  "Apos Select Field": {
+    "prefix": "aposSelect",
+    "body": [
+      "${1}: {",
+      "\tlabel: '${2}',",
+      "\ttype: 'select',",
+      "\tchoices: [",
+      "\t\t${3}",
+      "\t],",
+      "\t${4:required: true},",
+      "},"
+    ],
+    "description": "Apos Select Field"
+  },
+
+  "Apos Checkboxes Field": {
+    "prefix": "aposCheckbox",
+    "body": [
+      "${1}: {",
+      "\tlabel: '${2}',",
+      "\ttype: 'checkboxes',",
+      "\tchoices: [",
+      "\t\t${3}",
+      "\t],",
+      "\t${4:required: true},",
+      "},"
+    ],
+    "description": "Apos Checkboxes Field"
+  },
+
+  "Apos Array Field": {
+    "prefix": "aposArray",
+    "body": [
+      "${1}: {",
+      "\tlabel: '${2}',",
+      "\ttype: 'array',",
+      "\tfields: {",
+      "\t\tadd: {",
+      "\t\t\t${3}",
+      "\t\t},",
+      "\t},",
+      "\t${4:required: true},",
+      "},"
+    ],
+
+    "description": "Apos Array Field"
+  },
+
+  "Apos Object Field": {
+    "prefix": "aposObject",
+    "body": [
+      "${1}: {",
+      "\tlabel: '${2}',",
+      "\ttype: 'object',",
+      "\tfields: {",
+      "\t\tadd: {",
+      "\t\t\t${3}",
+      "\t\t},",
+      "\t},",
+      "},"
+    ],
+    "description": "Apos Object Field"
+  },
+
+  "Apos Relationship Field": {
+    "prefix": "aposRelationship",
+    "body": [
+      "_${1}: {",
+      "\tlabel: '${2}',",
+      "\ttype: 'relationship',",
+      "\twithType: '${3}',",
+      "\t${4:required: true},",
+      "},"
+    ],
+    "description": "Apos Relationship Field"
+  },
+
+  "Apos Area Field": {
+    "prefix": "aposArea",
+    "body": [
+      "${1}: {",
+      "\tlabel: '${2}',",
+      "\ttype: 'area',",
+      "\toptions: {",
+      "\t\twidgets: {",
+      "\t\t\t${3}",
+      "\t\t}",
+      "\t},",
+      "\t${4:required: true},",
+      "},"
+    ],
+    "description": "Apos Area Field"
+  },
+
+  "Apos Choice": {
+    "prefix": "aposChoice",
+    "body": [
+      "{",
+      "\tlabel: '${1}',",
+      "\tvalue: ${2},",
+      "}"
+    ],
+    "description": "Apos Choice"
   }
 }

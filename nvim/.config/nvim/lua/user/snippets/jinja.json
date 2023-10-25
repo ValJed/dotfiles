@@ -50,7 +50,7 @@
   },
 
   "Apos Image": {
-    "prefix": "ai",
+    "prefix": "aposImg",
     "body": [
       "{% set ${1:img} = apos.image.first(${2}) %}"
     ],
@@ -58,7 +58,7 @@
   },
 
   "Apos Attachment": {
-    "prefix": "aa",
+    "prefix": "aposAttachment",
     "body": [
       "{% set ${1:imgUrl} = apos.attachment.url(${2}) %}"
     ],
