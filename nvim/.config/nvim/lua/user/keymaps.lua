@@ -72,6 +72,10 @@ keymap("v", "p", '"_dP', opts)
 keymap("x", "p", '"_dP', opts)
 
 -- Visual Block --
+
+-- Align multiple lines together
+keymap("x", "A", "J", opts)
+
 -- Move text up and down
 keymap("x", "K", ":move '<-2<cr>gv-gv", opts)
 keymap("x", "J", ":move '>+1<cr>gv-gv", opts)
