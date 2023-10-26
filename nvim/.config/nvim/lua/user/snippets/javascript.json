@@ -215,7 +215,7 @@
       "${1}: {",
       "\tlabel: '${2}',",
       "\ttype: '${3}',",
-      "\t${4:required: true},",
+      "$\t{4:required: true,}",
       "},"
     ],
     "description": "Apos Field"
@@ -227,7 +227,7 @@
       "${1}: {",
       "\tlabel: '${2}',",
       "\ttype: 'string',",
-      "\t${4:required: true},",
+      "\t${4:required: true,}",
       "},"
     ],
     "description": "Apos String Field"
@@ -239,7 +239,7 @@
       "${1}: {",
       "\tlabel: '${2}',",
       "\ttype: 'boolean',",
-      "\t${4:required: true},",
+      "\t${4:required: true,}",
       "},"
     ],
     "description": "Apos Boolean Field"
@@ -254,7 +254,7 @@
       "\tchoices: [",
       "\t\t${3}",
       "\t],",
-      "\t${4:required: true},",
+      "\t${4:required: true,}",
       "},"
     ],
     "description": "Apos Select Field"
@@ -269,7 +269,7 @@
       "\tchoices: [",
       "\t\t${3}",
       "\t],",
-      "\t${4:required: true},",
+      "\t${4:required: true,}",
       "},"
     ],
     "description": "Apos Checkboxes Field"
@@ -286,7 +286,7 @@
       "\t\t\t${3}",
       "\t\t},",
       "\t},",
-      "\t${4:required: true},",
+      "\t${4:required: true,}",
       "},"
     ],
 
@@ -316,7 +316,7 @@
       "\tlabel: '${2}',",
       "\ttype: 'relationship',",
       "\twithType: '${3}',",
-      "\t${4:required: true},",
+      "\t${4:required: true,}",
       "},"
     ],
     "description": "Apos Relationship Field"
@@ -333,7 +333,7 @@
       "\t\t\t${3}",
       "\t\t}",
       "\t},",
-      "\t${4:required: true},",
+      "\t${4:required: true,}",
       "},"
     ],
     "description": "Apos Area Field"
