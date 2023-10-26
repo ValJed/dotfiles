@@ -5,7 +5,6 @@ alias grep='grep --color=auto'
 alias l='la'
 alias run="npm run"
 alias s="sudo "
-alias cat="bat"
 alias n="nvim"
 alias ...="cd ../.."
 alias ....="cd ../../.."
