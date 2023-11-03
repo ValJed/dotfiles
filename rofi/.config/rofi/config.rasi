@@ -5,6 +5,19 @@
  * Location: ~/.config/rofi/config.rasi
  *******************************************************************************/
 
+configuration {
+  kb-row-up: "Up,Control+k";
+  kb-row-down: "Down,Control+j";
+	kb-accept-entry: "Control+m,Return,KP_Enter";
+	kb-remove-to-eol: "Control+r";
+	kb-row-right: "Control+d";
+	kb-remove-char-forward: "Delete";
+	kb-remove-char-back: "BackSpace";
+	kb-mode-complete: "";
+  kb-mode-next: "Control+l";
+  kb-mode-previous: "Control+h";
+}
+
 * {
 	background-color: #0F1212;
 	text-color: #d3d7cf;
@@ -32,7 +45,6 @@
 
   alternate-normal-background: @normal-background;
   alternate-normal-foreground: @text-color;
-  
 }
 
 window {

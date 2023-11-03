@@ -45,6 +45,11 @@ cargo install wasm-pack
 # Create file in /etc/X11/xinit/xinitrc.d containing:
 docker start mdb
 
+# Greenclip
+# https://github.com/erebe/greenclip
+# create files in /etc/X11/xinit/xinitrc.d folder with scripts
+greenclip daemon
+
 # LAPTOP
 
 # For laptops, create files in /etc/X11/xinit/xinitrc.d folder with scripts
