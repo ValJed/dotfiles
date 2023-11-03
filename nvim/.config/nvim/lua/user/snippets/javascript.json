@@ -215,7 +215,7 @@
       "${1}: {",
       "\tlabel: '${2}',",
       "\ttype: '${3}',",
-      "$\t{4:required: true,}",
+      "\t${4:required: true,}",
       "},"
     ],
     "description": "Apos Field"
