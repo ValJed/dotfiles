@@ -34,5 +34,15 @@
       "vec![${0}]"
     ],
     "description": "Vec"
+  },
+  "Match": {
+    "prefix": "match",
+    "body": [
+      "match ${1} {",
+      "\t${2} => ${3}",
+      "\t${4:_} => ${5}",
+      "}"
+    ],
+    "description": "Match"
   }
 }
