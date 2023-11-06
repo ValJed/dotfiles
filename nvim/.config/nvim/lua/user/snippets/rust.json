@@ -34,7 +34,6 @@
     ],
     "description": "Vec"
   },
-<<<<<<< Updated upstream
   "Match": {
     "prefix": "match",
     "body": [
@@ -44,7 +43,7 @@
       "}"
     ],
     "description": "Match"
-=======
+  },
   "For In": {
     "prefix": "fi",
     "body": [
@@ -53,16 +52,6 @@
       "}"
     ],
     "description": "For In"
-  },
-  "Match": {
-    "prefix": "match",
-    "body": [
-      "match {",
-      "\t${1} => ${2}",
-      "\t${3:_} => ${4}",
-      "}"
-    ],
-    "description": "Match"
   },
   "If": {
     "prefix": "if",
@@ -117,6 +106,5 @@
       "use ${1:std}::${2}"
     ],
     "description": "Use"
->>>>>>> Stashed changes
   }
 }
