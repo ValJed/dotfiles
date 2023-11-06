@@ -1,4 +1,13 @@
+local status_tree, tree = pcall(require, "nvim-tree.api.tree")
 local M = {}
+
+local close_or_quit = function(quit)
+	if quit then
+		vim.cmd("qa!")
+	else
+		vim.cmd("q!")
+	end
+end
 
 function M.smart_close(quit)
 	local bufnr = vim.api.nvim_get_current_buf()
@@ -14,14 +23,6 @@ function M.smart_close(quit)
 		end)
 	else
 		close_or_quit(quit)
-	end
-end
-
-function close_or_quit(quit)
-	if quit then
-		vim.cmd("qa!")
-	else
-		vim.cmd("q!")
 	end
 end
 
