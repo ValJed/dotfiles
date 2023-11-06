@@ -11,6 +11,8 @@ configuration {
 	kb-accept-entry: "Control+m,Return,KP_Enter";
 	kb-remove-to-eol: "Control+r";
 	kb-row-right: "Control+d";
+  kb-remove-to-sol: "";
+	kb-row-left: "Control+u";
 	kb-remove-char-forward: "Delete";
 	kb-remove-char-back: "BackSpace";
 	kb-mode-complete: "";
