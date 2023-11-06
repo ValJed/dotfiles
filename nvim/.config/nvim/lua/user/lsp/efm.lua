@@ -18,7 +18,7 @@ require("lspconfig").efm.setup({
 
 			vue = {
 				require("efmls-configs.formatters.eslint_d"),
-				require("efmls-configs.formatters.prettier"),
+				--[[ require("efmls-configs.formatters.prettier"), ]]
 			},
 		},
 	},
