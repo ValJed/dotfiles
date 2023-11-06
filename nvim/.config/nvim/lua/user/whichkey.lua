@@ -14,6 +14,7 @@ wk.register({
 	[";"] = { ":Alpha<cr>", "Dashboard" },
 	["e"] = { ":NvimTreeToggle<cr>", "Explorer" },
 	["m"] = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
+	["n"] = { ":Telescope notify<cr>", "Notifications" },
 	["a"] = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Show Marked Files" },
 	["c"] = { ":lua require('user.utils.functions').smart_close()<cr>", "Close" },
 	["q"] = { ":lua require('user.utils.functions').smart_close(true)<cr>", "Quit" },
@@ -24,12 +25,12 @@ wk.register({
 		name = "Find",
 		f = { ":Telescope find_files<cr>", "Find file" },
 		h = { ":Telescope find_files hidden=true<cr>", "Find hidden files" },
-		t = { ":Telescope live_grep<cr>", "Find text" },
+		g = { ":Telescope live_grep<cr>", "Grep" },
 		c = {
 			":lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",
-			"Colorscheme with Preview",
+			"Color Schemes",
 		},
-		T = { ":Telescope help_tags<cr>", "Find Help" },
+		t = { ":Telescope help_tags<cr>", "Find Help" },
 		H = { ":Telescope highlights<cr>", "Find highlight groups" },
 		M = { ":Telescope man_pages<cr>", "Man Pages" },
 		r = { ":Telescope oldfiles<cr>", "Open Recent File" },
@@ -54,7 +55,7 @@ wk.register({
 			":Gitsigns undo_stage_hunk<cr>",
 			"Undo Stage Hunk",
 		},
-		o = { ":Telescope git_status<cr>", "Open changed file" },
+		o = { ":Tlescope git_status<cr>", "Open changed file" },
 		B = { ":Telescope git_branches<cr>", "Checkout branch" },
 		c = { ":Telescope git_commits<cr>", "Checkout commit" },
 		C = {
@@ -93,15 +94,9 @@ wk.register({
 		},
 
 		l = { vim.lsp.codelens.run, "CodeLens Action" },
-		--[[ q = { vim.diagnostic.setloclist, "Quickfix" }, ]]
 		R = { ":Lspsaga rename<cr>", "Rename" },
 		s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
-		--[[ S = { ]]
-		--[[ 	"<cmd>Telescope lsp_dynamic_workspace_symbols<cr>", ]]
-		--[[ 	"Workspace Symbols", ]]
-		--[[ }, ]]
 		e = { ":Telescope quickfix<cr>", "Telescope Quickfix" },
-		--[[ n = { ":NullLsInfo<cr>", "Null LS" }, ]]
 	},
 	--[[ m = { ]]
 	--[[ 	name = "Marks", ]]
@@ -109,6 +104,7 @@ wk.register({
 	--[[ 	b = { ":MarksListBuf<cr>", "List Buffer" }, ]]
 	--[[ 	f = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" }, ]]
 	--[[ }, ]]
+
 	d = {
 		name = "DB",
 		t = { "<cmd>DBUIToggle<cr>", "Toggle UI" },

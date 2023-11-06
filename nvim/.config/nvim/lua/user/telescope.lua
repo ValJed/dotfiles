@@ -4,6 +4,8 @@ if not status_ok then
 end
 
 telescope.load_extension("workspaces")
+telescope.load_extension("notify")
+--[[ telescope.load_extension("marks") ]]
 
 local actions = require("telescope.actions")
 local state = require("telescope.actions.state")

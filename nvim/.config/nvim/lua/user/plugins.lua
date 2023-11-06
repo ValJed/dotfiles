@@ -30,8 +30,14 @@ local plugins = {
 	},
 	"folke/which-key.nvim", -- Shows keymaps
 	"goolord/alpha-nvim", -- Dashboard
-	"natecraddock/workspaces.nvim", -- Navigate through common projects
-	"akinsho/toggleterm.nvim",
+	-- Navigate through common projects
+	--[[ "natecraddock/workspaces.nvim", ]]
+	{
+		"workspaces.nvim",
+		dev = true,
+	},
+
+	--[[ "akinsho/toggleterm.nvim", ]]
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -44,6 +50,7 @@ local plugins = {
 			require("crates").setup()
 		end,
 	},
+	"rcarriga/nvim-notify",
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
@@ -61,7 +68,11 @@ local plugins = {
 	},
 	--[[ "preservim/tagbar", ]]
 	"pocco81/true-zen.nvim",
-	"chentoast/marks.nvim",
+	--[[ "chentoast/marks.nvim" ]]
+	{
+		"marks.nvim",
+		dev = true,
+	},
 
 	-- DB
 	"tpope/vim-dadbod",
@@ -121,9 +132,13 @@ local plugins = {
 			{ "nvim-treesitter/nvim-treesitter-textobjects" },
 		},
 	},
+	--[[ { ]]
+	--[[ 	"nvim-treesitter/nvim-treesitter-textobjects", ]]
+	--[[ 	lazy = true, ]]
+	--[[ }, ]]
 	{
-		"nvim-treesitter/nvim-treesitter-textobjects",
-		lazy = true,
+		"nvim-treesitter-textobjects",
+		dev = true,
 	},
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	"Glench/Vim-Jinja2-Syntax",
@@ -149,4 +164,8 @@ local plugins = {
 	{ "rcarriga/nvim-dap-ui", dependencies = { "mfussenegger/nvim-dap" } },
 }
 
-require("lazy").setup(plugins, {})
+require("lazy").setup(plugins, {
+	dev = {
+		path = "~/Documents/projects",
+	},
+})

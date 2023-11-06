@@ -19,9 +19,6 @@ keymap("v", "<Down>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Format on save
-vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
-
 -- Modes
 --   normal_mode = "n",
 --   insert_mode = "i",
@@ -98,13 +95,10 @@ keymap("n", "<leader>è", ":lua require('harpoon.ui').nav_file(7)<cr>", opts)
 keymap("n", "<leader>_", ":lua require('harpoon.ui').nav_file(8)<cr>", opts)
 keymap("n", "<leader>ç", ":lua require('harpoon.ui').nav_file(9)<cr>", opts)
 
--- Terminal
-keymap("n", "<C-t>", "<cmd>lua require('user.utils.functions').toggle_term()<cr>", opts)
-keymap("t", "<C-t>", "<cmd>lua require('user.utils.functions').toggle_term()<cr>", opts)
-
 -- Lsp
 keymap("n", "gp", ":Lspsaga peek_definition<cr>", opts)
 keymap("n", "gd", ":Lspsaga goto_definition<cr>", opts)
 
--- CMD Line
---[[ keymap("n", ":", "<cmd>FineCmdline<cr>", opts) ]]
+-- Marks
+keymap("n", "gm", ":Telescope marks_list_buf<cr>", opts)
+keymap("n", "gam", ":MarksListAll<cr>", opts)

@@ -4,6 +4,7 @@ require("lspconfig").efm.setup({
 		rootMarkers = { ".git/" },
 		languages = {
 			lua = {
+				--[[ require("efmls-configs.linters.luacheck"), ]]
 				require("efmls-configs.formatters.stylua"),
 			},
 
@@ -17,6 +18,7 @@ require("lspconfig").efm.setup({
 
 			vue = {
 				require("efmls-configs.formatters.eslint_d"),
+				require("efmls-configs.formatters.prettier"),
 			},
 		},
 	},
