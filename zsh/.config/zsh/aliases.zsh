@@ -1,6 +1,7 @@
 #!/bin/bash
 
 # Basics
+alias aliases='print -rl -- ${(k)aliases}'
 alias grep='grep --color=auto'
 alias l='la'
 alias run="npm run"
