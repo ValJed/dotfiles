@@ -68,11 +68,11 @@ local plugins = {
 	},
 	--[[ "preservim/tagbar", ]]
 	"pocco81/true-zen.nvim",
-	--[[ "chentoast/marks.nvim" ]]
-	{
-		"marks.nvim",
-		dev = true,
-	},
+	"chentoast/marks.nvim",
+	--[[ { ]]
+	--[[ 	"marks.nvim", ]]
+	--[[ 	dev = true, ]]
+	--[[ }, ]]
 
 	-- DB
 	"tpope/vim-dadbod",

@@ -137,6 +137,7 @@ wk.register({
 		r = { ":WorkspacesRemove<cr>", "Remove Workspace" },
 		l = { ":WorkspacesList<cr>", "List Workspace" },
 		f = { ":Telescope workspaces<cr>", "Find Workspace" },
+		s = { ":Telescope workspacesSyncDirs<cr>", "Find Workspace" },
 	},
 	T = {
 		name = "Treesitter",
