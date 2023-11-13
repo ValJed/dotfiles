@@ -31,13 +31,8 @@ local plugins = {
 	"folke/which-key.nvim", -- Shows keymaps
 	"goolord/alpha-nvim", -- Dashboard
 	-- Navigate through common projects
-	--[[ "natecraddock/workspaces.nvim", ]]
-	{
-		"workspaces.nvim",
-		dev = true,
-	},
+	"natecraddock/workspaces.nvim",
 
-	--[[ "akinsho/toggleterm.nvim", ]]
 	{
 		"nvim-lualine/lualine.nvim",
 		dependencies = { "nvim-tree/nvim-web-devicons" },
@@ -50,29 +45,16 @@ local plugins = {
 			require("crates").setup()
 		end,
 	},
-	"rcarriga/nvim-notify",
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
-		opts = {
-			-- add any options here
-		},
 		dependencies = {
-			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
 			"MunifTanjim/nui.nvim",
-			-- OPTIONAL:
-			--   `nvim-notify` is only needed, if you want to use the notification view.
-			--   If not available, we use `mini` as the fallback
-			--[[ "rcarriga/nvim-notify", ]]
+			"rcarriga/nvim-notify",
 		},
 	},
-	--[[ "preservim/tagbar", ]]
 	"pocco81/true-zen.nvim",
 	"chentoast/marks.nvim",
-	--[[ { ]]
-	--[[ 	"marks.nvim", ]]
-	--[[ 	dev = true, ]]
-	--[[ }, ]]
 
 	-- DB
 	"tpope/vim-dadbod",
@@ -108,7 +90,6 @@ local plugins = {
 
 	-- snippets
 	"L3MON4D3/LuaSnip", --snippet engine
-	--[[ "rafamadriz/friendly-snippets", -- a bunch of snippets to use ]]
 
 	-- LSP
 	"neovim/nvim-lspconfig", -- enable LSP
@@ -132,13 +113,9 @@ local plugins = {
 			{ "nvim-treesitter/nvim-treesitter-textobjects" },
 		},
 	},
-	--[[ { ]]
-	--[[ 	"nvim-treesitter/nvim-treesitter-textobjects", ]]
-	--[[ 	lazy = true, ]]
-	--[[ }, ]]
 	{
-		"nvim-treesitter-textobjects",
-		dev = true,
+		"nvim-treesitter/nvim-treesitter-textobjects",
+		lazy = true,
 	},
 	"JoosepAlviste/nvim-ts-context-commentstring",
 	"Glench/Vim-Jinja2-Syntax",
