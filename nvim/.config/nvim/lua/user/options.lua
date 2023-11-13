@@ -32,7 +32,6 @@ local options = {
 	wrap = false, -- display lines as one long line
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8,
-	guifont = "monospace:h17", -- the font used in graphical neovim applications
 }
 
 for k, v in pairs(options) do
@@ -40,7 +39,3 @@ for k, v in pairs(options) do
 end
 
 vim.opt.shortmess:append("c")
-
--- vim.cmd "set whichwrap+=<,>,[,],h,l"
--- vim.cmd [[set iskeyword+=-]]
--- vim.cmd [[set formatoptions-=cro]] -- TODO: this doesn't seem to work
