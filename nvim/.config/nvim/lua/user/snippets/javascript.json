@@ -124,7 +124,7 @@
   "Reduce": {
     "prefix": "r",
     "body": [
-      "${1}.reduce((${2}, acc) => {\n\t${4}\n}, ${3})"
+      "${1}.reduce((acc, ${2:cur}) => {\n\t${4}\n}, ${3:{}})"
     ],
     "description": "Reduce"
   },
