@@ -10,9 +10,9 @@ require("notify").setup({
 	},
 	level = 2,
 	minimum_width = 40,
-	render = "default",
+	render = "compact",
 	stages = "fade_in_slide_out",
-	timeout = 3000,
+	timeout = 1000,
 	top_down = true,
 })
 
