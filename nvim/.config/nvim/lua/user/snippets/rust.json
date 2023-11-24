@@ -96,7 +96,7 @@
   "Derive": {
     "prefix": "derive",
     "body": [
-      "#[derive(${1})]"
+      "#[${1:derive}(${2})]"
     ],
     "description": "Derive"
   },
