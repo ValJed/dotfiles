@@ -144,11 +144,9 @@ wk.register({
 		i = { ":TSConfigInfo<cr>", "Info" },
 	},
 	t = {
-		name = "Ctags",
-		t = { ":TagbarToggle<cr>", "Toggle" },
-		c = { ":TagbarClose<cr>", "Close" },
-		j = { ":TagbarJumpNext<cr>", "Next" },
-		k = { ":TagbarJumpPrev<cr>", "previous" },
+		name = "Git Worktree",
+		f = { ":lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", "List Worktree" },
+		a = { ":lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>", "Add Worktree" },
 	},
 
 	z = {
