@@ -23,11 +23,10 @@ autoload -U compinit && compinit
 # keybinds
 bindkey -M viins 'kj' vi-cmd-mode 
 bindkey '^ ' autosuggest-accept
-bindkey '^r' history-incremental-search-backward 
-bindkey '^R' history-incremental-search-forward 
+bindkey '^E' fzf-cd-widget
+
 
 eval `ssh-agent -s` > /dev/null && ssh-add > /dev/null 2>&1
-
 
 # bun completions
 [ -s "/home/jed/.bun/_bun" ] && source "/home/jed/.bun/_bun"
@@ -35,3 +34,6 @@ eval `ssh-agent -s` > /dev/null && ssh-add > /dev/null 2>&1
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
