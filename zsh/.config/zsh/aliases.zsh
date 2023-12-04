@@ -46,15 +46,15 @@ alias cww="cargo watch -i .gitignore -i \"pkg/*\" -s \"wasm-pack build --target 
 alias sn="sudo -e"
 
 # Tasks
-alias tkls="tasks ls"
-alias tklsa="tasks lsa"
-alias tklsc="tasks lsc"
-alias tku="tasks use"
-alias tka="tasks add"
-alias tkd="tasks done"
-alias tkrm="tasks rm"
-alias tkrmc="tasks rmc"
-alias tkc="tasks clear"
+alias tkls="task ls"
+alias tklsa="task lsa"
+alias tklsc="task lsc"
+alias tku="task use"
+alias tka="task add"
+alias tkd="task done"
+alias tkrm="task rm"
+alias tkrmc="task rmc"
+alias tkc="task clear"
 
 # Rest
 alias GET="lwp-request -m \"GET\""
