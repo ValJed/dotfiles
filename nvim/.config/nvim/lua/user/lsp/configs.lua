@@ -9,6 +9,7 @@ local servers = {
 	"tailwindcss",
 	"eslint",
 	"lua_ls",
+	"stylelint_lsp",
 }
 local lspconfig = require("lspconfig")
 
