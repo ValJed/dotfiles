@@ -98,12 +98,12 @@ wk.register({
 		s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
 		e = { ":Telescope quickfix<cr>", "Telescope Quickfix" },
 	},
-	--[[ m = { ]]
-	--[[ 	name = "Marks", ]]
-	--[[ 	a = { ":MarksListAll<cr>", "List All" }, ]]
-	--[[ 	b = { ":MarksListBuf<cr>", "List Buffer" }, ]]
-	--[[ 	f = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" }, ]]
-	--[[ }, ]]
+
+	M = {
+		name = "Marks",
+		a = { ":MarksListAll<cr>", "List All" },
+		f = { ":MarksListBuf<cr>", "List Buffer" },
+	},
 
 	d = {
 		name = "DB",
