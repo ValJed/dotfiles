@@ -22,6 +22,12 @@ local plugins = {
 	"ThePrimeagen/harpoon",
 	"ThePrimeagen/git-worktree.nvim",
 	{
+		"brenoprata10/nvim-highlight-colors",
+		config = function()
+			require("nvim-highlight-colors").setup()
+		end,
+	},
+	{
 		"iamcco/markdown-preview.nvim",
 		build = "cd app && npm install",
 		init = function()
