@@ -20,7 +20,7 @@ require("user.harpoon")
 require("user.whichkey")
 require("user.dashboard")
 require("user.workspaces")
---[[ require("user.toggleterm") ]]
+require("user.lspsaga")
 require("user.lualine")
 require("user.dap")
 require("user.zen")
