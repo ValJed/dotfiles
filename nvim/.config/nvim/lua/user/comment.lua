@@ -3,6 +3,8 @@ if not status_ok then
 	return
 end
 
+require("ts_context_commentstring").setup({})
+
 comment.setup({
 	pre_hook = function(ctx)
 		local U = require("Comment.utils")
