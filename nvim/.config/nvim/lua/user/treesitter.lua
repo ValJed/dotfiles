@@ -32,10 +32,6 @@ configs.setup({
 		additional_vim_regex_highlighting = false,
 	},
 	indent = { enable = true, disable = { "yaml" } },
-	context_commentstring = {
-		enable = true,
-		enable_autocmd = false,
-	},
 	incremental_selection = {
 		enable = true,
 		keymaps = {
