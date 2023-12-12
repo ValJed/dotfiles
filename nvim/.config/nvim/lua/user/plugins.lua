@@ -129,9 +129,6 @@ local plugins = {
 	"mechatroner/rainbow_csv",
 	{
 		"nvimdev/lspsaga.nvim",
-		config = function()
-			require("lspsaga").setup()
-		end,
 		dependencies = {
 			{ "nvim-tree/nvim-web-devicons" },
 			{ "nvim-treesitter/nvim-treesitter" },
