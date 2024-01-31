@@ -20,7 +20,7 @@ local plugins = {
 	"nvim-tree/nvim-tree.lua",
 	"numToStr/Navigator.nvim", -- Navigate between Nvim panes and tmux ones with same bindings
 	"ThePrimeagen/harpoon",
-	"ThePrimeagen/git-worktree.nvim",
+	--[[ "ThePrimeagen/git-worktree.nvim", ]]
 	{
 		"brenoprata10/nvim-highlight-colors",
 		config = function()
