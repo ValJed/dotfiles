@@ -21,9 +21,12 @@ plug "jeffreytse/zsh-vi-mode"
 autoload -U compinit && compinit
 
 # keybinds
-bindkey -M viins 'kj' vi-cmd-mode 
+# bindkey -M viins 'kj' vi-cmd-mode 
 bindkey '^ ' autosuggest-accept
+
 bindkey '^E' fzf-cd-widget
+bindkey -M vicmd '^E' fzf-cd-widget
+bindkey -M viins '^E' fzf-cd-widget 
 
 eval `ssh-agent -s` > /dev/null && ssh-add > /dev/null 2>&1
 

@@ -20,6 +20,7 @@ export ZVM_KEYTIMEOUT=0.1
 
 # FZF
 export FZF_TMUX=1
+export FZF_TMUX_OPTS='-p80%,60%'
 
 export PNPM_HOME="/home/jed/.local/share/pnpm"
 export PATH="$PNPM_HOME:$PATH"
