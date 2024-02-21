@@ -1,3 +1,11 @@
+function Opts(desc)
+	local opt = { noremap = true, silent = true }
+	if desc then
+		opt.desc = desc
+	end
+
+	return opt
+end
 local opts = { noremap = true, silent = true }
 
 -- Shorten function name
@@ -57,7 +65,6 @@ keymap("i", "<C-j>", "<Down>", opts)
 -- Press kj fast to enter
 keymap("i", "kj", "<ESC>", opts)
 keymap("i", "KJ", "<ESC>", opts)
---[[ keymap("v", "kj", "<ESC>", opts) ]]
 
 -- Indentation --
 keymap("v", "<Tab>", ">gv", opts)
@@ -85,20 +92,20 @@ keymap("n", "<C-j>", ":NavigatorDown<cr>", opts)
 keymap("n", "<C-p>", ":NavigatorPrevious<cr>", opts)
 
 -- Harpoon
-keymap("n", "<leader>&", ":lua require('harpoon.ui').nav_file(1)<cr>", opts)
-keymap("n", "<leader>é", ":lua require('harpoon.ui').nav_file(2)<cr>", opts)
-keymap("n", '<leader>"', ":lua require('harpoon.ui').nav_file(3)<cr>", opts)
-keymap("n", "<leader>'", ":lua require('harpoon.ui').nav_file(4)<cr>", opts)
-keymap("n", "<leader>(", ":lua require('harpoon.ui').nav_file(5)<cr>", opts)
-keymap("n", "<leader>-", ":lua require('harpoon.ui').nav_file(6)<cr>", opts)
-keymap("n", "<leader>è", ":lua require('harpoon.ui').nav_file(7)<cr>", opts)
-keymap("n", "<leader>_", ":lua require('harpoon.ui').nav_file(8)<cr>", opts)
-keymap("n", "<leader>ç", ":lua require('harpoon.ui').nav_file(9)<cr>", opts)
+keymap("n", "<leader>m", ":lua require('harpoon'):list():append()<cr>", Opts("Mark File"))
+keymap(
+	"n",
+	"<leader>a",
+	":lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())<cr>",
+	Opts("File Marked")
+)
 
--- Lsp
-keymap("n", "gp", ":Lspsaga peek_definition<cr>", opts)
-keymap("n", "gd", ":Lspsaga goto_definition<cr>", opts)
-
--- Marks
-keymap("n", "gm", ":Telescope marks_list_buf<cr>", opts)
-keymap("n", "gam", ":MarksListAll<cr>", opts)
+keymap("n", "<leader>&", ":lua require('harpoon'):list():select(1)<cr>", opts)
+keymap("n", "<leader>é", ":lua require('harpoon'):list():select(2)<cr>", opts)
+keymap("n", '<leader>"', ":lua require('harpoon'):list():select(3)<cr>", opts)
+keymap("n", "<leader>'", ":lua require('harpoon'):list():select(4)<cr>", opts)
+keymap("n", "<leader>(", ":lua require('harpoon'):list():select(5)<cr>", opts)
+keymap("n", "<leader>-", ":lua require('harpoon'):list():select(6)<cr>", opts)
+keymap("n", "<leader>è", ":lua require('harpoon'):list():select(7)<cr>", opts)
+keymap("n", "<leader>_", ":lua require('harpoon'):list():select(8)<cr>", opts)
+keymap("n", "<leader>ç", ":lua require('harpoon'):list():select(9)<cr>", opts)

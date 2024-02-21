@@ -4,18 +4,9 @@ vim.o.timeout = true
 vim.o.timeoutlen = 300
 
 wk.register({
-	["&"] = "which_key_ignore",
-	["é"] = "which_key_ignore",
-	['"'] = "which_key_ignore",
-	["'"] = "which_key_ignore",
-	["("] = "which_key_ignore",
-	["-"] = "which_key_ignore",
-
 	[";"] = { ":Alpha<cr>", "Dashboard" },
 	["e"] = { ":NvimTreeToggle<cr>", "Explorer" },
-	["m"] = { ":lua require('harpoon.mark').add_file()<cr>", "Mark File" },
 	["n"] = { ":Telescope notify<cr>", "Notifications" },
-	["a"] = { ":lua require('harpoon.ui').toggle_quick_menu()<cr>", "Show Marked Files" },
 	["c"] = { ":lua require('user.utils.functions').smart_close()<cr>", "Close" },
 	["q"] = { ":lua require('user.utils.functions').smart_close(true)<cr>", "Quit" },
 	["p"] = { ":Lazy profile<cr>", "Plugins" },
@@ -37,7 +28,8 @@ wk.register({
 		R = { ":Telescope registers<cr>", "Registers" },
 		k = { ":Telescope keymaps<cr>", "Keymaps" },
 		C = { ":Telescope commands<cr>", "Commands" },
-		m = { ":Telescope marks<cr>", "Marks" },
+		m = { ":MarksListBuf<cr>", "List Marks" },
+		--[[ M = { ":MarksListAll<cr>", "List All Marks" }, ]]
 		w = { ":Telescope workspaces<cr>", "Workspaces" },
 	},
 	g = {
@@ -77,7 +69,6 @@ wk.register({
 		p = { ":Lspsaga peek_definition<cr>", "Peek Definition" },
 		w = { ":Lspsaga show_workspace_diagnostics<cr>", "Diagnostics" },
 		h = { ":Lspsaga finder<cr>", "Signature" },
-		r = { ":Telescope lsp_references<cr>", "References" },
 		--[[ a = { ":lua vim.lsp.buf.code_action()<cr>", "Code Action" }, ]]
 		--[[ w = { "<cmd>Telescope diagnostics<cr>", "Diagnostics" }, ]]
 		--[[ h = { ":lua vim.lsp.buf.hover()<cr>", "Signature" }, ]]
@@ -94,9 +85,9 @@ wk.register({
 		},
 
 		l = { vim.lsp.codelens.run, "CodeLens Action" },
-		R = { ":Lspsaga rename<cr>", "Rename" },
+		r = { ":Lspsaga rename<cr>", "Rename" },
 		s = { ":Telescope lsp_document_symbols<cr>", "Document Symbols" },
-		e = { ":Telescope quickfix<cr>", "Telescope Quickfix" },
+		f = { ":Telescope quickfix<cr>", "Telescope Quickfix" },
 	},
 
 	M = {
@@ -158,7 +149,11 @@ wk.register({
 wk.register({
 	d = { ":lua vim.lsp.buf.definition()<cr>", "Definition" },
 	i = { ":lua vim.lsp.buf.implementation()<cr>", "Implementation" },
+	p = { ":Lspsaga peek_definition<cr>", "Peek Definition" },
+	r = { ":Telescope lsp_references<cr>", "Find References" },
 	s = { ":lua vim.lsp.buf.hover()<cr>", "Signature" },
 }, { prefix = "g" })
 
-wk.setup()
+wk.setup({
+	ignore_missing = true,
+})
