@@ -14,7 +14,10 @@ vim.opt.rtp:prepend(lazypath)
 
 local plugins = {
 	"nvim-lua/plenary.nvim", -- Useful lua functions used ny lots of plugins
-	"windwp/nvim-autopairs", -- Autopairs, integrates with both cmp and treesitter
+	{
+		"windwp/nvim-autopairs",
+		event = "InsertEnter",
+	},
 	"numToStr/Comment.nvim", -- Easily comment stuff
 	"nvim-tree/nvim-web-devicons",
 	"nvim-tree/nvim-tree.lua",
