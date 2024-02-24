@@ -29,6 +29,7 @@ bindkey -M vicmd '^E' fzf-cd-widget
 bindkey -M viins '^E' fzf-cd-widget 
 
 eval `ssh-agent -s` > /dev/null && ssh-add > /dev/null 2>&1
+eval "$(zoxide init zsh)"
 
 # bun completions
 [ -s "/home/jed/.bun/_bun" ] && source "/home/jed/.bun/_bun"
