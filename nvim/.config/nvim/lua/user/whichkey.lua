@@ -28,8 +28,8 @@ wk.register({
 		R = { ":Telescope registers<cr>", "Registers" },
 		k = { ":Telescope keymaps<cr>", "Keymaps" },
 		C = { ":Telescope commands<cr>", "Commands" },
-		m = { ":MarksListBuf<cr>", "List Marks" },
-		--[[ M = { ":MarksListAll<cr>", "List All Marks" }, ]]
+		m = { ":lua require('telescope').extensions.marks_nvim.marks_list_buf()<cr>", "List Marks" }, --[[ list buf ]]
+		a = { ":lua require('telescope').extensions.marks_nvim.marks_list_all()<cr>", "List All Marks" },
 		w = { ":Telescope workspaces<cr>", "Workspaces" },
 	},
 	g = {
