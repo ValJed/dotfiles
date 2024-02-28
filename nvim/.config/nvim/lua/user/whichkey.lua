@@ -152,6 +152,7 @@ wk.register({
 	p = { ":Lspsaga peek_definition<cr>", "Peek Definition" },
 	r = { ":Telescope lsp_references<cr>", "Find References" },
 	s = { ":lua vim.lsp.buf.hover()<cr>", "Signature" },
+	h = { ":Lspsaga hover_doc<cr>", "Hover Doc" },
 }, { prefix = "g" })
 
 wk.setup({
