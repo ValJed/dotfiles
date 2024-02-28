@@ -38,25 +38,9 @@ marks.setup({
 	},
 })
 
---[[ Use to add telescope for buf marks and global marks ]]
---[[ local function toggle_telescope(harpoon_files) ]]
---[[ 	local file_paths = {} ]]
---[[ 	for _, item in ipairs(harpoon_files.items) do ]]
---[[ 		table.insert(file_paths, item.value) ]]
---[[ 	end ]]
---[[]]
---[[ 	require("telescope.pickers") ]]
---[[ 		.new({}, { ]]
---[[ 			prompt_title = "Local Marks", ]]
---[[ 			finder = require("telescope.finders").new_table({ ]]
---[[ 				results = file_paths, ]]
---[[ 			}), ]]
---[[ 			previewer = conf.file_previewer({}), ]]
---[[ 			sorter = conf.generic_sorter({}), ]]
---[[ 		}) ]]
---[[ 		:find() ]]
---[[ end ]]
---[[]]
---[[ vim.keymap.set("n", "<C-e>", function() ]]
---[[ 	toggle_telescope(harpoon:list()) ]]
---[[ end, { desc = "Open harpoon window" }) ]]
+local status_ok, telescope = pcall(require, "telescope")
+if not status_ok then
+	return
+end
+
+telescope.load_extension("marks_nvim")
