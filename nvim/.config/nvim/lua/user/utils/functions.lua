@@ -1,4 +1,3 @@
-local status_tree, tree = pcall(require, "nvim-tree.api.tree")
 local M = {}
 
 local close_or_quit = function(quit)
