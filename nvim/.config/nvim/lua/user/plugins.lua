@@ -67,7 +67,8 @@ local plugins = {
 		},
 	},
 	"pocco81/true-zen.nvim",
-	"chentoast/marks.nvim",
+	--[[ "chentoast/marks.nvim", ]]
+		"ValJed/marks.nvim",
 
 	-- DB
 	"tpope/vim-dadbod",
