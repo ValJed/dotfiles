@@ -68,7 +68,7 @@ local plugins = {
 	},
 	"pocco81/true-zen.nvim",
 	--[[ "chentoast/marks.nvim", ]]
-		"ValJed/marks.nvim",
+	"ValJed/marks.nvim",
 
 	-- DB
 	"tpope/vim-dadbod",
@@ -109,9 +109,15 @@ local plugins = {
 	"neovim/nvim-lspconfig", -- enable LSP
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
+
 	"creativenull/efmls-configs-nvim",
 
-	--[[ "jose-elias-alvarez/null-ls.nvim", ]]
+	--[[ { ]]
+	--[[ 	"nvimtools/none-ls.nvim", ]]
+	--[[ 	dependencies = { ]]
+	--[[ 		"nvimtools/none-ls-extras.nvim", ]]
+	--[[ 	}, ]]
+	--[[ }, ]]
 	--[[ "mhartington/formatter.nvim", ]]
 
 	-- Telescope
