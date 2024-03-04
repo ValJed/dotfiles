@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Desktop environment
-sudo pacman -S i3 i3lock polybar rofi feh xinput maim xclip tmux zsh
+sudo pacman -S i3 i3lock polybar rofi feh xinput maim xclip 
 
 # Terminal tools
-sudo pacman -S alacritty neovim fish lazygit exa bat ripgrep fd tokei procs htop fzf zoxide
+sudo pacman -S alacritty neovim zsh tmux lazygit exa bat ripgrep fd tokei procs htop fzf zoxide
 
 # Apps
 signal-desktop spotify-launcher blueman docker docker-compose
