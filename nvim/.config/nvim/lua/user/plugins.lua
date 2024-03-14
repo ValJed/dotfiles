@@ -68,7 +68,10 @@ local plugins = {
 	},
 	"pocco81/true-zen.nvim",
 	--[[ "chentoast/marks.nvim", ]]
-	"ValJed/marks.nvim",
+	{
+		"ValJed/marks.nvim",
+		branch = "feat-telescope-support-for-listing-marks",
+	},
 
 	-- DB
 	"tpope/vim-dadbod",
@@ -112,13 +115,8 @@ local plugins = {
 
 	"creativenull/efmls-configs-nvim",
 
-	--[[ { ]]
-	--[[ 	"nvimtools/none-ls.nvim", ]]
-	--[[ 	dependencies = { ]]
-	--[[ 		"nvimtools/none-ls-extras.nvim", ]]
-	--[[ 	}, ]]
-	--[[ }, ]]
-	--[[ "mhartington/formatter.nvim", ]]
+	-- Copilot
+	"github/copilot.vim",
 
 	-- Telescope
 	"nvim-telescope/telescope.nvim",
