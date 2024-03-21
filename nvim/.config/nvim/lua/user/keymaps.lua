@@ -74,6 +74,7 @@ keymap("i", "<S-Tab>", "<C-d>", opts)
 -- Select and paste
 keymap("v", "p", '"_dP', opts)
 keymap("x", "p", '"_dP', opts)
+--[[ keymap("v", "p", ":lua require('user.utils.functions').replace_from_register()<cr>", opts) ]]
 
 -- Visual Block --
 

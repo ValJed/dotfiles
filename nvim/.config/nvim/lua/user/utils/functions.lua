@@ -25,4 +25,9 @@ function M.smart_close(quit)
 	end
 end
 
+function M.replace_from_register()
+	local cmd = '"_d"' .. vim.v.register .. "p"
+	vim.cmd("normal! " .. cmd)
+end
+
 return M
