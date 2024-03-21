@@ -81,10 +81,13 @@ cmp.setup({
 		-- Set `select` to `false` to only confirm explicitly selected items.
 		["<CR>"] = cmp.mapping.confirm({ select = true }),
 		["<Tab>"] = cmp.mapping(function(fallback)
-			if luasnip.expandable() then
-				luasnip.expand()
-			elseif luasnip.expand_or_jumpable() then
-				luasnip.expand_or_jump()
+			local copilot_keys = vim.fn["copilot#Accept"]()
+			--[[ if luasnip.expandable() then ]]
+			--[[ 	luasnip.expand() ]]
+			if luasnip.jumpable(1) then
+				luasnip.jump(1)
+			elseif copilot_keys ~= "" and type(copilot_keys) == "string" then
+				vim.api.nvim_feedkeys(copilot_keys, "n", true)
 			elseif cmp.visible() then
 				cmp.select_next_item()
 			else
