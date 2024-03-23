@@ -52,10 +52,15 @@ style = "Italic"
 family = "Hack Nerd Font"
 style = "Regular"
 
+[shell]
+program = "/usr/bin/zsh"
+
 [[keyboard.bindings]]
 action = "Paste"
 key = "P"
 mods = "Control"
 
-[shell]
-program = "/usr/bin/zsh"
+[[keyboard.bindings]]
+action = "ReceiveChar"
+key = "D"
+mods = "Control"
