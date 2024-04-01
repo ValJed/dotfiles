@@ -23,6 +23,14 @@
     "description": "Define Meta"
   },
 
+  "Computed": {
+    "prefix": "cp",
+    "body": [
+      "const ${1} = computed(() => {\n\t${2}\n})"
+    ],
+    "description": "Computed"
+  },
+
   "Prop": {
     "prefix": "prop",
     "body": [
