@@ -1,6 +1,5 @@
-vim.cmd("colorscheme default")
-
 local colorscheme = "carbonfox"
+vim.cmd("colorscheme default")
 
 local status_ok, _ = pcall(vim.cmd, "colorscheme " .. colorscheme)
 

@@ -7,8 +7,8 @@ wk.register({
 	[";"] = { ":Alpha<cr>", "Dashboard" },
 	["e"] = { ":NvimTreeToggle<cr>", "Explorer" },
 	["n"] = { ":Telescope notify<cr>", "Notifications" },
-	["c"] = { ":lua require('user.utils.functions').smart_close()<cr>", "Close" },
-	["q"] = { ":lua require('user.utils.functions').smart_close(true)<cr>", "Quit" },
+	["c"] = { ":lua require('utils.functions').smart_close()<cr>", "Close" },
+	["q"] = { ":lua require('utils.functions').smart_close(true)<cr>", "Quit" },
 	["p"] = { ":Lazy profile<cr>", "Plugins" },
 	["/"] = { "<Plug>(comment_toggle_linewise_current)", "Comment toggle current line" },
 
