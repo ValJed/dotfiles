@@ -36,28 +36,32 @@ return {
 	},
 	{
 		"williamboman/mason.nvim",
-		config = function() end,
+		config = function()
+			require("mason").setup()
+		end,
 	},
 	{
 		"williamboman/mason-lspconfig.nvim",
-		opts = {
-			ensure_installed = lsp_servers,
-			automatic_installation = true,
-		},
-		config = function() end,
+		config = function()
+			require("mason-lspconfig").setup({
+				ensure_installed = lsp_servers,
+				automatic_installation = true,
+			})
+		end,
 	},
 	{
 		"nvimdev/lspsaga.nvim",
-		opts = {
-			ui = {
-				code_action = "",
-			},
-			lightbulb = {
-				virtual_text = false,
-				sign = true,
-			},
-		},
-		config = function() end,
+		config = function()
+			require("lspsaga").setup({
+				ui = {
+					code_action = "",
+				},
+				lightbulb = {
+					virtual_text = false,
+					sign = true,
+				},
+			})
+		end,
 		dependencies = {
 			{ "nvim-tree/nvim-web-devicons" },
 			{ "nvim-treesitter/nvim-treesitter" },

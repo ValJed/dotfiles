@@ -21,5 +21,5 @@ require("lazy").setup("plugins", {
 	},
 })
 
---[[ require("cmp") ]]
+require("completion")
 require("autocmd")
