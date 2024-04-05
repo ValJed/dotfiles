@@ -4,7 +4,6 @@ require("lspconfig").efm.setup({
 		rootMarkers = { ".git/" },
 		languages = {
 			lua = {
-				--[[ require("efmls-configs.linters.luacheck"), ]]
 				require("efmls-configs.formatters.stylua"),
 			},
 
