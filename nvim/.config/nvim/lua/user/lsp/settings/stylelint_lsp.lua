@@ -1,7 +1,3 @@
 return {
-	settings = {
-		settings = {
-			filetypes = { "css", "scss", "vue" },
-		},
-	},
+	filetypes = { "css", "scss", "vue" },
 }

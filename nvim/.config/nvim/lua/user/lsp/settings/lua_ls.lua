@@ -1,6 +1,6 @@
 return {
+	filetypes = { "lua" },
 	settings = {
-		filetypes = { "lua" },
 		Lua = {
 			diagnostics = {
 				globals = { "vim" },

@@ -1,5 +1,3 @@
 return {
-	settings = {
-		filetypes = { "html", "jinja" },
-	},
+	filetypes = { "html", "jinja" },
 }
