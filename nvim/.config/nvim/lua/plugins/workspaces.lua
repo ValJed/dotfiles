@@ -1,10 +1,13 @@
 return {
 	{
 		"natecraddock/workspaces.nvim",
-		opts = {
-			open = { "Telescope find_files" },
-		},
 		config = function()
+      require("workspaces").setup({
+        hooks = {
+          open = { "Telescope find_files" },
+        },
+      })
+
 			local status_ok, telescope = pcall(require, "telescope")
 			if not status_ok then
 				return

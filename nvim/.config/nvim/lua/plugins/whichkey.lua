@@ -139,19 +139,6 @@ return {
 					name = "Treesitter",
 					i = { ":TSConfigInfo<cr>", "Info" },
 				},
-				t = {
-					name = "Git Worktree",
-					f = { ":lua require('telescope').extensions.git_worktree.git_worktrees()<cr>", "List Worktree" },
-					a = {
-						":lua require('telescope').extensions.git_worktree.create_git_worktree()<cr>",
-						"Add Worktree",
-					},
-				},
-
-				z = {
-					name = "Zen",
-					a = { "<cmd>TZAtaraxis<cr>", "Ataraxis" },
-				},
 			}, { prefix = "<leader>" })
 
 			wk.register({
@@ -162,6 +149,10 @@ return {
 				s = { ":lua vim.lsp.buf.hover()<cr>", "Signature" },
 				h = { ":Lspsaga hover_doc<cr>", "Hover Doc" },
 			}, { prefix = "g" })
+
+      wk.setup({
+        ignore_missing = true,
+      })
 		end,
 	},
 }

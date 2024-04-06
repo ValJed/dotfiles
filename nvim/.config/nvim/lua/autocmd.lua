@@ -9,6 +9,6 @@ end
 
 -- Format on save
 vim.cmd([[autocmd BufWritePre * lua vim.lsp.buf.format()]])
---[[ vim.cmd("WorkspacesSyncDir") ]]
+vim.cmd("WorkspacesSyncDir")
 vim.api.nvim_exec([[ autocmd DirChanged * silent execute luaeval("GetTmuxCommand()") ]], false)
 vim.api.nvim_exec([[ autocmd ExitPre * silent execute luaeval("GetTmuxCommand(true)") ]], false)

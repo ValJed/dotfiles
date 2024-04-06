@@ -1,5 +1,4 @@
 local lsp_servers = {
-	"efm",
 	"jsonls",
 	"tsserver",
 	"html",
@@ -13,6 +12,7 @@ local lsp_servers = {
 }
 
 return {
+	{ "creativenull/efmls-configs-nvim" },
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
@@ -30,8 +30,45 @@ return {
 					opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
 				end
 
+        if (server == 'efm') then
+          vim.notify(vim.inspect(opts))
+        end
 				lspconfig[server].setup(opts)
 			end
+
+      lspconfig.efm.setup({
+          init_options = { documentFormatting = true },
+          settings = {
+            rootMarkers = { ".git/" },
+            languages = {
+              lua = {
+                require("efmls-configs.formatters.stylua"),
+              },
+
+              rust = {
+                require("efmls-configs.formatters.rustfmt"),
+              },
+
+              javascript = {
+                require("efmls-configs.formatters.eslint_d"),
+              },
+
+              vue = {
+                require("efmls-configs.formatters.eslint_d"),
+                require("efmls-configs.formatters.stylelint"),
+                --[[ require("efmls-configs.formatters.prettier"), ]]
+              },
+
+              css = {
+                require("efmls-configs.formatters.stylelint"),
+              },
+
+              scss = {
+                require("efmls-configs.formatters.stylelint"),
+              },
+            },
+          },
+        })
 		end,
 	},
 	{
@@ -66,8 +103,5 @@ return {
 			{ "nvim-tree/nvim-web-devicons" },
 			{ "nvim-treesitter/nvim-treesitter" },
 		},
-	},
-	{
-		"creativenull/efmls-configs-nvim",
 	},
 }
