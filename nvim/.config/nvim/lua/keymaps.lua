@@ -93,7 +93,7 @@ keymap("n", "<C-j>", ":NavigatorDown<cr>", opts)
 keymap("n", "<C-p>", ":NavigatorPrevious<cr>", opts)
 
 -- Harpoon
-keymap("n", "<leader>m", ":lua require('harpoon'):list():append()<cr>", Opts("Mark File"))
+keymap("n", "<leader>m", ":lua require('harpoon'):list():add()<cr>", Opts("Mark File"))
 keymap(
 	"n",
 	"<leader>a",
