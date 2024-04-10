@@ -13,6 +13,8 @@ export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=/opt/stagecoach/bin:$PATH
 export PATH=/opt/ops-tools/bin:$PATH
+export ANDROID_HOME=/usr/local/lib/android/sdk
+export NDK_HOME=/usr/local/lib/android/ndk
 
 # zsh-vi-mode 
 export ZVM_VI_INSERT_ESCAPE_BINDKEY=kj
