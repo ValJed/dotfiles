@@ -12,6 +12,7 @@ alias ....="cd ../../.."
 alias pn="pnpm"
 alias prun="pnpm run"
 alias cl="clear"
+alias emulator="/home/jed/Android/Sdk/emulator/emulator"
 
 # Locations
 alias doc="cd /home/$USER/Documents"
@@ -44,6 +45,7 @@ alias cwr="cargo watch -c -q -x \"run -q\""
 alias cwb="cargo watch -c -q -x \"build -q\""
 alias cww="cargo watch -i .gitignore -i \"pkg/*\" -s \"wasm-pack build --target web\""
 alias sn="sudo -e"
+alias clip="xclip -selection clipboard"
 
 # Tasks
 alias tkls="task ls"
