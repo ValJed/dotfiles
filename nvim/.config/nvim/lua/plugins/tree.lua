@@ -166,7 +166,7 @@ return {
 					timeout = 500,
 				},
 				view = {
-					width = 40,
+					width = 50,
 					side = "left",
 					number = false,
 					relativenumber = true,
