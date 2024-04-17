@@ -1,9 +1,9 @@
 local util = require("lspconfig.util")
 
 local function get_typescript_lib()
-  local global_packages_path = io.popen("npm root -g"):read("l")
+	local global_packages_path = io.popen("npm root -g"):read("l")
 
-  return global_packages_path .. "/typescript/lib"
+	return global_packages_path .. "/typescript/lib"
 end
 
 local volar_cmd = { "vue-language-server", "--stdio" }
@@ -18,6 +18,7 @@ return {
 	--filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
 	init_options = {
 		typescript = {
+			--[[ tsdk = "/home/jed/.nvm/versions/node/v18.16.0/lib/node_modules/typescript/lib", ]]
 			tsdk = get_typescript_lib(),
 		},
 		languageFeatures = {

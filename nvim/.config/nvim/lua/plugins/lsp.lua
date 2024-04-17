@@ -17,11 +17,12 @@ return {
 		"neovim/nvim-lspconfig",
 		config = function()
 			local lspconfig = require("lspconfig")
+			local handlers = require("lsp.handlers")
 
 			for _, server in pairs(lsp_servers) do
 				local opts = {
-					on_attach = require("lsp.handlers").on_attach,
-					capabilities = require("lsp.handlers").capabilities,
+					on_attach = handlers.on_attach,
+					capabilities = handlers.capabilities,
 				}
 
 				local has_custom_opts, server_custom_opts = pcall(require, "lsp.settings." .. server)
@@ -33,6 +34,9 @@ return {
 				lspconfig[server].setup(opts)
 			end
 
+			handlers.setup()
+
+			local eslint_d_formatter = require("efmls-configs.formatters.eslint_d")
 			lspconfig.efm.setup({
 				init_options = { documentFormatting = true },
 				settings = {
@@ -47,12 +51,12 @@ return {
 						},
 
 						javascript = {
-							require("efmls-configs.formatters.eslint_d"),
+							eslint_d_formatter,
 						},
 
 						vue = {
-							require("efmls-configs.formatters.eslint_d"),
-							require("efmls-configs.formatters.stylelint"),
+							eslint_d_formatter,
+							--[[ require("efmls-configs.formatters.stylelint"), ]]
 							--[[ require("efmls-configs.formatters.prettier"), ]]
 						},
 
