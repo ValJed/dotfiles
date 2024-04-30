@@ -12,7 +12,6 @@ alias ....="cd ../../.."
 alias pn="pnpm"
 alias prun="pnpm run"
 alias cl="clear"
-alias emulator="/home/jed/Android/Sdk/emulator/emulator"
 
 # Locations
 alias doc="cd /home/$USER/Documents"
