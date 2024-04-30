@@ -1,5 +1,6 @@
 return {
 	{ "EdenEast/nightfox.nvim" },
+	{ "RRethy/base16-nvim" },
 	{
 		"rose-pine/neovim",
 		as = "rose-pine",
