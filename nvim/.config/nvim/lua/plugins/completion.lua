@@ -134,7 +134,7 @@ return {
 					end,
 				},
 				sources = {
-					{ name = "luasnip" },
+					--[[ { name = "luasnip" }, ]]
 					{ name = "nvim_lsp" },
 					{ name = "buffer" },
 					{ name = "path" },
@@ -150,6 +150,13 @@ return {
 				experimental = {
 					ghost_text = false,
 					native_menu = false,
+				},
+			})
+
+			cmp.setup.filetype({ "sql" }, {
+				sources = {
+					{ name = "vim-dadbod-completion" },
+					{ name = "buffer" },
 				},
 			})
 		end,
