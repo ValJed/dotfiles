@@ -37,7 +37,7 @@ return {
 			handlers.setup()
 
 			local eslint_d_formatter = require("efmls-configs.formatters.eslint_d")
-			local prettier_formatter = require("efmls-configs.formatters.prettier")
+			--[[ local prettier_formatter = require("efmls-configs.formatters.prettier") ]]
 			lspconfig.efm.setup({
 				init_options = { documentFormatting = true },
 				settings = {
