@@ -67,6 +67,7 @@ return {
 			})
 
 			cmp.setup({
+				preselect = "none",
 				snippet = {
 					expand = function(args)
 						luasnip.lsp_expand(args.body) -- For `luasnip` users.
@@ -77,8 +78,8 @@ return {
 					["<C-j>"] = cmp.mapping.select_next_item(),
 					["<C-u>"] = cmp.mapping.scroll_docs(-8),
 					["<C-d>"] = cmp.mapping.scroll_docs(8),
-					["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-					["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
+					--[[ ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }), ]]
+					--[[ ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping. ]]
 					["<C-c>"] = cmp.mapping({
 						i = cmp.mapping.abort(),
 						c = cmp.mapping.close(),
@@ -88,27 +89,8 @@ return {
 					["<CR>"] = cmp.mapping.confirm({ select = true }),
 					["<Tab>"] = cmp.mapping(function(fallback)
 						local copilot_keys = vim.fn["copilot#Accept"]()
-						--[[ if luasnip.expandable() then ]]
-						--[[ 	luasnip.expand() ]]
-						if luasnip.jumpable(1) then
-							luasnip.jump(1)
-						elseif copilot_keys ~= "" and type(copilot_keys) == "string" then
+						if copilot_keys ~= "" and type(copilot_keys) == "string" then
 							vim.api.nvim_feedkeys(copilot_keys, "n", true)
-						elseif cmp.visible() then
-							cmp.select_next_item()
-						else
-							fallback()
-						end
-					end, {
-						"i",
-						"s",
-					}),
-					["<S-Tab>"] = cmp.mapping(function(fallback)
-						if luasnip.jumpable(-1) then
-							luasnip.jump(-1)
-						elseif cmp.visible() then
-							cmp.select_prev_item()
-						else
 							fallback()
 						end
 					end, {
@@ -123,8 +105,8 @@ return {
 						-- vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
 						vim_item.kind = string.format("%s %s", kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 						vim_item.menu = ({
+							--[[ luasnip = "[Snippet]", ]]
 							nvim_lsp = "[LSP]",
-							luasnip = "[Snippet]",
 							buffer = "[Buffer]",
 							path = "[Path]",
 							crates = "[Crates]",
@@ -144,9 +126,6 @@ return {
 					behavior = cmp.ConfirmBehavior.Replace,
 					select = false,
 				},
-				-- documentation = {
-				--   border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }, -- Generates error when tab
-				-- },
 				experimental = {
 					ghost_text = false,
 					native_menu = false,
@@ -159,6 +138,20 @@ return {
 					{ name = "buffer" },
 				},
 			})
+
+			vim.keymap.set({ "i", "s" }, "<c-l>", function()
+				if luasnip.expandable() then
+					luasnip.expand()
+				elseif luasnip.jumpable(1) then
+					luasnip.jump(1)
+				end
+			end, { silent = true })
+
+			vim.keymap.set({ "i", "s" }, "<c-h>", function()
+				if luasnip.jumpable(-1) then
+					luasnip.jump(-1)
+				end
+			end, { silent = true })
 		end,
 	},
 }
