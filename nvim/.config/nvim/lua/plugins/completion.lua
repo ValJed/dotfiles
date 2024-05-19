@@ -91,6 +91,7 @@ return {
 						local copilot_keys = vim.fn["copilot#Accept"]()
 						if copilot_keys ~= "" and type(copilot_keys) == "string" then
 							vim.api.nvim_feedkeys(copilot_keys, "n", true)
+						else
 							fallback()
 						end
 					end, {
@@ -144,12 +145,16 @@ return {
 					luasnip.expand()
 				elseif luasnip.jumpable(1) then
 					luasnip.jump(1)
+				else
+					vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Right>", true, true, true), "i", true)
 				end
 			end, { silent = true })
 
 			vim.keymap.set({ "i", "s" }, "<c-h>", function()
 				if luasnip.jumpable(-1) then
 					luasnip.jump(-1)
+				else
+					vim.api.nvim_feedkeys(vim.api.nvim_replace_termcodes("<Left>", true, true, true), "i", true)
 				end
 			end, { silent = true })
 		end,

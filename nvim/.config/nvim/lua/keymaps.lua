@@ -56,8 +56,8 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "<C-f>", "<C-f>zz", opts)
 keymap("n", "<C-b>", "<C-b>zz", opts)
 
-keymap("i", "<C-l>", "<Right>", opts)
-keymap("i", "<C-h>", "<Left>", opts)
+--[[ keymap("i", "<C-l>", "<Right>", opts) ]]
+--[[ keymap("i", "<C-h>", "<Left>", opts) ]]
 keymap("i", "<C-k>", "<Up>", opts)
 keymap("i", "<C-j>", "<Down>", opts)
 
