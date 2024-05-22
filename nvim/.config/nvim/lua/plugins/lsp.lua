@@ -5,7 +5,7 @@ local lsp_servers = {
 	"emmet_ls",
 	"rust_analyzer",
 	"volar",
-	"tailwindcss",
+	--[[ "tailwindcss", ]]
 	"eslint",
 	"lua_ls",
 	"stylelint_lsp",
@@ -38,6 +38,19 @@ return {
 
 			local eslint_d_formatter = require("efmls-configs.formatters.eslint_d")
 			--[[ local prettier_formatter = require("efmls-configs.formatters.prettier") ]]
+
+			--[[ local fs = require("efmls-configs.fs") ]]
+			--[[ local formatter = "stylelint" ]]
+			--[[ local args = "--fix '${FILENAME}'" ]]
+			--[[ local command = string.format("%s %s", fs.executable(formatter, fs.Scope.NODE), args) ]]
+			--[[ vim.notify(command) ]]
+			--[[]]
+			--[[ local stylelint_formatter = { ]]
+			--[[ 	formatCommand = command, ]]
+			--[[ 	formatStdin = false, ]]
+			--[[ 	rootMarkers = { ".stylelintrc", ".stylelintrc.json", ".stylelintrc.yml", ".stylelintrc.yaml" }, ]]
+			--[[ } ]]
+
 			lspconfig.efm.setup({
 				init_options = { documentFormatting = true },
 				settings = {
@@ -58,16 +71,17 @@ return {
 
 						vue = {
 							eslint_d_formatter,
+							--[[ stylelint_formatter, ]]
 							--[[ require("efmls-configs.formatters.stylelint"), ]]
 							--[[ require("efmls-configs.formatters.prettier"), ]]
 						},
 
 						css = {
-							require("efmls-configs.formatters.stylelint"),
+							--[[ stylelint_formatter, ]]
 						},
 
 						scss = {
-							require("efmls-configs.formatters.stylelint"),
+							--[[ stylelint_formatter, ]]
 						},
 					},
 				},
