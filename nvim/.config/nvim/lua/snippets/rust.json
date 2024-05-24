@@ -106,5 +106,14 @@
       "use ${1:std}::${2}"
     ],
     "description": "Use"
+  },
+  "Function": {
+    "prefix": "fn",
+    "body": [
+      "fn ${1}(${2}) -> ${3} {",
+      "\t${4}",
+      "}"
+    ],
+    "description": "Function"
   }
 }
