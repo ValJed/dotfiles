@@ -1,0 +1,36 @@
+local wezterm = require("wezterm")
+
+local config = wezterm.config_builder()
+
+--[[ config.color_scheme = "Red Phoenix (terminal.sexy)" ]]
+--[[ config.color_scheme = "Color Star (terminal.sexy)" ]]
+--[[ config.color_scheme = "Dark Ocean (terminal.sexy)" ]]
+--[[ config.color_scheme = "JWR dark (terminal.sexy)" ]]
+--[[ config.color_scheme = "Dark Violet (base16)" ]]
+config.color_scheme = "FarSide (terminal.sexy)"
+config.color_scheme = "Cloud (terminal.sexy)"
+
+config.hide_tab_bar_if_only_one_tab = true
+
+config.font = wezterm.font_with_fallback({
+	"Hack Nerd Font",
+	"DejaVu Sans Mono",
+})
+config.font_size = 13.0
+
+config.window_padding = {
+	left = 0,
+	right = 0,
+	top = 0,
+	bottom = 0,
+}
+config.default_cursor_style = "BlinkingBar"
+config.warn_about_missing_glyphs = false
+
+config.keys = {
+	{ key = "p", mods = "CTRL", action = wezterm.action({ PasteFrom = "Clipboard" }) },
+}
+
+config.default_prog = { "/usr/bin/zsh" }
+
+return config
