@@ -16,7 +16,21 @@ config.font = wezterm.font_with_fallback({
 	"Hack Nerd Font",
 	"DejaVu Sans Mono",
 })
-config.font_size = 13.0
+
+local cmd = "xrandr | grep '*' | awk '{print $1}'"
+local handle = io.popen(cmd)
+if handle ~= nil then
+	local resolution = handle:read("*a")
+	handle:close()
+	local width = tonumber(resolution.sub(resolution, 1, 4))
+	if width > 2000 then
+		config.font_size = 13.0
+	elseif width > 1600 then
+		config.font_size = 11.0
+	end
+else
+	config.font_size = 12.0
+end
 
 config.window_padding = {
 	left = 0,
@@ -29,6 +43,7 @@ config.warn_about_missing_glyphs = false
 
 config.keys = {
 	{ key = "p", mods = "CTRL", action = wezterm.action({ PasteFrom = "Clipboard" }) },
+	{ key = "d", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
 }
 
 config.default_prog = { "/usr/bin/zsh" }
