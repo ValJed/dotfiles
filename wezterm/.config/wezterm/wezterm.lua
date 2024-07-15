@@ -43,7 +43,11 @@ config.warn_about_missing_glyphs = false
 
 config.keys = {
 	{ key = "p", mods = "CTRL", action = wezterm.action({ PasteFrom = "Clipboard" }) },
-	{ key = "d", mods = "CTRL", action = wezterm.action.ShowDebugOverlay },
+	{ key = "d", mods = "CTRL|SHIFT", action = wezterm.action.ShowDebugOverlay },
+	{ key = "DownArrow", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
+	{ key = "UpArrow", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
+	{ key = "LeftArrow", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
+	{ key = "RightArrow", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
 }
 
 config.default_prog = { "/usr/bin/zsh" }
