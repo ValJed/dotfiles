@@ -46,6 +46,11 @@ keymap("n", "<C-S-Down>", ":resize -2<cr>", opts)
 keymap("n", "<C-S-Right>", ":vertical resize +2<cr>", opts)
 keymap("n", "<C-S-Left>", ":vertical resize -2<cr>", opts)
 
+--[[ keymap("n", "<C-S-k>", ":resize +2<cr>", opts) ]]
+--[[ keymap("n", "<C-S-j>", ":resize -2<cr>", opts) ]]
+--[[ keymap("n", "<C-S-l>", ":vertical resize +2<cr>", opts) ]]
+--[[ keymap("n", "<C-S-h>", ":vertical resize -2<cr>", opts) ]]
+
 -- Navigate buffers
 keymap("n", "<S-h>", ":bp<cr>", { silent = true })
 keymap("n", "<S-l>", ":bn<cr>", { silent = true })
@@ -91,22 +96,3 @@ keymap("n", "<C-l>", ":NavigatorRight<cr>", opts)
 keymap("n", "<C-k>", ":NavigatorUp<cr>", opts)
 keymap("n", "<C-j>", ":NavigatorDown<cr>", opts)
 keymap("n", "<C-p>", ":NavigatorPrevious<cr>", opts)
-
--- Harpoon
-keymap("n", "<leader>m", ":lua require('harpoon'):list():add()<cr>", Opts("Mark File"))
-keymap(
-	"n",
-	"<leader>a",
-	":lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())<cr>",
-	Opts("File Marked")
-)
-
-keymap("n", "<leader>&", ":lua require('harpoon'):list():select(1)<cr>", opts)
-keymap("n", "<leader>é", ":lua require('harpoon'):list():select(2)<cr>", opts)
-keymap("n", '<leader>"', ":lua require('harpoon'):list():select(3)<cr>", opts)
-keymap("n", "<leader>'", ":lua require('harpoon'):list():select(4)<cr>", opts)
-keymap("n", "<leader>(", ":lua require('harpoon'):list():select(5)<cr>", opts)
-keymap("n", "<leader>-", ":lua require('harpoon'):list():select(6)<cr>", opts)
-keymap("n", "<leader>è", ":lua require('harpoon'):list():select(7)<cr>", opts)
-keymap("n", "<leader>_", ":lua require('harpoon'):list():select(8)<cr>", opts)
-keymap("n", "<leader>ç", ":lua require('harpoon'):list():select(9)<cr>", opts)
