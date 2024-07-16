@@ -115,5 +115,12 @@
       "}"
     ],
     "description": "Function"
+  },
+  "Format": {
+    "prefix": "fo",
+    "body": [
+      "format!(\"${1:HERE}\")"
+    ],
+    "description": "Format"
   }
 }
