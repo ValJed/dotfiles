@@ -48,8 +48,8 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
 # source
-source /usr/share/fzf/key-bindings.zsh
-source /usr/share/fzf/completion.zsh
+source ~/.local/share/fzf/key-bindings.zsh
+source ~/.local/share/fzf/completion.zsh
 
 plug "$HOME/.config/zsh/aliases.zsh"
 plug "$HOME/.config/zsh/exports.zsh"
