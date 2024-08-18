@@ -3,7 +3,6 @@
 # Basics
 alias aliases='print -rl -- ${(k)aliases}'
 alias grep='grep --color=auto'
-alias l='la'
 alias run="npm run"
 alias s="sudo "
 alias n="nvim"
@@ -12,6 +11,18 @@ alias ....="cd ../../.."
 alias pn="pnpm"
 alias prun="pnpm run"
 alias cl="clear"
+
+# Files system
+alias ls='eza --group-directories-first --icons'
+if eza --version | grep -q '+git';
+then
+	alias ll='ls -lh --git'
+else
+	alias ll='ls -lh'
+fi
+alias la='ll -a'
+alias l='la'
+alias tree='ll --tree --level=2'
 
 # Locations
 alias doc="cd /home/$USER/Documents"
