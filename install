@@ -20,7 +20,7 @@ cargo install stylua
 # Install zap for zsh config
 sh <(curl -s https://raw.githubusercontent.com/zap-zsh/zap/master/install.sh)
 
-# Fonts
+# Fonts (download on nerdfonts)
 sudo cp -r ./fonts/Hack /usr/share/fonts/
 
 # tmux package manager

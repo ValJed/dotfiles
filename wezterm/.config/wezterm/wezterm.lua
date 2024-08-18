@@ -51,6 +51,6 @@ config.keys = {
 	{ key = "RightArrow", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
 }
 
-config.default_prog = { "/usr/bin/zsh" }
+config.default_prog = { "zsh" }
 
 return config
