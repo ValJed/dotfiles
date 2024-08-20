@@ -69,7 +69,6 @@ keymap("i", "<C-j>", "<Down>", opts)
 -- Insert --
 -- Press kj fast to enter
 keymap("i", "kj", "<ESC>", opts)
-keymap("i", "KJ", "<ESC>", opts)
 
 -- Indentation --
 keymap("v", "<Tab>", ">gv", opts)
