@@ -49,6 +49,7 @@ config.keys = {
 	{ key = "UpArrow", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
 	{ key = "LeftArrow", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
 	{ key = "RightArrow", mods = "CTRL|SHIFT", action = wezterm.action.DisableDefaultAssignment },
+	{ key = "W", mods = "SHIFT", action = wezterm.action.DisableDefaultAssignment },
 }
 
 config.default_prog = { "zsh" }
