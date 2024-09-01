@@ -103,9 +103,17 @@
     packages = with pkgs; [];
   };
 
-  #security.sudo.extraRules = [
-  #{ groups = [ "wheel" ]; commands = [ "${pkgs.kmod}/bin/rmmod" ]; }
-  #]; 
+   security.sudo.extraRules = [
+     { 
+       groups = [ "wheel" ]; 
+       commands = [ 
+         { 
+           command = "${pkgs.brillo}/bin/brillo"; 
+           options = ["SETENV" "NOPASSWD"]; 
+         }
+       ]; 
+     }
+   ]; 
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
@@ -127,6 +135,17 @@
     defaultEditor = true;
   };
 
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    autosuggestions = {
+      enable = true;
+    };
+    syntaxHighlighting = {
+      enable = true;
+    };
+  };
+
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
@@ -143,7 +162,6 @@
     wezterm
     stow
     git
-    zsh
     tmux
     eza
     bat
@@ -159,7 +177,7 @@
     signal-desktop
     libsForQt5.dolphin
     xfce.thunar
-
+    vlc
 
     # Dev
     python3
@@ -185,6 +203,7 @@
     kitty
     swww
     cliphist
+    brillo
 
     (firefox.override { nativeMessagingHosts = [ passff-host ]; }) 
     (waybar.overrideAttrs (oldAttrs: {
