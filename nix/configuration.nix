@@ -185,8 +185,12 @@
     nodejs_20
     docker_27
     docker-compose
-    rustup
+
+    # Rust
     pkg-config 
+    cargo
+    rustc
+    openssl
 
     #bluez
     #blueman
@@ -204,12 +208,17 @@
     swww
     cliphist
     brillo
+    hyprlock
 
     (firefox.override { nativeMessagingHosts = [ passff-host ]; }) 
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
     }))
   ];
+
+  environment.variables = {
+    PKG_CONFIG_PATH="${pkgs.openssl.dev}/lib/pkgconfig";
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
