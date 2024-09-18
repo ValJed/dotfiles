@@ -1,5 +1,4 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
+# Edit this configuration file to define what should be installed on your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
 { config, pkgs, ... }:
@@ -33,10 +32,10 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "Europe/Paris";
+  time.timeZone = "Asia/Makassar";
 
+  # Hardware
   hardware.enableAllFirmware = true;
-  # sound.enable = true;
 
   # Commented to test Hyprland
   #hardware.pulseaudio.enable = true;
@@ -156,10 +155,12 @@
     # Apps
     firefox
     spotify
+    libreoffice-qt
+    gthumb
 
     # Tools
     wev
-    wezterm
+    # wezterm
     stow
     git
     tmux
@@ -178,6 +179,7 @@
     libsForQt5.dolphin
     xfce.thunar
     vlc
+    file
 
     # Dev
     python3
@@ -198,12 +200,11 @@
     networkmanagerapplet
 
     # Hyprland
-    #waybar
+    # waybar
     wl-clipboard
     rofi-wayland
     dunst
     libnotify
-    # To remove
     kitty
     swww
     cliphist
@@ -275,8 +276,11 @@
   };
 
   hardware = {
-    opengl.enable = true;
     nvidia.modesetting.enable = true;
+    opengl = {
+      enable = true;
+      extraPackages = with pkgs; [ intel-media-driver ];
+    };
   };
 
   xdg.portal.enable = true;
