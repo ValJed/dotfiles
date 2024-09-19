@@ -6,9 +6,12 @@
 {
   imports =
     [ # Include the results of the hardware scan.
-      /etc/nixos/hardware-configuration.nix
+      ./hardware-configuration.nix
     ];
 
+
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  #nix.package = pkgs.nixFlakes;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -114,10 +117,8 @@
      }
    ]; 
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-
   # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
+  # nixpkgs.config.allowUnfree = true;
 
   # Commented for Hyprland
   #nixpkgs.config = {
@@ -157,6 +158,7 @@
     spotify
     libreoffice-qt
     gthumb
+    qbittorrent
 
     # Tools
     wev
