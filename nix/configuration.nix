@@ -35,7 +35,7 @@
   networking.networkmanager.enable = true;
 
   # Set your time zone.
-  time.timeZone = "Asia/Makassar";
+  time.timeZone = "Europe/Paris";
 
   # Hardware
   hardware.enableAllFirmware = true;
@@ -118,7 +118,7 @@
    ]; 
 
   # Allow unfree packages
-  # nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnfree = true;
 
   # Commented for Hyprland
   #nixpkgs.config = {
@@ -155,6 +155,7 @@
   environment.systemPackages = with pkgs; [
     # Apps
     firefox
+    chromium
     spotify
     libreoffice-qt
     gthumb
@@ -162,6 +163,7 @@
 
     # Tools
     wev
+    unzip
     # wezterm
     stow
     git
@@ -178,7 +180,6 @@
     ripgrep
     tokei
     signal-desktop
-    libsForQt5.dolphin
     xfce.thunar
     vlc
     file
@@ -279,7 +280,7 @@
 
   hardware = {
     nvidia.modesetting.enable = true;
-    opengl = {
+    graphics = {
       enable = true;
       extraPackages = with pkgs; [ intel-media-driver ];
     };
@@ -288,7 +289,6 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
-  sound.enable = true;
   security.rtkit.enable = true;
   services.pipewire = {
     enable = true;
@@ -298,3 +298,4 @@
     jack.enable = true;
   };
 }
+
