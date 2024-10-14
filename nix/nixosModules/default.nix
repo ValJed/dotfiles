@@ -4,8 +4,9 @@
 { config, pkgs, ... }:
 
 {
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  #nix.package = pkgs.nixFlakes;
+  # pkgs.config.allowUnfree = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;

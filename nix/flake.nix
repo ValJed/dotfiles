@@ -5,27 +5,33 @@
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
+
+    home-manager = {
+      url = "github:nix-community/home-manager";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs }: 
-    let
-      system = "x86_64-linux";
-      pkgs = import nixpkgs { 
-        inherit system;
+  outputs = { nixpkgs, ... }@inputs: 
+  let
+    system = "x86_64-linux";
+    pkgs = import nixpkgs { 
+      inherit system;
 
-        config = {
-          allowUnfree = true;
-        };
+      config = {
+        allowUnfree = true;
       };
-
-    in {
+    };
+  in {
     nixosConfigurations = {
-      main = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit system; };
+      yoga = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
         modules = [
-          ./configuration.nix
+          ./hosts/yoga/configuration.nix
         ];
       };
     };
+
+    nixosModules.default = ./nixosModules;
   };
 }
