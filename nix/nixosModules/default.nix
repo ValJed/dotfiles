@@ -11,13 +11,7 @@
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
-  boot.initrd.luks.devices."luks-8b83c743-2c4d-47ca-ad0d-00cc2680314e".device = "/dev/disk/by-uuid/8b83c743-2c4d-47ca-ad0d-00cc2680314e";
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  boot.kernelModules = [
-    "btusb"
-    "btintel"
-  ];
 
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 

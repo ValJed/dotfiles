@@ -30,6 +30,13 @@
           ./hosts/yoga/configuration.nix
         ];
       };
+
+      xps = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [
+          ./hosts/xps/configuration.nix
+        ];
+      };
     };
 
     nixosModules.default = ./nixosModules;
