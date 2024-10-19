@@ -39,7 +39,23 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/hypr".source = ~/dotfiles/hypr/.config/hypr;
+    ".config/hypr" = {
+	source = ../../hypr/.config/hypr;
+	recursive = true;
+    };
+    ".zshrc".source = ../../zsh/.zshrc;
+    ".config/zsh" = {
+    	source = ../../zsh/.config/zsh;
+	recursive = true;
+    };
+    ".config/starship.toml".source = ../../starship/.config/starship.toml;
+    ".tmux.conf".source = ../../tmux/.tmux.conf;
+    ".config/waybar/config.jsonc".source = ../../waybar/.config/waybar/config.jsonc;
+    ".config/nvim" = {
+    	source = ../../nvim/.config/nvim;
+	recursive = true;
+    };
+    ".config/rofi/config.rasi".source = ../../rofi/.config/rofi/config.rasi;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in
     # # the Nix store. Activating the configuration will then make '~/.screenrc' a
     # # symlink to the Nix store copy.
