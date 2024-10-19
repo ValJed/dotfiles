@@ -7,8 +7,8 @@ HISTSIZE=50000
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 
-source ./.config/zsh/aliases.zsh
-source ./.config/zsh/exports.zsh
+source ~/.config/zsh/aliases.zsh
+source ~/.config/zsh/exports.zsh
 
 autoload -U compinit && compinit
 
@@ -28,8 +28,8 @@ zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 # source
-source ./.config/zsh/fzf/key-bindings.zsh
-source ./.config/zsh/fzf/completion.zsh
+source ~/.config/zsh/fzf/key-bindings.zsh
+source ~/.config/zsh/fzf/completion.zsh
 
 # keybinds
 bindkey '^ ' autosuggest-accept
