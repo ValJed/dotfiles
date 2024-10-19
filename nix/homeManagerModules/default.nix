@@ -3,6 +3,7 @@
 {
   imports = [
     ./programs/tmux.nix
+    ./programs/kitty.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -43,7 +44,6 @@
       recursive = true;
     };
     ".config/starship.toml".source = ../../starship/.config/starship.toml;
-    ".tmux.conf".source = ../../tmux/.tmux.conf;
     ".config/waybar/config.jsonc".source = ../../waybar/.config/waybar/config.jsonc;
     ".config/nvim" = {
     	source = ../../nvim/.config/nvim;
@@ -77,9 +77,10 @@
   # or
   #
   #  /etc/profiles/per-user/jed/etc/profile.d/hm-session-vars.sh
-  #
+  
   home.sessionVariables = {
     EDITOR = "nvim";
+    ZSH_TMUX_CONFIG = "$HOME/.config/tmux/tmux.conf";
   };
 
   # Let Home Manager install and manage itself.

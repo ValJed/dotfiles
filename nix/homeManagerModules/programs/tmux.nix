@@ -4,17 +4,19 @@
   programs.tmux = {
     enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
+    keyMode = "vi";
+    prefix = "C-w";
     plugins = with pkgs; [
       {
         plugin = tmuxPlugins.dracula;
-        extraConfig ''
+        extraConfig = ''
           set -g @dracula-show-powerline true
           set -g @dracula-fixed-location "Lyon"
           set -g @dracula-plugins "weather"
           set -g @dracula-show-fahrenheit false
           set -g @dracula-show-flags true
           set -g @dracula-show-left-icon session 
-        ''
+        '';
       }
       tmuxPlugins.vim-tmux-navigator
     ];
@@ -22,11 +24,11 @@
       set-option -g default-shell /usr/bin/zsh
       set-option -g prefix C-w
 
-      unbind-key C-b
-      bind C-w send-prefix
+      # unbind-key C-b
+      # bind C-w send-prefix
 
       # act like vim
-      setw -g mode-keys vi
+      # setw -g mode-keys vi
 
       bind -n C-Left resize-pane -L 2
       bind -n C-Right resize-pane -R 2

@@ -155,7 +155,6 @@
     # wezterm
     stow
     git
-    tmux
     eza
     bat
     lazygit
