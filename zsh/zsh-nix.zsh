@@ -1,1 +1,2 @@
-source ./default.zsh
+source ./.config/zsh/default.zsh
+
