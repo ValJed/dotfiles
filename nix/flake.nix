@@ -12,7 +12,7 @@
     };
   };
 
-  outputs = { nixpkgs, ... }@inputs: 
+  outputs = { nixpkgs, home-manager, ... }@inputs: 
   let
     system = "x86_64-linux";
     pkgs = import nixpkgs { 
@@ -39,6 +39,15 @@
       };
     };
 
+    homeConfigurations = {
+    	"jed@xps" = home-manager.lib.homeManagerConfiguration {
+		inherit pkgs;
+		modules = [./hosts/xps/home.nix];
+		extraSpecialArgs = { inherit inputs; };
+	};
+    };
+
     nixosModules.default = ./nixosModules;
+    homeManagerModules.default = ./homeManagerModules;
   };
 }

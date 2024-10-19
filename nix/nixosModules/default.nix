@@ -90,7 +90,7 @@
     isNormalUser = true;
     description = "jed";
     extraGroups = [ "networkmanager" "wheel" ];
-    packages = with pkgs; [];
+    packages = with pkgs; [ home-manager ];
   };
 
    security.sudo.extraRules = [
