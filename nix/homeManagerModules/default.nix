@@ -17,43 +17,33 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = [
-    # # Adds the 'hello' command to your environment. It prints a friendly
-    # # "Hello, world!" when run.
-    # pkgs.hello
-
-    # # It is sometimes useful to fine-tune packages, for example, by applying
-    # # overrides. You can do that directly here, just don't forget the
-    # # parentheses. Maybe you want to install Nerd Fonts with a limited number of
-    # # fonts?
-    # (pkgs.nerdfonts.override { fonts = [ "FantasqueSansMono" ]; })
-
-    # # You can also create simple shell scripts directly inside your
-    # # configuration. For example, this adds a command 'my-hello' to your
-    # # environment:
-    # (pkgs.writeShellScriptBin "my-hello" ''
-    #   echo "Hello, ${config.home.username}!"
-    # '')
+  home.packages = with pkgs; [
+    zsh-autopair
+    zsh-syntax-highlighting
+    zsh-completions
+    zsh-autosuggestions
+    zsh-fzf-tab
+    zsh-vi-mode
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
     ".config/hypr" = {
-	source = ../../hypr/.config/hypr;
-	recursive = true;
+      source = ../../hypr/.config/hypr;
+      recursive = true;
     };
-    ".zshrc".source = ../../zsh/.zshrc;
+    ".zshrc".source = ../../zsh/zsh-nix.zsh;
     ".config/zsh" = {
-    	source = ../../zsh/.config/zsh;
-	recursive = true;
+      source = ../../zsh/.config/zsh;
+      recursive = true;
     };
     ".config/starship.toml".source = ../../starship/.config/starship.toml;
     ".tmux.conf".source = ../../tmux/.tmux.conf;
     ".config/waybar/config.jsonc".source = ../../waybar/.config/waybar/config.jsonc;
     ".config/nvim" = {
     	source = ../../nvim/.config/nvim;
-	recursive = true;
+	    recursive = true;
     };
     ".config/rofi/config.rasi".source = ../../rofi/.config/rofi/config.rasi;
     # # Building this configuration will create a copy of 'dotfiles/screenrc' in

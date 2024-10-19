@@ -8,4 +8,4 @@ plug "zsh-users/zsh-autosuggestions"
 plug "Aloxaf/fzf-tab"
 plug "jeffreytse/zsh-vi-mode"
 
-source ./default.zsh
+source ./.config/zsh/default.zsh

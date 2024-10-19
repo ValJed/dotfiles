@@ -7,8 +7,8 @@ HISTSIZE=50000
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 
-source ./.config/zsh/aliases.zsh
-source ./.config/zsh/exports.zsh
+source ./aliases.zsh
+source ./exports.zsh
 
 autoload -U compinit && compinit
 
