@@ -4,8 +4,10 @@
   programs.tmux = {
     enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
+    terminal = "tmux-256color";
     keyMode = "vi";
     prefix = "C-w";
+    mouse = true;
     plugins = with pkgs; [
       {
         plugin = tmuxPlugins.dracula;
@@ -21,22 +23,10 @@
       tmuxPlugins.vim-tmux-navigator
     ];
     extraConfig = ''
-      set-option -g default-shell /usr/bin/zsh
-      set-option -g prefix C-w
-
-      # unbind-key C-b
-      # bind C-w send-prefix
-
-      # act like vim
-      # setw -g mode-keys vi
-
       bind -n C-Left resize-pane -L 2
       bind -n C-Right resize-pane -R 2
       bind -n C-Up resize-pane -U 2
       bind -n C-Down resize-pane -D 2
-
-      # Mouse mode
-      setw -g mouse on
 
       bind-key h previous-window
       bind-key l next-window
