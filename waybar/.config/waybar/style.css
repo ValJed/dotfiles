@@ -1,14 +1,17 @@
+/* Colors:  */
+/* --primary: #C9282D; */
+/* --secondary: #E3E3E3; */
+/* --background: #0F1212; */
+
 * {
     /* `otf-font-awesome` is required to be installed for icons */
     font-family: FiraCode Nerd Font, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 13px;
+    font-size: 14px;
 }
 
 window#waybar {
-    background-color: #0F1212;
     color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
+    background-color: transparent;
 }
 
 window#waybar.hidden {
@@ -48,14 +51,13 @@ button:hover {
 }
 
 /* you can set a style on hover for any module like this */
-#pulseaudio:hover {
-    background-color: #a37800;
-}
 
 #workspaces button {
     padding: 0 5px;
-    background-color: transparent;
+    background-color: #E3E3E3;
     color: #ffffff;
+    border: 1px solid #C9282D;
+    border-radius: 15px;
 }
 
 #workspaces button:hover {
@@ -93,8 +95,12 @@ button:hover {
 #scratchpad,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
-    color: #ffffff;
+    padding: 5px 15px 5px 10px;
+    color: #000;
+    background-color: #e3e3e3;
+    border-radius: 15px;
+    border: 1px solid #C9282D;
+
 }
 
 #window,
@@ -112,12 +118,8 @@ button:hover {
     margin-right: 0;
 }
 
-#clock {
-    background-color: #64727D;
-}
-
 #battery {
-    background-color: #ffffff;
+    background-color: #e3e3e3;
     color: #000000;
 }
 
@@ -135,7 +137,7 @@ button:hover {
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
+    background-color: #C9282D;
     color: #ffffff;
     animation-name: blink;
     animation-duration: 0.5s;
@@ -167,34 +169,8 @@ label:focus {
     background-color: #000000;
 }
 
-#cpu {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background-color: #9b59b6;
-}
-
-#disk {
-    background-color: #964B00;
-}
-
-#backlight {
-    background-color: #90b1b1;
-}
-
-#network {
-    background-color: #2980b9;
-}
-
 #network.disconnected {
     background-color: #f53c3c;
-}
-
-#pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
 }
 
 #pulseaudio.muted {
@@ -225,16 +201,8 @@ label:focus {
     background-color: #ffa000;
 }
 
-#temperature {
-    background-color: #f0932b;
-}
-
 #temperature.critical {
     background-color: #eb4d4b;
-}
-
-#tray {
-    background-color: #2980b9;
 }
 
 #tray > .passive {
@@ -246,18 +214,9 @@ label:focus {
     background-color: #eb4d4b;
 }
 
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
 #idle_inhibitor.activated {
     background-color: #ecf0f1;
     color: #2d3436;
-}
-
-#mpd {
-    background-color: #66cc99;
-    color: #2a5c45;
 }
 
 #mpd.disconnected {
@@ -324,3 +283,4 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
+

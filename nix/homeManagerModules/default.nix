@@ -31,6 +31,7 @@
     zsh-fzf-tab
     zsh-vi-mode
     wbg
+    adwaita-qt
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -47,7 +48,7 @@
     };
     ".config/starship.toml".source = ../../starship/.config/starship.toml;
     ".config/waybar" = {
-      source = ../../waybar/.config/waybar/config.jsonc;
+      source = ../../waybar/.config/waybar;
       recursive = true;
     };
     ".config/nvim" = {

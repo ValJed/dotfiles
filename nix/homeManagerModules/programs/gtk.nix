@@ -1,9 +1,10 @@
-{ config, lib, ... }:
+{ config, pkgs, lib, ... }:
 
 {
-  programs.qt= {
+  qt = {
     enable = true;
-    platformTheme = "gtk";
+    platformTheme.name = "qt5ct";
     style.name = "adwaita-dark";
+    style.package = pkgs.adwaita-qt;
   };
 }
