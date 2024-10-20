@@ -4,6 +4,7 @@
   imports = [
     ./programs/tmux.nix
     ./programs/kitty.nix
+    ./programs/gtk.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -29,6 +30,7 @@
     zsh-autosuggestions
     zsh-fzf-tab
     zsh-vi-mode
+    wbg
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -44,7 +46,10 @@
       recursive = true;
     };
     ".config/starship.toml".source = ../../starship/.config/starship.toml;
-    ".config/waybar/config.jsonc".source = ../../waybar/.config/waybar/config.jsonc;
+    ".config/waybar" = {
+      source = ../../waybar/.config/waybar/config.jsonc;
+      recursive = true;
+    };
     ".config/nvim" = {
     	source = ../../nvim/.config/nvim;
 	    recursive = true;

@@ -172,6 +172,7 @@
     file
 
     # Dev
+    kitty
     python3
     gcc14
     nodejs_20
@@ -195,8 +196,6 @@
     rofi-wayland
     dunst
     libnotify
-    kitty
-    swww
     cliphist
     brillo
     hyprlock
