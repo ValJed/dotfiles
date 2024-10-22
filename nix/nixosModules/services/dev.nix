@@ -2,10 +2,11 @@
 { config, pkgs, ... }:
 
 {
-  services.mongodb = {
-    enable = true;
-    package = "mongodb-5_0";
-    enableAuth = true;
-    initialRootPassword = "root";
-  };
+  environment.systemPackages = with pkgs; [
+    mongosh
+    docker-compose
+  ];
+
+  virtualisation.docker.enable = true;
 }
+
