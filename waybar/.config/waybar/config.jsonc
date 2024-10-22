@@ -45,18 +45,8 @@
              "6": "",
              "7": "",
              "8": "",
-             "9": "",
-             "urgent": "",
-             "active": "",
-             "default": ""
-         },
-          "persistent_workspaces": {
-              "1": [],
-              "2": [],
-              "3": [],
-              "4": [],
-              "5": []
-          }
+             "9": ""
+         }
      },
     "keyboard-state": {
         "numlock": true,
@@ -137,7 +127,7 @@
         },
         "format": "{capacity}% {icon}",
         "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
+        "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
         "format-alt": "{time} {icon}",
         // "format-good": "", // An empty format will hide the module
