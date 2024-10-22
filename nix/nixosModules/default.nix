@@ -5,6 +5,10 @@
 
 {
 
+  imports = [
+    ./services/dev.nix
+  ];
+
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   # pkgs.config.allowUnfree = true;
 
