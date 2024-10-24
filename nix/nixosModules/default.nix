@@ -127,17 +127,6 @@
     defaultEditor = true;
   };
 
-  programs.zsh = {
-    enable = true;
-    enableCompletion = true;
-    autosuggestions = {
-      enable = true;
-    };
-    syntaxHighlighting = {
-      enable = true;
-    };
-  };
-
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];

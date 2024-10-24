@@ -2,6 +2,7 @@
 
 {
   imports = [
+    ./programs/zsh.nix
     ./programs/tmux.nix
     ./programs/kitty.nix
     ./programs/gtk.nix
@@ -24,12 +25,6 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = with pkgs; [
-    zsh-autopair
-    zsh-syntax-highlighting
-    zsh-completions
-    zsh-autosuggestions
-    zsh-fzf-tab
-    zsh-vi-mode
     wbg
     adwaita-qt
   ];
