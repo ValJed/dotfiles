@@ -28,6 +28,18 @@
   home.packages = with pkgs; [
     wbg
     adwaita-qt
+    lazygit
+    lazydocker
+    eza
+    bat
+    btop
+    fzf
+    zoxide
+    yazi
+    pass
+    starship
+    ripgrep
+    tokei
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

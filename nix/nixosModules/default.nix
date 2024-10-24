@@ -142,17 +142,6 @@
     unzip
     stow
     git
-    eza
-    bat
-    lazygit
-    btop
-    fzf
-    zoxide
-    yazi
-    pass
-    starship
-    ripgrep
-    tokei
     signal-desktop
     xfce.thunar
     file
@@ -217,6 +206,14 @@
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
+
+  systemd.user.services.docker_mongo = {
+    description = "Start mongodb container";
+    script = ''
+      docker start mdb
+    '';
+    wantedBy = [ "multi-user.target" ]; # starts after login
+  };
 
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
