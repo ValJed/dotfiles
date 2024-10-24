@@ -89,11 +89,19 @@
   # Configure console keymap
   console.keyMap = "fr";
 
+  users.groups = {
+    docker = {};
+  };
+
   # Define a user account. Don't forget to set a password with ‘passwd’.
   users.users.jed = {
     isNormalUser = true;
     description = "jed";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [ 
+      "networkmanager" 
+      "wheel" 
+      "docker" 
+    ];
     packages = with pkgs; [ home-manager ];
   };
 
@@ -112,21 +120,6 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Commented for Hyprland
-  #nixpkgs.config = {
-  #packageOverrides = pkgs: rec {
-  #polybar = pkgs.polybar.override {
-  #i3Support = true;
-  #};
-  #};
-  #};
-
-  # Programs configs
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-  };
-
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" ]; })
   ];
@@ -141,11 +134,12 @@
     libreoffice-qt
     gthumb
     qbittorrent
+    vlc
 
     # Tools
     wev
+    zip
     unzip
-    # wezterm
     stow
     git
     eza
@@ -161,7 +155,6 @@
     tokei
     signal-desktop
     xfce.thunar
-    vlc
     file
 
     # Dev
@@ -177,10 +170,6 @@
     cargo
     rustc
     openssl
-
-    #bluez
-    #blueman
-
     networkmanagerapplet
 
     # Hyprland
