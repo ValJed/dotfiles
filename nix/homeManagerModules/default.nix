@@ -36,7 +36,6 @@
       source = ../../hypr/.config/hypr;
       recursive = true;
     };
-    ".zshrc".source = ../../zsh/zsh-nix.zsh;
     ".config/zsh" = {
       source = ../../zsh/.config/zsh;
       recursive = true;

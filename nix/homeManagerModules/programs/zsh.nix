@@ -4,12 +4,8 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    autosuggestions = {
-      enable = true;
-    };
-    syntaxHighlighting = {
-      enable = true;
-    };
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
     zplug = {
       enable = true;
       plugins = [
@@ -19,7 +15,10 @@
        { name = "zsh-users/zsh-autosuggestions"; }
        { name = "Aloxaf/fzf-tab"; }
        { name = "jeffreytse/zsh-vi-mode"; }
-      ]
-    }
+      ];
+    };
+    initExtra = ''
+      source ~/.config/zsh/default.zsh
+    '';
   };
 }
