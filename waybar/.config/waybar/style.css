@@ -18,15 +18,6 @@ window#waybar.hidden {
     opacity: 0.2;
 }
 
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
-
 window#waybar.termite {
     background-color: #3F3F3F;
 }
@@ -36,21 +27,12 @@ window#waybar.chromium {
     border: none;
 }
 
-button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
-    border: none;
-    border-radius: 0;
-}
-
-/* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-/* you can set a style on hover for any module like this */
+/* Use box-shadow instead of border so the text isn't offset */
+/* button { */
+/*     box-shadow: inset 0 -3px transparent; */
+/*     border: none; */
+/*     border-radius: 0; */
+/* } */
 
 #workspaces button {
     padding: 5px 15px 5px 10px;
@@ -65,10 +47,6 @@ button:hover {
     background-color: #C9282D;
     color: #E3E3E3;
     border: 1px solid #000;
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
 }
 
 #mode {
@@ -160,10 +138,6 @@ button:hover {
 
 label:focus {
     background-color: #000000;
-}
-
-#network.disconnected {
-    background-color: #f53c3c;
 }
 
 #wireplumber {
@@ -271,6 +245,4 @@ label:focus {
 #privacy-item.audio-out {
     background-color: #0069d4;
 }
-
-
 
