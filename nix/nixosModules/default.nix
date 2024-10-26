@@ -135,6 +135,8 @@
     gthumb
     qbittorrent
     vlc
+    discord
+    slack
 
     # Tools
     wev
@@ -170,6 +172,10 @@
     cliphist
     brillo
     hyprlock
+    grim
+    slurp
+    wf-recorder
+    swappy
 
     (firefox.override { nativeMessagingHosts = [ passff-host ]; }) 
     (waybar.overrideAttrs (oldAttrs: {

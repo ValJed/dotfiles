@@ -9,7 +9,7 @@
 
   virtualisation.docker.enable = true;
 
-# Service
+  # Setup mongodb container
   # virtualisation.oci-containers = {
   #   enable = true;
   #   containers.mycontainer = {
