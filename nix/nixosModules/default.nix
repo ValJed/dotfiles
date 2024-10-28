@@ -213,14 +213,6 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  systemd.user.services.docker_mongo = {
-    description = "Start mongodb container";
-    script = ''
-      docker start mdb
-    '';
-    wantedBy = [ "multi-user.target" ]; # starts after login
-  };
-
   # Open ports in the firewall.
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
