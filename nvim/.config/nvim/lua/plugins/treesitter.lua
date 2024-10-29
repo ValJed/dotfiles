@@ -1,4 +1,5 @@
 return {
+	{ "Glench/Vim-Jinja2-Syntax" },
 	{
 		"nvim-treesitter/nvim-treesitter",
 		event = { "BufReadPre", "BufNewFile" },
