@@ -1,6 +1,6 @@
 local lsp_servers = {
 	"jsonls",
-	"tsserver",
+	"ts_ls",
 	"html",
 	"emmet_ls",
 	"rust_analyzer",

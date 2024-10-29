@@ -1,6 +1,6 @@
 local M = {}
 
-local clients_with_no_default_formatting = { "tsserver", "sumneko_lua", "volar" }
+local clients_with_no_default_formatting = { "ts_ls", "sumneko_lua", "volar" }
 
 M.setup = function()
 	local signs = {
