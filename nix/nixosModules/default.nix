@@ -7,6 +7,7 @@
 
   imports = [
     ./services/dev.nix
+    ./services/sddm/default.nix
   ];
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];

@@ -22,32 +22,32 @@
   # };
 
   # Install ACT
-  pkgs.stdenv.mkDerivation = {
-    name = "act";
-    # src = pkgs.fetchFromGitHub {
-    #   owner = "apostrophecms";
-    #   repo = "apostrophe";
-    #   rev = "6a01b763ea6bdfcf12d992fe012d1a5bd52eb623";
-    #   fetchSubmodules = true;
-    #   hash = "";
-    # };
-    src = builtins.fetchGit {
-      # url = "git+ssh://git@https://github.com/apostrophecms/assembly-cloud-tools.git";
-      # url = "git@github.com:apostrophecms/apostrophe.git";
-      url = "ssh+git://git@github.com/apostrophecms/apostrophe.git?ref=main";
-      ref = "main";
-      rev = "d6b7d38eef464cae1ead490e6dce5ccf4949c02b";
-      allRefs = true;
-      # rev = "8530f7eeb7db056e5d6a9806ea3629293930eff7";       
-      # sha256 = "sha256-42cd1277c2b45aa6b4eb648cb1d425be8b1c9c3996f63787f69b2bfb0aa574c6";
-      # sha256 = pkgs.lib.fakeHash;
-    };
-    buildPhase = ''
-      npm install
-    '';
-    # installPhase = ''
-    #   cp -r ./* $out
-    # '';
-  };
+  # pkgs.stdenv.mkDerivation = {
+  #   name = "act";
+  #   src = pkgs.fetchFromGitHub {
+  #     owner = "apostrophecms";
+  #     repo = "apostrophe";
+  #     rev = "main";
+  #     # fetchSubmodules = true;
+  #     hash = "";
+  #   };
+  #   # src = builtins.fetchGit {
+  #   #   # url = "git+ssh://git@https://github.com/apostrophecms/assembly-cloud-tools.git";
+  #   #   # url = "git@github.com:apostrophecms/apostrophe.git";
+  #   #   url = "git://git@github.com/apostrophecms/apostrophe.git?ref=main";
+  #   #   ref = "main";
+  #   #   rev = "d6b7d38eef464cae1ead490e6dce5ccf4949c02b";
+  #   #   allRefs = true;
+  #   #   # rev = "8530f7eeb7db056e5d6a9806ea3629293930eff7";       
+  #   #   # sha256 = "sha256-42cd1277c2b45aa6b4eb648cb1d425be8b1c9c3996f63787f69b2bfb0aa574c6";
+  #   #   # sha256 = pkgs.lib.fakeHash;
+  #   # };
+  #   buildPhase = ''
+  #     npm install
+  #   '';
+  #   # installPhase = ''
+  #   #   cp -r ./* $out
+  #   # '';
+  # };
 }
 
