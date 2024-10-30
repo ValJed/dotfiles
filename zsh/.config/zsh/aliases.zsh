@@ -11,10 +11,6 @@ alias ....="cd ../../.."
 alias pn="pnpm"
 alias prun="pnpm run"
 alias cl="clear"
-
-# Nix
-alias nixos-switch="sudo nixos-rebuild --flake ~/dotfiles/nix#xps switch"
-alias nixhome-switch="home-manager --flake ~/dotfiles/nix#jed@xps switch"
  
 # Files system
 alias ls='eza --group-directories-first --icons'

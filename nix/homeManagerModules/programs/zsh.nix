@@ -1,4 +1,4 @@
-{ config, lib, ...}:
+{ config, lib, hostname,  ...}:
 
 {
   programs.zsh = {
@@ -20,5 +20,9 @@
     initExtra = ''
       source ~/.config/zsh/default.zsh
     '';
+     shellAliases = {
+        nixos-switch = "sudo nixos-rebuild --flake ~/dotfiles/nix#${hostname} switch";
+        nixhome-switch = "home-manager --flake ~/dotfiles/nix#jed@${hostname} switch";
+    };
   };
 }

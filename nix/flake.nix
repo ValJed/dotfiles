@@ -32,7 +32,7 @@
       };
 
       xps = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs; hostname = "xps";};
         modules = [
           ./hosts/xps/configuration.nix
         ];
@@ -43,7 +43,7 @@
     	"jed@xps" = home-manager.lib.homeManagerConfiguration {
 		inherit pkgs;
 		modules = [./hosts/xps/home.nix];
-		extraSpecialArgs = { inherit inputs; };
+		extraSpecialArgs = { inherit inputs; hostname = "xps"; };
 	};
     };
 
