@@ -1,12 +1,10 @@
 {pkgs, lib, ...}: let
   sddmTheme = import ./sddm-theme.nix {inherit pkgs;};
 in {
-  services.xserver = {
+  services.displayManager = {
     enable = true;
-    displayManager = {
-      sddm.enable = lib.mkDefault true;
-      sddm.theme = "${sddmTheme}";
-    };
+    sddm.enable = lib.mkDefault true;
+    sddm.theme = "${sddmTheme}";
   };
 
   environment.systemPackages = with pkgs; [
