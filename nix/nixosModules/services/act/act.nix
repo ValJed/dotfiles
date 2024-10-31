@@ -1,4 +1,4 @@
-{pkgs} let
+{pkgs}: let
   url = "git@github.com:apostrophecms/assembly-cloud-tools";
 in {
   pkgs.stdenv.mkDerivation {
