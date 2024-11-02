@@ -1,11 +1,11 @@
 { config, pkgs, ... }: let
   act-update = import ./scripts/act-update.nix {inherit pkgs;};
 in {
-  environment.systemPackages = with pkgs; [
-    mongosh
-    docker-compose
-    dig
-    awscli2
+  environment.systemPackages = [
+    pkgs.mongosh
+    pkgs.docker-compose
+    pkgs.dig
+    pkgs.awscli2
     act-update
   ];
 
