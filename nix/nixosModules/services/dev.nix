@@ -1,6 +1,6 @@
-{ config, pkgs, ... }: let
+{ config, pkgs, lib, ... }: let
   act-update = import ./scripts/act-update.nix {inherit pkgs;};
-  task = import ./scripts/task.nix {inherit pkgs;};
+  task = import ./scripts/task.nix {inherit pkgs; inherit lib;};
 in {
   environment.systemPackages = [
     pkgs.mongosh
@@ -8,6 +8,7 @@ in {
     pkgs.dig
     pkgs.awscli2
     act-update
+    task
   ];
 
   virtualisation.docker.enable = true;

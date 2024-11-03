@@ -1,17 +1,23 @@
-{ lib, fetchFromGitHub, rustPlatform }:
-rustPlatform.buildRustPackage rec {
+{ pkgs, lib }:
+pkgs.rustPlatform.buildRustPackage rec {
   pname = "task";
   version = "main";
 
-  src = fetchFromGitHub {
+  src = pkgs.fetchFromGitHub {
     owner = "ValJed";
     repo = pname;
     rev = version;
-    # hash = "sha256-+s5RBC3XSgb8omTbUNLywZnP6jSxZBKSS1BmXOjRF8M=";
-    hash = lib.fakeHash
+    hash = "sha256-FI2iNYD5ytXSEx+SrMXDYnFc1uz7XX/xNS1AT7McCu4=";
   };
 
-  # cargoHash = "sha256-jtBw4ahSl88L0iuCXxQgZVm1EcboWRJMNtjxLVTtzts=";
+  cargoHash = "sha256-iM/ZuEqS/dxmG+f1h34LP9Nc7RGlmL4JdFPrAocTNJ0=";
+
+  nativeBuildInputs = [
+    pkgs.pkg-config
+    pkgs.openssl
+  ];
+
+  PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
 
   meta = {
     description = "Task manager";
