@@ -23,6 +23,9 @@ fi
 alias la='ll -a'
 alias l='la'
 alias tree='ll --tree --level=2'
+alias tree1='ll --tree --level=1'
+alias tree2='ll --tree --level=2'
+alias tree3='ll --tree --level=3'
 
 # Locations
 alias doc="cd /home/$USER/Documents"
