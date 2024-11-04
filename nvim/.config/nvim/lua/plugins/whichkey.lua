@@ -57,7 +57,7 @@ return {
 				{ "<leader>gB", ":Telescope git_branches<cr>", desc = "Checkout branch" },
 				{ "<leader>gc", ":Telescope git_commits<cr>", desc = "Checkout commit" },
 				{ "<leader>gC", ":Telescope git_bcommits<cr>", desc = "Checkout commit (for current file)" },
-				{ "<leader>gd", ":Gitsigns diffthis HEAD<cr>", desc = "Git Diff" },
+				{ "<leader>gd", ":GitDiff<cr>", desc = "Git Diff" },
 				{ "<leader>gD", ":lua require('git.diff').close()<cr>", desc = "Git Diff Close" },
 				{ "<leader>gP", ":lua require('git.browse').create_pull_request()<cr>", desc = "Pull Request" },
 

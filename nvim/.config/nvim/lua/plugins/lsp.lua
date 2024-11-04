@@ -76,6 +76,10 @@ return {
 							--[[ require("efmls-configs.formatters.prettier"), ]]
 						},
 
+						jinja = {
+							require("efmls-configs.formatters.djlint"),
+						},
+
 						css = {
 							--[[ stylelint_formatter, ]]
 						},
