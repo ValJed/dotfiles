@@ -116,3 +116,5 @@ alias gpristine="git reset --hard && git clean --force -dfx"
 alias a3u="node app @apostrophecms/user:add"
 alias a3g="node app @apostrophecms-pro/advanced-permission-group:add-admin admin"
 alias a2u="node app apostrophe-users:add"
+alias link="~/dotfiles/scripts/link.sh"
+
