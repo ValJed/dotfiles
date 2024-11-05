@@ -9,6 +9,7 @@ local lsp_servers = {
 	"eslint",
 	"lua_ls",
 	"stylelint_lsp",
+	"bashls",
 }
 
 return {
