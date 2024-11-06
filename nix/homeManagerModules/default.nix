@@ -41,6 +41,7 @@
     starship
     ripgrep
     tokei
+    tealdeer 
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
