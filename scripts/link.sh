@@ -8,6 +8,8 @@ fi
 
 module_name=$1
 workspace_path="/home/$USER/Documents/workspace/*"
+project_found=false
+
 
 for dir in $workspace_path; do
   dir_path="$dir/*"
@@ -25,12 +27,17 @@ for dir in $workspace_path; do
           rm -rf $existing_module
         fi
         ln -s $project_path ./node_modules/$project_name
+        project_found=true
       else
         echo "Error: No package.json found in $project_path"
       fi
 
       break
     fi
+
   done
 done
 
+if [ ! $project_found == true ]; then
+  echo "No project found for $module_name"
+fi
