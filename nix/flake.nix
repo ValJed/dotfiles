@@ -37,6 +37,13 @@
           ./hosts/xps/configuration.nix
         ];
       };
+
+      desktop = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; hostname = "desktop";};
+        modules = [
+          ./hosts/desktop/configuration.nix
+        ];
+      };
     };
 
     homeConfigurations = {
@@ -44,6 +51,13 @@
 		inherit pkgs;
 		modules = [./hosts/xps/home.nix];
 		extraSpecialArgs = { inherit inputs; hostname = "xps"; };
+	};
+
+
+    	"jed@desktop" = home-manager.lib.homeManagerConfiguration {
+		inherit pkgs;
+		modules = [./hosts/desktop/home.nix];
+		extraSpecialArgs = { inherit inputs; hostname = "desktop"; };
 	};
     };
 
