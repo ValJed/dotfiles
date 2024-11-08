@@ -138,6 +138,7 @@
     vlc
     discord
     slack
+    obsidian
 
     # Tools
     wev
