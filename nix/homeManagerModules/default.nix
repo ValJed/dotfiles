@@ -47,10 +47,8 @@
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
-    ".config/hypr" = {
-      source = ../../hypr/.config/hypr;
-      recursive = true;
-    };
+    ".config/hypr/hyprlock.conf".source = ../../hypr/hyprlock.conf;
+    ".config/hypr/default.conf".source = ../../hypr/default.conf;
     ".config/zsh" = {
       source = ../../zsh/.config/zsh;
       recursive = true;
