@@ -5,7 +5,7 @@
 
   home.file = {
     ".config/hypr/hyprland.conf" = {
-      source = ../../hypr/laptop.conf;
+      source = ../../../hypr/laptop.conf;
     };
   };
 }

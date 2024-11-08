@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, inputs, ... }:
 
 {
   imports = [
@@ -26,29 +26,29 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
-  home.packages = with pkgs; [
-    wbg
-    adwaita-qt
-    lazygit
-    lazydocker
-    eza
-    bat
-    btop
-    fzf
-    zoxide
-    yazi
-    pass
-    starship
-    ripgrep
-    tokei
-    tealdeer 
+  home.packages = [
+    pkgs.wbg
+    pkgs.adwaita-qt
+    pkgs.lazygit
+    pkgs.lazydocker
+    pkgs.eza
+    pkgs.bat
+    pkgs.btop
+    pkgs.fzf
+    pkgs.zoxide
+    pkgs.yazi
+    pkgs.pass
+    pkgs.starship
+    pkgs.ripgrep
+    pkgs.tokei
+    pkgs.tealdeer 
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
     ".config/hypr/hyprlock.conf".source = ../../hypr/hyprlock.conf;
-    ".config/hypr/default.conf".source = ../../hypr/default.conf;
     ".config/zsh" = {
       source = ../../zsh/.config/zsh;
       recursive = true;

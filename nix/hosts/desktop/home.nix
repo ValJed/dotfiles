@@ -3,7 +3,7 @@
 
   home.file = {
     ".config/hypr/hyprland.conf" = {
-      source = ../../hypr/desktop.conf;
+      source = ../../../hypr/desktop.conf;
     };
   };
 }
