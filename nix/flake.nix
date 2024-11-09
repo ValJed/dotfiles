@@ -51,17 +51,17 @@
 
     homeConfigurations = {
     	"jed@xps" = home-manager.lib.homeManagerConfiguration {
-		inherit pkgs;
-		modules = [./hosts/xps/home.nix];
-		extraSpecialArgs = { inherit inputs; hostname = "xps"; };
-	};
+        inherit pkgs;
+        modules = [./hosts/xps/home.nix];
+        extraSpecialArgs = { inherit inputs; hostname = "xps"; };
+      };
 
 
-    	"jed@desktop" = home-manager.lib.homeManagerConfiguration {
-		inherit pkgs;
-		modules = [./hosts/desktop/home.nix];
-		extraSpecialArgs = { inherit inputs; hostname = "desktop"; };
-	};
+      "jed@desktop" = home-manager.lib.homeManagerConfiguration {
+        inherit pkgs;
+        modules = [./hosts/desktop/home.nix];
+        extraSpecialArgs = { inherit inputs; hostname = "desktop"; };
+      };
     };
 
     nixosModules.default = ./nixosModules;
