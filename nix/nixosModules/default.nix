@@ -54,22 +54,6 @@
   };
 
   services = {
-    # Commented to test hyprland
-    #displayManager = {
-    #defaultSession = "none+i3";
-    #};
-    
-      #windowManager.i3 = {
-      #enable = true;
-      #extraPackages = with pkgs; [
-      #rofi
-      #i3status
-      #i3lock
-      #polybar
-      #feh
-      #];
-      #};
-
     xserver = {
       enable = true;
       xkb = {
@@ -99,6 +83,7 @@
     packages = with pkgs; [ home-manager ];
   };
 
+   # TODO: Fix that
    security.sudo.extraRules = [
      { 
        groups = [ "wheel" ]; 
@@ -131,6 +116,7 @@
     discord
     slack
     obsidian
+    easyeffects
 
     # Tools
     wev
@@ -142,23 +128,9 @@
     xfce.thunar
     file
 
-    # Dev
-    kitty
-    python3
-    gcc14
-    nodejs_20
-    # docker_27
-    # docker-compose
-
-    # Rust
-    pkg-config 
-    cargo
-    rustc
-    openssl
-    networkmanagerapplet
-
     # Hyprland
     waybar
+    networkmanagerapplet
     wl-clipboard
     rofi-wayland
     dunst

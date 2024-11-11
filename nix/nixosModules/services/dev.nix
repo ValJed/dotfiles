@@ -6,9 +6,21 @@ in {
     pkgs.mongosh
     pkgs.dig
     pkgs.awscli2
+    pkgs.alejandra
+    pkgs.kitty
+    pkgs.python3
+    pkgs.gcc14
+    pkgs.nodejs_18
+    pkgs.mongodb-tools
+
+    # Rust
+    pkgs.pkg-config 
+    pkgs.cargo
+    pkgs.rustc
+    pkgs.openssl
+
     act-update
     task
-    pkgs.mongodb-tools
   ];
 
   virtualisation.docker.enable = true;
