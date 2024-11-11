@@ -1,5 +1,6 @@
 #!/usr/bin/env python 
 import subprocess
+import logging
 
 # function to parse output of command "wpctl status" and return a dictionary of sinks with their id and name.
 def parse_wpctl_status():
@@ -18,10 +19,11 @@ def parse_wpctl_status():
 
     # start by getting the lines after "Sinks:" and before the next blank line and store them in a list
     sinks = []
-    for line in lines[sinks_index +1:]:
-        if not line.strip():
+    for line in lines[sinks_index + 1:]:
+        stripped = line.strip()
+        if not stripped:
             break
-        sinks.append(line.strip())
+        sinks.append(stripped)
 
     # remove the "[vol:" from the end of the sink name
     for index, sink in enumerate(sinks):
@@ -37,21 +39,18 @@ def parse_wpctl_status():
 
     return sinks_dict
 
-# get the list of sinks ready to put into wofi - highlight the current default sink
 output = ''
 sinks = parse_wpctl_status()
-for items in sinks:
-    if items['sink_name'].endswith(" - Default"):
-        output += f"<b>-> {items['sink_name']}</b>\n"
-    else:
-        output += f"{items['sink_name']}\n"
+for index, items in enumerate(sinks):
+    new_line = "\n"
+    if index + 1 == len(sinks):
+        new_line = ""
+    output += f"{items['sink_name']}{new_line}"
 
-# Call wofi and show the list. take the selected sink name and set it as the default sink
 rofi_command = f"echo '{output}' | rofi -dmenu"
 rofi_process = subprocess.run(rofi_command, shell=True, encoding='utf-8', stdout=subprocess.PIPE, stderr=subprocess.PIPE)
 
 if rofi_process.returncode != 0:
-    print("User cancelled the operation.")
     exit(0)
 
 selected_sink_name = rofi_process.stdout.strip()
