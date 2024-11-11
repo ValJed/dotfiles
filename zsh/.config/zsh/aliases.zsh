@@ -29,9 +29,9 @@ alias tree3='ll --tree --level=3'
 
 # Locations
 alias doc="cd /home/$USER/Documents"
-alias wp="cd /home/$USER/Documents/workspace/"
-alias apo="cd /home/$USER/Documents/workspace/apo/"
-alias pj="cd /home/$USER/Documents/projects/"
+alias wp="cd /home/$USER/workspace/"
+alias apo="cd /home/$USER/workspace/apo"
+alias pj="cd /home/$USER/workspace/projects"
 alias dl="cd /home/$USER/Downloads/"
 alias pic="cd /home/$USER/Pictures/"
 alias dtf="cd ~/dotfiles/"
