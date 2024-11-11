@@ -72,19 +72,11 @@
 
     xserver = {
       enable = true;
-      # Configure keymap in X11
       xkb = {
         layout = "fr";
         variant = "azerty";
         model = "pc105";
       };
-      # Screen setup
-      xrandrHeads = [
-        {
-          output = "eDP-1";
-          primary = true;
-        }
-      ];
     };
   };
 
