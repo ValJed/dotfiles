@@ -10,6 +10,7 @@ local lsp_servers = {
 	"lua_ls",
 	"stylelint_lsp",
 	"bashls",
+  "nil_ls",
 }
 
 return {
@@ -88,6 +89,10 @@ return {
 						scss = {
 							--[[ stylelint_formatter, ]]
 						},
+
+            nix = {
+              require("efmls-configs.formatters.alejandra")
+            }
 					},
 				},
 			})
