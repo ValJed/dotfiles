@@ -155,8 +155,8 @@
     python3
     gcc14
     nodejs_20
-    docker_27
-    docker-compose
+    # docker_27
+    # docker-compose
 
     # Rust
     pkg-config 
@@ -185,10 +185,7 @@
   ];
 
   # HYPRLAND
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
+  programs.hyprland.enable = true;
 
   environment.variables = {
     PKG_CONFIG_PATH="${pkgs.openssl.dev}/lib/pkgconfig";
@@ -226,21 +223,6 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-  # If needed
-  environment.sessionVariables = {
-    #If your cursor becomes invisible
-    WLR_NO_HARDWARE_CURSORS = "1";
-    #Hint electron apps to use wayland
-    NIXOS_OZONE_WL = "1";
-  };
-
-  hardware = {
-    nvidia.modesetting.enable = true;
-    graphics = {
-      enable = true;
-      extraPackages = with pkgs; [ intel-media-driver ];
-    };
-  };
 
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
