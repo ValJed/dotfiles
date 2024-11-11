@@ -9,11 +9,11 @@
       size = 24;
     };
     theme = {
-      name = "rose-pine-moon";
+      name = "rose-pine";
       package = pkgs.rose-pine-gtk-theme;
     };
     iconTheme = {
-      name = "rose-pine-moon";
+      name = "rose-pine";
       package = pkgs.rose-pine-icon-theme;
     };
   };
