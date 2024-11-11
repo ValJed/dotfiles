@@ -21,12 +21,12 @@ configuration {
 }
 
 * {
-	background-color: #0F1212;
-	text-color: #d3d7cf;
-	selbg: #e3e3e3;
-	actbg: #e3e3e3;
+	background-color: #191724;
+	text-color: #e0def4;
+	selbg: #908caa;
+	actbg: #908caa;
 	urgbg: #e53935;
-	winbg: #0F1212;
+	winbg: #191724;
 
 	selected-normal-foreground: @winbg;
 	normal-foreground: @text-color;
