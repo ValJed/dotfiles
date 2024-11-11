@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Get the ID for the current DEFAULT_SINK
 default=$(pactl info | grep "Default Sink: " | awk '{ print $3 }')
