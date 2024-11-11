@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"

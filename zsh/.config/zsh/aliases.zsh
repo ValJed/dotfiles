@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # Basics
 alias aliases='print -rl -- ${(k)aliases}'
@@ -28,10 +28,10 @@ alias tree2='ll --tree --level=2'
 alias tree3='ll --tree --level=3'
 
 # Locations
-alias doc="cd /home/$USER/Documents"
+alias doc="cd /home/$USER/Documents/"
 alias wp="cd /home/$USER/workspace/"
-alias apo="cd /home/$USER/workspace/apo"
-alias pj="cd /home/$USER/workspace/projects"
+alias apo="cd /home/$USER/workspace/apo/"
+alias pj="cd /home/$USER/workspace/projects/"
 alias dl="cd /home/$USER/Downloads/"
 alias pic="cd /home/$USER/Pictures/"
 alias dtf="cd ~/dotfiles/"

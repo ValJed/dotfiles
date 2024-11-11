@@ -1,5 +1,4 @@
-{ config, lib, hostname,  ...}:
-
+{ hostname }:
 {
   programs.zsh = {
     enable = true;
