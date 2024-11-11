@@ -1,14 +1,19 @@
-{pkgs, lib, ...}: let
-  sddmTheme = import ./sddm-theme.nix {inherit pkgs;};
-in {
-  services.displayManager = {
+{pkgs, ...}:
+{
+  environment.systemPackages = [(
+    # pkgs.libsForQt5.qt5.qtgraphicaleffects
+    # pkgs.libsForQt5.qt5.qtquickcontrols2
+    pkgs.catppuccin-sddm.override {
+      flavor = "mocha";
+      font  = "FiraCode Nerd Font";
+      fontSize = "12";
+      background = "${../../../../assets/wallpaper.png}";
+      loginBackground = true;
+    }
+  )];
+  services.displayManager.sddm = {
     enable = true;
-    sddm.enable = lib.mkDefault true;
-    sddm.theme = "${sddmTheme}";
+    theme = "catppuccin-mocha";
+    package = pkgs.kdePackages.sddm;
   };
-
-  environment.systemPackages = with pkgs; [
-    libsForQt5.qt5.qtquickcontrols2
-    libsForQt5.qt5.qtgraphicaleffects
-  ];
 }

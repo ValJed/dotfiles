@@ -127,6 +127,7 @@
     signal-desktop
     xfce.thunar
     file
+    lsof
 
     # Hyprland
     waybar
