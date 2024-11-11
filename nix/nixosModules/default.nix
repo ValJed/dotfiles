@@ -166,7 +166,7 @@
     networkmanagerapplet
 
     # Hyprland
-    # waybar
+    waybar
     wl-clipboard
     rofi-wayland
     dunst
