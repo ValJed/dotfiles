@@ -43,6 +43,7 @@
     pkgs.ripgrep
     pkgs.tokei
     pkgs.tealdeer 
+    pkgs.fastfetch
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
 

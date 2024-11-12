@@ -12,7 +12,7 @@
     gap_size = 3
     font = "Monospace 14"
 
-    icon_theme = "rose-pine-icons"
+    icon_theme = "BreezeX-RosePine-Linux"
     enable_recursive_icon_lookup = true
     corner_radius = 2
 
