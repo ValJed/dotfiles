@@ -65,10 +65,7 @@
     };
     ".config/rofi/config.rasi".source = ../../rofi/.config/rofi/config.rasi;
     ".config/swappy/config".source = ../../swappy/config;
-    # # Building this configuration will create a copy of 'dotfiles/screenrc' in
-    # # the Nix store. Activating the configuration will then make '~/.screenrc' a
-    # # symlink to the Nix store copy.
-    # ".screenrc".source = dotfiles/screenrc;
+    ".config/dunst/dunstrc".source = ../../dunst/dunstrc;
 
     # # You can also set the file content immediately.
     # ".gradle/gradle.properties".text = ''
