@@ -10,7 +10,7 @@ in {
     pkgs.kitty
     pkgs.python3
     pkgs.gcc14
-    pkgs.nodejs_18
+    pkgs.nodejs_20
     pkgs.mongodb-tools
 
     # Rust

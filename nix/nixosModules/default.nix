@@ -128,6 +128,7 @@
     xfce.thunar
     file
     lsof
+    jq
 
     # Hyprland
     waybar

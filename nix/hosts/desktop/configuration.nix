@@ -6,9 +6,15 @@
     inputs.self.outputs.nixosModules.default
   ];
 
+  services.xserver.videoDrivers = ["nvidia"];
+
   hardware = {
     graphics.enable = true;
-    nvidia.modesetting.enable = true;
+    nvidia = {
+      modesetting.enable = true;
+      nvidiaSettings = true;
+      open = true;
+    };
   };
 
   # If needed

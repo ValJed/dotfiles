@@ -1,8 +1,6 @@
 {pkgs, ...}:
 {
   environment.systemPackages = [(
-    # pkgs.libsForQt5.qt5.qtgraphicaleffects
-    # pkgs.libsForQt5.qt5.qtquickcontrols2
     pkgs.catppuccin-sddm.override {
       flavor = "mocha";
       font  = "FiraCode Nerd Font";
