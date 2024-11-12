@@ -7,7 +7,7 @@ if [ $# -eq 0 ]; then
 fi
 
 module_name=$1
-workspace_path="/home/$USER/Documents/workspace/*"
+workspace_path="/home/$USER/workspace/*"
 project_found=false
 
 

@@ -6,11 +6,11 @@
     progress_bar_max_width = 380
     progress_bar_corner_radius = 2
 
-    padding = 10
-    horizontal_padding = 10
+    padding = 3
+    horizontal_padding = 3
     frame_width = 1
     gap_size = 3
-    font = "Monospace 14"
+    font = "FiraCode Nerd Font 10"
 
     icon_theme = "BreezeX-RosePine-Linux"
     enable_recursive_icon_lookup = true
