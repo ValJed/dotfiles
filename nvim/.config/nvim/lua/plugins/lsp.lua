@@ -11,6 +11,7 @@ local lsp_servers = {
 	"stylelint_lsp",
 	"bashls",
   "nil_ls",
+  "efm"
 }
 
 return {
