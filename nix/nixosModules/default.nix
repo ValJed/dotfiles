@@ -129,6 +129,7 @@
     file
     lsof
     jq
+    ffmpeg
 
     # Hyprland
     waybar
