@@ -1,17 +1,18 @@
 # Edit this configuration file to define what should be installed on your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, inputs, ... }:
-
 {
-
+  config,
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./services/dev.nix
     ./services/sddm/default.nix
     # ./services/act/default.nix
   ];
 
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   # pkgs.config.allowUnfree = true;
 
   # Bootloader.
@@ -75,34 +76,34 @@
   users.users.jed = {
     isNormalUser = true;
     description = "jed";
-    extraGroups = [ 
-      "networkmanager" 
-      "wheel" 
-      "docker" 
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "docker"
     ];
-    packages = with pkgs; [ home-manager ];
+    packages = with pkgs; [home-manager];
   };
 
-   # TODO: Fix that
-   security.sudo.extraRules = [
-     { 
-       groups = [ "wheel" ]; 
-       commands = [ 
-         { 
-           command = "${pkgs.brillo}/bin/brillo"; 
-           options = ["SETENV" "NOPASSWD"]; 
-         }
-       ]; 
-     }
-   ]; 
+  # TODO: Fix that
+  security.sudo.extraRules = [
+    {
+      groups = ["wheel"];
+      commands = [
+        {
+          command = "${pkgs.brillo}/bin/brillo";
+          options = ["SETENV" "NOPASSWD"];
+        }
+      ];
+    }
+  ];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    (nerdfonts.override {fonts = ["FiraCode"];})
   ];
-  
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
@@ -130,6 +131,7 @@
     lsof
     jq
     ffmpeg
+    playerctl
 
     # Hyprland
     waybar
@@ -147,7 +149,7 @@
     swappy
 
     (waybar.overrideAttrs (oldAttrs: {
-      mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
+      mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
     }))
   ];
 
@@ -155,16 +157,16 @@
   programs.hyprland.enable = true;
 
   environment.variables = {
-    PKG_CONFIG_PATH="${pkgs.openssl.dev}/lib/pkgconfig";
+    PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
   # programs.mtr.enable = true;
-   programs.gnupg.agent = {
-     enable = true;
-     enableSSHSupport = true;
-   };
+  programs.gnupg.agent = {
+    enable = true;
+    enableSSHSupport = true;
+  };
 
   # Bluetooth
   hardware.bluetooth = {
@@ -190,9 +192,8 @@
   # Or disable the firewall altogether.
   # networking.firewall.enable = false;
 
-
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
 
   security.rtkit.enable = true;
   services.pipewire = {
@@ -211,4 +212,3 @@
   # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
   system.stateVersion = "24.05"; # Did you read the comment?
 }
-
