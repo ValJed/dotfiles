@@ -1,6 +1,4 @@
-{ config, pkgs, ... }:
-
-{
+{pkgs, ...}: {
   programs.tmux = {
     enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
@@ -17,7 +15,7 @@
           set -g @dracula-plugins "weather"
           set -g @dracula-show-fahrenheit false
           set -g @dracula-show-flags true
-          set -g @dracula-show-left-icon session 
+          set -g @dracula-show-left-icon session
         '';
       }
       tmuxPlugins.vim-tmux-navigator
@@ -34,7 +32,7 @@
       # Copy mode
       unbind [
 
-      bind u copy-mode 
+      bind u copy-mode
       bind -T copy-mode-vi v send -X begin-selection
       bind -T copy-mode-vi r send -X rectangle-toggle
       bind -T copy-mode-vi y send -X copy-pipe-and-cancel 'wl-copy'

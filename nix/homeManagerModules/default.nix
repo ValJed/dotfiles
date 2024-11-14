@@ -1,6 +1,8 @@
-{ config, pkgs, inputs, ... }:
-
 {
+  pkgs,
+  inputs,
+  ...
+}: {
   imports = [
     ./programs/zsh.nix
     ./programs/tmux.nix
@@ -8,6 +10,7 @@
     ./programs/gtk.nix
     ./programs/nvim.nix
     ./programs/firefox.nix
+    ./programs/git.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -42,7 +45,7 @@
     pkgs.starship
     pkgs.ripgrep
     pkgs.tokei
-    pkgs.tealdeer 
+    pkgs.tealdeer
     pkgs.fastfetch
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
   ];
@@ -61,8 +64,8 @@
       recursive = true;
     };
     ".config/nvim" = {
-    	source = ../../nvim/.config/nvim;
-	    recursive = true;
+      source = ../../nvim/.config/nvim;
+      recursive = true;
     };
     ".config/rofi/config.rasi".source = ../../rofi/.config/rofi/config.rasi;
     ".config/swappy/config".source = ../../swappy/config;
@@ -90,7 +93,7 @@
   # or
   #
   #  /etc/profiles/per-user/jed/etc/profile.d/hm-session-vars.sh
-  
+
   home.sessionVariables = {
     EDITOR = "nvim";
     ZSH_TMUX_CONFIG = "$HOME/.config/tmux/tmux.conf";
