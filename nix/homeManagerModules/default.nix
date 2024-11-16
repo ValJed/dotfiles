@@ -48,6 +48,18 @@
     pkgs.tealdeer
     pkgs.fastfetch
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+
+    # LSP
+    pkgs.rust-analyzer
+    pkgs.eslint_d
+    pkgs.efm-langserver
+    pkgs.vscode-langservers-extracted
+    pkgs.typescript-language-server
+    pkgs.rustfmt
+    pkgs.stylua
+    pkgs.djlint
+    pkgs.vue-language-server
+    pkgs.stylelint-lsp
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage

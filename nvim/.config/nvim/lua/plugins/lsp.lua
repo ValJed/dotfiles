@@ -5,7 +5,6 @@ local lsp_servers = {
 	"emmet_ls",
 	"rust_analyzer",
 	"volar",
-	--[[ "tailwindcss", ]]
 	"eslint",
 	"lua_ls",
 	"stylelint_lsp",
@@ -96,21 +95,6 @@ return {
             }
 					},
 				},
-			})
-		end,
-	},
-	{
-		"williamboman/mason.nvim",
-		config = function()
-			require("mason").setup()
-		end,
-	},
-	{
-		"williamboman/mason-lspconfig.nvim",
-		config = function()
-			require("mason-lspconfig").setup({
-				ensure_installed = lsp_servers,
-				automatic_installation = true,
 			})
 		end,
 	},

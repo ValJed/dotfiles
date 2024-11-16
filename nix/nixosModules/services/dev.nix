@@ -1,6 +1,14 @@
-{ config, pkgs, lib, ... }: let
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}: let
   act-update = import ./scripts/act-update.nix {inherit pkgs;};
-  task = import ./scripts/task.nix {inherit pkgs; inherit lib;};
+  task = import ./scripts/task.nix {
+    inherit pkgs;
+    inherit lib;
+  };
 in {
   environment.systemPackages = [
     pkgs.mongosh
@@ -12,9 +20,10 @@ in {
     pkgs.gcc14
     pkgs.nodejs_20
     pkgs.mongodb-tools
+    pkgs.typescript
 
     # Rust
-    pkgs.pkg-config 
+    pkgs.pkg-config
     pkgs.cargo
     pkgs.rustc
     pkgs.openssl
@@ -29,10 +38,9 @@ in {
   virtualisation.oci-containers.containers.mdb = {
     autoStart = true;
     image = "mongo:5";
-    ports = [ "27017:27017" ];
+    ports = ["27017:27017"];
     volumes = [
       "/var/lib/mongodb:/data/db"
     ];
   };
 }
-
