@@ -64,29 +64,29 @@ window#waybar.hidden {
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 /* If workspaces is the rightmost module, omit right margin */
 .modules-right > widget:last-child {
-    margin-right: 10px;
+  margin-right: 10px;
 }
 
 #battery {
-    background-color: #e3e3e3;
-    color: #000000;
+  color: @pine;
 }
 
 @keyframes blink {
     to {
-        background-color: #ffffff;
-        color: #000000;
+        background-color: none;
+        color: @pine;
     }
 }
 
 /* Using steps() instead of linear as a timing function to limit cpu usage */
 #battery.critical:not(.charging) {
   background-color: @love;
+  color: @text;
   animation-name: blink;
   animation-duration: 0.5s;
   animation-timing-function: steps(12);
