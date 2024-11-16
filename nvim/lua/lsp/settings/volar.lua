@@ -1,13 +1,8 @@
 local util = require("lspconfig.util")
 
-local function get_typescript_lib()
-	local global_packages_path = io.popen("npm root -g"):read("l")
-
-	return global_packages_path .. "/typescript/lib"
-end
-
 local volar_cmd = { "vue-language-server", "--stdio" }
 local volar_root_dir = util.root_pattern("package.json")
+local ts_lib = 
 
 return {
 	cmd = volar_cmd,
@@ -17,9 +12,9 @@ return {
 	-- If you want to use Volar's Take Over Mode (if you know, you know):
 	--filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
 	init_options = {
-		--[[ typescript = { ]]
-		--[[ 	tsdk = get_typescript_lib(), ]]
-		--[[ }, ]]
+		typescript = {
+			tsdk = os.getenv("TS_LIB"),
+		},
 		languageFeatures = {
 			implementation = true, -- new in @volar/vue-language-server v0.33
 			documentHighlight = true,

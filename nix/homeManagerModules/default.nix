@@ -61,6 +61,7 @@
     pkgs.vue-language-server
     pkgs.stylelint-lsp
     pkgs.nil
+    pkgs.emmet-language-server
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -110,6 +111,7 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     ZSH_TMUX_CONFIG = "$HOME/.config/tmux/tmux.conf";
+    TS_LIB = "${pkgs.typescript}/lib/node_modules/typescript/lib";
   };
 
   # Let Home Manager install and manage itself.
