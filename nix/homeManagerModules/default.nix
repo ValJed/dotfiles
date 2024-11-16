@@ -51,15 +51,16 @@
 
     # LSP
     pkgs.rust-analyzer
+    pkgs.rustfmt
     pkgs.eslint_d
     pkgs.efm-langserver
     pkgs.vscode-langservers-extracted
     pkgs.typescript-language-server
-    pkgs.rustfmt
     pkgs.stylua
     pkgs.djlint
     pkgs.vue-language-server
     pkgs.stylelint-lsp
+    pkgs.nil
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
@@ -67,19 +68,19 @@
   home.file = {
     ".config/hypr/hyprlock.conf".source = ../../hypr/hyprlock.conf;
     ".config/zsh" = {
-      source = ../../zsh/.config/zsh;
+      source = ../../zsh;
       recursive = true;
     };
-    ".config/starship.toml".source = ../../starship/.config/starship.toml;
+    ".config/starship.toml".source = ../../starship/starship.toml;
     ".config/waybar" = {
-      source = ../../waybar/.config/waybar;
+      source = ../../waybar;
       recursive = true;
     };
     ".config/nvim" = {
-      source = ../../nvim/.config/nvim;
+      source = ../../nvim;
       recursive = true;
     };
-    ".config/rofi/config.rasi".source = ../../rofi/.config/rofi/config.rasi;
+    ".config/rofi/config.rasi".source = ../../rofi/config.rasi;
     ".config/swappy/config".source = ../../swappy/config;
     ".config/dunst/dunstrc".source = ../../dunst/dunstrc;
 
