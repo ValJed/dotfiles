@@ -2,15 +2,15 @@ local lsp_servers = {
 	"jsonls",
 	"ts_ls",
 	"html",
-	"emmet_ls",
+	"emmet_language_server",
+	"stylelint_lsp",
 	"rust_analyzer",
 	"volar",
 	"eslint",
 	"lua_ls",
-	"stylelint_lsp",
 	"bashls",
-  "nil_ls",
-  "efm"
+	"nil_ls",
+	"efm",
 }
 
 return {
@@ -90,9 +90,9 @@ return {
 							--[[ stylelint_formatter, ]]
 						},
 
-            nix = {
-              require("efmls-configs.formatters.alejandra")
-            }
+						nix = {
+							require("efmls-configs.formatters.alejandra"),
+						},
 					},
 				},
 			})
