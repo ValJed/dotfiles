@@ -78,7 +78,7 @@ window#waybar.hidden {
 
 @keyframes blink {
     to {
-        background-color: none;
+        background-color: transparent;
         color: @pine;
     }
 }
