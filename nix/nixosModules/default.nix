@@ -109,14 +109,10 @@
   environment.systemPackages = with pkgs; [
     # Apps
     chromium
-    spotify
     libreoffice-qt
     gthumb
     qbittorrent
     vlc
-    discord
-    slack
-    obsidian
     easyeffects
 
     # Tools

@@ -49,6 +49,12 @@
     pkgs.fastfetch
     inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
 
+    # Apps
+    pkgs.discord
+    pkgs.slack
+    pkgs.obsidian
+    pkgs.spotify
+
     # LSP
     pkgs.rust-analyzer
     pkgs.rustfmt
@@ -63,6 +69,13 @@
     pkgs.nil
     pkgs.emmet-language-server
   ];
+
+  xdg.desktopEntries.obsidian = {
+    name = "Obsidian";
+    type = "Application";
+    exec = "obsidian --disable-gpu %u";
+    icon = "obsidian";
+  };
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
