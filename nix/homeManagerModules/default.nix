@@ -9,6 +9,10 @@
     inherit pkgs;
     inherit lib;
   };
+  tomato = import ./scripts/tomato.nix {
+    inherit pkgs;
+    inherit lib;
+  };
 in {
   imports = [
     ./programs/zsh.nix
@@ -39,6 +43,7 @@ in {
   home.packages = [
     act-update
     task
+    tomato
 
     pkgs.dconf-editor
     pkgs.wbg
