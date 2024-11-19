@@ -32,6 +32,14 @@ zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 source ~/.config/zsh/fzf/key-bindings.zsh
 source ~/.config/zsh/fzf/completion.zsh
 
+paste_from_clipboard() {
+  # zle self-insert
+  # zle -U "$(wl-paste)"
+  LBUFFER+="$(wl-paste)"
+}
+
+zle -N paste_from_clipboard
+
 # keybinds
 bindkey '^ ' autosuggest-accept
 
@@ -40,9 +48,11 @@ zvm_after_init_commands+=(
   "bindkey '^n' history-search-forward"
   "bindkey '^E' fzf-cd-widget"
   "bindkey '^R' fzf-history-widget"
+  "bindkey "^P" paste_from_clipboard"
 )
 
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
+
 
