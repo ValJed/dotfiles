@@ -1,15 +1,4 @@
-{
-  config,
-  pkgs,
-  lib,
-  ...
-}: let
-  act-update = import ./scripts/act-update.nix {inherit pkgs;};
-  task = import ./scripts/task.nix {
-    inherit pkgs;
-    inherit lib;
-  };
-in {
+{pkgs, ...}: {
   environment.systemPackages = [
     pkgs.mongosh
     pkgs.dig
@@ -27,9 +16,6 @@ in {
     pkgs.cargo
     pkgs.rustc
     pkgs.openssl
-
-    act-update
-    task
   ];
 
   virtualisation.docker.enable = true;

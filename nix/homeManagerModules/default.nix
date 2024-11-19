@@ -1,8 +1,15 @@
 {
   pkgs,
   inputs,
+  lib,
   ...
-}: {
+}: let
+  act-update = import ./scripts/act-update.nix {inherit pkgs;};
+  task = import ./scripts/task.nix {
+    inherit pkgs;
+    inherit lib;
+  };
+in {
   imports = [
     ./programs/zsh.nix
     ./programs/tmux.nix
@@ -30,6 +37,9 @@
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
+    act-update
+    task
+
     pkgs.dconf-editor
     pkgs.wbg
     pkgs.adwaita-qt
