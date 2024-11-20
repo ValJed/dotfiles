@@ -2,7 +2,7 @@ local util = require("lspconfig.util")
 
 local volar_cmd = { "vue-language-server", "--stdio" }
 local volar_root_dir = util.root_pattern("package.json")
-local ts_lib = 
+local tsdk = os.getenv("TS_LIB")
 
 return {
 	cmd = volar_cmd,
@@ -13,7 +13,7 @@ return {
 	--filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
 	init_options = {
 		typescript = {
-			tsdk = os.getenv("TS_LIB"),
+			tsdk = tsdk,
 		},
 		languageFeatures = {
 			implementation = true, -- new in @volar/vue-language-server v0.33
