@@ -137,7 +137,7 @@
     dunst
     libnotify
     cliphist
-    brillo
+    brightnessctl
     hyprlock
     grim
     slurp
