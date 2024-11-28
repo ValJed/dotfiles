@@ -33,8 +33,6 @@ source ~/.config/zsh/fzf/key-bindings.zsh
 source ~/.config/zsh/fzf/completion.zsh
 
 paste_from_clipboard() {
-  # zle self-insert
-  # zle -U "$(wl-paste)"
   LBUFFER+="$(wl-paste)"
 }
 
@@ -54,5 +52,3 @@ zvm_after_init_commands+=(
 eval "$(starship init zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 eval "$(fzf --zsh)"
-
-

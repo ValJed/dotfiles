@@ -36,7 +36,9 @@ return {
 				},
 				highlight = {
 					enable = true, -- false will disable the whole extension
-					disable = { "" }, -- list of language that will be disabled
+					disable = function(lang, bufnr)
+						return vim.api.nvim_buf_line_count(bufnr) > 50000
+					end,
 					additional_vim_regex_highlighting = false,
 				},
 				indent = { enable = true, disable = { "yaml" } },
