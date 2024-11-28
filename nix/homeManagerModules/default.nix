@@ -22,6 +22,7 @@ in {
     ./programs/nvim.nix
     ./programs/firefox.nix
     ./programs/git.nix
+    ./programs/btop.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -52,7 +53,6 @@ in {
     pkgs.lazydocker
     pkgs.eza
     pkgs.bat
-    pkgs.btop
     pkgs.fzf
     pkgs.zoxide
     pkgs.yazi
@@ -83,6 +83,9 @@ in {
     pkgs.stylelint-lsp
     pkgs.nil
     pkgs.emmet-language-server
+
+    # Work
+    pkgs.cypress
   ];
 
   xdg.desktopEntries.obsidian = {
@@ -140,6 +143,8 @@ in {
     EDITOR = "nvim";
     ZSH_TMUX_CONFIG = "$HOME/.config/tmux/tmux.conf";
     TS_LIB = "${pkgs.typescript}/lib/node_modules/typescript/lib";
+    CYPRESS_INSTALL_BINARY = 0;
+    CYPRESS_RUN_BINARY = "${pkgs.cypress}/bin/Cypress";
   };
 
   # Let Home Manager install and manage itself.
