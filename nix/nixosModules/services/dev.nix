@@ -16,6 +16,10 @@
     pkgs.cargo
     pkgs.rustc
     pkgs.openssl
+
+    # Gleam
+    pkgs.gleam
+    pkgs.erlang
   ];
 
   virtualisation.docker.enable = true;
