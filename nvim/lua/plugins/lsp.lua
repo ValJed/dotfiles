@@ -15,6 +15,7 @@ local lsp_servers = {
 
 return {
 	{ "creativenull/efmls-configs-nvim" },
+	{ "gleam-lang/gleam.vim" },
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
