@@ -1,6 +1,9 @@
-{ pkgs, inputs, hostname, ... }:
-
 {
+  pkgs,
+  inputs,
+  hostname,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     inputs.self.outputs.nixosModules.default
@@ -11,7 +14,16 @@
     # remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
     # dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
     # localNetworkGameTransfers.openFirewall = true; # Open ports in the firewall for Steam Local Network Game Transfers
+
+    gamescopeSession.enable = true;
   };
+  programs.gamemode.enable = true;
+
+  environment.systemPackages = with pkgs; [
+    mangohud
+    protonup
+    bottles
+  ];
 
   services.xserver.videoDrivers = ["nvidia"];
 
@@ -27,9 +39,10 @@
   # If needed
   environment.sessionVariables = {
     #If your cursor becomes invisible
-    WLR_NO_HARDWARE_CURSORS = "1";
+    # WLR_NO_HARDWARE_CURSORS = "1";
     #Hint electron apps to use wayland
     NIXOS_OZONE_WL = "1";
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/jed/.steam/root/compatibilitytools.d";
   };
 
   programs.hyprland = {
