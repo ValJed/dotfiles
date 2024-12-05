@@ -11,11 +11,11 @@ local lsp_servers = {
 	"bashls",
 	"nil_ls",
 	"efm",
+	"gleam",
 }
 
 return {
 	{ "creativenull/efmls-configs-nvim" },
-	{ "gleam-lang/gleam.vim" },
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
