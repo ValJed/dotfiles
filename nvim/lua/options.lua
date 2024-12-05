@@ -32,11 +32,15 @@ local options = {
 	wrap = false, -- display lines as one long line
 	scrolloff = 8, -- is one of my fav
 	sidescrolloff = 8,
-	foldmethod = "expr",
+	foldlevelstart = 99,
 }
 
 for k, v in pairs(options) do
 	vim.opt[k] = v
 end
+
+vim.wo.foldmethod = "expr" -- 'foldexpr' gives the fold level of a line
+vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- evaluated for each line to obtain its fold level
+vim.wo.foldenable = false -- all folds are open
 
 vim.opt.shortmess:append("c")
