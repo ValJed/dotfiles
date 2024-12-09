@@ -5,7 +5,7 @@
       confirm_os_window_close = 2;
       shell = "zsh";
       font_size = 12;
-      # font_family = "FiraCode Nerd Font";
+      font_family = "FiraCode Nerd Font";
       extraConfig = ''
         ## name: Rosé Pine
         ## author: mvllow
