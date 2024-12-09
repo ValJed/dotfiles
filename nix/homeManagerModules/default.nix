@@ -88,6 +88,7 @@ in {
     pkgs.cypress
   ];
 
+  wayland.windowManager.hyprland.systemd.enable = false;
   xdg.desktopEntries.obsidian = {
     name = "Obsidian";
     type = "Application";
