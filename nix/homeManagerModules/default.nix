@@ -13,6 +13,7 @@
     inherit pkgs;
     inherit lib;
   };
+  record = import ./scripts/record.nix {inherit pkgs;};
 in {
   imports = [
     ./programs/zsh.nix
@@ -45,6 +46,7 @@ in {
     act-update
     task
     tomato
+    record
 
     pkgs.dconf-editor
     pkgs.wbg
@@ -83,6 +85,7 @@ in {
     pkgs.stylelint-lsp
     pkgs.nil
     pkgs.emmet-language-server
+    pkgs.lua-language-server
 
     # Work
     pkgs.cypress
