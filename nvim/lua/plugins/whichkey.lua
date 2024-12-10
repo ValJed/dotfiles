@@ -18,6 +18,7 @@ return {
 				{ "<leader>ff", ":Telescope find_files<cr>", desc = "Find file" },
 				{ "<leader>fh", ":Telescope find_files hidden=true<cr>", desc = "Find hidden files" },
 				{ "<leader>fg", ":Telescope live_grep<cr>", desc = "Grep" },
+				{ "<leader>fs", ":Telescope live_string<cr>", desc = "Grep String" },
 				{
 					"<leader>fc",
 					":lua require('telescope.builtin').colorscheme({enable_preview = true})<cr>",

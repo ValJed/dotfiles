@@ -34,7 +34,7 @@ return {
 							["kj"] = actions.close,
 							["<C-c>"] = actions.close,
 							["<C-n>"] = actions.cycle_history_next,
-							["<C-p>"] = actions.cycle_history_prev,
+							["<C-b>"] = actions.cycle_history_prev,
 
 							["<C-j>"] = actions.move_selection_next,
 							["<C-k>"] = actions.move_selection_previous,
@@ -63,6 +63,7 @@ return {
 
 						n = {
 							["<esc>"] = actions.close,
+							["<C-c>"] = actions.close,
 							["<CR>"] = actions.select_default,
 							["<C-x>"] = actions.select_horizontal,
 							["<C-v>"] = actions.select_vertical,
