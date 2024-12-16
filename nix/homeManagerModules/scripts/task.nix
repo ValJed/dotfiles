@@ -1,16 +1,18 @@
-{ pkgs, lib }:
+{
+  pkgs,
+  lib,
+}:
 pkgs.rustPlatform.buildRustPackage rec {
   pname = "task";
   version = "main";
-
   src = pkgs.fetchFromGitHub {
     owner = "ValJed";
     repo = pname;
     rev = version;
-    hash = "sha256-FI2iNYD5ytXSEx+SrMXDYnFc1uz7XX/xNS1AT7McCu4=";
+    hash = "sha256-eU+c5rU14+gTk9I60o39gqOq2nKlFjdqJBTGIz8gjYw=";
   };
 
-  cargoHash = "sha256-iM/ZuEqS/dxmG+f1h34LP9Nc7RGlmL4JdFPrAocTNJ0=";
+  cargoHash = "sha256-AkXIINF0EavbnfsnnHFgQqNeQq4i2/jzaSxKjbozCY4=";
 
   nativeBuildInputs = [
     pkgs.pkg-config
@@ -23,6 +25,6 @@ pkgs.rustPlatform.buildRustPackage rec {
     description = "Task manager";
     homepage = "https://github.com/ValJed/task";
     license = lib.licenses.unlicense;
-    maintainers = [ ];
+    maintainers = [];
   };
 }

@@ -86,6 +86,7 @@ in {
     pkgs.nil
     pkgs.emmet-language-server
     pkgs.lua-language-server
+    pkgs.bash-language-server
 
     # Work
     pkgs.cypress

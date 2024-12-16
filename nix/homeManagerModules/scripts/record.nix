@@ -2,7 +2,6 @@
 pkgs.writeShellScriptBin "record" ''
   record_process="$(pgrep -x "wf-recorder")"
   if [[ -n $record_process ]]; then
-    echo "NO RECORD PROCESS"
     pkill -INT -x wf-recorder
     notify-send -h string:wf-recorder:record -t 1000 "Finished Recording"
     exit 0
