@@ -15,7 +15,6 @@ local lsp_servers = {
 }
 
 return {
-	{ "creativenull/efmls-configs-nvim" },
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
@@ -38,63 +37,24 @@ return {
 			end
 
 			handlers.setup()
-
-			local eslint_d_formatter = require("efmls-configs.formatters.eslint_d")
-			--[[ local prettier_formatter = require("efmls-configs.formatters.prettier") ]]
-
-			--[[ local fs = require("efmls-configs.fs") ]]
-			--[[ local formatter = "stylelint" ]]
-			--[[ local args = "--fix '${FILENAME}'" ]]
-			--[[ local command = string.format("%s %s", fs.executable(formatter, fs.Scope.NODE), args) ]]
-			--[[ vim.notify(command) ]]
-			--[[]]
-			--[[ local stylelint_formatter = { ]]
-			--[[ 	formatCommand = command, ]]
-			--[[ 	formatStdin = false, ]]
-			--[[ 	rootMarkers = { ".stylelintrc", ".stylelintrc.json", ".stylelintrc.yml", ".stylelintrc.yaml" }, ]]
-			--[[ } ]]
-
-			lspconfig.efm.setup({
-				init_options = { documentFormatting = true },
-				settings = {
-					rootMarkers = { ".git/" },
-					languages = {
-						lua = {
-							require("efmls-configs.formatters.stylua"),
-						},
-
-						rust = {
-							require("efmls-configs.formatters.rustfmt"),
-						},
-
-						javascript = {
-							eslint_d_formatter,
-							--[[ prettier_formatter, ]]
-						},
-
-						vue = {
-							eslint_d_formatter,
-							--[[ stylelint_formatter, ]]
-							--[[ require("efmls-configs.formatters.stylelint"), ]]
-							--[[ require("efmls-configs.formatters.prettier"), ]]
-						},
-
-						jinja = {
-							require("efmls-configs.formatters.djlint"),
-						},
-
-						css = {
-							--[[ stylelint_formatter, ]]
-						},
-
-						scss = {
-							--[[ stylelint_formatter, ]]
-						},
-
-						nix = {
-							require("efmls-configs.formatters.alejandra"),
-						},
-					},
+		end,
+	},
+	{
+		"stevearc/conform.nvim",
+		config = function()
+			require("conform").setup({
+				formatters_by_ft = {
+					nix = { "alejandra" },
+					lua = { "stylua" },
+					rust = { "rustfmt", lsp_format = "fallback" },
+					javascript = { "eslint_d" },
+					jinja = { "djlint" },
+					gleam = { "gleam" },
+				},
+				format_on_save = {
+					-- These options will be passed to conform.format()
+					timeout_ms = 500,
+					lsp_format = "fallback",
 				},
 			})
 		end,
