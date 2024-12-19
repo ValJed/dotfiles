@@ -2,7 +2,6 @@
   environment.systemPackages = [
     pkgs.mongosh
     pkgs.dig
-    pkgs.awscli2
     pkgs.alejandra
     pkgs.kitty
     pkgs.python3
@@ -10,6 +9,10 @@
     pkgs.nodejs_20
     pkgs.mongodb-tools
     pkgs.typescript
+
+    # Amazon
+    pkgs.awscli2
+    pkgs.ssm-session-manager-plugin
 
     # Rust
     pkgs.pkg-config
