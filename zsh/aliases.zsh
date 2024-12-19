@@ -34,7 +34,7 @@ alias apo="cd /home/$USER/workspace/apo/"
 alias pj="cd /home/$USER/workspace/projects/"
 alias dl="cd /home/$USER/Downloads/"
 alias pic="cd /home/$USER/Pictures/"
-alias dtf="cd ~/dotfiles/"
+alias dtf="cd ~/dotfiles/ && $EDITOR"
 
 # Binaries
 alias pm="/home/$USER/Documents/tools/postman/Postman"
