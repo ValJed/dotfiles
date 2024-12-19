@@ -120,12 +120,10 @@ in {
     ".config/rofi/config.rasi".source = ../../rofi/config.rasi;
     ".config/swappy/config".source = ../../swappy/config;
     ".config/dunst/dunstrc".source = ../../dunst/dunstrc;
-
-    # # You can also set the file content immediately.
-    # ".gradle/gradle.properties".text = ''
-    #   org.gradle.console=verbose
-    #   org.gradle.daemon.idletimeout=3600000
-    # '';
+    ".config/yazi" = {
+      source = ../../yazi;
+      recursive = true;
+    };
   };
 
   # Home Manager can also manage your environment variables through
