@@ -23,30 +23,4 @@ return {
 			require("crates").setup()
 		end,
 	},
-	{
-		"folke/flash.nvim",
-		event = "VeryLazy",
-		config = function()
-			local flash = require("flash")
-			flash.setup()
-
-			--[[ local keymap = vim.api.nvim_set_keymap ]]
-			--[[]]
-			--[[ keymap({ "n", "x", "o" }, "s", function() ]]
-			--[[ 	flash.jump() ]]
-			--[[ end, Opts("Flash")) ]]
-			--[[ keymap({ "n", "x", "o" }, "S", function() ]]
-			--[[ 	flash.treesitter() ]]
-			--[[ end, Opts("Flash Treesitter")) ]]
-			--[[ keymap("o", "r", function() ]]
-			--[[ 	flash.remote() ]]
-			--[[ end, Opts("Remote Flash")) ]]
-			--[[ keymap({ "o", "x" }, "R", function() ]]
-			--[[ 	flash.treesitter_search() ]]
-			--[[ end, Opts("Treesitter Search")) ]]
-			--[[ keymap("c", "<c-s>", function() ]]
-			--[[ 	flash.toggle() ]]
-			--[[ end, opts("toggle flash search")) ]]
-		end,
-	},
 }

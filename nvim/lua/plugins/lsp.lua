@@ -42,18 +42,19 @@ return {
 	{
 		"stevearc/conform.nvim",
 		config = function()
-			require("conform").setup({
+			local conform = require("conform")
+			conform.setup({
 				formatters_by_ft = {
 					nix = { "alejandra" },
 					lua = { "stylua" },
 					rust = { "rustfmt", lsp_format = "fallback" },
-					javascript = { "eslint_d" },
+					javascript = { "eslint_d", timeout_ms = 1000 },
 					jinja = { "djlint" },
 					gleam = { "gleam" },
 				},
 				format_on_save = {
 					-- These options will be passed to conform.format()
-					timeout_ms = 500,
+					timeout_ms = 1000,
 					lsp_format = "fallback",
 				},
 			})

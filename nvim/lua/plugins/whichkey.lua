@@ -3,13 +3,10 @@ return {
 		"folke/which-key.nvim",
 		config = function()
 			local wk = require("which-key")
-			--[[ vim.o.timeout = true ]]
-			--[[ vim.o.timeoutlen = 300 ]]
 			wk.add({
 				{ "<leader>;", ":Alpha<cr>", desc = "Dashboard" },
 				{ "<leader>e", ":NvimTreeToggle<cr>", desc = "Explorer" },
 				{ "<leader>n", ":Telescope notify<cr>", desc = "Notifications" },
-				{ "<leader>c", ":lua require('utils.functions').smart_close()<cr>", desc = "Close" },
 				{ "<leader>q", ":lua require('utils.functions').smart_close(true)<cr>", desc = "Quit" },
 				{ "<leader>p", ":Lazy profile<cr>", desc = "Plugins" },
 				{ "<leader>/", "<Plug>(comment_toggle_linewise_current)", desc = "Comment toggle current line" },
@@ -80,7 +77,7 @@ return {
 				--[[ {"<leader>lh", ":lua vim.lsp.buf.hover()<cr>", desc = "Signature" }, ]]
 				--[[ {"<leader>lr", ":lua vim.lsp.buf.references()<cr>", desc = "References" }, ]]
 				{ "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
-				{ "<leader>lI", "<cmd>Mason<cr>", desc = "Mason Info" },
+				--[[ { "<leader>lI", "<cmd>Mason<cr>", desc = "Mason Info" }, ]]
 				{ "<leader>lj", vim.diagnostic.goto_next, desc = "Next Diagnostic" },
 				{ "<leader>lk", vim.diagnostic.goto_prev, desc = "Prev Diagnostic" },
 
