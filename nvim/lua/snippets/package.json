@@ -26,6 +26,10 @@
       {
         "language": "rust",
         "path": "./rust.json"
+      },
+      {
+        "language": "gleam",
+        "path": "./gleam.json"
       }
     ]
   }

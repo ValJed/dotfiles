@@ -1,0 +1,103 @@
+{
+  "Print Line": {
+    "prefix": "pl",
+    "body": [
+      "io.println(\"${1:HERE}\");"
+    ],
+    "description": "Print Line"
+  },
+  "Print": {
+    "prefix": "p",
+    "body": [
+      "io.print(\"${1:HERE}\");"
+    ],
+    "description": "Print"
+  },
+  "Debug": {
+    "prefix": "d",
+    "body": [
+      "io.debug(\"${1}\")"
+    ],
+    "description": "Debug"
+  },
+  "Let": {
+    "prefix": "l",
+    "body": [
+      "let ${1} = ${2}"
+    ],
+    "description": "Let"
+  },
+  "Const": {
+    "prefix": "c",
+    "body": [
+      "const ${1} = ${2}"
+    ],
+    "description": "Const"
+  },
+  "Case": {
+    "prefix": "case",
+    "body": [
+      "case ${1} {",
+      "\t${2} -> ${3}",
+      "\t${4:_} -> ${5}",
+      "}"
+    ],
+    "description": "Case"
+  },
+  "Type Alias": {
+    "prefix": "ta",
+    "body": [
+      "pub type ${1} = ${2} "
+    ],
+    "description": "Type Alias"
+  },
+  "Type": {
+    "prefix": "t",
+    "body": [
+      "pub type ${1} {",
+      "\t${2}",
+      "}"
+    ],
+    "description": "Type"
+  },
+  "Function": {
+    "prefix": "fn",
+    "body": [
+      "fn ${1}(${2}) -> ${3} {",
+      "\t${4}",
+      "}"
+    ],
+    "description": "Function"
+  },
+  "Map": {
+    "prefix": "map",
+    "body": [
+      "list.map(${1}, fn(${2}) {${3}})"
+    ],
+    "description": "Map"
+  },
+
+  "Filter": {
+    "prefix": "filter",
+    "body": [
+      "list.filter(${1}, fn(${2}) {${3}})"
+    ],
+    "description": "Filter"
+  },
+
+  "Fold": {
+    "prefix": "fold",
+    "body": [
+      "list.fold(${1}, ${2}, fn(acc, ${3}) {${4}})"
+    ],
+    "description": "Fold"
+  },
+
+  "Reduce": {
+    "prefix": "reduce",
+    "body": [
+      "list.reduce(${1}, fn(acc, ${2}) {${3}})"
+    ],
+    "description": "Reduce"
+  }
+}
