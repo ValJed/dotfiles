@@ -48,9 +48,13 @@ in {
     tomato
     record
 
+    # Desktop
     pkgs.dconf-editor
     pkgs.wbg
     pkgs.adwaita-qt
+    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+
+    # Tools
     pkgs.lazygit
     pkgs.lazydocker
     pkgs.eza
@@ -64,7 +68,7 @@ in {
     pkgs.tokei
     pkgs.tealdeer
     pkgs.fastfetch
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    pkgs.bc
 
     # Apps
     pkgs.discord

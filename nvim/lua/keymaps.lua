@@ -39,7 +39,7 @@ vim.g.maplocalleader = " "
 keymap("n", "<C-s>", ":w<cr>", opts)
 keymap("x", "<C-s>", "<ESC>:w<cr>", opts)
 keymap("n", "µ", "£", opts)
-keymap("n", "C-c", ":lua require('utils.functions').smart_close()<cr>", opts)
+keymap("n", "<C-c>", ":lua require('utils.functions').smart_close()<cr>", opts)
 
 -- Resize with arrows
 keymap("n", "<C-S-Up>", ":resize +2<cr>", opts)
