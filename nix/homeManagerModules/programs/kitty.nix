@@ -4,16 +4,16 @@
   ...
 }: let
   font_size =
-    if hostname == "jed@desktop"
-    then "11"
-    else "13";
+    if hostname == "desktop"
+    then 11
+    else 13;
 in {
   programs.kitty = lib.mkForce {
     enable = true;
     settings = {
       confirm_os_window_close = 2;
-      shell = font_size;
-      font_size = 13;
+      shell = "zsh";
+      font_size = font_size;
       font_family = "FiraCode Nerd Font";
       extraConfig = ''
         ## name: Rosé Pine
