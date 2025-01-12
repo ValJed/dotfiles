@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-[ -f "$HOME/.local/share/zap/zap.zsh" ] && source "$HOME/.local/share/zap/zap.zsh"
-
 # history
 HISTFILE=~/.zsh_history
 HISTSIZE=50000
