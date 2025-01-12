@@ -69,6 +69,7 @@ in {
     pkgs.tealdeer
     pkgs.fastfetch
     pkgs.bc
+    pkgs.nodePackages.eas-cli
 
     # Apps
     pkgs.discord

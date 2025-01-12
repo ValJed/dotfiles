@@ -128,6 +128,7 @@
     jq
     ffmpeg
     playerctl
+    usbutils
 
     # Hyprland
     waybar
