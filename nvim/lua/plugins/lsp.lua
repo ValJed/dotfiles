@@ -48,9 +48,10 @@ return {
 					nix = { "alejandra" },
 					lua = { "stylua" },
 					rust = { "rustfmt", lsp_format = "fallback" },
-					javascript = { "eslint_d", timeout_ms = 1000 },
+					javascript = { "eslint_d" },
 					jinja = { "djlint" },
 					gleam = { "gleam" },
+					scss = { "stylelint" },
 				},
 				format_on_save = {
 					-- These options will be passed to conform.format()
