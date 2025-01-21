@@ -79,19 +79,6 @@
     packages = with pkgs; [home-manager];
   };
 
-  # TODO: Fix that
-  security.sudo.extraRules = [
-    {
-      groups = ["wheel"];
-      commands = [
-        {
-          command = "${pkgs.brillo}/bin/brillo";
-          options = ["SETENV" "NOPASSWD"];
-        }
-      ];
-    }
-  ];
-
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
