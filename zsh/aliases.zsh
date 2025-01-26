@@ -118,4 +118,5 @@ alias a3g="node app @apostrophecms-pro/advanced-permission-group:add-admin admin
 alias a2u="node app apostrophe-users:add"
 alias link="~/dotfiles/scripts/link.sh"
 alias cypress_clean="sudo rm -rf ~/.config/Cypress/cy/production/**"
+alias rmnm="rm -rf node_modules package-lock.json && npm i"
 
