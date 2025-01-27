@@ -81,7 +81,6 @@ in {
     pkgs.rust-analyzer
     pkgs.rustfmt
     pkgs.eslint_d
-    pkgs.efm-langserver
     pkgs.vscode-langservers-extracted
     pkgs.typescript-language-server
     pkgs.stylua

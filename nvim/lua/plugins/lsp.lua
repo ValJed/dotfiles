@@ -10,7 +10,6 @@ local lsp_servers = {
 	"lua_ls",
 	"bashls",
 	"nil_ls",
-	"efm",
 	"gleam",
 }
 
