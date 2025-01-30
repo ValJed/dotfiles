@@ -36,6 +36,8 @@
 
       # Ensure window index numbers get reordered on delete
       set-option -g renumber-windows on
+      # bind-key -T prefix r, command-prompt "rename-window '%%'"
+      bind-key          , command-prompt "rename-window '%%'"
 
       # Windows navigation
 
