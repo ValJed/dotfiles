@@ -23,6 +23,9 @@
     # Gleam
     pkgs.gleam
     pkgs.erlang
+
+    # DB
+    pkgs.sqlite
   ];
 
   virtualisation.docker.enable = true;
