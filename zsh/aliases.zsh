@@ -12,6 +12,7 @@ alias pn="pnpm"
 alias prun="pnpm run"
 alias cl="clear"
 alias y="yazi"
+alias calc="bc -l"
  
 # Files system
 alias ls='eza --group-directories-first --icons'
