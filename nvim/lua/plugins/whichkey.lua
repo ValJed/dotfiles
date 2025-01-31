@@ -90,9 +90,12 @@ return {
 				--[[ { "<leader>Ma", ":MarksListAll<cr>", desc = "List All" }, ]]
 				--[[ { "<leader>Mf", ":MarksListBuf<cr>", desc = "List Buffer" }, ]]
 
-				{ "<leader>d", group = "DB" },
-				{ "<leader>dt", "<cmd>DBUIToggle<cr>", desc = "Toggle UI" },
-				{ "<leader>db", "<cmd>DBUIFindBuffer<cr>", desc = "Find Buffer" },
+				{ "<leader>d", group = "Doc" },
+				{ "<leader>dg", ":lua require('neogen').generate()<cr>", desc = "Find Buffer" },
+
+				{ "<leader>D", group = "DB" },
+				{ "<leader>Dt", "<cmd>DBUIToggle<cr>", desc = "Toggle UI" },
+				{ "<leader>Db", "<cmd>DBUIFindBuffer<cr>", desc = "Find Buffer" },
 
 				{ "<leader>b", group = "Debug" },
 				{ "<leader>bt", "<cmd>lua require'dap'.toggle_breakpoint()<cr>", desc = "Toggle Breakpoint" },
