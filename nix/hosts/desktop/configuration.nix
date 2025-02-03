@@ -1,6 +1,7 @@
 {
   pkgs,
   inputs,
+  config,
   ...
 }: {
   imports = [
@@ -28,14 +29,15 @@
 
   hardware = {
     graphics.enable = true;
+    # 565.77 (current working if need to pin it)
     nvidia = {
       modesetting.enable = true;
       nvidiaSettings = true;
       open = true;
+      package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
   };
 
-  # If needed
   environment.sessionVariables = {
     #If your cursor becomes invisible
     # WLR_NO_HARDWARE_CURSORS = "1";

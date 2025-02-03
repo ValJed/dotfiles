@@ -112,6 +112,7 @@
     playerctl
     usbutils
     ntfs3g
+    xh
 
     # Hyprland
     waybar
