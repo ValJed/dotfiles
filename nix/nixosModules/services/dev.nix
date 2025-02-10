@@ -28,6 +28,13 @@
     pkgs.sqlite
   ];
 
+  # Dynamic libraries for unpackaged programs
+  programs.nix-ld.enable = true;
+  programs.nix-ld.libraries = with pkgs; [
+    glibc
+    libcxx
+  ];
+
   virtualisation.docker.enable = true;
 
   # Setup mongodb container
