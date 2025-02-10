@@ -46,10 +46,5 @@
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/jed/.steam/root/compatibilitytools.d";
   };
 
-  programs.hyprland = {
-    enable = true;
-    xwayland.enable = true;
-  };
-
   networking.hostName = "jed_desktop"; # Define your hostname.
 }
