@@ -11,6 +11,7 @@ local lsp_servers = {
 	"bashls",
 	"nil_ls",
 	"gleam",
+	"astro",
 }
 
 return {

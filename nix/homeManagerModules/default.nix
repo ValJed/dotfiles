@@ -2,6 +2,7 @@
   pkgs,
   inputs,
   lib,
+  config,
   ...
 }: let
   act-update = import ./scripts/act-update.nix {inherit pkgs;};
@@ -92,6 +93,7 @@ in {
     pkgs.emmet-language-server
     pkgs.lua-language-server
     pkgs.bash-language-server
+    pkgs.astro-language-server
 
     # Work
     pkgs.cypress
@@ -119,7 +121,7 @@ in {
       recursive = true;
     };
     ".config/nvim" = {
-      source = ../../nvim;
+      source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/nvim";
       recursive = true;
     };
     ".config/rofi/config.rasi".source = ../../rofi/config.rasi;
