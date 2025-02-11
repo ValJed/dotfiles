@@ -51,6 +51,7 @@ return {
 					lua = { "stylua" },
 					rust = { "rustfmt", lsp_format = "fallback" },
 					javascript = { "eslint_d", "prettierd" },
+					vue = { "eslint_d", "prettierd" },
 					jinja = { "djlint" },
 					gleam = { "gleam" },
 					scss = { "stylelint" },
