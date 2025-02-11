@@ -23,6 +23,7 @@
     mangohud
     protonup
     bottles
+    obs-studio
   ];
 
   services.xserver.videoDrivers = ["nvidia"];
