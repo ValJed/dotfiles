@@ -8,8 +8,10 @@ function Opts(desc)
 end
 
 return {
+	{ "folke/zen-mode.nvim" },
 	{
 		"danymat/neogen",
+		dev = true,
 		config = function()
 			require("neogen").setup({
 				snippet_engine = "luasnip",

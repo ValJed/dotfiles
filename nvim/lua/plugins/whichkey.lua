@@ -10,6 +10,7 @@ return {
 				{ "<leader>q", ":lua require('utils.functions').smart_close(true)<cr>", desc = "Quit" },
 				{ "<leader>p", ":Lazy profile<cr>", desc = "Plugins" },
 				{ "<leader>/", "<Plug>(comment_toggle_linewise_current)", desc = "Comment toggle current line" },
+				{ "<leader>z", ":ZenMode<cr>", desc = "Zen Mode" },
 
 				{ "<leader>f", group = "File" },
 				{ "<leader>ff", ":Telescope find_files<cr>", desc = "Find file" },
@@ -91,7 +92,16 @@ return {
 				--[[ { "<leader>Mf", ":MarksListBuf<cr>", desc = "List Buffer" }, ]]
 
 				{ "<leader>d", group = "Doc" },
-				{ "<leader>dg", ":lua require('neogen').generate()<cr>", desc = "Find Buffer" },
+				{
+					"<leader>df",
+					":lua require('neogen').generate({ type = 'func'})<cr>",
+					desc = "Generate Function Doc",
+				},
+				{
+					"<leader>dc",
+					":lua require('neogen').generate({ type = 'class'})<cr>",
+					desc = "Generate Class Doc",
+				},
 
 				{ "<leader>D", group = "DB" },
 				{ "<leader>Dt", "<cmd>DBUIToggle<cr>", desc = "Toggle UI" },
