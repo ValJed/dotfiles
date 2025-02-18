@@ -11,10 +11,12 @@ return {
 	{ "folke/zen-mode.nvim" },
 	{
 		"danymat/neogen",
-		dev = true,
 		config = function()
 			require("neogen").setup({
 				snippet_engine = "luasnip",
+				placeholders_text = {
+					["parameter"] = "any",
+				},
 			})
 		end,
 		-- Uncomment next line if you want to follow only stable versions

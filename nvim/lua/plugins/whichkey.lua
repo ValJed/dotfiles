@@ -102,6 +102,11 @@ return {
 					":lua require('neogen').generate({ type = 'class'})<cr>",
 					desc = "Generate Class Doc",
 				},
+				{
+					"<leader>dg",
+					":lua require('neogen').generate()<cr>",
+					desc = "Generate Doc",
+				},
 
 				{ "<leader>D", group = "DB" },
 				{ "<leader>Dt", "<cmd>DBUIToggle<cr>", desc = "Toggle UI" },

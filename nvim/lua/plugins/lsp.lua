@@ -52,9 +52,10 @@ return {
 					rust = { "rustfmt", lsp_format = "fallback" },
 					javascript = { "eslint_d", "prettierd" },
 					vue = { "eslint_d", "prettierd" },
+					astro = { "eslint_d", "prettierd" },
 					jinja = { "djlint" },
 					gleam = { "gleam" },
-					scss = { "stylelint" },
+					scss = { "stylelint", "prettierd" },
 				},
 				format_on_save = true,
 				formatters = {
