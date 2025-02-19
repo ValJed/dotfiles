@@ -77,6 +77,7 @@ in {
     pkgs.slack
     pkgs.obsidian
     pkgs.spotify
+    pkgs.slumber
 
     # LSP
     pkgs.rust-analyzer
@@ -124,6 +125,7 @@ in {
       source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/nvim";
       recursive = true;
     };
+    ".config/slumber/config.yml".source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/slumber/config.yml";
     ".config/rofi/config.rasi".source = ../../rofi/config.rasi;
     ".config/swappy/config".source = ../../swappy/config;
     ".config/dunst/dunstrc".source = ../../dunst/dunstrc;

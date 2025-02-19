@@ -1,0 +1,10 @@
+# config.yaml
+input_bindings:
+  up: [k]
+  down: [j]
+  left: [h]
+  right: [l]
+  scroll_left: [shift h]
+  scroll_right: [shift l]
+  select_recipe_list: [ctrl l] # Rebind from `l`
+  history: [ctrl h]
