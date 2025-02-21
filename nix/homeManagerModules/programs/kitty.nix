@@ -15,6 +15,7 @@ in {
       shell = "zsh";
       font_size = font_size;
       font_family = "FiraCode Nerd Font";
+      cursor_trail = 3;
     };
     extraConfig = ''
       foreground               #e0def4

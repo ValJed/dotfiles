@@ -7,4 +7,4 @@ input_bindings:
   scroll_left: [shift h]
   scroll_right: [shift l]
   select_recipe_list: [ctrl l] # Rebind from `l`
-  history: [ctrl h]
+  history: [w]
