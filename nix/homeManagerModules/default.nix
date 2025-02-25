@@ -70,7 +70,7 @@ in {
     pkgs.tealdeer
     pkgs.fastfetch
     pkgs.bc
-    pkgs.nodePackages.eas-cli
+    # pkgs.nodePackages.eas-cli Removed for now since breaks at build time
 
     # Apps
     pkgs.discord
