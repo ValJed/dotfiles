@@ -26,7 +26,15 @@
 
     # DB
     pkgs.sqlite
+
+    # Tests
+    pkgs.cypress
   ];
+
+  environment.variables = {
+    CYPRESS_INSTALL_BINARY = 0;
+    CYPRESS_RUN_BINARY = "${pkgs.cypress}/bin/Cypress";
+  };
 
   # Dynamic libraries for unpackaged programs
   programs.nix-ld.enable = true;

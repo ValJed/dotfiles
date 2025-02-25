@@ -95,9 +95,6 @@ in {
     pkgs.lua-language-server
     pkgs.bash-language-server
     pkgs.astro-language-server
-
-    # Work
-    pkgs.cypress
   ];
 
   wayland.windowManager.hyprland.systemd.enable = false;
@@ -155,8 +152,6 @@ in {
     EDITOR = "nvim";
     ZSH_TMUX_CONFIG = "$HOME/.config/tmux/tmux.conf";
     TS_LIB = "${pkgs.typescript}/lib/node_modules/typescript/lib";
-    CYPRESS_INSTALL_BINARY = 0;
-    CYPRESS_RUN_BINARY = "${pkgs.cypress}/bin/Cypress";
   };
 
   # Let Home Manager install and manage itself.
