@@ -6,6 +6,7 @@
         "language": [
           "javascript",
           "javascriptreact",
+          "typescript",
           "vue",
           "svelte",
           "astro"
