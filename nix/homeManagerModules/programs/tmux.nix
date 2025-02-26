@@ -26,6 +26,11 @@
       bind -n C-Up resize-pane -U 2
       bind -n C-Down resize-pane -D 2
 
+
+      # Swap windows
+      bind -T prefix Left swap-window -t -1\; select-window -t -1
+      bind -T prefix Right swap-window -t +1\; select-window -t +1
+
       # Unbind
       unbind -T prefix \'
       unbind -T prefix (
