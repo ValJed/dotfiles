@@ -17,15 +17,16 @@
   record = import ./scripts/record.nix {inherit pkgs;};
 in {
   imports = [
-    ./programs/zsh.nix
-    ./programs/tmux.nix
-    ./programs/kitty.nix
-    ./programs/gtk.nix
-    ./programs/nvim.nix
-    ./programs/firefox.nix
-    ./programs/git.nix
     ./programs/btop.nix
+    ./programs/firefox.nix
+    ./programs/fzf.nix
+    ./programs/git.nix
+    ./programs/gtk.nix
+    ./programs/kitty.nix
+    ./programs/nvim.nix
     ./programs/pass.nix
+    ./programs/tmux.nix
+    ./programs/zsh.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -61,7 +62,6 @@ in {
     pkgs.lazydocker
     pkgs.eza
     pkgs.bat
-    pkgs.fzf
     pkgs.zoxide
     pkgs.yazi
     pkgs.starship
