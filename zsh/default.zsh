@@ -43,6 +43,7 @@ zvm_after_init_commands+=(
   "bindkey '^b' history-search-backward" 
   "bindkey '^n' history-search-forward"
   "bindkey '^E' fzf-cd-widget"
+  "bindkey '^F' fzf-file-widget"
   "bindkey '^R' fzf-history-widget"
   "bindkey "^P" paste_from_clipboard"
 )

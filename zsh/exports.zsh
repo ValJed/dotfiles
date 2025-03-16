@@ -15,6 +15,7 @@ export ZVM_VI_INSERT_ESCAPE_BINDKEY=kj
 export ZVM_KEYTIMEOUT=0.1
 
 # FZF
-export FZF_TMUX=1
+# export FZF_TMUX=1
 export FZF_TMUX_OPTS='-p80%,60%'
+export _ZO_FZF_OPTS='--tmux'
 
