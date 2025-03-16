@@ -16,8 +16,9 @@
 
     # Rust
     pkgs.pkg-config
-    pkgs.cargo
     pkgs.rustc
+    pkgs.cargo
+    pkgs.cargo-watch
     pkgs.openssl
 
     # Gleam
