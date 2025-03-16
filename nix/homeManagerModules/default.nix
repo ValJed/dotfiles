@@ -25,6 +25,7 @@ in {
     ./programs/firefox.nix
     ./programs/git.nix
     ./programs/btop.nix
+    ./programs/pass.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -63,7 +64,6 @@ in {
     pkgs.fzf
     pkgs.zoxide
     pkgs.yazi
-    pkgs.pass
     pkgs.starship
     pkgs.ripgrep
     pkgs.tokei
