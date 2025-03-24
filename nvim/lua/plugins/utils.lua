@@ -8,6 +8,7 @@ function Opts(desc)
 end
 
 return {
+	{ "tpope/vim-surround" },
 	{ "folke/zen-mode.nvim" },
 	{
 		"danymat/neogen",
