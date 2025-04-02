@@ -18,6 +18,9 @@ in {
       cursor_trail = 3;
     };
     extraConfig = ''
+      map ctrl+shift+right no_op
+      map ctrl+shift+left no_op
+
       foreground               #e0def4
       background               #191724
       selection_foreground     #e0def4
