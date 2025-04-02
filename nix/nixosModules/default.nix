@@ -118,7 +118,9 @@
     waybar
     networkmanagerapplet
     wl-clipboard
-    rofi-wayland
+    (rofi-wayland.override (_: {
+      plugins = [rofi-emoji-wayland];
+    }))
     dunst
     libnotify
     cliphist

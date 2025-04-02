@@ -25,7 +25,9 @@ configuration {
 	text-color: #e0def4;
 	selbg: #908caa;
 	actbg: #908caa;
-	urgbg: #e53935;
+  magenta: #c4a7e7;
+	urgbg: #eb6f92;
+  border: #eb6f92;
 	winbg: #191724;
 
 	selected-normal-foreground: @winbg;
@@ -50,6 +52,9 @@ configuration {
 }
 
 window {
+  border: 1px;
+  border-color: @border;
+  border-radius: 40px;
   background-color: @background-color;
 	children: [mainbox];
 }
@@ -61,12 +66,12 @@ mainbox {
 }
 
 entry {
-  placeholder: "Filter here";
+  placeholder: " Search...";
 	expand: false;
 	text-color: @normal-foreground;
   padding: 10px 0px 10px 0px ; 				//padding between two lines
 	border: 0 0 1px;
-	border-color: grey;
+	border-color: @border;
   margin: 30px 30px 0px 30px;
 }
 
@@ -81,21 +86,18 @@ sidebar {
 
 textbox {  													// mesg box
 	horizontal-align: 0;
-	background-color: silver;
+	background-color: #c4a7e7;
   padding: 10px 20px 10px 20px ;
 	text-color: #000;
 }
 
 listview {
   border: 0px 0px 0px ;
-  border-color: grey;
+  border-color: #c4a7e7;
 	padding: 20 30 70 30;
 }
 
 mode-switcher {
-  /* border: 1px 0px 0px 0px; */
-  /* border-color: grey; */
-	/* padding: 0 30 10 30; */
 	margin: 10px 30px 30px 30px;
 }
 
@@ -147,4 +149,6 @@ element selected.active {
   background-color: @selected-active-background;
   text-color:       @selected-active-foreground;
 }
+
+
 
