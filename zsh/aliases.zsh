@@ -44,7 +44,7 @@ alias robo="/home/$USER/Documents/tools/robo3t/bin/robo3t"
 alias tor="/home/$USER/Documents/tools/tor && ./start-tor-browser.desktop"
 alias dc="docker-compose"
 alias patator="/home/$USER/Documents/tools/hacking/patator/patator.py"
-alias np="/opt/ops-tools/bin/np"
+alias np="~/apps/ops-tools/bin/np"
 alias monero="/home/val/Documents/monero/monero-wallet-gui"
 
 # Tmux
