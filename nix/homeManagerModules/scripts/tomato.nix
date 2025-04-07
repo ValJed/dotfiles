@@ -13,7 +13,7 @@ pkgs.rustPlatform.buildRustPackage rec {
     hash = "sha256-2ERqEtTQ25muKjoJgMPb9wjpPkoof5yBptgAmOTpItc=";
   };
 
-  cargoHash = "sha256-tmpz6y2yRUFPnTwCAnJQ3G00g1T6iuNdgYEi2vCZVEk=";
+  cargoHash = "sha256-pGX8CdkVZu+XYUIfiU21BxVGP36yv5fwZ0MNm4QSl+M=";
 
   meta = {
     description = "Task manager";
