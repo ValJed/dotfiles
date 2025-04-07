@@ -47,11 +47,6 @@ keymap("n", "<C-S-Down>", ":resize -2<cr>", opts)
 keymap("n", "<C-S-Right>", ":vertical resize +2<cr>", opts)
 keymap("n", "<C-S-Left>", ":vertical resize -2<cr>", opts)
 
---[[ keymap("n", "<C-S-k>", ":resize +2<cr>", opts) ]]
---[[ keymap("n", "<C-S-j>", ":resize -2<cr>", opts) ]]
---[[ keymap("n", "<C-S-l>", ":vertical resize +2<cr>", opts) ]]
---[[ keymap("n", "<C-S-h>", ":vertical resize -2<cr>", opts) ]]
-
 -- Navigate buffers
 keymap("n", "<S-h>", ":bp<cr>", { silent = true })
 keymap("n", "<S-l>", ":bn<cr>", { silent = true })

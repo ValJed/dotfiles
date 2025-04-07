@@ -2,7 +2,7 @@ return {
 	{
 		"dinhhuy258/git.nvim",
 		config = function()
-			require("git").setup()
+			require("git").setup({ default_mappings = false })
 		end,
 	},
 	{ "kdheepak/lazygit.nvim" },
