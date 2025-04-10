@@ -1,68 +1,139 @@
+local js_based_languages = {
+	"typescript",
+	"javascript",
+	"vue",
+}
+
 return {
 	{
-		"rcarriga/nvim-dap-ui",
-		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
-		config = function()
-			require("dapui").setup()
-		end,
-	},
-	{
 		"mfussenegger/nvim-dap",
+		dependencies = {
+			"rcarriga/nvim-dap-ui",
+			{ "theHamsta/nvim-dap-virtual-text", opts = {} },
+		},
 		config = function()
 			local dap = require("dap")
+			local dapui = require("dapui")
 
-			dap.adapters.firefox = {
-				type = "executable",
-				command = "node",
-				args = { os.getenv("HOME") .. "/Documents/tools/vscode-firefox-debug/dist/adapter.bundle.js" },
-			}
+			dapui.setup()
+			require("nvim-dap-virtual-text").setup({
+				commented = true,
+			})
 
-			dap.configurations.vue = {
-				{
-					name = "Debug with Firefox",
-					type = "firefox",
-					request = "launch",
-					reAttach = true,
-					url = "http://localhost:3000/",
-					webRoot = "${workspaceFolder}",
-					firefoxExecutable = "/usr/bin/firefox",
-				},
-			}
+			for _, language in ipairs(js_based_languages) do
+				dap.configurations[language] = {
+					-- Debug single nodejs files
+					{
+						type = "pwa-node",
+						request = "launch",
+						name = "Launch file",
+						program = "${file}",
+						cwd = vim.fn.getcwd(),
+						sourceMaps = true,
+					},
+					-- Debug nodejs processes (make sure to add --inspect when you run the process)
+					{
+						type = "pwa-node",
+						request = "attach",
+						name = "Attach",
+						processId = require("dap.utils").pick_process,
+						cwd = vim.fn.getcwd(),
+						sourceMaps = true,
+					},
+					-- Debug web applications (client side)
+					{
+						type = "pwa-chrome",
+						request = "launch",
+						name = "Launch & Debug Chrome",
+						url = function()
+							local co = coroutine.running()
+							return coroutine.create(function()
+								vim.ui.input({
+									prompt = "Enter URL: ",
+									default = "http://localhost:3000",
+								}, function(url)
+									if url == nil or url == "" then
+										return
+									else
+										coroutine.resume(co, url)
+									end
+								end)
+							end)
+						end,
+						webRoot = vim.fn.getcwd(),
+						protocol = "inspector",
+						sourceMaps = true,
+						userDataDir = false,
+					},
+					-- Divider for the launch.json derived configs
+					{
+						name = "----- ↓ launch.json configs ↓ -----",
+						type = "",
+						request = "launch",
+					},
+				}
+			end
+		end,
+	},
 
-			dap.adapters.node2 = {
-				type = "executable",
-				command = "node",
-				args = { os.getenv("HOME") .. "/Documents/tools/vscode-node-debug2/out/src/nodeDebug.js" },
-			}
+	-- fancy UI for the debugger
+	{
+		"rcarriga/nvim-dap-ui",
+		dependencies = { "nvim-neotest/nvim-nio" },
+		opts = {},
+		config = function(_, opts)
+			local dap = require("dap")
+			local dapui = require("dapui")
+			dapui.setup(opts)
 
-			dap.configurations.javascript = {
-				{
-					name = "Debug with Firefox",
-					type = "firefox",
-					request = "launch",
-					reAttach = true,
-					url = "http://localhost:3000/",
-					webRoot = "${workspaceFolder}",
-					firefoxExecutable = "/usr/bin/firefox",
+			dap.listeners.before.attach.dapui_config = function()
+				dapui.open()
+			end
+			dap.listeners.before.launch.dapui_config = function()
+				dapui.open()
+			end
+			dap.listeners.before.event_terminated.dapui_config = function()
+				dapui.close()
+			end
+			dap.listeners.before.event_exited.dapui_config = function()
+				dapui.close()
+			end
+		end,
+	},
+
+	{
+		"mxsdev/nvim-dap-vscode-js",
+		config = function()
+			---@diagnostic disable-next-line: missing-fields
+			require("dap-vscode-js").setup({
+				-- Path of node executable. Defaults to $NODE_PATH, and then "node"
+				-- node_path = "node",
+
+				-- Path to vscode-js-debug installation.
+				debugger_cmd = { "js-debug" },
+
+				-- Command to use to launch the debug server. Takes precedence over "node_path" and "debugger_path"
+				-- debugger_cmd = { "js-debug-adapter" },
+
+				-- which adapters to register in nvim-dap
+				adapters = {
+					"chrome",
+					"pwa-node",
+					"pwa-chrome",
+					"pwa-msedge",
+					"pwa-extensionHost",
+					"node-terminal",
 				},
-				{
-					name = "Launch",
-					type = "node2",
-					request = "launch",
-					program = "${file}",
-					cwd = vim.fn.getcwd(),
-					sourceMaps = true,
-					protocol = "inspector",
-					console = "integratedTerminal",
-				},
-				{
-					-- For this to work you need to make sure the node process is started with the `--inspect` flag.
-					name = "Attach to process",
-					type = "node2",
-					request = "attach",
-					processId = require("dap.utils").pick_process,
-				},
-			}
+
+				-- Path for file logging
+				-- log_file_path = "(stdpath cache)/dap_vscode_js.log",
+
+				-- Logging level for output to file. Set to false to disable logging.
+				-- log_file_level = false,
+
+				-- Logging level for output to console. Set to false to disable console output.
+				-- log_console_level = vim.log.levels.ERROR,
+			})
 		end,
 	},
 }

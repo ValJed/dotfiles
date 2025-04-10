@@ -9,6 +9,7 @@
     pkgs.nodejs_20
     pkgs.mongodb-tools
     pkgs.typescript
+    pkgs.vscode-js-debug
 
     # Amazon
     pkgs.awscli2

@@ -128,6 +128,7 @@ return {
 				{ "<leader>bs", "<cmd>lua require'dap'.continue()<cr>", desc = "Start" },
 				{ "<leader>bq", "<cmd>lua require'dap'.close()<cr>", desc = "Quit" },
 				{ "<leader>bU", "<cmd>lua require'dapui'.toggle({reset = true})<cr>", desc = "Toggle UI" },
+				{ "<leader>be", "<cmd>lua require'dapui'.eval()<cr>", desc = "Eval" },
 
 				{ "<leader>s", group = "Split" },
 				{ "<leader>sh", ":split<cr>", desc = "Split Horizontally" },
