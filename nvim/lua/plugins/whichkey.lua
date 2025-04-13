@@ -12,7 +12,7 @@ return {
 				{ "<leader>/", "<Plug>(comment_toggle_linewise_current)", desc = "Comment toggle current line" },
 				{ "<leader>z", ":ZenMode<cr>", desc = "Zen Mode" },
 
-				{ "<leader>f", group = "File" },
+				{ "<leader>f", group = "Find" },
 				{ "<leader>ff", ":Telescope find_files<cr>", desc = "Find file" },
 				{ "<leader>fh", ":Telescope find_files hidden=true<cr>", desc = "Find hidden files" },
 				{ "<leader>fg", ":Telescope live_grep<cr>", desc = "Grep" },
@@ -33,7 +33,12 @@ return {
 					"<leader>fm",
 					":lua require('telescope').extensions.marks_nvim.marks_list_buf()<cr>",
 					desc = "List Marks",
-				}, --[[ list buf ]]
+				},
+				{
+					"<leader>fb",
+					":lua require('telescope').extensions.marks_nvim.bookmarks_list_all()<cr>",
+					desc = "List Marks",
+				},
 				{
 					"<leader>fa",
 					":lua require('telescope').extensions.marks_nvim.marks_list_all()<cr>",

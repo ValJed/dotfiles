@@ -1,6 +1,7 @@
 return {
 	{
 		"ValJed/marks.nvim",
+		event = "VeryLazy",
 		branch = "feat-telescope-support-for-listing-marks",
 		config = function()
 			local marks = require("marks")
