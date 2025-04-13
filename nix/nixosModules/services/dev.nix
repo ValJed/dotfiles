@@ -10,6 +10,7 @@
     pkgs.mongodb-tools
     pkgs.typescript
     pkgs.vscode-js-debug
+    pkgs.pnpm_10
 
     # Amazon
     pkgs.awscli2

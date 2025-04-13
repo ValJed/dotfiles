@@ -1,6 +1,9 @@
 return {
 	{
 		"nvim-telescope/telescope.nvim",
+		dependencies = {
+			"nvim-telescope/telescope-ui-select.nvim",
+		},
 		config = function()
 			local telescope = require("telescope")
 			local actions = require("telescope.actions")
@@ -106,6 +109,8 @@ return {
 					git_bcommits = commits_picker_config,
 				},
 			})
+
+			telescope.load_extension("ui-select")
 		end,
 	},
 }
