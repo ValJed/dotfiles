@@ -29,6 +29,16 @@ return {
 				},
 			}
 
+			require("dap").adapters["pwa-chrome"] = {
+				type = "server",
+				host = "localhost",
+				port = 8123,
+				executable = {
+					command = "js-debug",
+					args = { "8123" },
+				},
+			}
+
 			for _, language in ipairs(js_based_languages) do
 				dap.configurations[language] = {
 					-- Debug single nodejs files
@@ -36,7 +46,9 @@ return {
 						type = "pwa-node",
 						request = "launch",
 						name = "Launch file | " .. language,
-						program = "${file}",
+						program = function()
+							return vim.fn.input("Path to file: ", vim.fn.expand("%"), "file")
+						end,
 						cwd = vim.fn.getcwd(),
 						sourceMaps = true,
 					},
@@ -50,30 +62,30 @@ return {
 						sourceMaps = true,
 					},
 					-- Debug web applications (client side)
-					--[[ { ]]
-					--[[ 	type = "pwa-chrome", ]]
-					--[[ 	request = "launch", ]]
-					--[[ 	name = "Launch & Debug Chrome | " .. language, ]]
-					--[[ 	url = function() ]]
-					--[[ 		local co = coroutine.running() ]]
-					--[[ 		return coroutine.create(function() ]]
-					--[[ 			vim.ui.input({ ]]
-					--[[ 				prompt = "Enter URL: ", ]]
-					--[[ 				default = "http://localhost:3000", ]]
-					--[[ 			}, function(url) ]]
-					--[[ 				if url == nil or url == "" then ]]
-					--[[ 					return ]]
-					--[[ 				else ]]
-					--[[ 					coroutine.resume(co, url) ]]
-					--[[ 				end ]]
-					--[[ 			end) ]]
-					--[[ 		end) ]]
-					--[[ 	end, ]]
-					--[[ 	webRoot = vim.fn.getcwd(), ]]
-					--[[ 	protocol = "inspector", ]]
-					--[[ 	sourceMaps = true, ]]
-					--[[ 	userDataDir = false, ]]
-					--[[ }, ]]
+					{
+						type = "pwa-chrome",
+						request = "launch",
+						name = "Chrome | " .. language,
+						url = function()
+							local co = coroutine.running()
+							return coroutine.create(function()
+								vim.ui.input({
+									prompt = "Enter URL: ",
+									default = "http://localhost:3000",
+								}, function(url)
+									if url == nil or url == "" then
+										return
+									else
+										coroutine.resume(co, url)
+									end
+								end)
+							end)
+						end,
+						sourceMaps = true,
+						--[[ webRoot = vim.fn.getcwd(), ]]
+						--[[ protocol = "inspector", ]]
+						--[[ userDataDir = false, ]]
+					},
 				}
 			end
 		end,
