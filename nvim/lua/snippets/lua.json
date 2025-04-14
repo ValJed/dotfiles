@@ -1,8 +1,8 @@
 {
- "Snippet": {
+ "Inspect": {
     "prefix": "inspect",
     "body": [
-      "{{ print(vim.inspect(${1})) }}"
+      "print(vim.inspect(${1}))"
     ],
     "description": "Vim Inspect"
   }
