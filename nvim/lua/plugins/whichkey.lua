@@ -5,7 +5,9 @@ return {
 			local wk = require("which-key")
 			wk.add({
 				{ "<leader>;", ":Alpha<cr>", desc = "Dashboard" },
-				{ "<leader>e", ":NvimTreeToggle<cr>", desc = "Explorer" },
+				{ "<leader>e", ":Yazi<cr>", desc = "Explorer" },
+				{ "<leader>c", ":Yazi cwd<cr>", desc = "Explorer Cwd" },
+				{ "<leader>t", ":Yazi toggle<cr>", desc = "Explorer Toggle" },
 				{ "<leader>n", ":Telescope notify<cr>", desc = "Notifications" },
 				{ "<leader>q", ":lua require('utils.functions').smart_close(true)<cr>", desc = "Quit" },
 				{ "<leader>p", ":Lazy profile<cr>", desc = "Plugins" },
