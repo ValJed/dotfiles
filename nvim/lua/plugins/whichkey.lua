@@ -80,10 +80,10 @@ return {
 				{ "<leader>lD", ":Lspsaga show_buf_diagnostics<cr>", desc = "Buffer Diagnostics" },
 				{ "<leader>lp", ":Lspsaga peek_definition<cr>", desc = "Peek Definition" },
 				{ "<leader>lw", ":Lspsaga show_workspace_diagnostics<cr>", desc = "Diagnostics" },
-				{ "<leader>lh", ":Lspsaga finder<cr>", desc = "Signature" },
+				--[[ { "<leader>lh", ":Lspsaga finder<cr>", desc = "Signature" }, ]]
 				--[[ {"<leader>la", ":lua vim.lsp.buf.code_action()<cr>", desc = "Code Action" }, ]]
 				--[[ {"<leader>lw", "<cmd>Telescope diagnostics<cr>", desc = "Diagnostics" }, ]]
-				--[[ {"<leader>lh", ":lua vim.lsp.buf.hover()<cr>", desc = "Signature" }, ]]
+				{ "<leader>lh", ":lua vim.lsp.buf.hover()<cr>", desc = "Signature" },
 				--[[ {"<leader>lr", ":lua vim.lsp.buf.references()<cr>", desc = "References" }, ]]
 				{ "<leader>li", "<cmd>LspInfo<cr>", desc = "Info" },
 				--[[ { "<leader>lI", "<cmd>Mason<cr>", desc = "Mason Info" }, ]]
@@ -135,7 +135,7 @@ return {
 				{ "<leader>bs", "<cmd>lua require'dap'.continue()<cr>", desc = "Start" },
 				{ "<leader>bq", "<cmd>lua require'dap'.close()<cr>", desc = "Quit" },
 				{ "<leader>bU", "<cmd>lua require'dapui'.toggle({reset = true})<cr>", desc = "Toggle UI" },
-				{ "<leader>be", "<cmd>lua require'dapui'.eval()<cr>", desc = "Eval" },
+				{ "<leader>be", "<cmd>lua require'dapui'.eval(nil, {enter = true})<cr>", desc = "Eval" },
 
 				{ "<leader>s", group = "Split" },
 				{ "<leader>sh", ":split<cr>", desc = "Split Horizontally" },
