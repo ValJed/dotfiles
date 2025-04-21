@@ -21,6 +21,9 @@ in {
       map ctrl+shift+right no_op
       map ctrl+shift+left no_op
 
+      # Paste from clipboard
+      map ctrl+shift+p paste_from_clipboard
+
       foreground               #e0def4
       background               #191724
       selection_foreground     #e0def4
