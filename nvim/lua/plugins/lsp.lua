@@ -54,7 +54,7 @@ return {
 					typescript = { "eslint_d", "prettierd" },
 					vue = { "eslint_d", "prettierd" },
 					astro = { "eslint_d", "prettierd" },
-					jinja = { "djlint" },
+					--[[ jinja = { "djlint" }, ]]
 					gleam = { "gleam" },
 					scss = { "stylelint", "prettierd" },
 				},
