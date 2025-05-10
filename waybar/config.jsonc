@@ -1,7 +1,7 @@
 // -*- mode: jsonc -*-
 {
   "spacing": 10, // Gaps between modules (4px)
-  "height": 30,
+  "height": 43,
   "reload_style_on_change": true,
   "modules-left": [
     "clock",
@@ -41,7 +41,21 @@
     "spacing": 10
   },
   "clock": {
-    "format": " {:%H:%M   %d/%m}"
+    "format": " {:%H:%M   %d/%m}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode" : "year",
+      "mode-mon-col" : 3,
+      "weeks-pos" : "right",
+      "on-scroll" : 1,
+      "format": {
+        "months": "<span color='#ffead3'><b>{}</b></span>",
+        "days": "<span color='#ecc6d9'><b>{}</b></span>",
+        "weeks": "<span color='#99ffdd'><b>W{}</b></span>",
+        "weekdays": "<span color='#ffcc66'><b>{}</b></span>",
+        "today": "<span color='#ff6699'><b><u>{}</u></b></span>"
+      }
+    }
   },
   "cpu": {
     "format": " {usage}%",
@@ -70,10 +84,10 @@
     "format-full": "{capacity}% {icon}",
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
+    "format-icons": ["", "", "", "", ""]
     // "format-alt": "{time} {icon}",
     // "format-good": "", // An empty format will hide the module
     // "format-full": "",
-    "format-icons": ["", "", "", "", ""]
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",
@@ -90,16 +104,13 @@
       "car": "",
       "default": ["", "", ""]
     },
-    "on-click": "pavucontrol"
+    "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
   },
   "custom/power": {
     "format" : "⏻ ",
     "tooltip": false,
-    "menu": "on-click",
-    "menu-actions": {
-      "shutdown": "shutdown",
-      "reboot": "reboot"
-    }
+    "on-click": "shutdown"
   }
 }
+
 
