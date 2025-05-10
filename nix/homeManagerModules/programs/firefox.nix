@@ -3,5 +3,31 @@
   programs.firefox = {
     enable = true;
     nativeMessagingHosts = [pkgs.browserpass];
+
+    # profiles = {
+    #   default = {
+    #     id = "default";
+    #     isDefault = true;
+    #     # extensions = [
+    #     #   # Enable the browserpass extension
+    #     #   pkgs.firefox-addons.browserpass
+    #     # ];
+    #
+    #     search = {
+    #       force = true;
+    #       default = "DuckDuckGo";
+    #       order = [
+    #         "DuckDuckGo"
+    #         "Google"
+    #         "Bing"
+    #         "Qwant"
+    #         "Wikipedia (en)"
+    #         "YouTube"
+    #         "History"
+    #         "Bookmarks"
+    #       ];
+    #     };
+    #   };
+    # };
   };
 }
