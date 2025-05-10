@@ -43,7 +43,6 @@
     #If your cursor becomes invisible
     # WLR_NO_HARDWARE_CURSORS = "1";
     #Hint electron apps to use wayland
-    NIXOS_OZONE_WL = "1";
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/jed/.steam/root/compatibilitytools.d";
   };
 

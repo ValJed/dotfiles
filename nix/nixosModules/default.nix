@@ -145,6 +145,9 @@
 
   environment.variables = {
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
+
+    # Hint electron apps to use wayland
+    NIXOS_OZONE_WL = "1";
   };
 
   # Some programs need SUID wrappers, can be configured further or are
