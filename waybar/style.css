@@ -30,9 +30,9 @@ window#waybar.hidden {
 
 #clock,
 #battery,
+#disk,
 #cpu,
 #memory,
-#disk,
 #temperature,
 #network,
 #pulseaudio,
@@ -48,6 +48,10 @@ window#waybar.hidden {
 
 #pulseaudio {
   color: @love;
+}
+
+#disk {
+  color: @pine;
 }
 
 #cpu {
