@@ -26,6 +26,7 @@
       bind -n C-Up resize-pane -U 2
       bind -n C-Down resize-pane -D 2
 
+      set-option -g history-limit 25000
 
       # Swap windows
       bind -T prefix Left swap-window -t -1\; select-window -t -1
