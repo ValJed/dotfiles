@@ -4,6 +4,7 @@
   imports = [
     ./services/dev.nix
     ./services/sddm/default.nix
+    ./services/virtualization.nix
     # ./services/act/default.nix
   ];
 
@@ -75,6 +76,7 @@
       "networkmanager"
       "wheel"
       "docker"
+      "libvirt"
     ];
     packages = with pkgs; [home-manager];
   };

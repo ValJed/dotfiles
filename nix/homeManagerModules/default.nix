@@ -26,6 +26,7 @@ in {
     ./programs/nvim.nix
     ./programs/pass.nix
     ./programs/tmux.nix
+    ./programs/virt.nix
     ./programs/zsh.nix
   ];
 
@@ -70,6 +71,7 @@ in {
     pkgs.tealdeer
     pkgs.fastfetch
     pkgs.bc
+    pkgs.dysk
     # pkgs.nodePackages.eas-cli Removed for now since breaks at build time
 
     # Apps
