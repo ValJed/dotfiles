@@ -2,3 +2,6 @@
 play = [
 	{ run = 'vlc "$@"', orphan = true }
 ]
+
+[manager]
+show_hidden = false
