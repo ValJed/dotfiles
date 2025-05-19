@@ -115,7 +115,7 @@
   "custom/power": {
     "format" : "⏻ ",
     "tooltip": false,
-    "on-click": "shutdown"
+    "on-click": "poweroff"
   }
 }
 
