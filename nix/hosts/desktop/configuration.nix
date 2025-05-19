@@ -24,6 +24,9 @@
     protonup
     bottles
     obs-studio
+
+    # Test
+    qutebrowser
   ];
 
   services.xserver.videoDrivers = ["nvidia"];

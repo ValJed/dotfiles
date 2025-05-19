@@ -57,6 +57,7 @@ return {
 					--[[ jinja = { "djlint" }, ]]
 					gleam = { "gleam" },
 					scss = { "stylelint", "prettierd" },
+					python = { "black" },
 				},
 				format_on_save = true,
 				formatters = {

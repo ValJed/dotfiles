@@ -97,6 +97,7 @@ in {
     pkgs.lua-language-server
     pkgs.bash-language-server
     pkgs.astro-language-server
+    pkgs.black
   ];
 
   wayland.windowManager.hyprland.systemd.enable = false;
@@ -130,6 +131,10 @@ in {
     ".config/dunst/dunstrc".source = ../../dunst/dunstrc;
     ".config/yazi" = {
       source = ../../yazi;
+      recursive = true;
+    };
+    ".config/qutebrowser" = {
+      source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/qutebrowser";
       recursive = true;
     };
   };
