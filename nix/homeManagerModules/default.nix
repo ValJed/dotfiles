@@ -80,6 +80,7 @@ in {
     pkgs.obsidian
     pkgs.spotify
     pkgs.slumber
+    pkgs.qutebrowser
 
     # LSP
     pkgs.rust-analyzer
