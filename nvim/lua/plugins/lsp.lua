@@ -12,6 +12,7 @@ local lsp_servers = {
 	"nil_ls",
 	"gleam",
 	"astro",
+	"pyright",
 }
 
 return {

@@ -63,6 +63,7 @@ in {
     pkgs.lazydocker
     pkgs.eza
     pkgs.bat
+    pkgs.fd
     pkgs.zoxide
     pkgs.yazi
     pkgs.starship
@@ -98,6 +99,7 @@ in {
     pkgs.lua-language-server
     pkgs.bash-language-server
     pkgs.astro-language-server
+    pkgs.pyright
     pkgs.black
   ];
 
