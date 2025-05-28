@@ -82,6 +82,7 @@ in {
     pkgs.spotify
     pkgs.slumber
     pkgs.qutebrowser
+    pkgs.presenterm
 
     # LSP
     pkgs.rust-analyzer
