@@ -1,6 +1,7 @@
 # vim:fileencoding=utf-8:foldmethod=marker
 
-def setup(c, variant, samecolorrows = False):
+
+def setup(c, variant, samecolorrows=False):
     # Palette {{{
     palette = {}
     if variant == "rose-pine":
@@ -8,17 +9,17 @@ def setup(c, variant, samecolorrows = False):
             "Base": "#191724",
             "Surface": "#1f1d2e",
             "Overlay": "#26233a",
-            "Muted": "#6e6a86",	
-            "Subtle": "#908caa",	
-            "Text": "#e0def4",	
-            "Love": "#eb6f92",	
-            "Gold": "#f6c177",	
-            "Rose": "#ebbcba",	
-            "Pine": "#31748f",	
-            "Foam": "#9ccfd8",	
-            "Iris": "#c4a7e7",	
-            "HighlightLow": "#21202e",	
-            "HighlightMed": "#403d52",	
+            "Muted": "#6e6a86",
+            "Subtle": "#908caa",
+            "Text": "#e0def4",
+            "Love": "#eb6f92",
+            "Gold": "#f6c177",
+            "Rose": "#ebbcba",
+            "Pine": "#31748f",
+            "Foam": "#9ccfd8",
+            "Iris": "#c4a7e7",
+            "HighlightLow": "#21202e",
+            "HighlightMed": "#403d52",
             "HighlightHigh": "#524f67",
         }
     elif variant == "rose-pine-moon":
@@ -53,26 +54,26 @@ def setup(c, variant, samecolorrows = False):
             "Pine": "#286983",
             "Foam": "#56949f",
             "Iris": "#907aa9",
-            "HighlightLow": "#f4ede8",	
-            "HighlightMed": "#dfdad9",	
+            "HighlightLow": "#f4ede8",
+            "HighlightMed": "#dfdad9",
             "HighlightHigh": "#cecacd",
         }
     else:
         palette = {
-            "Base": "#191724",	
-            "Surface": "#1f1d2e",	
-            "Overlay": "#26233a",	
-            "Muted": "#6e6a86",	
-            "Subtle": "#908caa",	
-            "Text": "#e0def4",	
-            "Love": "#eb6f92",	
-            "Gold": "#f6c177",	
-            "Rose": "#ebbcba",	
-            "Pine": "#31748f",	
-            "Foam": "#9ccfd8",	
-            "Iris": "#c4a7e7",	
-            "HighlightLow": "#21202e",	
-            "HighlightMed": "#403d52",	
+            "Base": "#191724",
+            "Surface": "#1f1d2e",
+            "Overlay": "#26233a",
+            "Muted": "#6e6a86",
+            "Subtle": "#908caa",
+            "Text": "#e0def4",
+            "Love": "#eb6f92",
+            "Gold": "#f6c177",
+            "Rose": "#ebbcba",
+            "Pine": "#31748f",
+            "Foam": "#9ccfd8",
+            "Iris": "#c4a7e7",
+            "HighlightLow": "#21202e",
+            "HighlightMed": "#403d52",
             "HighlightHigh": "#524f67",
         }
     # }}}
@@ -178,7 +179,7 @@ def setup(c, variant, samecolorrows = False):
     c.colors.tabs.indicator.error = palette["Gold"]
     c.colors.tabs.indicator.start = palette["Pine"]
     c.colors.tabs.indicator.stop = palette["Rose"]
-    
+
     # Pinned tabs
     c.colors.tabs.pinned.even.fg = palette["Subtle"]
     c.colors.tabs.pinned.even.bg = palette["Overlay"]
@@ -188,11 +189,11 @@ def setup(c, variant, samecolorrows = False):
     c.colors.tabs.pinned.selected.even.bg = palette["HighlightMed"]
     c.colors.tabs.pinned.selected.odd.fg = palette["Text"]
     c.colors.tabs.pinned.selected.odd.bg = palette["HighlightMed"]
-    
+
     # }}}
 
     # Background color of webpages {{{
-    c.colors.webpage.bg = palette["Base"]
+    # c.colors.webpage.bg = palette["Base"]
     # }}}
     # Context menu {{{
     c.colors.contextmenu.menu.bg = palette["Surface"]
@@ -227,8 +228,6 @@ def setup(c, variant, samecolorrows = False):
     ## Border for follow hint
     c.hints.border = f"1px solid {palette['Overlay']}"
 
-
-
     # }}}
 
     # Downloads {{{
@@ -255,7 +254,7 @@ def setup(c, variant, samecolorrows = False):
 
     # Error, info and warning messages {{{
     c.colors.messages.error.bg = palette["Surface"]
-    c.colors.messages.error.border =palette["Surface"]
+    c.colors.messages.error.border = palette["Surface"]
     c.colors.messages.error.fg = palette["Text"]
 
     c.colors.messages.info.bg = palette["Surface"]
@@ -265,8 +264,5 @@ def setup(c, variant, samecolorrows = False):
     c.colors.messages.warning.bg = palette["Surface"]
     c.colors.messages.warning.border = palette["Surface"]
     c.colors.messages.warning.fg = palette["Gold"]
-
-
-
 
     # }}}
