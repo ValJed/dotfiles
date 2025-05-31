@@ -8,9 +8,9 @@
 
 
 document.addEventListener('load', () => {
-    const btn = document.querySelector('.videoAdUiSkipButton,.ytp-ad-skip-button-modern')
-    if (btn) {
-        btn.click()
+    const ignoreBtn = document.querySelector('button.ytp-skip-ad-button')
+    if (ignoreBtn) {
+      ignoreBtn.click()
     }
     const ad = [...document.querySelectorAll('.ad-showing')][0];
     if (ad) {

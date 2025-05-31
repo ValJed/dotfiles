@@ -3,6 +3,9 @@ import rosepine
 # Personal configuration
 # config.set("colors.webpage.darkmode.enabled", True)
 
+
+c.content.user_stylesheets = ["~/.config/qutebrowser/styles/youtube.css"]
+
 # Theme
 rosepine.setup(c, "rose-pine-moon", True)
 
