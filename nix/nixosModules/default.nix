@@ -115,6 +115,7 @@
     usbutils
     ntfs3g
     xh
+    exiftool
 
     # Hyprland
     waybar
