@@ -1,0 +1,44 @@
+bind j scrollline 5
+bind k scrollline -5
+bind --mode=ex <C-j> ex.next_completion
+bind --mode=ex <C-k> ex.prev_completion
+
+quickmark y https://www.youtube.com
+quickmark g https://github.com/ValJed
+quickmark m https://mail.proton.me/inbox
+quickmark M https://mail.google.com/mail/u/0/#inbox
+quickmark c https://www.google.fr/maps 
+quickmark C https://calendar.proton.me
+quickmark b https://www.helios.do/ 
+quickmark q https://app.qonto.com/signin
+quickmark d https://drive.proton.me
+quickmark l https://linear.app/apostrophecms/team/PRO/active
+quickmark L http://locahost:3000
+quickmark n https://www.notion.so/apostrophetechnologies/Platform-Support-Backlog-Refinement-Feb-12-CycleYe-190371d0f99b80dfa166ec0c9f4529f0
+quickmark r https://www.reddit.com/
+
+set searchurls.d https://duckduckgo.com/html?q=%s
+set searchurls.g https://www.google.com/search?q=%s 
+set searchurls.nx https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=%s
+set searchurls.nxh https://home-manager-options.extranix.com/?query=%s&release=master 
+set searchurls.gh https://github.com/search?utf8=%E2%9C%93&q=%s&ref=simplesearch
+set searchurls.tle https://translate.google.fr/?hl=fr&sl=en&tl=fr&text=%s&op=translate
+set searchurls.tlf https://translate.google.fr/?hl=fr&sl=fr&tl=en&text=%s&op=translate
+set searchurls.npm https://www.npmjs.com/search?q=%s 
+set searchurls.w https://en.wikipedia.org/wiki/%s 
+set searchurls.ms https://www.messenger.com
+set searchurls.y https://www.youtube.com/results?search_query=%s
+set searchurls.ytm https://www.youtube.com/#ysm-group-title=Media
+set searchurls.ytc https://www.youtube.com/#ysm-group-title=Code
+set searchurls.yts https://www.youtube.com/#ysm-group-title=Science
+set searchurls.ytp https://www.youtube.com/#ysm-group-title=Philosophy
+set searchurls.yth https://www.youtube.com/#ysm-group-title=History
+set searchurls.rd https://www.reddit.com/search/?q=%s
+
+set searchurls.aposc https://github.com/search?q=repo%3Aapostrophecms%2Fapostrophe%20%s&type=code 
+set searchurls.aposr https://github.com/orgs/apostrophecms/repositories?q=%s
+set searchurls.aposd https://docs.apostrophecms.org 
+set searchurls.aposD https://www.sketch.com/workspace/8dc58890-6440-4554-9a32-302d72d76aaa/shares
+set searchurls.pmu https://meet.google.com/vaw-yhan-pdg 
+set searchurls.apost https://apostrophetechnologiesinc.harvestapp.com/time
+
