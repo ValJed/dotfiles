@@ -116,6 +116,7 @@
     ntfs3g
     xh
     exiftool
+    zathura
 
     # Hyprland
     waybar

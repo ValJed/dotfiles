@@ -134,11 +134,15 @@ in {
     ".config/swappy/config".source = ../../swappy/config;
     ".config/dunst/dunstrc".source = ../../dunst/dunstrc;
     ".config/yazi" = {
-      source = ../../yazi;
+      source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/yazi";
       recursive = true;
     };
     ".config/qutebrowser" = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/qutebrowser";
+      recursive = true;
+    };
+    ".config/tridactyl" = {
+      source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/tridactyl";
       recursive = true;
     };
   };

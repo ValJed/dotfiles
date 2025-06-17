@@ -2,6 +2,14 @@
 play = [
 	{ run = 'vlc "$@"', orphan = true }
 ]
+pdff = [
+  { run = 'zathura "$@"', desc = "Zathura", block = true, for = "unix" }
+]
 
-[manager]
+[rules]
+pdf = [
+  { mime = 'application/pdf', use = [ "pdff" ] }
+]
+
+[mgr]
 show_hidden = false

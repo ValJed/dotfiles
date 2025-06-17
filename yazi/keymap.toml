@@ -1,4 +1,4 @@
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on  = "y"
 run = [ '''
   shell 'for path in "$@"; do echo "file://$path"; done | wl-copy -t text/uri-list'
@@ -8,36 +8,36 @@ run = [ '''
 on  = "/"
 run = 'filter'
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on  = "?"
 run = 'help'
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "g", "/" ]
 run  = "cd /"
 desc = "Go root"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "g", "p" ]
 run  = "cd ~/workspace/projects"
 desc = "Goto Projects"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "g", "a" ]
 run  = "cd ~/workspace/apo"
 desc = "Goto Apos"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "g", "d" ]
 run  = "cd ~/Documents"
 desc = "Goto ~/Documents"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "g", "D" ]
 run  = "cd ~/Downloads"
 desc = "Goto ~/Downloads"
 
-[[manager.prepend_keymap]]
+[[mgr.prepend_keymap]]
 on   = [ "g", "P" ]
 run  = "cd ~/Pictures"
 desc = "Goto ~/Pictures"
