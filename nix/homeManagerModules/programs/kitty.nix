@@ -5,19 +5,25 @@
 }: let
   font_size =
     if hostname == "desktop"
-    then 11
-    else 13;
+    then "11.0"
+    else "13.0";
 in {
   programs.kitty = lib.mkForce {
     enable = true;
-    settings = {
-      confirm_os_window_close = 2;
-      shell = "zsh";
-      font_size = font_size;
-      font_family = "FiraCode Nerd Font";
-      cursor_trail = 3;
-    };
+    # settings = {
+    #   confirm_os_window_close = 2;
+    #   shell = "zsh";
+    #   font_size = font_size;
+    #   font_family = "FiraCode Nerd Font";
+    #   cursor_trail = 3;
+    # };
     extraConfig = ''
+      confirm_os_window_close 2
+      shell "zsh"
+      font_size ${font_size}
+      font_family "FiraCode Nerd Font"
+      cursor_trail 3
+
       map ctrl+shift+right no_op
       map ctrl+shift+left no_op
 
