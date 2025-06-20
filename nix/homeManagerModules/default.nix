@@ -102,6 +102,7 @@ in {
     pkgs.astro-language-server
     pkgs.pyright
     pkgs.black
+    pkgs.taplo
   ];
 
   wayland.windowManager.hyprland.systemd.enable = false;

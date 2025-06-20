@@ -59,6 +59,7 @@ return {
 					gleam = { "gleam" },
 					scss = { "stylelint", "prettierd" },
 					python = { "black" },
+					toml = { "taplo" },
 				},
 				format_on_save = true,
 				formatters = {
