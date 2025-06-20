@@ -3,6 +3,13 @@ bind k scrollline -5
 bind --mode=ex <C-j> ex.next_completion
 bind --mode=ex <C-k> ex.prev_completion
 
+bind --mode=normal <C-l> nohlsearch
+bind --mode=normal / fillcmdline find
+bind --mode=normal ? fillcmdline find -?
+bind --mode=normal n findnext 1
+bind --mode=normal N findnext -1
+bind --mode=visual * composite js document.getSelection().toString() | fillcmdline find
+
 quickmark y https://www.youtube.com
 quickmark g https://github.com/ValJed
 quickmark m https://mail.proton.me/inbox
@@ -34,6 +41,7 @@ set searchurls.yts https://www.youtube.com/#ysm-group-title=Science
 set searchurls.ytp https://www.youtube.com/#ysm-group-title=Philosophy
 set searchurls.yth https://www.youtube.com/#ysm-group-title=History
 set searchurls.rd https://www.reddit.com/search/?q=%s
+set searchurls.cl https://claude.ai/chat
 
 set searchurls.aposc https://github.com/search?q=repo%3Aapostrophecms%2Fapostrophe%20%s&type=code 
 set searchurls.aposr https://github.com/orgs/apostrophecms/repositories?q=%s
