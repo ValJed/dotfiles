@@ -38,4 +38,5 @@ return {
 			require("crates").setup()
 		end,
 	},
+	{ "ton/vim-bufsurf" },
 }

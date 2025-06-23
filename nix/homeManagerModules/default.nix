@@ -27,6 +27,7 @@ in {
     ./programs/pass.nix
     ./programs/tmux.nix
     ./programs/virt.nix
+    ./programs/yazi.nix
     ./programs/zsh.nix
   ];
 
@@ -65,7 +66,6 @@ in {
     pkgs.bat
     pkgs.fd
     pkgs.zoxide
-    pkgs.yazi
     pkgs.starship
     pkgs.ripgrep
     pkgs.tokei

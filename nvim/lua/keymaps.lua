@@ -48,8 +48,8 @@ keymap("n", "<C-S-Right>", ":vertical resize +2<cr>", opts)
 keymap("n", "<C-S-Left>", ":vertical resize -2<cr>", opts)
 
 -- Navigate buffers
-keymap("n", "<S-h>", ":bp<cr>", { silent = true })
-keymap("n", "<S-l>", ":bn<cr>", { silent = true })
+keymap("n", "<S-h>", ":BufSurfBack<cr>", { silent = true })
+keymap("n", "<S-l>", ":BufSurfForward<cr>", { silent = true })
 
 -- Moves
 keymap("n", "<C-d>", "<C-d>zz", opts)
