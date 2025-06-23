@@ -1,14 +1,14 @@
 [opener]
-play = [
-	{ run = 'vlc "$@"', orphan = true }
-]
-pdff = [
-  { run = 'zathura "$@"', desc = "Zathura", block = true, for = "unix" }
-]
+play = [{ run = 'vlc "$@"', orphan = true }]
+pdf = [{ run = 'zathura "$@"', desc = "Zathura" }]
+zip = [{ run = 'unzip "$1" -d "${1%.*}"', desc = "Extract to folder" }]
+tar_gz = [{ run = 'tar -xzf "$1"', desc = "Extract here", block = true }]
 
-[rules]
-pdf = [
-  { mime = 'application/pdf', use = [ "pdff" ] }
+[open]
+prepend_rules = [
+  { name = "*.pdf", use = "pdf" },
+  { name = "*.zip", use = "zip" },
+  { name = "*.tar.gz", use = "tar_gz" },
 ]
 
 [mgr]
