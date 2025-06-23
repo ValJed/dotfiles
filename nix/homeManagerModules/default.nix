@@ -135,7 +135,7 @@ in {
     ".config/swappy/config".source = ../../swappy/config;
     ".config/dunst/dunstrc".source = ../../dunst/dunstrc;
     ".config/yazi" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/yazi";
+      source = ../../yazi;
       recursive = true;
     };
     ".config/qutebrowser" = {

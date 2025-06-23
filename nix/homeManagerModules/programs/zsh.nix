@@ -15,7 +15,7 @@
         {name = "jeffreytse/zsh-vi-mode";}
       ];
     };
-    initExtra = ''
+    initContent = ''
       source ~/.config/zsh/default.zsh
     '';
     shellAliases = {
