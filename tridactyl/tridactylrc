@@ -42,6 +42,7 @@ set searchurls.ytp https://www.youtube.com/#ysm-group-title=Philosophy
 set searchurls.yth https://www.youtube.com/#ysm-group-title=History
 set searchurls.rd https://www.reddit.com/search/?q=%s
 set searchurls.cl https://claude.ai/chat
+set searchurls.regie https://lescuyer.h2i.fr/log_client.php 
 
 set searchurls.aposc https://github.com/search?q=repo%3Aapostrophecms%2Fapostrophe%20%s&type=code 
 set searchurls.aposr https://github.com/orgs/apostrophecms/repositories?q=%s
