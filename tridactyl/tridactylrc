@@ -10,6 +10,9 @@ bind --mode=normal n findnext 1
 bind --mode=normal N findnext -1
 bind --mode=visual * composite js document.getSelection().toString() | fillcmdline find
 
+set newtab about:blank
+set newtab https://duckduckgo.com
+
 quickmark y https://www.youtube.com
 quickmark g https://github.com/ValJed
 quickmark m https://mail.proton.me/inbox
