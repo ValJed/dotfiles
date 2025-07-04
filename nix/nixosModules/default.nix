@@ -98,6 +98,7 @@
     qbittorrent
     vlc
     easyeffects
+    pinta
 
     # Tools
     wev

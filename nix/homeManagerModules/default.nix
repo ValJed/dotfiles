@@ -62,6 +62,9 @@ in {
     # Tools
     pkgs.lazygit
     pkgs.lazydocker
+    pkgs.lazysql
+    pkgs.rainfrog
+    pkgs.vi-mongo
     pkgs.eza
     pkgs.bat
     pkgs.fd
@@ -130,7 +133,8 @@ in {
       source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/nvim";
       recursive = true;
     };
-    ".config/slumber/config.yml".source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/slumber/config.yml";
+    ".config/slumber/config.yml".source =
+      config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/slumber/config.yml";
     ".config/rofi/config.rasi".source = ../../rofi/config.rasi;
     ".config/swappy/config".source = ../../swappy/config;
     ".config/dunst/dunstrc".source = ../../dunst/dunstrc;
@@ -146,6 +150,8 @@ in {
       source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/tridactyl";
       recursive = true;
     };
+    ".config/lazysql/config.toml".source =
+      config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/lazysql/config.toml";
   };
 
   # Home Manager can also manage your environment variables through
