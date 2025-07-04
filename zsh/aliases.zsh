@@ -60,7 +60,6 @@ alias cwr="cargo watch -c -q -x \"run -q\""
 alias cwb="cargo watch -c -q -x \"build -q\""
 alias cww="cargo watch -i .gitignore -i \"pkg/*\" -s \"wasm-pack build --target web\""
 alias sn="sudo -e"
-alias clip="xclip -selection clipboard"
 
 # Tasks
 alias tkls="task ls"
@@ -72,14 +71,6 @@ alias tkd="task done"
 alias tkrm="task rm"
 alias tkrmc="task rmc"
 alias tkc="task clear"
-
-# Rest
-alias GET="lwp-request -m \"GET\""
-alias DELETE="lwp-request -m \"DELETE\""
-alias POST="lwp-request -m \"POST\""
-alias PUT="lwp-request -m \"PUT\""
-alias PATCH="lwp-request -m \"PATCH\""
-alias HEAD="lwp-request -m \"HEAD\""
 
 # GIT commands
 alias gl="git pull"

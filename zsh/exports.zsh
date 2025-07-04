@@ -2,9 +2,8 @@
 
 export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
-export TERMINAL="alacrity"
+export TERMINAL="kitty"
 export BROWSER="firefox"
-export XDG_CURRENT_DESKTOP="i3"
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 export PATH=/opt/stagecoach/bin:$PATH
@@ -15,7 +14,8 @@ export ZVM_VI_INSERT_ESCAPE_BINDKEY=kj
 export ZVM_KEYTIMEOUT=0.1
 
 # FZF
-# export FZF_TMUX=1
+export FZF_TMUX=1
 export FZF_TMUX_OPTS='-p80%,60%'
-export _ZO_FZF_OPTS='--tmux'
+# export _ZO_FZF_EXTRA_OPTS='--tmux'
+# export _ZO_FZF_OPTS=" ${FZF_DEFAULT_OPTS} --tmux"
 
