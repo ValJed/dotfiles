@@ -1,8 +1,8 @@
 {
   "For": {
-    "prefix": "f",
+    "prefix": "for",
     "body": [
-      "{% for ${1} in ${2} $}",
+      "{% for ${1} in ${2} %}",
       "\t${3}",
       "{% endfor %}"
     ],
