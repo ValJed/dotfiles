@@ -1,0 +1,4 @@
+[[database]]
+Name = 'Task API'
+Provider = 'sqlite'
+URL = '/home/jed/workspace/projects/task-api/data/app.db'
