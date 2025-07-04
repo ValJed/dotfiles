@@ -2,13 +2,15 @@
 play = [{ run = 'vlc "$@"', orphan = true }]
 pdf = [{ run = 'zathura "$@"', desc = "Zathura" }]
 zip = [{ run = 'unzip "$1" -d "${1%.*}"', desc = "Extract to folder" }]
-tar_gz = [{ run = 'tar -xzf "$1"', desc = "Extract here", block = true }]
+tar_gz = [{ run = 'tar -xzf "$1"', desc = "Extract here" }]
+image = [{ run = 'pinta "$@"', desc = "Pinta" }]
 
 [open]
 prepend_rules = [
   { name = "*.pdf", use = "pdf" },
   { name = "*.zip", use = "zip" },
   { name = "*.tar.gz", use = "tar_gz" },
+  { mime = "image/*", use = "image" },
 ]
 
 [mgr]
