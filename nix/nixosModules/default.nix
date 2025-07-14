@@ -3,9 +3,9 @@
 {pkgs, ...}: {
   imports = [
     ./services/dev.nix
-    ./services/sddm/default.nix
+    ./services/dispalyManager.nix
     ./services/virtualization.nix
-    # ./services/act/default.nix
+    # ./services/kanata.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
