@@ -77,6 +77,7 @@
       "wheel"
       "docker"
       "libvirt"
+      "uinput"
     ];
     packages = with pkgs; [home-manager];
   };
