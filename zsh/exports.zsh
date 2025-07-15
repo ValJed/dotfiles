@@ -10,7 +10,6 @@ export PATH=/opt/stagecoach/bin:$PATH
 export PATH=/opt/ops-tools/bin:$PATH
 
 # zsh-vi-mode 
-export ZVM_VI_INSERT_ESCAPE_BINDKEY=kj
 export ZVM_KEYTIMEOUT=0.1
 
 # FZF

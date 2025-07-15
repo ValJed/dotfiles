@@ -62,10 +62,6 @@ keymap("n", "<C-b>", "<C-b>zz", opts)
 keymap("i", "<C-k>", "<Up>", opts)
 keymap("i", "<C-j>", "<Down>", opts)
 
--- Insert --
--- Press kj fast to enter
-keymap("i", "kj", "<ESC>", opts)
-
 -- Indentation --
 keymap("v", "<Tab>", ">gv", opts)
 keymap("v", "<S-Tab>", "<gv", opts)
