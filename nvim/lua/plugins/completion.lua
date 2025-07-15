@@ -90,7 +90,7 @@ return {
 					["<Tab>"] = cmp.mapping(function(fallback)
 						local copilot_keys = vim.fn["copilot#Accept"]()
 						if copilot_keys ~= "" and type(copilot_keys) == "string" then
-							vim.api.nvim_feedkeys(copilot_keys, "n", true)
+							--[[ vim.api.nvim_feedkeys(copilot_keys, "n", true) ]]
 						else
 							fallback()
 						end
