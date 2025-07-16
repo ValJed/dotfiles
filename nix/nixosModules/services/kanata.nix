@@ -16,7 +16,7 @@
         '';
         config = ''
           (defsrc
-            caps q s d f h j k l
+            caps a s d f j k l ;
           )
           (defvar
             hold-time 100
@@ -24,157 +24,24 @@
             chord-m 50
           )
           (defalias
-            caps (tap-hold 200 200 esc lctl)
+            caps (tap-hold 100 100 esc lctl)
           )
           (deflayer default
             @caps _ _ _ _ _ _ _ _
           )
           (defchordsv2
             ;; Left Hand
-            (q s) esc $chord-s all-released ()
+            (a s) ralt $chord-s all-released ()
             (s d) lshft $chord-s all-released ()
-            (d f) lctrl $chord-s all-released ()
+            (d f) lmeta $chord-s all-released ()
 
             ;; Right Hand
-            (h k) lctrl $chord-s all-released ()
-            (j k) lshft $chord-s all-released ()
-            (k l) lctrl $chord-s all-released ()
+            (j k) lmeta $chord-s all-released ()
+            (k l) lshft $chord-s all-released ()
+            (l ;) ralt $chord-s all-released ()
           )
         '';
       };
     };
   };
 }
-# #|
-# Main Documentation
-# https://jtroo.github.io/config.html
-# Key Name Documentation
-# https://github.com/jtroo/kanata/blob/main/parser/src/keys/mod.rs
-# |#
-#
-# (defcfg
-# concurrent-tap-hold yes ;; needed for chordsv2
-# process-unmapped-keys yes ;; macros and sldr need this enabled
-# sequence-timeout 2000
-# )
-#
-# (defvar
-# chord-s 30
-# chord-m 50
-# chord-l 200
-# shots 1000
-# thumb 160
-# holdmods 220
-# cw (caps-word 3000)
-#
-# ;; layers
-# fkey (layer-toggle fkey)
-# numnav (layer-toggle numnav)
-# char (layer-toggle char)
-# )
-#
-# (defalias ;; One Shot Mods
-# os (one-shot-release $shots lsft)
-# oc (one-shot-release $shots lctl)
-# oa (one-shot-release $shots lalt)
-# )
-#
-# (defalias ;; Home Row Hold Mods, _ means use default key
-# hs (tap-hold $holdmods $holdmods _ lsft)
-# hc (tap-hold $holdmods $holdmods _ lctl)
-# ha (tap-hold $holdmods $holdmods _ lalt)
-# hrs (tap-hold $holdmods $holdmods _ rsft)
-# hrc (tap-hold $holdmods $holdmods _ rctl)
-# hra (tap-hold $holdmods $holdmods _ ralt)
-# hm (tap-hold $holdmods $holdmods _ met)
-# meh (tap-hold $holdmods $holdmods _ (multi ctl alt sft))
-# hyp (tap-hold $holdmods $holdmods _ (multi ctl alt sft met))
-# )
-#
-# ;; kanata templates are basically just making a function
-# ;; I liked wrapping it this way instead of making two variables for the different times
-# (deftemplate holdfor-char (tapact holdact)
-# (tap-hold 150 160 $tapact $holdact)
-# )
-#
-# (defvar
-# kp+* (t! holdfor-char kp+ kp*)
-# inft (t! holdfor-char S-' ')
-# ' (t! holdfor-char ' S-')
-# / (t! holdfor-char / S-/)
-# )
-#
-# (defchordsv2
-# ;; LEFT HAND
-# (f e) sldr $chord-s all-released ()
-# (d f) tab $chord-s all-released ()
-# (d c) esc  $chord-s all-released ()
-# (f v) enter  $chord-s all-released ()
-# (c v) bspc  $chord-s all-released ()
-#
-# ;; RIGHT HAND
-# (j k) S-9  $chord-s all-released ()
-# (j l) S-0  $chord-s all-released ()
-# (j i) S-[ $chord-s all-released ()
-# (j o) S-] $chord-s all-released ()
-# (j ,) [ $chord-s all-released ()
-# (j .) ] $chord-s all-released ()
-# (j n) enter  $chord-s all-released ()
-# (n m) bspc  $chord-s all-released ()
-# )
-#
-# (defalias
-# cap (tap-hold-press 200 200 enter $fkey)
-# lalt (tap-hold-press $thumb $thumb bspc $char)
-# ;; kanata switches are an if statement
-# spc (switch
-#       (lalt) (tap-hold-release $thumb $thumb tab $numnav) break
-#       () (tap-hold-release $thumb $thumb spc $numnav)
-#       break )
-# lnav (tap-hold 200 250 _  (layer-toggle lnav))
-# br (tap-hold-release 200 250 _  (layer-toggle br))
-# )
-#
-# (defsrc
-# tab     q     w     e     r     t     y     u     i     o     p
-# caps    a     s     d     f     g     h     j     k     l     ;    '
-#         z     x     c     v     b     n     m     ,     .     /
-#             lalt          spc
-# )
-#
-# (deflayer base
-# tab     @meh  _     @lnav _     _     _     _     _     _     _
-# @cap    _     @ha   @hc   @hs   _     _     @hrs  @hrc  @hra  _     $'
-#         _     _     @br   @hm   _     _     _     _     _     $/
-#             @lalt         @spc
-# ) ;; test phrase, how easy to type: x = 3% at 5:45 am
-#
-# (deflayer numnav
-# XX       $kp+* kp7   kp8   kp9   $inft home  home  pgdn  pgup  end
-# @cap     kp-   kp4   kp5   kp6   kp/   =     left  down  up    right    XX
-#          kp.   kp1   kp2   kp3   kp0   del   XX    XX    XX    XX
-#            @lalt         @spc
-# ) ;; characters or anything that would come after/before a spc don't feel good on a spc activated layer. Keypad numbers are usually followed by enter
-#
-# (deflayer char
-# XX      S-1   S-2   S-3   S-4   S-5   S-6   S-7   S-8   \     /
-# `       S-,   S-`   S-;   S--   ;     kp+   -     =     S-\   S-. XX
-#         1     2     3     4     5     6     7     8     9     0
-#             @lalt         @spc
-# )
-# ;; put kp+ instead of S-= because writing += quickly lags with S-=
-# ;; wanted to get down to 3x10 layout excluding extra that would be thumbs if on split keyb
-# ;; but ' kept on base because I'm too used to it there. Could replace ; with ' if I could get used to it there
-# ;; brackets separate from chars since they don't pair with other chars unlike eg: <= -> in programming. I guess they do for faces :)
-#
-# (deflayer fkey
-# XX      caps  nlck  $cw   bck   fwd   brup  pp    prev  next  f12
-# @cap    prtsc @oa   @oc   @os   ins   brdn  mute  vold  volu  f11  XX
-#         f1    f2    f3    f4    f5    f6    f7    f8    f9    f10
-#             @lalt         @spc
-# )
-#
-# ;; ___ XX excludes all unmapped keys in this layer
-# (deflayermap (lnav) ___ XX d left f down g right r up)
-# (deflayermap (br) ___ XX j S-9 k S-0 m [ , ] u S-[ i S-])
-
