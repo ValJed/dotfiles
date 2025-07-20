@@ -49,16 +49,16 @@
 
       bind-key h previous-window
       bind-key l next-window
-      bind-key -T prefix & select-window -t :=1
-      bind-key -T prefix é select-window -t :=2
-      bind-key -T prefix \" select-window -t :=3
-      bind-key -T prefix \' select-window -t :=4
-      bind-key -T prefix \( select-window -t :=5
-      bind-key -T prefix - select-window -t :=6
-      bind-key -T prefix è select-window -t :=7
-      bind-key -T prefix _ select-window -t :=8
-      bind-key -T prefix ç select-window -t :=9
-      bind-key -T prefix à select-window -t :=10
+      bind-key -T prefix 1 select-window -t :=1
+      bind-key -T prefix 2 select-window -t :=2
+      bind-key -T prefix 3 select-window -t :=3
+      bind-key -T prefix 4 select-window -t :=4
+      bind-key -T prefix 5 select-window -t :=5
+      bind-key -T prefix 6 select-window -t :=6
+      bind-key -T prefix 7 select-window -t :=7
+      bind-key -T prefix 8 select-window -t :=8
+      bind-key -T prefix 9 select-window -t :=9
+      bind-key -T prefix 0 select-window -t :=10
 
       # Copy mode
       unbind [

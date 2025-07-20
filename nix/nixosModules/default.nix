@@ -54,15 +54,14 @@
     xserver = {
       enable = true;
       xkb = {
-        layout = "fr";
-        variant = "azerty";
-        model = "pc105";
+        layout = "us";
+        variant = "altgr-intl";
       };
     };
   };
 
   # Configure console keymap
-  console.keyMap = "fr";
+  console.keyMap = "us";
 
   users.groups = {
     docker = {};
