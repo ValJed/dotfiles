@@ -31,7 +31,7 @@ source ~/.config/zsh/fzf/key-bindings.zsh
 source ~/.config/zsh/fzf/completion.zsh
 
 # keybinds
-bindkey '^ ' autosuggest-accept
+bindkey '^l' autosuggest-accept
 
 zvm_after_init_commands+=(
   "bindkey '^b' history-search-backward" 
