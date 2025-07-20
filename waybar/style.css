@@ -30,8 +30,8 @@ window#waybar.hidden {
 
 #clock,
 #battery,
-#disk,
 #cpu,
+#sdisk,
 #memory,
 #temperature,
 #network,
@@ -78,6 +78,10 @@ window#waybar.hidden {
 
 #battery {
   color: @pine;
+}
+
+#custom-kanata {
+  color: @rose;
 }
 
 @keyframes blink {
