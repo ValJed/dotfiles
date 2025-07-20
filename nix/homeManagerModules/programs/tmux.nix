@@ -4,7 +4,7 @@
     shell = "${pkgs.zsh}/bin/zsh";
     terminal = "tmux-256color";
     keyMode = "vi";
-    prefix = "C-w";
+    prefix = "C-space";
     mouse = true;
     plugins = with pkgs; [
       {
