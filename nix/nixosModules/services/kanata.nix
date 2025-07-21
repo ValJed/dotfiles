@@ -35,8 +35,7 @@
             l_alt (tap-hold $tap-time $hold-time l ralt)
 
             ;; Layouts
-            spc_mod (tap-hold 200 200 spc (layer-while-held special))
-
+            spc_mod (tap-hold $tap-time $hold-time spc (layer-while-held special))
             game_toggle (switch
               ((layer game)) (layer-switch base) break
               () (layer-switch game) break)
@@ -55,10 +54,11 @@
             lctl  lmet lalt             @spc_mod            ralt rmet rctl
           )
 
+          ;; Test to remove the S to brackets and stuff to take less space, could still be used using space + shift
           (deflayer special
-            _      f1   f2   f3   f4   f5   f6   f7    f8   f9   f10  f11   f12  _
+            _        f1   f2   f3   f4   f5   f6   f7    f8   f9   f10  f11   f12  _
             S-prtsc  1    2    3    4    5    6    7     8    9    0    =     S-=    ret
-            caps   S-1  S-2  S-3  S-4  S-5  S-6  S-9   S-0  S-[  S-]  [     ]
+            caps     S-1  S-2  S-3  S-4  S-5  S-6  S-9   S-0  S-[  S-]  [     ]
             C-S-prtsc   prev pp   next mute voldwn    volu  -    S--  S-7  S-8   rsft
             prtsc      lmet lalt           @spc_mod        ralt rmet      rctl
           )
