@@ -9,5 +9,6 @@ end
 
 -- Format on save
 vim.cmd("WorkspacesSyncDir")
+vim.cmd("Copilot disable")
 vim.api.nvim_exec([[ autocmd DirChanged * silent execute luaeval("GetTmuxCommand()") ]], false)
 vim.api.nvim_exec([[ autocmd ExitPre * silent execute luaeval("GetTmuxCommand(true)") ]], false)

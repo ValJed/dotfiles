@@ -43,7 +43,7 @@ keymap("n", "<C-c>", ":lua require('utils.functions').smart_close()<cr>", opts)
 
 -- Next Prev occurences
 keymap("n", "&", "£", opts)
-vim.keymap.set("n", ",", function()
+vim.keymap.set("n", ".", function()
 	vim.api.nvim_feedkeys(":", "n", false)
 end, opts)
 
