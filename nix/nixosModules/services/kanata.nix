@@ -79,7 +79,7 @@
           (deflayer game
             grv   1    2    3    4    5    6    7    8    9    0    -    =    bspc
             tab   q    w    e    r    t    y    u    i    o    p    [    ]    ret
-            caps  a    s    d    f    g    h    @j_meta   @k_shft   l    ;    '    \
+            caps  a    s    d    f    g    h    j    k    l    ;    '    \
             lsft  z    x    c    v    b    n    m    ,    .    /    rsft
             lctl  lmet lalt           spc            ralt rmet rctl
           )
@@ -88,3 +88,6 @@
     };
   };
 }
+# Better tmux key, another layout for arrows and page up / down using space + another key
+# Remove too much shortcut for print replace with useful stuff
+

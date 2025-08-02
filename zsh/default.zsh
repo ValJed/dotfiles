@@ -31,13 +31,13 @@ source ~/.config/zsh/fzf/key-bindings.zsh
 source ~/.config/zsh/fzf/completion.zsh
 
 # keybinds
-bindkey '^E' autosuggest-accept
+bindkey '^F' autosuggest-accept
 
 zvm_after_init_commands+=(
   "bindkey '^b' history-search-backward" 
   "bindkey '^n' history-search-forward"
   "bindkey '^C' fzf-cd-widget"
-  "bindkey '^F' fzf-file-widget"
+  "bindkey '^E' fzf-file-widget"
   "bindkey '^R' fzf-history-widget"
 )
 

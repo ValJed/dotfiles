@@ -5,7 +5,7 @@
     ./services/dev.nix
     ./services/displayManager.nix
     ./services/virtualization.nix
-    ./services/kanata.nix
+    # ./services/kanata.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
@@ -30,6 +30,8 @@
 
   # Hardware
   hardware.enableAllFirmware = true;
+
+  hardware.keyboard.zsa.enable = true;
 
   # Commented to test Hyprland
   #hardware.pulseaudio.enable = true;
@@ -77,6 +79,7 @@
       "docker"
       "libvirt"
       "uinput"
+      "plugdev"
     ];
     packages = with pkgs; [home-manager];
   };
@@ -99,6 +102,7 @@
     vlc
     easyeffects
     pinta
+    keymapp
 
     # Tools
     wev
@@ -118,6 +122,7 @@
     xh
     exiftool
     zathura
+    enca
 
     # Hyprland
     waybar
