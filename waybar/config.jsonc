@@ -11,7 +11,7 @@
     "hyprland/window"
   ],
   "modules-right": [
-    "custom/kanata",
+    // "custom/kanata",
     "pulseaudio",
     "disk",
     "cpu",
@@ -59,12 +59,12 @@
       }
     }
   },
-  "custom/kanata": {
-    "exec": "journalctl -u kanata-default.service --no-pager -n 50 | grep deflayer | tail -n 1 | awk '{print $NF}'",
-    "interval": 2,
-    "format": "{}  ",
-    "tooltip": false
-  },
+  // "custom/kanata": {
+  //   "exec": "journalctl -u kanata-default.service --no-pager -n 50 | grep deflayer | tail -n 1 | awk '{print $NF}'",
+  //   "interval": 2,
+  //   "format": "{}  ",
+  //   "tooltip": false
+  // },
   "pulseaudio": {
     "format": "{icon} {volume}%",
     "format-bluetooth": "{icon} {volume}% {icon}",
