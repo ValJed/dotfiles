@@ -1,14 +1,14 @@
 {
   pkgs,
-  lib,
   inputs,
-  hostname,
   ...
 }: {
   imports = [
     ./hardware-configuration.nix
     inputs.self.outputs.nixosModules.default
   ];
+
+  kanata.enable = true;
 
   hardware = {
     nvidia.modesetting.enable = true;
