@@ -119,6 +119,7 @@
     playerctl
     usbutils
     ntfs3g
+    exfatprogs
     xh
     exiftool
     zathura
