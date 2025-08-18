@@ -10,13 +10,6 @@
 in {
   programs.kitty = lib.mkForce {
     enable = true;
-    # settings = {
-    #   confirm_os_window_close = 2;
-    #   shell = "zsh";
-    #   font_size = font_size;
-    #   font_family = "FiraCode Nerd Font";
-    #   cursor_trail = 3;
-    # };
     extraConfig = ''
       confirm_os_window_close 2
       shell "zsh"

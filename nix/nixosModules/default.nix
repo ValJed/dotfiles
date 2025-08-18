@@ -109,7 +109,7 @@
     zip
     unzip
     stow
-    git
+    # git
     signal-desktop
     xfce.thunar
     file

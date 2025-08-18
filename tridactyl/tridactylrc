@@ -38,7 +38,7 @@ set searchurls.tlf https://translate.google.fr/?hl=fr&sl=fr&tl=en&text=%s&op=tra
 set searchurls.npm https://www.npmjs.com/search?q=%s 
 set searchurls.w https://en.wikipedia.org/wiki/%s 
 set searchurls.ms https://www.messenger.com
-set searchurls.y https://www.youtube.com/results?search_query=%s
+set searchurls.yt https://www.youtube.com/results?search_query=%s
 set searchurls.ytm https://www.youtube.com/#ysm-group-title=Media
 set searchurls.ytc https://www.youtube.com/#ysm-group-title=Code
 set searchurls.yts https://www.youtube.com/#ysm-group-title=Science
