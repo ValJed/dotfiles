@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-sudo mkdir -p /var/lib/mongodb /mnt/sdc /mnt/sdd ~/Pictures ~/Videos ~/workspace/apo ~/workspace/projects
+sudo mkdir -p /var/lib/mongodb /mnt/sdc /mnt/sdd ~/Pictures ~/Videos ~/workspace/apo ~/workspace/projects &&
+sudo chmod 777 -R ~/Pictures ~/Videos ~/workspace &&
+sudo chmod 600 ~/.ssh/*
