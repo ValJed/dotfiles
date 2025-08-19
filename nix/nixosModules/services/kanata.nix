@@ -78,7 +78,7 @@
               tab   q      w     e    r    t    y    u    i    o     p       \    ]    ret     ;; 14
               @caps_mod    a     s    d    f    g    h    j    k     l  ;  '       bspc    ;; 13
               lsft  @z_alt x     c    v    b    n    m    ,    .     @/_alt  rsft    ;; 12
-              lctl  lalt   lmet             @spc_mod            ralt  rmet    rctl    ;; 7
+              lctl  lalt   lmet             @spc_mod            rmet  ralt    rctl    ;; 7
             )
 
             (deflayer special
