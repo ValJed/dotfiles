@@ -9,6 +9,11 @@
     inputs.self.outputs.nixosModules.default
   ];
 
+  fileSystems."/media" = {
+    device = "/dev/sdb1";
+    fsType = "ext4";
+  };
+
   programs.steam = {
     enable = true;
     # remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
