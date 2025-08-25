@@ -26,7 +26,7 @@ in {
     ./programs/kitty.nix
     ./programs/nvim.nix
     ./programs/pass.nix
-    ./programs/rofi.nix
+    # ./programs/rofi.nix
     ./programs/tmux.nix
     ./programs/virt.nix
     ./programs/yazi.nix
