@@ -4,15 +4,14 @@
   config,
   ...
 }: {
-  options = {
-    kanata.enable = lib.mkEnableOption "enables kanata";
-  };
+  # options = {
+  #   kanata.enable = lib.mkEnableOption "enables kanata";
+  # };
 
   config = lib.mkIf config.kanata.enable {
     environment.systemPackages = [
       pkgs.kanata
     ];
-    # platform-i8042-serio-0-event-kbd
     services.kanata = {
       enable = true;
       keyboards = {
