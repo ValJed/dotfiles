@@ -149,6 +149,3 @@ element selected.active {
   background-color: @selected-active-background;
   text-color:       @selected-active-foreground;
 }
-
-
-
