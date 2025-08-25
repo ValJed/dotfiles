@@ -4,8 +4,9 @@
   imports = [
     ./services/dev.nix
     ./services/displayManager.nix
-    ./services/virtualization.nix
     ./services/kanata.nix
+    ./services/stylix.nix
+    ./services/virtualization.nix
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
