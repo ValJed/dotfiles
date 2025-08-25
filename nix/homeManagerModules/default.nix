@@ -177,7 +177,4 @@ in {
     TS_LIB = "${pkgs.typescript}/lib/node_modules/typescript/lib";
     VOLAR_LS = "${pkgs.vue-language-server}/lib/node_modules/@vue/language-server";
   };
-
-  # Let Home Manager install and manage itself.
-  programs.home-manager.enable = true;
 }

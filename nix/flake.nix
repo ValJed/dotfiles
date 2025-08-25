@@ -33,14 +33,19 @@
       };
     };
   in {
-    nixosConfigurations = {
-      yoga = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/yoga/configuration.nix
-        ];
+    desktop = nixpkgs.lib.nixosSystem {
+      specialArgs = {
+        inherit inputs;
+        hostname = "desktop";
+        # homeManagerPath = ./hosts/desktop/home.nix;
       };
+      modules = [
+        stylix.nixosModules.stylix
+        ./hosts/desktop/configuration.nix
+      ];
+    };
 
+    nixosConfigurations = {
       xps = nixpkgs.lib.nixosSystem {
         specialArgs = {
           inherit inputs;
@@ -52,39 +57,14 @@
         ];
       };
 
-      desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-          hostname = "desktop";
-        };
+      yoga = nixpkgs.lib.nixosSystem {
+        specialArgs = {inherit inputs;};
         modules = [
-          stylix.nixosModules.stylix
-          ./hosts/desktop/configuration.nix
+          ./hosts/yoga/configuration.nix
         ];
       };
     };
 
-    homeConfigurations = {
-      "jed@xps" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [./hosts/xps/home.nix];
-        extraSpecialArgs = {
-          inherit inputs;
-          hostname = "xps";
-        };
-      };
-
-      "jed@desktop" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [./hosts/desktop/home.nix];
-        extraSpecialArgs = {
-          inherit inputs;
-          hostname = "desktop";
-        };
-      };
-    };
-
     nixosModules.default = ./nixosModules;
-    homeManagerModules.default = ./homeManagerModules;
   };
 }

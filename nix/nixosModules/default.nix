@@ -9,10 +9,18 @@
     ./services/virtualization.nix
   ];
 
-  nix.settings.experimental-features = ["nix-command" "flakes"];
-  # pkgs.config.allowUnfree = true;
+  # home-manager = {
+  #   useUserPackages = true;
+  #   useGlobalPkgs = true;
+  #   backupFileExtension = "backup";
+  #   # users.jed = homeManagerPath;
+  # };
 
-  # Bootloader.
+  nix.settings.experimental-features = ["nix-command" "flakes"];
+
+  nixpkgs.config.allowUnfree = true;
+
+  # Bootloader
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
@@ -82,11 +90,8 @@
       "uinput"
       "plugdev"
     ];
-    packages = with pkgs; [home-manager];
+package = with pkgs; [home-manager];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code
@@ -104,6 +109,7 @@
     easyeffects
     pinta
     keymapp
+    git
 
     # Tools
     wev
@@ -130,9 +136,6 @@
     waybar
     networkmanagerapplet
     wl-clipboard
-    (rofi-wayland.override (_: {
-      plugins = [rofi-emoji-wayland];
-    }))
     dunst
     libnotify
     cliphist
