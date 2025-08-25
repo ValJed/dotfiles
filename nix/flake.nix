@@ -11,18 +11,23 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    stylix = {
+      url = "github:nix-community/stylix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
   };
 
   outputs = {
     nixpkgs,
     home-manager,
+    stylix,
     ...
   } @ inputs: let
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
-
       config = {
         allowUnfree = true;
       };
@@ -42,6 +47,7 @@
           hostname = "xps";
         };
         modules = [
+          stylix.nixosModules.stylix
           ./hosts/xps/configuration.nix
         ];
       };
@@ -52,6 +58,7 @@
           hostname = "desktop";
         };
         modules = [
+          stylix.nixosModules.stylix
           ./hosts/desktop/configuration.nix
         ];
       };
