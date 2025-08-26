@@ -135,6 +135,7 @@ in {
       source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/nvim";
       recursive = true;
     };
+    ".config/rofi/config.rasi".source = ../../rofi/config.rasi;
     ".config/slumber/config.yml".source =
       config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/slumber/config.yml";
     ".config/swappy/config".source = ../../swappy/config;
