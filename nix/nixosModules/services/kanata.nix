@@ -4,9 +4,9 @@
   config,
   ...
 }: {
-  # options = {
-  #   kanata.enable = lib.mkEnableOption "enables kanata";
-  # };
+  options = {
+    kanata.enable = lib.mkEnableOption "enables kanata";
+  };
 
   config = lib.mkIf config.kanata.enable {
     environment.systemPackages = [

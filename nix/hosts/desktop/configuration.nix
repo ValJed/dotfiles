@@ -9,6 +9,8 @@
     inputs.self.outputs.nixosModules.default
   ];
 
+  kanata.enable = false;
+
   fileSystems."/media" = {
     device = "/dev/sdb1";
     fsType = "ext4";
