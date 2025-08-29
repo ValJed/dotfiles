@@ -5,7 +5,7 @@
     ./services/dev.nix
     ./services/displayManager.nix
     ./services/kanata.nix
-    ./services/stylix.nix
+    # ./services/stylix.nix
     ./services/virtualization.nix
   ];
 
