@@ -6,7 +6,7 @@
 }: {
   imports = [
     ./hardware-configuration.nix
-    inputs.self.outputs.nixosModules.default
+    ../../nixosModules/default.nix
   ];
 
   kanata.enable = false;

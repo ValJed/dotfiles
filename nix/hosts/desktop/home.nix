@@ -1,5 +1,7 @@
-{ inputs, ... }: {
-  imports = [inputs.self.outputs.homeManagerModules.default];
+{...}: {
+  imports = [
+    ../../homeManagerModules/default.nix
+  ];
 
   home.file = {
     ".config/hypr/hyprland.conf" = {
