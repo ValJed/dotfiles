@@ -16,6 +16,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    # Can be removed (in offical packages)
     rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
   };
 
@@ -28,9 +29,6 @@
     system = "x86_64-linux";
     pkgs = import nixpkgs {
       inherit system;
-      config = {
-        allowUnfree = true;
-      };
     };
   in {
     nixosConfigurations = {
@@ -43,12 +41,25 @@
 
       xps = nixpkgs.lib.nixosSystem {
         specialArgs = {
-          inherit inputs;
           hostname = "xps";
         };
         modules = [
           stylix.nixosModules.stylix
           ./hosts/xps/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.jed = ./hosts/xps/home.nix;
+
+              extraSpecialArgs = {
+                # Remove when hyprcursor comes from packages
+                inherit inputs;
+                hostname = "xps";
+              };
+            };
+          }
         ];
       };
 
@@ -83,8 +94,5 @@
         };
       };
     };
-
-    nixosModules.default = ./nixosModules;
-    homeManagerModules.default = ./homeManagerModules;
   };
 }
