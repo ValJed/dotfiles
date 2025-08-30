@@ -50,7 +50,7 @@ in {
     pkgs.dconf-editor
     pkgs.wbg
     pkgs.adwaita-qt
-    inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+    pkgs.rose-pine-hyprcursor
 
     # Tools
     pkgs.lazygit

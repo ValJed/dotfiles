@@ -15,9 +15,6 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    # Can be removed (in offical packages)
-    rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
   };
 
   outputs = {
@@ -54,8 +51,6 @@
               users.jed = ./hosts/xps/home.nix;
 
               extraSpecialArgs = {
-                # Remove when hyprcursor comes from packages
-                inherit inputs;
                 hostname = "xps";
               };
             };
