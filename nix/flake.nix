@@ -23,70 +23,43 @@
     stylix,
     ...
   } @ inputs: let
-    system = "x86_64-linux";
-    pkgs = import nixpkgs {
-      inherit system;
-    };
-  in {
-    nixosConfigurations = {
-      yoga = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs;};
-        modules = [
-          ./hosts/yoga/configuration.nix
-        ];
-      };
-
-      xps = nixpkgs.lib.nixosSystem {
+    mkNixosConfig = {
+      hostname,
+      nixpkgs,
+      home-manager,
+    }:
+      nixpkgs.lib.nixosSystem {
         specialArgs = {
-          hostname = "xps";
+          hostname = hostname;
         };
         modules = [
           stylix.nixosModules.stylix
-          ./hosts/xps/configuration.nix
+          ./hosts/${hostname}/configuration.nix
           home-manager.nixosModules.home-manager
           {
             home-manager = {
               useGlobalPkgs = true;
               useUserPackages = true;
-              users.jed = ./hosts/xps/home.nix;
+              users.jed = ./hosts/${hostname}/home.nix;
 
               extraSpecialArgs = {
-                hostname = "xps";
+                hostname = hostname;
               };
             };
           }
         ];
       };
-
-      desktop = nixpkgs.lib.nixosSystem {
-        specialArgs = {
-          inherit inputs;
-          hostname = "desktop";
-        };
-        modules = [
-          stylix.nixosModules.stylix
-          ./hosts/desktop/configuration.nix
-        ];
+  in {
+    nixosConfigurations = {
+      xps = mkNixosConfig {
+        hostname = "xps";
+        nixpkgs = inputs.nixpkgs;
+        home-manager = inputs.home-manager;
       };
-    };
-
-    homeConfigurations = {
-      "jed@xps" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [./hosts/xps/home.nix];
-        extraSpecialArgs = {
-          inherit inputs;
-          hostname = "xps";
-        };
-      };
-
-      "jed@desktop" = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        modules = [./hosts/desktop/home.nix];
-        extraSpecialArgs = {
-          inherit inputs;
-          hostname = "desktop";
-        };
+      desktop = mkNixosConfig {
+        hostname = "desktop";
+        nixpkgs = inputs.nixpkgs;
+        home-manager = inputs.home-manager;
       };
     };
   };
