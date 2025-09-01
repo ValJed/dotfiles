@@ -151,7 +151,7 @@ in {
     EDITOR = "nvim";
     ZSH_TMUX_CONFIG = "$HOME/.config/tmux/tmux.conf";
     TS_LIB = "${pkgs.typescript}/lib/node_modules/typescript/lib";
-    VOLAR_LS = "${pkgs.vue-language-server}/lib/node_modules/@vue/language-server";
+    VOLAR_LS = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
   };
 
   # programs.home-manager.enable = true;
