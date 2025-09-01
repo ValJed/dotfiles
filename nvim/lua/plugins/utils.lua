@@ -30,7 +30,7 @@ return {
 		end,
 	},
 	{ "nvim-lua/plenary.nvim" }, -- Useful lua functions used ny lots of plugins
-	{ "github/copilot.vim" },
+	--[[ { "github/copilot.vim" }, ]]
 	{
 		"saecki/crates.nvim",
 		tag = "stable",
