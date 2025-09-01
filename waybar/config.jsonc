@@ -67,8 +67,8 @@
   // },
   "pulseaudio": {
     "format": "{icon} {volume}%",
-    "format-bluetooth": "{icon} {volume}% {icon}",
-    "format-bluetooth-muted": "󰟎 {icon}",
+    "format-bluetooth": "{icon} {volume}%",
+    "format-bluetooth-muted": "󰟎",
     "format-muted": "󰟎",
     "format-source-muted": "",
     "format-icons": {
@@ -115,9 +115,6 @@
     "format-charging": " {capacity}%",
     "format-plugged": " {capacity}%",
     "format-icons": ["", "", "", "", ""]
-    // "format-alt": "{time} {icon}",
-    // "format-good": "", // An empty format will hide the module
-    // "format-full": "",
   },
   "custom/power": {
     "format" : "⏻ ",
