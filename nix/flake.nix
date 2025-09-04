@@ -41,6 +41,7 @@
               useGlobalPkgs = true;
               useUserPackages = true;
               users.jed = ./hosts/${hostname}/home.nix;
+              backupFileExtension = "backup";
 
               extraSpecialArgs = {
                 hostname = hostname;
