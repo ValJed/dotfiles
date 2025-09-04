@@ -1,4 +1,4 @@
-{pkgs, ...}: {
+{...}: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -6,4 +6,6 @@
       luajitPackages.inspect
     ];
   };
+
+  stylix.targets.neovim.enable = false;
 }

@@ -20,7 +20,6 @@
     '';
     shellAliases = {
       nixos-switch = "sudo nixos-rebuild --flake ~/dotfiles/nix#${hostname} switch";
-      nixhome-switch = "home-manager --flake ~/dotfiles/nix#jed@${hostname} switch";
       act = "~/apps/assembly-cloud-tools/bin/act";
     };
   };
