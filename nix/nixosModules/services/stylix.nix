@@ -1,8 +1,7 @@
 {pkgs, ...}: {
   stylix = {
     enable = true;
-    # autoEnable = true;
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine-moon.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
     image = ../../../assets/wallpaper.png;
     cursor = {
       name = "BreezeX-RosePine-Linux";
@@ -23,6 +22,11 @@
         package = pkgs.nerd-fonts.fira-code;
         name = "FiraCode Nerd Font";
       };
+    };
+
+    icons = {
+      enable = true;
+      package = pkgs.rose-pine-icon-theme;
     };
   };
 }
