@@ -22,6 +22,10 @@
         package = pkgs.nerd-fonts.fira-code;
         name = "FiraCode Nerd Font";
       };
+
+      sizes = {
+        popups = 12;
+      };
     };
 
     icons = {
