@@ -16,18 +16,19 @@
   record = import ./scripts/record.nix {inherit pkgs;};
 in {
   imports = [
-    # ./programs/gtk.nix
     ./programs/btop.nix
     ./programs/dunst.nix
     ./programs/firefox.nix
     ./programs/fzf.nix
     ./programs/git.nix
+    ./programs/gtk.nix
     ./programs/kitty.nix
     ./programs/nvim.nix
     ./programs/pass.nix
     ./programs/rofi.nix
     ./programs/tmux.nix
     ./programs/virt.nix
+    ./programs/waybar.nix
     ./programs/yazi.nix
     ./programs/zsh.nix
   ];
@@ -117,10 +118,6 @@ in {
       recursive = true;
     };
     ".config/starship.toml".source = ../../starship/starship.toml;
-    ".config/waybar" = {
-      source = ../../waybar;
-      recursive = true;
-    };
     ".config/nvim" = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/nvim";
       recursive = true;
