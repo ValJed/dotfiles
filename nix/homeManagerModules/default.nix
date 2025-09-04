@@ -1,6 +1,5 @@
 {
   pkgs,
-  inputs,
   lib,
   config,
   ...
@@ -17,16 +16,17 @@
   record = import ./scripts/record.nix {inherit pkgs;};
 in {
   imports = [
+    # ./programs/gtk.nix
+    # ./programs/rofi.nix
     # ./programs/stylix.nix
     ./programs/btop.nix
+    ./programs/dunst.nix
     ./programs/firefox.nix
     ./programs/fzf.nix
     ./programs/git.nix
-    ./programs/gtk.nix
     ./programs/kitty.nix
     ./programs/nvim.nix
     ./programs/pass.nix
-    # ./programs/rofi.nix
     ./programs/tmux.nix
     ./programs/virt.nix
     ./programs/yazi.nix
@@ -130,7 +130,6 @@ in {
     ".config/slumber/config.yml".source =
       config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/slumber/config.yml";
     ".config/swappy/config".source = ../../swappy/config;
-    ".config/dunst/dunstrc".source = ../../dunst/dunstrc;
     ".config/yazi" = {
       source = ../../yazi;
       recursive = true;
