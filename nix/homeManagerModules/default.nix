@@ -17,7 +17,6 @@
 in {
   imports = [
     # ./programs/gtk.nix
-    # ./programs/stylix.nix
     ./programs/btop.nix
     ./programs/dunst.nix
     ./programs/firefox.nix
