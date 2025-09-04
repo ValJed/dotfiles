@@ -4,8 +4,12 @@ export EDITOR="nvim"
 export SUDO_EDITOR="nvim"
 export TERMINAL="kitty"
 export BROWSER="firefox"
+export PNPM_HOME=$HOME/.pnpm-global
+
 export PATH=$HOME/.local/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
+export PATH=$HOME/.npm-global/bin:$PATH
+export PATH=$HOME/.pnpm-global:$PATH
 export PATH=/opt/stagecoach/bin:$PATH
 export PATH=/opt/ops-tools/bin:$PATH
 
