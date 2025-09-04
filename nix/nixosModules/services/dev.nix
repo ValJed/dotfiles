@@ -29,11 +29,13 @@
 
     # DB
     pkgs.sqlite
-
     pkgs.gnumake
 
     # Tests
     pkgs.cypress
+
+    # Tools
+    pkgs.imagemagick
   ];
 
   environment.variables = {
