@@ -10,10 +10,10 @@
 
   kanata.enable = false;
 
-  fileSystems."/media" = {
-    device = "/dev/sdb1";
-    fsType = "ext4";
-  };
+  # fileSystems."/media" = {
+  #   device = "/dev/sdb1";
+  #   fsType = "ext4";
+  # };
 
   programs.steam = {
     enable = true;
