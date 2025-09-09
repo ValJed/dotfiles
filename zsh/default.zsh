@@ -9,13 +9,14 @@ HISTDUP=erase
 # source
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/exports.zsh
-source ~/.config/zsh/completions/task.zsh
-
-# fzf
-source ~/.config/zsh/fzf/key-bindings.zsh
-source ~/.config/zsh/fzf/completion.zsh
 
 autoload -U compinit && compinit
+
+# fzf / completions
+source ~/.config/zsh/fzf/key-bindings.zsh
+source ~/.config/zsh/fzf/completion.zsh
+source ~/.config/zsh/completions/task.zsh
+source ~/.config/zsh/completions/pass.zsh
 
 setopt append_history
 setopt share_history
