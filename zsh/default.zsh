@@ -6,8 +6,14 @@ HISTSIZE=50000
 SAVEHIST=$HISTSIZE
 HISTDUP=erase
 
+# source
 source ~/.config/zsh/aliases.zsh
 source ~/.config/zsh/exports.zsh
+source ~/.config/zsh/completions/task.zsh
+
+# fzf
+source ~/.config/zsh/fzf/key-bindings.zsh
+source ~/.config/zsh/fzf/completion.zsh
 
 autoload -U compinit && compinit
 
@@ -25,10 +31,6 @@ zstyle ':completion:*' list-colors '${(s.:.)LS_COLORS}'
 zstyle ':completion:*' menu no
 zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
 zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
-
-# source
-source ~/.config/zsh/fzf/key-bindings.zsh
-source ~/.config/zsh/fzf/completion.zsh
 
 # keybinds
 bindkey '^F' autosuggest-accept
