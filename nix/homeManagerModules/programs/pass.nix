@@ -1,5 +1,9 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    (pass.withExtensions (exts: [exts.pass-otp]))
-  ];
+  programs.password-store = {
+    enable = true;
+    package = pkgs.pass.withExtensions (exts: [exts.pass-otp]);
+    settings = {
+      PASSWORD_STORE_DIR = "/home/jed/.password-store";
+    };
+  };
 }
