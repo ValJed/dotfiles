@@ -16,6 +16,7 @@
   record = import ./scripts/record.nix {inherit pkgs;};
 in {
   imports = [
+    ./programs/bat.nix
     ./programs/btop.nix
     ./programs/dunst.nix
     ./programs/firefox.nix
@@ -59,7 +60,6 @@ in {
     pkgs.rainfrog
     pkgs.vi-mongo
     pkgs.eza
-    pkgs.bat
     pkgs.fd
     pkgs.zoxide
     pkgs.starship
