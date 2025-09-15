@@ -112,6 +112,24 @@ in {
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
   home.file = {
+    ".local/share/zsh/vendor-completions".source = pkgs.runCommand "zsh-completions" {} ''
+      mkdir -p $out
+      for pkg in ${lib.concatStringsSep " " (map toString config.home.packages)}; do
+        # Copy from site-functions
+        if [[ -d "$pkg/share/zsh/site-functions" ]]; then
+          cp -L "$pkg/share/zsh/site-functions/"_* $out/ 2>/dev/null || true
+        fi
+
+        # Copy from vendor-completions
+        if [[ -d "$pkg/share/zsh/vendor-completions" ]]; then
+          cp -L "$pkg/share/zsh/vendor-completions/"_* $out/ 2>/dev/null || true
+        fi
+      done
+    '';
+    ".local/share/zsh/completions" = {
+      source = ../../zsh/completions;
+      recursive = true;
+    };
     ".config/hypr/hyprlock.conf".source = ../../hypr/hyprlock.conf;
     ".config/zsh" = {
       source = ../../zsh;
