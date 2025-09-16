@@ -17,11 +17,11 @@
 in {
   imports = [
     ./programs/bat.nix
-    ./programs/gh.nix
     ./programs/btop.nix
     ./programs/dunst.nix
     ./programs/firefox.nix
     ./programs/fzf.nix
+    ./programs/ci.nix
     ./programs/git.nix
     ./programs/gtk.nix
     ./programs/kitty.nix
