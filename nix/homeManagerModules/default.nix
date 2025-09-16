@@ -17,6 +17,7 @@
 in {
   imports = [
     ./programs/bat.nix
+    ./programs/gh.nix
     ./programs/btop.nix
     ./programs/dunst.nix
     ./programs/firefox.nix
