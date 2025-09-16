@@ -185,7 +185,7 @@
       gpristine = "git reset --hard && git clean --force -dfx";
 
       # Apostrophe
-      act = "~/apps/assembly-cloud-tools/bin/act";
+      ac = "~/apps/assembly-cloud-tools/bin/act";
       a3u = "node app @apostrophecms/user:add";
       a3g = "node app @apostrophecms-pro/advanced-permission-group:add-admin admin";
       a2u = "node app apostrophe-users:add";
