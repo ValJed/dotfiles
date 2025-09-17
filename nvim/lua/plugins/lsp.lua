@@ -60,6 +60,14 @@ return {
 					scss = { "stylelint", "prettierd" },
 					python = { "black" },
 					toml = { "taplo" },
+					--[[ yaml = function(bufnr) ]]
+					--[[ 	local filepath = vim.api.nvim_buf_get_name(bufnr) ]]
+					--[[ 	-- Only format YAML files in .github/workflows/ ]]
+					--[[ 	if filepath:match("%.github/workflows/") then ]]
+					--[[ 		return { "actionlint", "prettierd" } ]]
+					--[[ 	end ]]
+					--[[ 	return { "prettierd" } ]]
+					--[[ end, ]]
 				},
 				format_on_save = true,
 				formatters = {
