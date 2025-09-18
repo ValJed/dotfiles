@@ -8,9 +8,11 @@
     ./services/stylix.nix
     ./services/virtualization.nix
   ];
-
   nix.settings.experimental-features = ["nix-command" "flakes"];
-  # pkgs.config.allowUnfree = true;
+  nix.settings.download-buffer-size = 524288000;
+
+  # Allow unfree packages
+  nixpkgs.config.allowUnfree = true;
 
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
@@ -84,9 +86,6 @@
     ];
     packages = with pkgs; [home-manager];
   };
-
-  # Allow unfree packages
-  nixpkgs.config.allowUnfree = true;
 
   fonts.packages = with pkgs; [
     nerd-fonts.fira-code

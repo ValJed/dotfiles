@@ -36,7 +36,7 @@
 
   hardware = {
     graphics.enable = true;
-    # 565.77 (current working if need to pin it)
+    # 580.65.06 (current working if need to pin it)
     nvidia = {
       modesetting.enable = true;
       nvidiaSettings = true;
