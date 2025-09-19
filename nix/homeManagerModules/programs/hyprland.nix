@@ -1,4 +1,6 @@
 {...}: {
+  stylix.targets.hyprland.enable = true;
+
   wayland.windowManager.hyprland = {
     enable = true;
     # Use global package
@@ -130,9 +132,9 @@
         "$mod, C, exec, $menu-clipboard"
         "$mod, S, exec, ~/dotfiles/scripts/rofi-sink.py"
         "$mod, N, togglesplit, # dwindle"
-        "$mod, W, fullscreen, 1 "
-        "$mod, A, fullscreen, "
-        "$mod, \, exec, hyprlock "
+        "$mod, W, fullscreen, 1"
+        "$mod, A, fullscreen,"
+        ''$mod, \, exec, hyprlock''
         "$mod, E, exec, $menu-emoji"
 
         # Apps
@@ -155,6 +157,9 @@
         "$mod SHIFT, J, movewindow, d"
         "$mod SHIFT, K, movewindow, u"
         "$mod SHIFT, L, movewindow, r"
+
+        # Resize mode
+        "$mod, R, submap, resize"
 
         "$mod, 1, workspace, 1"
         "$mod, 2, workspace, 2"
@@ -200,26 +205,17 @@
         ", XF86AudioPrev, exec, playerctl previous"
       ];
 
+      bindle = [
+        ", XF86AudioRaiseVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%+"
+        ", XF86AudioLowerVolume, exec, wpctl set-volume @DEFAULT_AUDIO_SINK@ 5%-"
+      ];
+      bindl = [
+        ", XF86AudioMute, exec, wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+      ];
       bindm = [
         "$mod, mouse:272, movewindow"
         "$mod, mouse:273, resizewindow"
       ];
-
-      submaps = {
-        resize = {
-          settings = {
-            binde = [
-              ", right, resizeactive, 30 0"
-              ", left, resizeactive, -30 0"
-              ", up, resizeactive, 0 -30"
-              ", down, resizeactive, 0 30"
-            ];
-            bind = [
-              ", escape, submap, reset "
-            ];
-          };
-        };
-      };
 
       windowrulev2 = [
         "workspace 4, class:discord"
@@ -231,5 +227,17 @@
         "suppressevent maximize, class:.*"
       ];
     };
+
+    extraConfig = ''
+      submap = resize
+
+      binde = , right, resizeactive, 30 0
+      binde = , left, resizeactive, -30 0
+      binde = , up, resizeactive, 0 -30
+      binde = , down, resizeactive, 0 30
+      bind = , escape, submap, reset
+
+      submap = reset
+    '';
   };
 }

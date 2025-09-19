@@ -25,6 +25,7 @@ in {
     ./programs/git.nix
     ./programs/gtk.nix
     ./programs/hyprland.nix
+    ./programs/hyprlock.nix
     ./programs/kitty.nix
     ./programs/nvim.nix
     ./programs/pass.nix
@@ -131,11 +132,6 @@ in {
     '';
     ".local/share/zsh/completions" = {
       source = ../../zsh/completions;
-      recursive = true;
-    };
-    ".config/hypr/hyprlock.conf".source = ../../hypr/hyprlock.conf;
-    ".config/zsh" = {
-      source = ../../zsh;
       recursive = true;
     };
     ".config/starship.toml".source = ../../starship/starship.toml;
