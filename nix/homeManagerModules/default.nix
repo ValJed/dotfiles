@@ -18,12 +18,13 @@ in {
   imports = [
     ./programs/bat.nix
     ./programs/btop.nix
+    ./programs/ci.nix
     ./programs/dunst.nix
     ./programs/firefox.nix
     ./programs/fzf.nix
-    ./programs/ci.nix
     ./programs/git.nix
     ./programs/gtk.nix
+    ./programs/hyprland.nix
     ./programs/kitty.nix
     ./programs/nvim.nix
     ./programs/pass.nix
@@ -102,7 +103,8 @@ in {
     pkgs.taplo
   ];
 
-  wayland.windowManager.hyprland.systemd.enable = false;
+  # wayland.windowManager.hyprland.systemd.enable = false;
+
   xdg.desktopEntries.obsidian = {
     name = "Obsidian";
     type = "Application";
