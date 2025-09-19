@@ -18,6 +18,7 @@ in {
       confirm_os_window_close = 2;
       shell = "zsh";
       cursor_trail = 3;
+      window_padding_width = 2;
     };
     keybindings = {
       "ctrol+shift+right" = "no_op";
