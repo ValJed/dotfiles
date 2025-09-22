@@ -7,11 +7,8 @@
 
   programs.rofi = {
     enable = true;
-    # to remove
-    package = pkgs.rofi-wayland;
     plugins = [
-      pkgs.rofi-emoji-wayland
-      # pkgs.rofi-emoji
+      pkgs.rofi-emoji
     ];
 
     extraConfig = {
