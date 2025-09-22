@@ -136,17 +136,25 @@
     };
 
     style = ''
-      * {
-        font-family: FiraCode Nerd Font, Roboto, Helvetica, Arial, sans-serif;
-        font-size: 13px;
-      }
-
       window#waybar.hidden {
         opacity: 0.2;
       }
 
+      .modules-left #workspaces button {
+          border: none;
+          border-radius: 0px;
+      }
+      .modules-left #workspaces button.focused,
+      .modules-left #workspaces button.active {
+          border: none;
+      }
+
+      .modules-left #workspaces button:hover {
+        color: @base05;
+        background: inherit;
+      }
+
       #workspaces {
-        border-radius: 10px;
         margin-top: 5px;
         padding: 5px;
       }
@@ -157,10 +165,6 @@
 
       #workspaces button.active {
         color: @base05;
-      }
-
-      #workspaces button:hover {
-        border: none;
       }
 
       #clock,
@@ -201,16 +205,6 @@
         color: @base0A;
       }
 
-      /* If workspaces is the leftmost module, omit left margin */
-      .modules-left > widget:first-child {
-        margin-left: 5px;
-      }
-
-      /* If workspaces is the rightmost module, omit right margin */
-      .modules-right > widget:last-child {
-        margin-right: 10px;
-      }
-
       #battery {
         color: @base0B;
       }
@@ -228,7 +222,7 @@
 
       /* Using steps() instead of linear as a timing function to limit cpu usage */
       #battery.critical:not(.charging) {
-        background-color: @love;
+        background-color: @base08;
         color: @base05;
         animation-name: blink;
         animation-duration: 0.5s;
@@ -248,7 +242,6 @@
       #custom-power {
         margin-right: 10px;
       }
-
     '';
   };
 }
