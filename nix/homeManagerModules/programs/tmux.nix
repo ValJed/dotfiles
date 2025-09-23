@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  stylix.targets.tmux.enable = true;
+
   programs.tmux = {
     enable = true;
     shell = "${pkgs.zsh}/bin/zsh";
@@ -7,17 +9,6 @@
     prefix = "C-b";
     mouse = true;
     plugins = with pkgs; [
-      {
-        plugin = tmuxPlugins.dracula;
-        extraConfig = ''
-          set -g @dracula-show-powerline true
-          set -g @dracula-fixed-location "Lyon"
-          set -g @dracula-plugins "weather"
-          set -g @dracula-show-fahrenheit false
-          set -g @dracula-show-flags true
-          set -g @dracula-show-left-icon session
-        '';
-      }
       tmuxPlugins.vim-tmux-navigator
     ];
     extraConfig = ''
