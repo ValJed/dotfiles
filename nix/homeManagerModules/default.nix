@@ -72,6 +72,9 @@ in {
     pkgs.fastfetch
     pkgs.bc
     pkgs.dysk
+    pkgs.awscli2
+    pkgs.ssm-session-manager-plugin
+    pkgs.mongosh
     # pkgs.nodePackages.eas-cli Removed for now since breaks at build time
 
     # Apps
@@ -82,6 +85,20 @@ in {
     pkgs.slumber
     pkgs.qutebrowser
     pkgs.presenterm
+
+    # Node
+    pkgs.nodejs_20
+    pkgs.pnpm_10
+
+    # Rust
+    pkgs.pkg-config
+    pkgs.rustc
+    pkgs.cargo
+    pkgs.cargo-watch
+
+    # Gleam
+    pkgs.gleam
+    pkgs.erlang
 
     # LSP
     pkgs.rust-analyzer
@@ -102,6 +119,12 @@ in {
     pkgs.pyright
     pkgs.black
     pkgs.taplo
+    pkgs.typescript
+    pkgs.vscode-js-debug
+    pkgs.alejandra
+
+    # Tests
+    pkgs.cypress
   ];
 
   # wayland.windowManager.hyprland.systemd.enable = false;
@@ -163,9 +186,11 @@ in {
     ZSH_TMUX_CONFIG = "$HOME/.config/tmux/tmux.conf";
     TS_LIB = "${pkgs.typescript}/lib/node_modules/typescript/lib";
     VOLAR_LS = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
-  };
 
-  # programs.home-manager.enable = true;
+    # Cypress
+    CYPRESS_INSTALL_BINARY = 0;
+    CYPRESS_RUN_BINARY = "${pkgs.cypress}/bin/Cypress";
+  };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
