@@ -158,8 +158,8 @@ in {
       recursive = true;
     };
     ".config/starship.toml".source = ../../starship/starship.toml;
-    ".config/nvim" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/nvim";
+    ".config/nvim/lua" = {
+      source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/nvim/lua";
       recursive = true;
     };
     ".config/slumber/config.yml".source =
