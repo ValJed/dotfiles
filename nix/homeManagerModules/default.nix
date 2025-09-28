@@ -186,6 +186,13 @@ in {
     # Cypress
     CYPRESS_INSTALL_BINARY = 0;
     CYPRESS_RUN_BINARY = "${pkgs.cypress}/bin/Cypress";
+    THEME_MODE = lib.mkDefault "dark";
+  };
+
+  specialisation.light.configuration = {
+    home.sessionVariables = {
+      THEME_MODE = "light";
+    };
   };
 
   # This value determines the Home Manager release that your configuration is
