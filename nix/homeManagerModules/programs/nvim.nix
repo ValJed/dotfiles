@@ -33,5 +33,5 @@
     '';
   };
 
-  stylix.targets.neovim.enable = true;
+  # stylix.targets.neovim.enable = true;
 }
