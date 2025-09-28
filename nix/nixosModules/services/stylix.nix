@@ -40,12 +40,20 @@
     };
   };
 
-  environment.systemPackages = [
-    (lib.lowPrio (pkgs.writeShellScriptBin "toggle-theme" ''
-      sudo nixos-rebuild --flake ~/dotfiles/nix#${hostname} switch --specialisation light
-      tmux source ~/.config/tmux/tmux.conf 2>/dev/null || true
-    ''))
-  ];
+  environment = {
+    systemPackages = [
+      (lib.lowPrio (pkgs.writeShellScriptBin "toggle-theme" ''
+        sudo nixos-rebuild --flake ~/dotfiles/nix#${hostname} switch --specialisation light
+        tmux source ~/.config/tmux/tmux.conf 2>/dev/null || true
+      ''))
+    ];
+    etc = {
+      theme = lib.mkDefault {
+        text = ''dark'';
+        mode = "044";
+      };
+    };
+  };
 
   specialisation.light.configuration = {
     stylix = {
@@ -54,14 +62,24 @@
       cursor.name = "BreezeX-RosePineDawn-Linux";
     };
 
-    environment.systemPackages = [
-      (pkgs.writeShellScriptBin "toggle-theme" ''
-        sudo nixos-rebuild --flake ~/dotfiles/nix#${hostname} switch
-        tmux source ~/.config/tmux/tmux.conf 2>/dev/null || true
-      '')
-    ];
+    environment = {
+      systemPackages = [
+        (pkgs.writeShellScriptBin "toggle-theme" ''
+          sudo nixos-rebuild --flake ~/dotfiles/nix#${hostname} switch
+          tmux source ~/.config/tmux/tmux.conf 2>/dev/null || true
+        '')
+      ];
+      etc = {
+        theme = lib.mkForce {
+          text = ''light'';
+          mode = "044";
+        };
+      };
+    };
   };
 }
+# unset __HM_SESS_VARS_SOURCED
+# source /etc/profiles/per-user/jed/etc/profile.d/hm-session-vars.sh
 # Current theme:
 # system: "base16"
 # name: "Rosé Pine"

@@ -1,4 +1,9 @@
-{...}: {
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -33,5 +38,12 @@
     '';
   };
 
-  # stylix.targets.neovim.enable = true;
+  home.file = {
+    ".config/nvim/lua" = {
+      source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/nvim/lua";
+      recursive = true;
+    };
+  };
+
+  stylix.targets.neovim.enable = false;
 }

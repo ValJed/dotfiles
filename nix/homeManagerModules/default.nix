@@ -158,10 +158,6 @@ in {
       recursive = true;
     };
     ".config/starship.toml".source = ../../starship/starship.toml;
-    ".config/nvim/lua" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/nvim/lua";
-      recursive = true;
-    };
     ".config/slumber/config.yml".source =
       config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/slumber/config.yml";
     ".config/swappy/config".source = ../../swappy/config;
@@ -186,13 +182,6 @@ in {
     # Cypress
     CYPRESS_INSTALL_BINARY = 0;
     CYPRESS_RUN_BINARY = "${pkgs.cypress}/bin/Cypress";
-    THEME_MODE = lib.mkDefault "dark";
-  };
-
-  specialisation.light.configuration = {
-    home.sessionVariables = {
-      THEME_MODE = "light";
-    };
   };
 
   # This value determines the Home Manager release that your configuration is
