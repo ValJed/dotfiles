@@ -1,6 +1,7 @@
 {
   pkgs,
   lib,
+  hostname,
   ...
 }: {
   stylix = {
@@ -40,19 +41,11 @@
   };
 
   environment.systemPackages = [
-    (pkgs.writeShellScriptBin "toggle-theme" ''
-      if [ "$THEME_MODE" = "dark" ]; then
-        sudo nixos-rebuild --flake ~/dotfiles/nix switch --specialisation light
-      else
-        sudo nixos-rebuild --flake ~/dotfiles/nix switch
-      fi
+    (lib.lowPrio (pkgs.writeShellScriptBin "toggle-theme" ''
+      sudo nixos-rebuild --flake ~/dotfiles/nix#${hostname} switch --specialisation light
       tmux source ~/.config/tmux/tmux.conf 2>/dev/null || true
-    '')
+    ''))
   ];
-
-  environment.sessionVariables = {
-    THEME_MODE = lib.mkDefault "dark";
-  };
 
   specialisation.light.configuration = {
     stylix = {
@@ -60,9 +53,13 @@
       polarity = "light";
       cursor.name = "BreezeX-RosePineDawn-Linux";
     };
-    environment.sessionVariables = {
-      THEME_MODE = "light";
-    };
+
+    environment.systemPackages = [
+      (pkgs.writeShellScriptBin "toggle-theme" ''
+        sudo nixos-rebuild --flake ~/dotfiles/nix#${hostname} switch
+        tmux source ~/.config/tmux/tmux.conf 2>/dev/null || true
+      '')
+    ];
   };
 }
 # Current theme:
