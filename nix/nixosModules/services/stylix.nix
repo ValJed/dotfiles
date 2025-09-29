@@ -3,7 +3,14 @@
   lib,
   hostname,
   ...
-}: {
+}: let
+  toggle_theme_script = ''
+    tmux source ~/.config/tmux/tmux.conf 2>/dev/null || true
+    for nvim_server in /run/user/1000/nvim.*.0; do
+      nvim --server "$nvim_server" --remote-send ':lua require("utils.functions").set_colorscheme()<CR>'
+    done
+  '';
+in {
   stylix = {
     enable = true;
     base16Scheme = lib.mkDefault "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
@@ -42,10 +49,10 @@
 
   environment = {
     systemPackages = [
-      (lib.lowPrio (pkgs.writeShellScriptBin "toggle-theme" ''
-        sudo nixos-rebuild --flake ~/dotfiles/nix#${hostname} switch --specialisation light
-        tmux source ~/.config/tmux/tmux.conf 2>/dev/null || true
-      ''))
+      (lib.lowPrio (pkgs.writeShellScriptBin "toggle-theme" (''
+          sudo nixos-rebuild --flake ~/dotfiles/nix#${hostname} switch --specialisation light
+        ''
+        + toggle_theme_script)))
     ];
     etc = {
       theme = lib.mkDefault {
@@ -64,10 +71,10 @@
 
     environment = {
       systemPackages = [
-        (pkgs.writeShellScriptBin "toggle-theme" ''
-          sudo nixos-rebuild --flake ~/dotfiles/nix#${hostname} switch
-          tmux source ~/.config/tmux/tmux.conf 2>/dev/null || true
-        '')
+        (pkgs.writeShellScriptBin "toggle-theme" (''
+            sudo nixos-rebuild --flake ~/dotfiles/nix#${hostname} switch
+          ''
+          + toggle_theme_script))
       ];
       etc = {
         theme = lib.mkForce {
