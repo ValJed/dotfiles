@@ -23,8 +23,8 @@
         "wl-paste --type text --watch cliphist store # Stores only text data"
         "wl-paste --type image --watch cliphist store # Stores only image data"
         "[workspace 1 silent] $browser "
-        "[workspace 2 silent] kitty -e tmux new -s main "
-        "[workspace 3 silent] kitty -e tmux new -s code "
+        "[workspace 2 silent] kitty -e tmux new-session -A -s main"
+        "[workspace 3 silent] kitty -e tmux new-session -A -s code"
         "[workspace 5 silent] spotify"
       ];
 
@@ -32,6 +32,7 @@
         "HYPRCURSOR_THEME,rose-pine-hyprcursor"
         "XCURSOR_SIZE,24"
         "HYPRCURSOR_SIZE,24"
+        "TMUX_TMPDIR,$XDG_RUNTIME_DIR"
       ];
 
       general = {
