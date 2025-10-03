@@ -41,7 +41,8 @@
       modesetting.enable = true;
       nvidiaSettings = true;
       open = true;
-      package = config.boot.kernelPackages.nvidiaPackages.stable;
+      # production = 580.82.09
+      package = config.boot.kernelPackages.nvidiaPackages.production;
     };
   };
 

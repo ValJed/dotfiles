@@ -135,7 +135,7 @@
         "$mod, N, togglesplit, # dwindle"
         "$mod, W, fullscreen, 1"
         "$mod, A, fullscreen,"
-        ''$mod, \, exec, hyprlock''
+        "$mod, backslash, exec, hyprlock"
         "$mod, E, exec, $menu-emoji"
 
         # Apps
