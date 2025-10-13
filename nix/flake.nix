@@ -23,6 +23,7 @@
     stylix,
     ...
   } @ inputs: let
+    system = "x86_64-linux";
     mkNixosConfig = {
       hostname,
       nixpkgs,
@@ -31,6 +32,7 @@
       nixpkgs.lib.nixosSystem {
         specialArgs = {
           hostname = hostname;
+          system = system;
         };
         modules = [
           stylix.nixosModules.stylix
@@ -45,6 +47,7 @@
 
               extraSpecialArgs = {
                 hostname = hostname;
+                system = system;
               };
             };
           }
