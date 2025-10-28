@@ -1,6 +1,6 @@
 {...}: let
-  monitor1 = "DP-3";
-  monitor2 = "HDMI-A-1";
+  monitor1 = "HDMI-A-1";
+  monitor2 = "DP-3";
 in {
   imports = [
     ../../homeManagerModules/default.nix
