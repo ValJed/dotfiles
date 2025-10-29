@@ -1,20 +1,20 @@
-local util = require("lspconfig.util")
-local vue_ts_plugin = os.getenv("VOLAR_LS")
-local root_dir = util.root_pattern("package.json")
+local vue_ls = os.getenv("VUE_LS")
+local tsserver_filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" }
+
+local vue_plugin = {
+	name = "@vue/typescript-plugin",
+	location = vue_ls,
+	languages = { "vue" },
+	configNamespace = "typescript",
+}
 
 return {
-	filetypes = { "typescript", "javascript", "javascriptreact", "typescriptreact", "vue" },
-	root_dir = root_dir,
+	root_markers = { "package.json" },
 	init_options = {
 		preferences = {
 			disableSuggestions = true,
 		},
-		plugins = {
-			{
-				name = "@vue/typescript-plugin",
-				location = vue_ts_plugin,
-				languages = { "vue" },
-			},
-		},
+		plugins = { vue_plugin },
 	},
+	filetypes = tsserver_filetypes,
 }

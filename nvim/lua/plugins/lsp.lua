@@ -5,7 +5,8 @@ local lsp_servers = {
 	"emmet_language_server",
 	"stylelint_lsp",
 	"rust_analyzer",
-	"volar",
+	--[[ "vtsls", ]]
+	"vue_ls",
 	"eslint",
 	"lua_ls",
 	"bashls",
@@ -19,7 +20,6 @@ return {
 	{
 		"neovim/nvim-lspconfig",
 		config = function()
-			local lspconfig = require("lspconfig")
 			local handlers = require("lsp.handlers")
 
 			for _, server in pairs(lsp_servers) do
@@ -34,7 +34,8 @@ return {
 					opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
 				end
 
-				lspconfig[server].setup(opts)
+				vim.lsp.config[server] = opts
+				vim.lsp.enable(server)
 			end
 
 			handlers.setup()

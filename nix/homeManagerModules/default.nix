@@ -119,6 +119,7 @@ in {
     pkgs.typescript-language-server
     pkgs.stylua
     pkgs.djlint
+    pkgs.vtsls
     pkgs.vue-language-server
     pkgs.stylelint-lsp
     pkgs.nil
@@ -187,7 +188,7 @@ in {
     EDITOR = "nvim";
     ZSH_TMUX_CONFIG = "$HOME/.config/tmux/tmux.conf";
     TS_LIB = "${pkgs.typescript}/lib/node_modules/typescript/lib";
-    VOLAR_LS = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
+    VUE_LS = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
 
     # Cypress
     CYPRESS_INSTALL_BINARY = 0;
