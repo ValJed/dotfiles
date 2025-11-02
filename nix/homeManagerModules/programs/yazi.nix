@@ -77,8 +77,9 @@
       ];
       mgr.prepend_keymap = [
         {
-          on = "y";
+          on = "Y";
           run = "shell 'for path in \"$@\"; do echo \"file://$path\"; done | wl-copy -t text/uri-list'";
+          desc = "wl copy selected files";
         }
         {
           on = "b";
