@@ -1,9 +1,11 @@
 {...}: {
   programs.git = {
     enable = true;
-    userName = "Jed";
-    userEmail = "vjeudy@protonmail.com";
-    extraConfig = {
+    settings = {
+      user = {
+        name = "Jed";
+        email = "vjeudy@protonmail.com";
+      };
       init.defaultBranch = "main";
       pull.rebase = true;
       merge = {
