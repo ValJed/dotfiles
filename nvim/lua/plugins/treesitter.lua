@@ -11,6 +11,9 @@ return {
 			local configs = require("nvim-treesitter.configs")
 
 			configs.setup({
+				fold = {
+					enable = true,
+				},
 				ensure_installed = {
 					"astro",
 					"bash",

@@ -26,7 +26,7 @@
         ];
         zip = [
           {
-            run = ''unzip "$1" -d "\$\{1%.*}"'';
+            run = ''unzip "$1" -d "''${1%.*}"'';
             desc = "Extract to folder";
           }
         ];

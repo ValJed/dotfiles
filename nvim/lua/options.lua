@@ -39,8 +39,9 @@ for k, v in pairs(options) do
 	vim.opt[k] = v
 end
 
-vim.wo.foldmethod = "expr" -- 'foldexpr' gives the fold level of a line
-vim.wo.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- evaluated for each line to obtain its fold level
-vim.wo.foldenable = false -- all folds are open
+vim.opt.foldmethod = "expr" -- 'foldexpr' gives the fold level of a line
+vim.opt.foldtext = "" -- This uses the new improved default fold text in 0.10+
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()" -- evaluated for each line to obtain its fold level
+vim.opt.foldenable = false -- all folds are open
 
 vim.opt.shortmess:append("c")
