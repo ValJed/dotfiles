@@ -4,7 +4,15 @@
     "body": [
       "console.log('${0}', ${0})"
     ],
-    "description": "Console log"
+    "description": "Console Log"
+  },
+
+  "console Log Data": {
+    "prefix": "cld",
+    "body": [
+      "console.log({${0}})"
+    ],
+    "description": "Console Log Data"
   },
 
   "console Log Show": {
@@ -16,7 +24,7 @@
   },
 
   "Console Dir": {
-    "prefix": "cd",
+    "prefix": "cdi",
     "body": [
       "console.dir(${1}, { depth: ${2:0} })"
     ],
