@@ -24,12 +24,10 @@ return {
 
 			for _, server in pairs(lsp_servers) do
 				local opts = {
-					on_attach = handlers.on_attach,
 					capabilities = handlers.capabilities,
 				}
 
 				local has_custom_opts, server_custom_opts = pcall(require, "lsp.settings." .. server)
-
 				if has_custom_opts then
 					opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
 				end

@@ -1,4 +1,4 @@
-local clients_with_no_default_formatting = { "ts_ls", "sumneko_lua", "volar" }
+local clients_with_no_default_formatting = { "ts_ls", "volar" }
 
 local M = {}
 
@@ -26,7 +26,7 @@ M.setup = function()
 			focusable = false,
 			style = "minimal",
 			border = "rounded",
-			source = "always",
+			source = true,
 			header = "",
 			prefix = "",
 		},
@@ -41,33 +41,37 @@ M.setup = function()
 	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
 		border = "rounded",
 	})
-end
 
-local function lsp_highlight_document(client)
-	-- Set autocommands conditional on server_capabilitiesdiagnostic.show_line_diagnostics
-	if client.server_capabilities.document_highlight then
-		vim.api.nvim_exec(
-			[[
-      augroup lsp_document_highlight
-        autocmd! * <buffer>
-        autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
-        autocmd CursorMoved <buffer> lua vim.lsp.buf.clear_references()
-      augroup END
-    ]],
-			false
-		)
-	end
-end
+	-- Modern approach: Use LspAttach autocmd instead of on_attach
+	vim.api.nvim_create_autocmd("LspAttach", {
+		group = vim.api.nvim_create_augroup("UserLspConfig", {}),
+		callback = function(ev)
+			local buffer = ev.buf
+			local client = vim.lsp.get_client_by_id(ev.data.client_id)
 
-M.on_attach = function(client)
-	for _, name in ipairs(clients_with_no_default_formatting) do
-		if name ~= nil then
-			-- For Neovim 0.8
-			client.server_capabilities.documentFormattingProvider = false
-		end
-	end
+			-- Disable formatting for specific clients
+			for _, name in ipairs(clients_with_no_default_formatting) do
+				if client.name == name then
+					client.server_capabilities.documentFormattingProvider = false
+				end
+			end
 
-	lsp_highlight_document(client)
+			-- Document highlight on cursor hold
+			if client.server_capabilities.documentHighlightProvider then
+				local group = vim.api.nvim_create_augroup("lsp_document_highlight_" .. buffer, { clear = true })
+				vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+					buffer = buffer,
+					group = group,
+					callback = vim.lsp.buf.document_highlight,
+				})
+				vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+					buffer = buffer,
+					group = group,
+					callback = vim.lsp.buf.clear_references,
+				})
+			end
+		end,
+	})
 end
 
 local status_ok, cmp_nvim_lsp = pcall(require, "cmp_nvim_lsp")
