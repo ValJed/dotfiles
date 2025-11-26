@@ -21,8 +21,8 @@ in {
       window_padding_width = 2;
     };
     keybindings = {
-      "ctrol+shift+right" = "no_op";
-      "ctrol+shift+left" = "no_op";
+      "ctrl+shift+right" = "no_op";
+      "ctrl+shift+left" = "no_op";
     };
   };
 
