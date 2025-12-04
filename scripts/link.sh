@@ -7,26 +7,31 @@ if [ $# -eq 0 ]; then
 fi
 
 module_name=$1
-workspace_path="/home/$USER/workspace/*"
+search_paths=(
+    "$HOME/workspace/apo"
+    "$HOME/workspace/apo/apostrophe/packages"
+    "$HOME/workspace/projets"
+)
 project_found=false
 
-
-for dir in $workspace_path; do
-  dir_path="$dir/*"
-
-  for project_path in $dir_path; do
-    last_part=$(echo $project_path | awk -F/ '{print $NF}')
+# for dir in $workspace_path; do
+for base_path in "${search_paths[@]}"; do
+ if [ ! -d "$base_path" ]; then
+      continue
+  fi
+  for project_path in $base_path; do
+    last_part=$(echo "$project_path" | awk -F/ '{print $NF}')
 
     if [ "$last_part" == "$module_name" ]; then
       package_json_path="$project_path/package.json"
 
       if [ -f "$package_json_path" ]; then
-        project_name=$(jq '.name' $package_json_path | tr -d '"')
+        project_name=$(jq '.name' "$package_json_path" | tr -d '"')
         existing_module="./node_modules/$project_name"
         if [ -d "$existing_module" ]; then
-          rm -rf $existing_module
+          rm -rf "$existing_module"
         fi
-        ln -s $project_path ./node_modules/$project_name
+        ln -s "$project_path" ./node_modules/"$project_name"
         project_found=true
       else
         echo "Error: No package.json found in $project_path"
