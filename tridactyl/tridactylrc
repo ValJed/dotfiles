@@ -58,3 +58,5 @@ set searchurls.apost https://apostrophetechnologiesinc.harvestapp.com/time
 
 blacklistadd localhost:*
 blacklistadd https://meet.google.com
+blacklistadd https://figma.com
+

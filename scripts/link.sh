@@ -19,7 +19,11 @@ for base_path in "${search_paths[@]}"; do
  if [ ! -d "$base_path" ]; then
       continue
   fi
-  for project_path in $base_path; do
+
+  for project_path in "$base_path"/*; do
+   if [ ! -d "$project_path" ]; then
+    continue
+   fi
     last_part=$(echo "$project_path" | awk -F/ '{print $NF}')
 
     if [ "$last_part" == "$module_name" ]; then
