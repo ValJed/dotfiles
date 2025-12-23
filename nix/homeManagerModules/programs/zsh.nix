@@ -7,7 +7,6 @@
   home.packages = with pkgs; [
     zsh-fzf-tab
     zsh-vi-mode
-    # zsh-system-clipboard
   ];
 
   programs.zsh = {
@@ -37,7 +36,6 @@
       # Sourcing plugins
       source ${pkgs.zsh-fzf-tab}/share/fzf-tab/fzf-tab.plugin.zsh
       source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
-      # source ${pkgs.zsh-system-clipboard}/share/zsh/zsh-system-clipboard/zsh-system-clipboard.zsh
     '';
     initContent = ''
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
@@ -69,6 +67,7 @@
       export TERMINAL="kitty"
       export BROWSER="firefox"
       export PNPM_HOME=$HOME/.pnpm-global
+      export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 
       export PATH=$HOME/.local/bin:$PATH
       export PATH=$HOME/.cargo/bin:$PATH
