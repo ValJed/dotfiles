@@ -41,10 +41,10 @@ in {
       };
     };
 
-    icons = {
-      enable = true;
-      package = pkgs.rose-pine-icon-theme;
-    };
+    # icons = {
+    #   enable = true;
+    #   package = pkgs.rose-pine-icon-theme;
+    # };
   };
 
   environment = {
