@@ -7,6 +7,7 @@
     ./services/kanata.nix
     ./services/stylix.nix
     ./services/virtualization.nix
+    ./services/mouse.nix
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.download-buffer-size = 524288000;
