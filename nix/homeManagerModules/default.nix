@@ -77,6 +77,7 @@ in {
     pkgs.zoxide
     pkgs.starship
     pkgs.ripgrep
+    pkgs.jless
     pkgs.tokei
     pkgs.tealdeer
     pkgs.fastfetch
