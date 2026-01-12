@@ -60,6 +60,13 @@
           eval "$(starship init zsh)"
         }
       eval "$(zoxide init --cmd cd zsh)"
+
+      alias -s json=jless
+      alias -s js=nvim
+      alias -s rs=nvim
+      alias -s ts=nvim
+      alias -s vue=nvim
+      alias -s html=nvim
     '';
     envExtra = ''
       export EDITOR="nvim"
