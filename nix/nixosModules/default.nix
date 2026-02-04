@@ -125,6 +125,7 @@
     exiftool
     zathura
     enca
+    haskellPackages.subtitles
 
     # Hyprland
     waybar
