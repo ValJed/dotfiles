@@ -10,7 +10,7 @@
     extraLuaPackages = luajitPackages: [
       luajitPackages.inspect
     ];
-    extraLuaConfig = ''
+    initLua = ''
       require("options")
       require("keymaps")
 

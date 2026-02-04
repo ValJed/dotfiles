@@ -112,7 +112,7 @@
     stow
     # git
     signal-desktop
-    xfce.thunar
+    thunar
     file
     lsof
     jq
