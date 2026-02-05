@@ -132,7 +132,7 @@
         "$mod, D, exec, $menu"
         "$mod, C, exec, $menu-clipboard"
         "$mod, S, exec, ~/dotfiles/scripts/rofi-sink.py"
-        "$mod, N, togglesplit, # dwindle"
+        "$mod, T, togglesplit,"
         "$mod, W, fullscreen, 1"
         "$mod, A, fullscreen,"
         "$mod, backslash, exec, hyprlock"
@@ -218,14 +218,17 @@
         "$mod, mouse:273, resizewindow"
       ];
 
-      windowrulev2 = [
-        "workspace 4, class:discord"
-        "workspace 4, class:Slack"
-        "workspace 5, class:spotify"
-        "workspace 3, class:^steam_app"
-        "fullscreenstate 3, class:cs2"
-        "fullscreenstate 3, class:^steam_app"
-        "suppressevent maximize, class:.*"
+      windowrule = [
+        "workspace 4, match:class discord"
+        "workspace 4, match:class Slack"
+        "workspace 5, match:class spotify"
+        "workspace 5, match:class steam"
+        "workspace 3, match:class ^steam_app"
+        "workspace 3, match:class cs2"
+        "fullscreen_state 3, match:class cs2"
+        "fullscreen_state 3, match:class ^steam_app"
+        # "maximize on, match:class steam"
+        # "suppressevent maximize, match:class .*"
       ];
     };
 
