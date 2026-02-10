@@ -202,6 +202,15 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     jack.enable = true;
+    wireplumber = {
+      extraConfig = {
+        "bluetooth.conf" = {
+          "monitor.bluez.properties" = {
+            "bluez5.auto-connect" = ["a2dp_sink" "hfp_hf"];
+          };
+        };
+      };
+    };
   };
 
   # This value determines the NixOS release from which the default
