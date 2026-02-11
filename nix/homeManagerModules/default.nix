@@ -40,10 +40,11 @@ in {
     ./programs/pass.nix
     ./programs/rofi.nix
     ./programs/tmux.nix
-    ./programs/virt.nix
     ./programs/waybar.nix
     ./programs/yazi.nix
     ./programs/zsh.nix
+    ./services/virt.nix
+    ./services/dev.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -93,49 +94,8 @@ in {
     pkgs.obsidian
     pkgs.spotify
     pkgs.slumber
-    pkgs.qutebrowser
+    # pkgs.qutebrowser
     pkgs.presenterm
-
-    # Node
-    pkgs.nodejs_20
-    pkgs.pnpm_10
-
-    # Rust
-    pkgs.pkg-config
-    pkgs.rustc
-    pkgs.cargo
-    pkgs.cargo-watch
-
-    # Gleam
-    pkgs.gleam
-    pkgs.erlang
-
-    # LSP
-    pkgs.rust-analyzer
-    pkgs.rustfmt
-    pkgs.eslint_d
-    pkgs.prettierd
-    pkgs.vscode-langservers-extracted
-    pkgs.typescript-language-server
-    pkgs.stylua
-    pkgs.djlint
-    pkgs.vtsls
-    pkgs.vue-language-server
-    pkgs.stylelint-lsp
-    pkgs.nil
-    pkgs.emmet-language-server
-    pkgs.lua-language-server
-    pkgs.bash-language-server
-    pkgs.astro-language-server
-    pkgs.pyright
-    pkgs.black
-    pkgs.taplo
-    pkgs.typescript
-    pkgs.vscode-js-debug
-    pkgs.alejandra
-
-    # Tests
-    pkgs.cypress
   ];
 
   # wayland.windowManager.hyprland.systemd.enable = false;
@@ -172,10 +132,10 @@ in {
     ".config/slumber/config.yml".source =
       config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/slumber/config.yml";
     ".config/swappy/config".source = ../../swappy/config;
-    ".config/qutebrowser" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/qutebrowser";
-      recursive = true;
-    };
+    # ".config/qutebrowser" = {
+    #   source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/qutebrowser";
+    #   recursive = true;
+    # };
     ".config/tridactyl" = {
       source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/tridactyl";
       recursive = true;
