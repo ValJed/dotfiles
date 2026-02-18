@@ -1,4 +1,5 @@
 {
+  config,
   lib,
   hostname,
   ...
@@ -8,11 +9,11 @@
     then 11
     else 13;
 in {
-  programs.kitty = lib.mkForce {
+  programs.kitty = {
     enable = true;
     font = {
       name = "FiraCode Nerd Font";
-      size = font_size;
+      size = lib.mkForce font_size;
     };
     settings = {
       confirm_os_window_close = 2;
@@ -24,6 +25,9 @@ in {
       "ctrl+shift+right" = "no_op";
       "ctrl+shift+left" = "no_op";
     };
+    extraConfig = ''
+      color8 ${config.lib.stylix.colors.withHashtag.base08}
+    '';
   };
 
   stylix.targets.kitty.enable = true;
