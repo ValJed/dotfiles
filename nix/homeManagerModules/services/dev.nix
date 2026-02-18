@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   home.packages = [
     # Node
-    pkgs.nodejs_20
+    pkgs.nodejs_25
     pkgs.pnpm_10
     pkgs.bun
 
@@ -38,6 +38,7 @@
     pkgs.typescript
     pkgs.vscode-js-debug
     pkgs.alejandra
+    pkgs.tailwindcss-language-server
 
     # Tests
     pkgs.cypress

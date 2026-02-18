@@ -1,3 +1,3 @@
 return {
-	filetypes = { "html", "jinja", "vue" },
+	filetypes = { "html", "jinja", "vue", "typescriptreact" },
 }

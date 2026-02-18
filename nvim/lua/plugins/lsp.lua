@@ -14,6 +14,7 @@ local lsp_servers = {
 	"gleam",
 	"astro",
 	"pyright",
+	"tailwindcss",
 }
 
 return {
