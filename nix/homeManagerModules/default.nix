@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  system,
   ...
 }: let
   act-update = import ./scripts/act-update.nix {inherit pkgs;};
@@ -15,14 +14,6 @@
     inherit lib;
   };
   record = import ./scripts/record.nix {inherit pkgs;};
-  # Pin version to 2.27 for now
-  # awsSrc =
-  #   import (builtins.fetchTarball {
-  #     url = "https://github.com/NixOS/nixpkgs/archive/e6f23dc08d3624daab7094b701aa3954923c6bbb.tar.gz";
-  #     sha256 = "sha256-3a7Tha/RwYlzH/v3PJrG7+HjOj4c6YOv2K8sqdGsHVQ=";
-  #   }) {
-  #     system = system;
-  #   };
 in {
   imports = [
     ./programs/bat.nix
@@ -45,6 +36,7 @@ in {
     ./programs/zsh.nix
     ./services/virt.nix
     ./services/dev.nix
+    ./services/agents.nix
   ];
 
   # Home Manager needs a bit of information about you and the paths it should
@@ -83,7 +75,6 @@ in {
     pkgs.fastfetch
     pkgs.bc
     pkgs.dysk
-    # awsSrc.awscli2
     # pkgs.ssm-session-manager-plugin
     pkgs.mongosh
     # pkgs.nodePackages.eas-cli Removed for now since breaks at build time
@@ -94,7 +85,6 @@ in {
     pkgs.obsidian
     pkgs.spotify
     pkgs.slumber
-    # pkgs.qutebrowser
     pkgs.presenterm
   ];
 

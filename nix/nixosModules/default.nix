@@ -1,5 +1,3 @@
-# Edit this configuration file to define what should be installed on your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
 {pkgs, ...}: {
   imports = [
     ./services/dev.nix
@@ -8,23 +6,16 @@
     ./services/stylix.nix
     ./services/virtualization.nix
     ./services/mouse.nix
+    ./services/agents.nix
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.download-buffer-size = 524288000;
 
-  # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-  # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
   boot.kernelPackages = pkgs.linuxPackages_latest;
-
-  # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
-
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
   networking.networkmanager.enable = true;
@@ -34,7 +25,6 @@
 
   # Hardware
   hardware.enableAllFirmware = true;
-
   hardware.keyboard.zsa.enable = true;
 
   # Commented to test Hyprland
@@ -109,7 +99,6 @@
     wev
     zip
     unzip
-    stow
     # git
     signal-desktop
     thunar
@@ -179,9 +168,7 @@
       };
     };
   };
-
   services.blueman.enable = true;
-  # services.blueman-applet.enable = true;
 
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;

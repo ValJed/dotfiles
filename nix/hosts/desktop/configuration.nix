@@ -10,6 +10,7 @@
 
   kanata.enable = false;
 
+  # Crash
   # fileSystems."/media" = {
   #   device = "/dev/sdb1";
   #   fsType = "ext4";
@@ -33,7 +34,6 @@
   ];
 
   services.xserver.videoDrivers = ["nvidia"];
-
   hardware = {
     graphics.enable = true;
     # 580.65.06 (current working if need to pin it)
@@ -41,17 +41,16 @@
       modesetting.enable = true;
       nvidiaSettings = true;
       open = true;
-      # production = 580.82.09
+      # production = 580.126.09; CUDA = 13.0
       package = config.boot.kernelPackages.nvidiaPackages.production;
     };
   };
+  services.ollama.acceleration = "cuda";
 
   environment.sessionVariables = {
-    #If your cursor becomes invisible
-    # WLR_NO_HARDWARE_CURSORS = "1";
     #Hint electron apps to use wayland
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/jed/.steam/root/compatibilitytools.d";
   };
 
-  networking.hostName = "jed_desktop"; # Define your hostname.
+  networking.hostName = "jed_desktop";
 }
