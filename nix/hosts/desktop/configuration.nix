@@ -46,6 +46,7 @@
     };
   };
   services.ollama.acceleration = "cuda";
+  services.ollama.package = pkgs.ollama-cuda;
 
   environment.sessionVariables = {
     #Hint electron apps to use wayland
