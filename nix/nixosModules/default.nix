@@ -7,6 +7,7 @@
     ./services/virtualization.nix
     ./services/mouse.nix
     ./services/agents.nix
+    ./services/omnissa.nix
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.download-buffer-size = 524288000;
