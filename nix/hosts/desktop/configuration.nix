@@ -45,7 +45,6 @@
       package = config.boot.kernelPackages.nvidiaPackages.production;
     };
   };
-  services.ollama.acceleration = "cuda";
   services.ollama.package = pkgs.ollama-cuda;
 
   environment.sessionVariables = {
