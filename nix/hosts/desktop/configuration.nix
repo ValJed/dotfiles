@@ -10,11 +10,11 @@
 
   kanata.enable = false;
 
-  # Crash
-  # fileSystems."/media" = {
-  #   device = "/dev/sdb1";
-  #   fsType = "ext4";
-  # };
+  fileSystems."/media" = {
+    device = "/dev/disk/by-label/media_disk";
+    fsType = "ext4";
+    options = ["nofail"];
+  };
 
   programs.steam = {
     enable = true;
