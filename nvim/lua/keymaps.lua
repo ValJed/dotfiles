@@ -63,8 +63,6 @@ keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "<C-f>", "<C-f>zz", opts)
 keymap("n", "<C-b>", "<C-b>zz", opts)
 
---[[ keymap("i", "<C-l>", "<Right>", opts) ]]
---[[ keymap("i", "<C-h>", "<Left>", opts) ]]
 keymap("i", "<C-k>", "<Up>", opts)
 keymap("i", "<C-j>", "<Down>", opts)
 
@@ -73,12 +71,13 @@ keymap("v", "<Tab>", ">gv", opts)
 keymap("v", "<S-Tab>", "<gv", opts)
 keymap("i", "<S-Tab>", "<C-d>", opts)
 
--- Select and paste
-keymap("v", "p", '"_dP', opts)
-keymap("x", "p", '"_dP', opts)
---[[ keymap("v", "p", ":lua require('user.utils.functions').replace_from_register()<cr>", opts) ]]
-
 -- Visual Block --
+
+-- Select and paste
+keymap("v", "p", '"_dp', opts)
+keymap("v", "P", '"_dP', opts)
+keymap("x", "p", '"_dp', opts)
+keymap("x", "P", '"_dP', opts)
 
 -- Align multiple lines together
 keymap("x", "A", "J", opts)
