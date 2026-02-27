@@ -22,6 +22,12 @@
           {
             run = ''zathura "$@"'';
             desc = "Zathura";
+            orphan = true;
+          }
+          {
+            run = ''firefox "$@"'';
+            desc = "Firefox";
+            orphan = true;
           }
         ];
         zip = [
@@ -50,7 +56,7 @@
       open = {
         prepend_rules = [
           {
-            name = "*.pdf";
+            mime = "application/pdf";
             use = "pdf";
           }
           {
