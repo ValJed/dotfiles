@@ -49,8 +49,6 @@ return {
 				delete_check_events = "InsertLeave",
 			})
 
-			luasnip.filetype_extend("typescript", { "javascript" })
-
 			vim.api.nvim_create_autocmd("ModeChanged", {
 				pattern = "*",
 				callback = function()
