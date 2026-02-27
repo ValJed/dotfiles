@@ -68,7 +68,7 @@
     };
     homeConfigurations = {
       wsl = home-manager.lib.homeManagerConfiguration {
-        pkgs = inputs.nixpkgs;
+        pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
         modules = [./hosts/wsl/home.nix];
         extraSpecialArgs = {
           hostname = "wsl";
