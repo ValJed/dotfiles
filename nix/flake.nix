@@ -22,7 +22,6 @@
     stylix,
     ...
   } @ inputs: let
-    system = "x86_64-linux";
     mkNixosConfig = {
       hostname,
       nixpkgs,
@@ -32,7 +31,6 @@
       nixpkgs.lib.nixosSystem {
         specialArgs = {
           hostname = hostname;
-          system = system;
         };
         modules = [
           stylix.nixosModules.stylix
@@ -44,11 +42,10 @@
               useUserPackages = true;
               users.jed = ./hosts/${hostname}/home.nix;
               backupFileExtension = "backup";
-
               extraSpecialArgs = {
                 hostname = hostname;
-                system = system;
                 neovim-nightly = neovim-nightly;
+                hasDesktop = true;
               };
             };
           }
@@ -67,6 +64,18 @@
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
         neovim-nightly = inputs.neovim-nightly-overlay;
+      };
+    };
+    homeConfigurations = {
+      "jed@wsl" = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.nixpkgs;
+        modules = [./hosts/wsl/home.nix];
+        backupFileExtension = "backup";
+        extraSpecialArgs = {
+          hostname = "wsl";
+          neovim-nightly = inputs.neovim-nightly-overlay;
+          hasDesktop = false;
+        };
       };
     };
   };

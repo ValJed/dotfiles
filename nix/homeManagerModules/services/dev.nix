@@ -1,5 +1,5 @@
 {pkgs, ...}: {
-  import = [
+  imports = [
     ../programs/ci.nix
   ];
 

@@ -1,0 +1,5 @@
+{...}: {
+  imports = [
+    ../../homeManagerModules/default.nix
+  ];
+}

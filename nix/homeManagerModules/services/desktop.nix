@@ -1,5 +1,5 @@
-{pkgs}: let
-  record = import ./scripts/record.nix {inherit pkgs;};
+{pkgs, ...}: let
+  record = import ../scripts/record.nix {inherit pkgs;};
 in {
   imports = [
     ../programs/dunst.nix
