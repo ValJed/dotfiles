@@ -114,6 +114,7 @@
     '';
     shellAliases = {
       nixos-switch = "sudo nixos-rebuild --flake ~/dotfiles/nix#${hostname} switch";
+      hm-switch = "home-manager --flake ~/dotfiles/nix#${hostname} switch";
 
       # Basics
       aliases = "print -rl -- $\{(k)aliases\}";
