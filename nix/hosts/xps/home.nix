@@ -1,6 +1,6 @@
 {...}: {
   imports = [
-    ../../homeManagerModules/default.nix
+    ../../homeModules/default.nix
   ];
 
   wayland.windowManager.hyprland = {

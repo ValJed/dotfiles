@@ -3,7 +3,7 @@
   monitor2 = "DP-3";
 in {
   imports = [
-    ../../homeManagerModules/default.nix
+    ../../homeModules/default.nix
   ];
 
   wayland.windowManager.hyprland = {
