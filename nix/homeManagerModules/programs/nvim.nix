@@ -1,6 +1,12 @@
-{config, ...}: {
+{
+  neovim-nightly,
+  pkgs,
+  config,
+  ...
+}: {
   programs.neovim = {
     enable = true;
+    package = neovim-nightly.packages.${pkgs.system}.default;
     defaultEditor = true;
     extraLuaPackages = luajitPackages: [
       luajitPackages.inspect
