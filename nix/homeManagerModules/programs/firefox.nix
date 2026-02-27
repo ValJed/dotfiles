@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  config,
+  ...
+}: {
   programs.browserpass.enable = true;
   programs.firefox = {
     enable = true;
@@ -28,9 +32,15 @@
     };
   };
 
+  home.file = {
+    ".config/tridactyl" = {
+      source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/tridactyl";
+      recursive = true;
+    };
+  };
+
   stylix.targets.firefox = {
     enable = true;
     profileNames = ["default"];
-    # colorTheme.enable = true;
   };
 }

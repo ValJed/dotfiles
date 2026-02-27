@@ -1,4 +1,8 @@
 {pkgs, ...}: {
+  import = [
+    ../programs/ci.nix
+  ];
+
   home.packages = [
     # Node
     pkgs.nodejs_25
@@ -40,7 +44,32 @@
     pkgs.alejandra
     pkgs.tailwindcss-language-server
 
+    # Databases
+    # pkgs.lazysql
+    # pkgs.rainfrog
+    # pkgs.mongosh
+
     # Tests
-    pkgs.cypress
+    # pkgs.cypress
+
+    # Mobile
+    # Removed for now since breaks at build time
+    # pkgs.nodePackages.eas-cli
   ];
+
+  home.sessionVariables = {
+    TS_LIB = "${pkgs.typescript}/lib/node_modules/typescript/lib";
+    VUE_LS = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
+
+    # Cypress
+    # CYPRESS_INSTALL_BINARY = 0;
+    # CYPRESS_RUN_BINARY = "${pkgs.cypress}/bin/Cypress";
+  };
+
+  # home.file = {
+  #   ".config/slumber/config.yml".source =
+  #     config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/slumber/config.yml";
+  #   ".config/lazysql/config.toml".source =
+  #     config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/lazysql/config.toml";
+  # };
 }

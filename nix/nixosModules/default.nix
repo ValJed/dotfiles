@@ -129,7 +129,6 @@
     grim
     slurp
     wf-recorder
-    swappy
 
     (waybar.overrideAttrs (oldAttrs: {
       mesonFlags = oldAttrs.mesonFlags ++ ["-Dexperimental=true"];
