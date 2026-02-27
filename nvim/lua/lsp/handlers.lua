@@ -34,13 +34,13 @@ M.setup = function()
 
 	vim.diagnostic.config(config)
 
-	vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, {
-		border = "rounded",
-	})
-
-	vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, {
-		border = "rounded",
-	})
+	--[[ vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(vim.lsp.handlers.hover, { ]]
+	--[[ 	border = "rounded", ]]
+	--[[ }) ]]
+	--[[]]
+	--[[ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(vim.lsp.handlers.signature_help, { ]]
+	--[[ 	border = "rounded", ]]
+	--[[ }) ]]
 
 	-- Modern approach: Use LspAttach autocmd instead of on_attach
 	vim.api.nvim_create_autocmd("LspAttach", {
