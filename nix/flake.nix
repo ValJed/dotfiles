@@ -70,7 +70,6 @@
       wsl = home-manager.lib.homeManagerConfiguration {
         pkgs = inputs.nixpkgs;
         modules = [./hosts/wsl/home.nix];
-        backupFileExtension = "backup";
         extraSpecialArgs = {
           hostname = "wsl";
           neovim-nightly = inputs.neovim-nightly-overlay;
