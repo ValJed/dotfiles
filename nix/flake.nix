@@ -69,7 +69,10 @@
     homeConfigurations = {
       wsl = home-manager.lib.homeManagerConfiguration {
         pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
-        modules = [./hosts/wsl/home.nix];
+        modules = [
+          stylix.homeManagerMogules.stylix
+          ./hosts/wsl/home.nix
+        ];
         extraSpecialArgs = {
           hostname = "wsl";
           neovim-nightly = inputs.neovim-nightly-overlay;
