@@ -70,7 +70,7 @@
       wsl = home-manager.lib.homeManagerConfiguration {
         pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
         modules = [
-          stylix.homeManagerMogules.stylix
+          stylix.homeManagerModules.stylix
           ./hosts/wsl/home.nix
         ];
         extraSpecialArgs = {
