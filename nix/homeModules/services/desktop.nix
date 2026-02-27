@@ -8,6 +8,7 @@ in {
     ../programs/hyprland.nix
     ../programs/hyprlock.nix
     ../programs/kitty.nix
+    ../programs/obsidian.nix
     ../programs/rofi.nix
     ../programs/spotify.nix
     ../programs/swappy.nix
