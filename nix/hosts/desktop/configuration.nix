@@ -1,6 +1,7 @@
 {
   pkgs,
   config,
+  user,
   ...
 }: {
   imports = [
@@ -49,7 +50,7 @@
 
   environment.sessionVariables = {
     #Hint electron apps to use wayland
-    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/jed/.steam/root/compatibilitytools.d";
+    STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/${user}/.steam/root/compatibilitytools.d";
   };
 
   networking.hostName = "jed_desktop";

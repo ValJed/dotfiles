@@ -55,12 +55,14 @@
     nixosConfigurations = {
       xps = mkNixosConfig {
         hostname = "xps";
+        user = "jed";
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
         neovim-nightly = inputs.neovim-nightly-overlay;
       };
       desktop = mkNixosConfig {
         hostname = "desktop";
+        user = "jed";
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
         neovim-nightly = inputs.neovim-nightly-overlay;
@@ -75,6 +77,7 @@
         ];
         extraSpecialArgs = {
           hostname = "wsl";
+          user = "jeudyv";
           neovim-nightly = inputs.neovim-nightly-overlay;
           hasDesktop = false;
         };

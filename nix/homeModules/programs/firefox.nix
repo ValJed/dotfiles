@@ -1,5 +1,6 @@
 {
   pkgs,
+  user,
   config,
   ...
 }: {
@@ -34,7 +35,7 @@
 
   home.file = {
     ".config/tridactyl" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/tridactyl";
+      source = config.lib.file.mkOutOfStoreSymlink "/home/${user}/dotfiles/tridactyl";
       recursive = true;
     };
   };

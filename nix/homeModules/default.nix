@@ -1,6 +1,7 @@
 {
   hasDesktop,
   lib,
+  user,
   ...
 }: {
   imports =
@@ -12,8 +13,8 @@
       ./services/desktop.nix
     ];
 
-  home.username = "jed";
-  home.homeDirectory = "/home/jed";
+  home.username = "${user}";
+  home.homeDirectory = "/home/${user}";
 
   home.sessionVariables = {
     EDITOR = "nvim";

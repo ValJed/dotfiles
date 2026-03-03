@@ -4,7 +4,7 @@
     ../../nixosModules/default.nix
   ];
 
-  kanata.enable = true;
+  kanata.enable = false;
 
   hardware = {
     nvidia.modesetting.enable = true;

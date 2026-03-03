@@ -3,6 +3,7 @@
   config,
   pkgs,
   hostname,
+  user,
   ...
 }: {
   home.packages = with pkgs; [
@@ -41,7 +42,7 @@
     };
     syntaxHighlighting.enable = true;
     history = {
-      path = "/home/jed/.zsh_history";
+      path = "/home/${user}/.zsh_history";
       size = 50000;
       save = 50000;
       append = true;

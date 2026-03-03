@@ -1,5 +1,6 @@
 {
   neovim-nightly,
+  user,
   pkgs,
   config,
   ...
@@ -41,7 +42,7 @@
 
   home.file = {
     ".config/nvim/lua" = {
-      source = config.lib.file.mkOutOfStoreSymlink "/home/jed/dotfiles/nvim/lua";
+      source = config.lib.file.mkOutOfStoreSymlink "/home/${user}/dotfiles/nvim/lua";
       recursive = true;
     };
   };
