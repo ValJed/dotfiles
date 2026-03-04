@@ -95,7 +95,7 @@
       export EDITOR="nvim"
       export SUDO_EDITOR="nvim"
       export TERMINAL="kitty"
-      export BROWSER="firefox"
+      export BROWSER=""
       export PNPM_HOME=$HOME/.pnpm-global
       export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
 
