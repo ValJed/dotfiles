@@ -1,17 +1,9 @@
-{
-  hasDesktop,
-  lib,
-  user,
-  ...
-}: {
-  imports =
-    [
-      ./services/terminal.nix
-      ./services/dev.nix
-    ]
-    ++ lib.optionals hasDesktop [
-      ./services/desktop.nix
-    ];
+{user, ...}: {
+  imports = [
+    ./services/terminal.nix
+    ./services/dev.nix
+    ./services/desktop.nix
+  ];
 
   home.username = "${user}";
   home.homeDirectory = "/home/${user}";

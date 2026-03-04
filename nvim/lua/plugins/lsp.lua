@@ -51,15 +51,16 @@ return {
 					nix = { "alejandra" },
 					lua = { "stylua" },
 					rust = { "rustfmt", lsp_format = "fallback" },
-					javascript = { "eslint_d", "prettierd" },
-					typescript = { "eslint_d", "prettierd" },
-					typescriptreact = { "eslint_d", "prettierd" },
+					javascript = { "biome", "eslint_d", "prettierd" },
+					typescript = { "biome", "eslint_d", "prettierd" },
+					typescriptreact = { "biome", "eslint_d", "prettierd" },
+					json = { "biome" },
+					css = { "biome" },
 					html = { "prettierd" },
 					vue = { "eslint_d", "prettierd" },
 					astro = { "eslint_d", "prettierd" },
-					--[[ jinja = { "djlint" }, ]]
 					gleam = { "gleam" },
-					scss = { "stylelint", "prettierd" },
+					scss = { "biome", "stylelint", "prettierd" },
 					python = { "black" },
 					toml = { "taplo" },
 					--[[ yaml = function(bufnr) ]]
@@ -73,6 +74,17 @@ return {
 				},
 				format_on_save = true,
 				formatters = {
+					biome = {
+						--[[ cwd = util.root_file({ ]]
+						--[[ 	".eslintrc", ]]
+						--[[ 	".eslintrc.json", ]]
+						--[[ 	".eslintrc.js", ]]
+						--[[ 	".eslintrc.yml", ]]
+						--[[ 	".eslintrc.yaml", ]]
+						--[[ 	"eslint.config.js", ]]
+						--[[ }), ]]
+						require_cwd = true,
+					},
 					prettierd = {
 						require_cwd = true,
 					},

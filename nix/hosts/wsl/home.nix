@@ -1,11 +1,16 @@
 {
   pkgs,
   lib,
+  user,
   ...
 }: {
   imports = [
-    ../../homeModules/default.nix
+    ../../homeModules/services/terminal.nix
+    ./wls-dev.nix
   ];
+
+  home.username = "${user}";
+  home.homeDirectory = "/home/${user}";
 
   programs.home-manager.enable = true;
 
@@ -17,6 +22,8 @@
   home.sessionVariables = {
     JAVA_HOME = "${pkgs.javaPackages.compiler.temurin-bin.jre-17}";
     BROWSER = "";
+    EDITOR = "nvim";
+    ZSH_TMUX_CONFIG = "$HOME/.config/tmux/tmux.conf";
   };
 
   home.sessionPath = [
@@ -82,4 +89,6 @@
       };
     };
   };
+
+  home.stateVersion = "24.05";
 }
