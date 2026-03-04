@@ -45,7 +45,6 @@
               extraSpecialArgs = {
                 hostname = hostname;
                 neovim-nightly = neovim-nightly;
-                hasDesktop = true;
               };
             };
           }
@@ -79,7 +78,6 @@
           hostname = "wsl";
           user = "jeudyv";
           neovim-nightly = inputs.neovim-nightly-overlay;
-          hasDesktop = false;
         };
       };
     };
