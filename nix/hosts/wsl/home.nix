@@ -7,15 +7,66 @@
     ../../homeModules/default.nix
   ];
 
+  programs.home-manager.enable = true;
+
   fonts.fontconfig.enable = true;
   home.packages = [
-    pkgs.nerd-fonts.jetbrains-mono # or whichever font you want
+    pkgs.javaPackages.compiler.temurin-bin.jre-17
   ];
+
+  home.sessionVariables = {
+    JAVA_HOME = "${pkgs.javaPackages.compiler.temurin-bin.jre-17}";
+    BROWSER = "";
+  };
+
+  home.sessionPath = [
+    "${pkgs.javaPackages.compiler.temurin-bin.jre-17}/bin"
+  ];
+
+  services.gpg-agent = {
+    enable = true;
+  };
+
+  programs.zsh = {
+    initContent = ''
+        zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+        zstyle ':completion:*' list-colors '$\{s.:. LS_COLORS\}'
+        zstyle ':completion:*' menu no
+        zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+        zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+        # keybinds
+        bindkey '^F' autosuggest-accept
+
+        zvm_after_init_commands+=(
+          "bindkey '^b' history-search-backward"
+          "bindkey '^n' history-search-forward"
+          "bindkey '^C' fzf-cd-widget"
+          "bindkey '^E' fzf-file-widget"
+          "bindkey '^R' fzf-history-widget"
+        )
+
+        type starship_zle-keymap-select >/dev/null || \
+          {
+            eval "$(starship init zsh)"
+          }
+        eval "$(zoxide init --cmd cd zsh)"
+
+        alias -s json=jless
+        alias -s js=nvim
+        alias -s rs=nvim
+        alias -s ts=nvim
+        alias -s vue=nvim
+        alias -s html=nvim
+
+        # Not sure it's needed
+      . ~/.nix-profile/etc/profile.d/nix.sh
+    '';
+  };
 
   stylix = {
     enable = true;
     base16Scheme = lib.mkDefault "${pkgs.base16-schemes}/share/themes/rose-pine.yaml";
-    image = ../../../assets/wallpaper.png;
     fonts = {
       monospace = {
         package = pkgs.nerd-fonts.fira-code;
@@ -28,10 +79,6 @@
       serif = {
         package = pkgs.nerd-fonts.fira-code;
         name = "FiraCode Nerd Font";
-      };
-
-      sizes = {
-        popups = 12;
       };
     };
   };
