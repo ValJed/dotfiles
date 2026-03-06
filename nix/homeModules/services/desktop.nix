@@ -13,6 +13,7 @@ in {
     ../programs/spotify.nix
     ../programs/swappy.nix
     ../programs/waybar.nix
+    ../programs/discord.nix
     ./virt.nix
   ];
 
