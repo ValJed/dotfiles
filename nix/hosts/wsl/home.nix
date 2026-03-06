@@ -69,6 +69,30 @@
         # Not sure it's needed
       . ~/.nix-profile/etc/profile.d/nix.sh
     '';
+    envExtra = ''
+      export EDITOR="nvim"
+      export SUDO_EDITOR="nvim"
+      export TERMINAL="kitty"
+      export BROWSER=""
+      export PNPM_HOME=$HOME/.pnpm-global
+      export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
+      export TERM=xterm-256color
+      export COLORTERM=truecolor
+
+      export PATH=$HOME/.local/bin:$PATH
+      export PATH=$HOME/.cargo/bin:$PATH
+      export PATH=$HOME/.npm-global/bin:$PATH
+      export PATH=$HOME/.pnpm-global:$PATH
+      export PATH=/opt/stagecoach/bin:$PATH
+      export PATH=/opt/ops-tools/bin:$PATH
+
+      # zsh-vi-mode
+      export ZVM_KEYTIMEOUT=0.1
+
+      # FZF
+      export FZF_TMUX=1
+      export FZF_TMUX_OPTS='-p80%,60%'
+    '';
   };
 
   stylix = {
