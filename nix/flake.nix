@@ -24,6 +24,7 @@
   } @ inputs: let
     mkNixosConfig = {
       hostname,
+      user,
       nixpkgs,
       home-manager,
       neovim-nightly,
@@ -31,6 +32,7 @@
       nixpkgs.lib.nixosSystem {
         specialArgs = {
           hostname = hostname;
+          user = user;
         };
         modules = [
           stylix.nixosModules.stylix
@@ -44,6 +46,7 @@
               backupFileExtension = "backup";
               extraSpecialArgs = {
                 hostname = hostname;
+                user = user;
                 neovim-nightly = neovim-nightly;
               };
             };
