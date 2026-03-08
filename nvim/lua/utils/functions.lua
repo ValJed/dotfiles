@@ -21,6 +21,16 @@ local close_or_quit = function(quit)
 	end
 end
 
+function M.load_services(folder)
+	local pattern = vim.fn.stdpath("config") .. "/lua/" .. folder .. "/*.lua"
+	print(pattern)
+	for _, file in ipairs(vim.fn.glob(pattern, true, true)) do
+		local module = folder .. "." .. vim.fn.fnamemodify(file, ":t:r")
+		print(module)
+		require(module)
+	end
+end
+
 function M.set_colorscheme()
 	local dark_theme = "rose-pine-main"
 	local light_theme = "rose-pine-dawn"

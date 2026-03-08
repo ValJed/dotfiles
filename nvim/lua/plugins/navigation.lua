@@ -1,3 +1,26 @@
+vim.pack.add({
+	"https://github.com/mikavilpas/yazi.nvim",
+	{ src = "ThePrimeagen/harpoon", version = "harpoon2" },
+})
+
+vim.keymap.set({ "n", "v" }, "<leader>e", "<cmd>Yazi<cr>", { desc = "Yazi" })
+vim.keymap.set("n", "<leader>c", "<cmd>Yazi cwd<cr>", { desc = "Yazi Cwd" })
+vim.keymap.set("n", "<leader>t", "<cmd>Yazi toggle<cr>", { desc = "Yazi Toggle" })
+
+local harpoon = require("harpoon")
+harpoon.setup()
+
+harpoon:extend({
+	UI_CREATE = function(cx)
+		vim.keymap.set("n", "<C-v>", function()
+			harpoon.ui:select_menu_item({ vsplit = true })
+		end, { buffer = cx.bufnr })
+
+		vim.keymap.set("n", "<C-h>", function()
+			harpoon.ui:select_menu_item({ split = true })
+		end, { buffer = cx.bufnr })
+	end,
+})
 return {
 	{
 		"mikavilpas/yazi.nvim",
@@ -22,25 +45,5 @@ return {
 				desc = "Yazi Toggle",
 			},
 		},
-	},
-	{
-		"ThePrimeagen/harpoon",
-		branch = "harpoon2",
-		config = function()
-			local harpoon = require("harpoon")
-			harpoon.setup()
-
-			harpoon:extend({
-				UI_CREATE = function(cx)
-					vim.keymap.set("n", "<C-v>", function()
-						harpoon.ui:select_menu_item({ vsplit = true })
-					end, { buffer = cx.bufnr })
-
-					vim.keymap.set("n", "<C-h>", function()
-						harpoon.ui:select_menu_item({ split = true })
-					end, { buffer = cx.bufnr })
-				end,
-			})
-		end,
 	},
 }

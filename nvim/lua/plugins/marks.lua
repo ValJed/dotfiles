@@ -1,9 +1,11 @@
-return {
-	{
-		"ValJed/marks.nvim",
-		event = "VeryLazy",
-		branch = "feat-telescope-support-for-listing-marks",
-		config = function()
+vim.pack.add({
+	{ src = "https://github.com/ValJed/marks.nvim", version = "feat-telescope-support-for-listing-marks" },
+})
+
+vim.api.nvim_create_autocmd("UIEnter", {
+	once = true,
+	callback = function()
+		vim.schedule(function()
 			local marks = require("marks")
 			marks.setup({
 				default_mappings = true,
@@ -49,6 +51,6 @@ return {
 			end
 
 			telescope.load_extension("marks_nvim")
-		end,
-	},
-}
+		end)
+	end,
+})

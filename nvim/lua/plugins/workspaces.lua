@@ -1,19 +1,16 @@
-return {
-	{
-		"natecraddock/workspaces.nvim",
-		config = function()
-      require("workspaces").setup({
-        hooks = {
-          open = { "Telescope find_files" },
-        },
-      })
+vim.pack.add({
+	"https://github.com/natecraddock/workspaces.nvim",
+})
 
-			local status_ok, telescope = pcall(require, "telescope")
-			if not status_ok then
-				return
-			end
-
-			telescope.load_extension("workspaces")
-		end,
+require("workspaces").setup({
+	hooks = {
+		open = { "Telescope find_files" },
 	},
-}
+})
+
+local status_ok, telescope = pcall(require, "telescope")
+if not status_ok then
+	return
+end
+
+telescope.load_extension("workspaces")

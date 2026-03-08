@@ -1,19 +1,20 @@
 return {
-	{
-		"brenoprata10/nvim-highlight-colors",
-		config = function()
-			require("nvim-highlight-colors").setup({})
-		end,
-	},
-	{ "nvim-mini/mini.base16" },
-	{
-		"rose-pine/neovim",
-		as = "rose-pine",
-		config = function()
-			require("utils.functions").set_colorscheme()
-		end,
-	},
-	config = function()
-		require("nvim-highlight-colors").setup()
-	end,
+  pack = function()
+vim.pack.add({
+	"https://github.com/brenoprata10/nvim-highlight-colors",
+	"https://github.com/nvim-mini/mini.base16",
+	{ src = "https://github.com/rose-pine/neovim", name = "rose-pine" },
+	"https://github.com/rose-pine/neovim",
+	"https://github.com/nvim-highlight-colors",
+})
+
+  end,
+
+  setup()
+require("nvim-highlight-colors").setup({})
+require("utils.functions").set_colorscheme()
+
+end
+
 }
+
