@@ -1,17 +1,17 @@
 {
-  "Print Line": {
-    "prefix": "p",
-    "body": [
-      "println!(\"${1:HERE}\");"
-    ],
-    "description": "Print Line"
-  },
   "Print Line Data": {
     "prefix": "pl",
     "body": [
       "println!(\"${1}: {:?}\", ${1});"
     ],
     "description": "Print Line Data"
+  },
+  "Print Line Info": {
+    "prefix": "pli",
+    "body": [
+      "println!(\"${1:HERE}\");"
+    ],
+    "description": "Print Line Info"
   },
   "Let": {
     "prefix": "l",
