@@ -17,94 +17,99 @@ local lsp_servers = {
 	"tailwindcss",
 }
 
-vim.pack.add({
-	"https://github.com/neovim/nvim-lspconfig",
-	"https://github.com/stevearc/conform.nvim",
-	"https://github.com/nvimdev/lspsaga.nvim",
-})
+return {
+	pack = function()
+		vim.pack.add({
+			"https://github.com/neovim/nvim-lspconfig",
+			"https://github.com/stevearc/conform.nvim",
+			"https://github.com/nvimdev/lspsaga.nvim",
+		})
+	end,
+	setup = function()
+		local handlers = require("lsp.handlers")
+		for _, server in pairs(lsp_servers) do
+			local opts = {
+				capabilities = handlers.capabilities,
+			}
 
-local handlers = require("lsp.handlers")
-for _, server in pairs(lsp_servers) do
-	local opts = {
-		capabilities = handlers.capabilities,
-	}
+			local has_custom_opts, server_custom_opts = pcall(require, "lsp.settings." .. server)
+			if has_custom_opts then
+				opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
+			end
 
-	local has_custom_opts, server_custom_opts = pcall(require, "lsp.settings." .. server)
-	if has_custom_opts then
-		opts = vim.tbl_deep_extend("force", opts, server_custom_opts)
-	end
+			vim.lsp.config[server] = opts
+			vim.lsp.enable(server)
+		end
 
-	vim.lsp.config[server] = opts
-	vim.lsp.enable(server)
-end
+		handlers.setup()
 
-handlers.setup()
+		require("lspsaga").setup({
+			ui = {
+				code_action = "",
+			},
+			lightbulb = {
+				virtual_text = false,
+				sign = true,
+			},
+		})
 
-require("lspsaga").setup({
-	ui = {
-		code_action = "",
-	},
-	lightbulb = {
-		virtual_text = false,
-		sign = true,
-	},
-})
+		local conform = require("conform")
+		local util = require("conform.util")
 
-local conform = require("conform")
-local util = require("conform.util")
-
-conform.setup({
-	formatters_by_ft = {
-		nix = { "alejandra" },
-		lua = { "stylua" },
-		rust = { "rustfmt", lsp_format = "fallback" },
-		javascript = { "biome", "eslint_d", "prettierd" },
-		typescript = { "biome", "eslint_d", "prettierd" },
-		typescriptreact = { "biome", "eslint_d", "prettierd" },
-		json = { "biome" },
-		css = { "biome" },
-		html = { "prettierd" },
-		vue = { "eslint_d", "prettierd" },
-		astro = { "eslint_d", "prettierd" },
-		gleam = { "gleam" },
-		scss = { "biome", "stylelint", "prettierd" },
-		python = { "black" },
-		toml = { "taplo" },
-		--[[ yaml = function(bufnr) ]]
-		--[[ 	local filepath = vim.api.nvim_buf_get_name(bufnr) ]]
-		--[[ 	-- Only format YAML files in .github/workflows/ ]]
-		--[[ 	if filepath:match("%.github/workflows/") then ]]
-		--[[ 		return { "actionlint", "prettierd" } ]]
-		--[[ 	end ]]
-		--[[ 	return { "prettierd" } ]]
-		--[[ end, ]]
-	},
-	format_on_save = true,
-	formatters = {
-		biome = {
-			--[[ cwd = util.root_file({ ]]
-			--[[ 	".eslintrc", ]]
-			--[[ 	".eslintrc.json", ]]
-			--[[ 	".eslintrc.js", ]]
-			--[[ 	".eslintrc.yml", ]]
-			--[[ 	".eslintrc.yaml", ]]
-			--[[ 	"eslint.config.js", ]]
-			--[[ }), ]]
-			require_cwd = true,
-		},
-		prettierd = {
-			require_cwd = true,
-		},
-		eslint_d = {
-			cwd = util.root_file({
-				".eslintrc",
-				".eslintrc.json",
-				".eslintrc.js",
-				".eslintrc.yml",
-				".eslintrc.yaml",
-				"eslint.config.js",
-			}),
-			require_cwd = true,
-		},
-	},
-})
+		conform.setup({
+			formatters_by_ft = {
+				nix = { "alejandra" },
+				lua = { "stylua" },
+				rust = { "rustfmt", lsp_format = "fallback" },
+				javascript = { "biome", "eslint_d", "prettierd" },
+				typescript = { "biome", "eslint_d", "prettierd" },
+				typescriptreact = { "biome", "eslint_d", "prettierd" },
+				json = { "biome" },
+				css = { "biome" },
+				html = { "prettierd" },
+				vue = { "eslint_d", "prettierd" },
+				astro = { "eslint_d", "prettierd" },
+				gleam = { "gleam" },
+				scss = { "biome", "stylelint", "prettierd" },
+				python = { "black" },
+				toml = { "taplo" },
+				--[[ yaml = function(bufnr) ]]
+				--[[ 	local filepath = vim.api.nvim_buf_get_name(bufnr) ]]
+				--[[ 	-- Only format YAML files in .github/workflows/ ]]
+				--[[ 	if filepath:match("%.github/workflows/") then ]]
+				--[[ 		return { "actionlint", "prettierd" } ]]
+				--[[ 	end ]]
+				--[[ 	return { "prettierd" } ]]
+				--[[ end, ]]
+			},
+			format_on_save = true,
+			formatters = {
+				biome = {
+					--[[ cwd = util.root_file({ ]]
+					--[[ 	".eslintrc", ]]
+					--[[ 	".eslintrc.json", ]]
+					--[[ 	".eslintrc.js", ]]
+					--[[ 	".eslintrc.yml", ]]
+					--[[ 	".eslintrc.yaml", ]]
+					--[[ 	"eslint.config.js", ]]
+					--[[ }), ]]
+					require_cwd = true,
+				},
+				prettierd = {
+					require_cwd = true,
+				},
+				eslint_d = {
+					cwd = util.root_file({
+						".eslintrc",
+						".eslintrc.json",
+						".eslintrc.js",
+						".eslintrc.yml",
+						".eslintrc.yaml",
+						"eslint.config.js",
+					}),
+					require_cwd = true,
+				},
+			},
+		})
+	end,
+}

@@ -23,11 +23,27 @@ end
 
 function M.load_services(folder)
 	local pattern = vim.fn.stdpath("config") .. "/lua/" .. folder .. "/*.lua"
-	print(pattern)
+	local modules = {}
 	for _, file in ipairs(vim.fn.glob(pattern, true, true)) do
-		local module = folder .. "." .. vim.fn.fnamemodify(file, ":t:r")
-		print(module)
-		require(module)
+		local name = folder .. "." .. vim.fn.fnamemodify(file, ":t:r")
+		local ok, mod = pcall(require, name)
+		if ok then
+			table.insert(modules, mod)
+		else
+			vim.notify("Failed to load: " .. name .. "\n" .. mod, vim.log.levels.ERROR)
+		end
+	end
+
+	for _, mod in ipairs(modules) do
+		if type(mod.pack) == "function" then
+			mod.pack()
+		end
+	end
+
+	for _, mod in ipairs(modules) do
+		if type(mod.setup) == "function" then
+			mod.setup()
+		end
 	end
 end
 

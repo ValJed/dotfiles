@@ -1,5 +1,7 @@
 -- vim.pack.add({
 -- 	"https://github.com/iamcco/markdown-preview.nvim",
+-- 	GOOD ONE
+--  "https://github.com/OXY2DEV/markview.nvim"
 -- })
 --
 -- -- mimic ft = { "markdown" }
