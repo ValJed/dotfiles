@@ -2,7 +2,7 @@ return {
 	pack = function()
 		vim.pack.add({
 			"https://github.com/mikavilpas/yazi.nvim",
-			{ src = "ThePrimeagen/harpoon", version = "harpoon2" },
+			{ src = "https://github.com/ThePrimeagen/harpoon", version = "harpoon2" },
 		})
 	end,
 	setup = function()
