@@ -5,7 +5,6 @@ return {
 			"https://github.com/nvim-mini/mini.base16",
 			{ src = "https://github.com/rose-pine/neovim", name = "rose-pine" },
 			"https://github.com/rose-pine/neovim",
-			"https://github.com/nvim-highlight-colors",
 		})
 	end,
 

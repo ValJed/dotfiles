@@ -1,3 +1,5 @@
+return {}
+
 -- vim.pack.add({
 -- 	"https://github.com/iamcco/markdown-preview.nvim",
 -- 	GOOD ONE

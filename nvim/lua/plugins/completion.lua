@@ -30,7 +30,7 @@ return {
 	pack = function()
 		-- Add missing event = "InsertEnter" for nvim-cmp
 		vim.pack.add({
-			"hrsh7th/nvim-cmp",
+			"https://github.com/hrsh7th/nvim-cmp",
 			"https://github.com/hrsh7th/cmp-buffer",
 			"https://github.com/hrsh7th/cmp-path",
 			"https://github.com/hrsh7th/cmp-nvim-lsp",
