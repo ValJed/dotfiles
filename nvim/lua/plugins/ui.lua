@@ -5,6 +5,7 @@ return {
 			"https://github.com/folke/noice.nvim",
 			"https://github.com/MunifTanjim/nui.nvim",
 			"https://github.com/rcarriga/nvim-notify",
+			"https://github.com/nvim-lualine/lualine.nvim",
 		})
 	end,
 	setup = function()
