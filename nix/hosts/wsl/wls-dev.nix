@@ -8,6 +8,7 @@
     # LSP
     pkgs.vscode-langservers-extracted
     pkgs.typescript-language-server
+    pkgs.vue-language-server
     pkgs.stylua
     pkgs.stylelint-lsp
     pkgs.emmet-language-server
@@ -30,5 +31,6 @@
 
   home.sessionVariables = {
     TS_LIB = "${pkgs.typescript}/lib/node_modules/typescript/lib";
+    VUE_LS = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
   };
 }
