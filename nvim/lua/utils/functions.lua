@@ -1,26 +1,5 @@
 local M = {}
 
-function ReadFile(filepath)
-	if vim.fn.filereadable(filepath) == 0 then
-		return nil, "File not found or not readable: " .. filepath
-	end
-
-	local lines = vim.fn.readfile(filepath, "", 1) -- Read only 1 line
-	if #lines > 0 then
-		return lines[1]
-	else
-		return "", "File is empty"
-	end
-end
-
-local close_or_quit = function(quit)
-	if quit then
-		vim.cmd("qa!")
-	else
-		vim.cmd("q!")
-	end
-end
-
 function M.load_services(folder)
 	local pattern = vim.fn.stdpath("config") .. "/lua/" .. folder .. "/*.lua"
 	local modules = {}
@@ -48,6 +27,19 @@ function M.load_services(folder)
 end
 
 function M.set_colorscheme()
+	local ReadFile = function(filepath)
+		if vim.fn.filereadable(filepath) == 0 then
+			return nil, "File not found or not readable: " .. filepath
+		end
+
+		local lines = vim.fn.readfile(filepath, "", 1) -- Read only 1 line
+		if #lines > 0 then
+			return lines[1]
+		else
+			return "", "File is empty"
+		end
+	end
+
 	local dark_theme = "rose-pine-main"
 	local light_theme = "rose-pine-dawn"
 	local cur_theme = ReadFile("/etc/theme")
@@ -66,6 +58,14 @@ function M.set_colorscheme()
 end
 
 function M.smart_close(quit)
+	local close_or_quit = function(q)
+		if q then
+			vim.cmd("qa!")
+		else
+			vim.cmd("q!")
+		end
+	end
+
 	local bufnr = vim.api.nvim_get_current_buf()
 	local buf_windows = vim.call("win_findbuf", bufnr)
 	local modified = vim.api.nvim_buf_get_option(bufnr, "modified")

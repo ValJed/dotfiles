@@ -1,28 +1,15 @@
-function Opts(desc)
-	local opt = { noremap = true, silent = true }
-	if desc then
-		opt.desc = desc
-	end
-
-	return opt
-end
-local opts = { noremap = true, silent = true }
-
--- Shorten function name
-local keymap = vim.api.nvim_set_keymap
-
 --Remap space as leader key
-keymap("", "<Space>", "<Nop>", opts)
+Map("", "<Space>", "<Nop>")
 
 -- Block arrow keys to force using hjkl
-keymap("n", "<Left>", "<Nop>", opts)
-keymap("n", "<Right>", "<Nop>", opts)
-keymap("n", "<Up>", "<Nop>", opts)
-keymap("n", "<Down>", "<Nop>", opts)
-keymap("v", "<Left>", "<Nop>", opts)
-keymap("v", "<Right>", "<Nop>", opts)
-keymap("v", "<Up>", "<Nop>", opts)
-keymap("v", "<Down>", "<Nop>", opts)
+Map("n", "<Left>", "<Nop>")
+Map("n", "<Right>", "<Nop>")
+Map("n", "<Up>", "<Nop>")
+Map("n", "<Down>", "<Nop>")
+Map("v", "<Left>", "<Nop>")
+Map("v", "<Right>", "<Nop>")
+Map("v", "<Up>", "<Nop>")
+Map("v", "<Down>", "<Nop>")
 
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -36,59 +23,59 @@ vim.g.maplocalleader = " "
 --   command_mode = "c",
 
 -- Basic
-keymap("n", "<C-s>", ":w<cr>", opts)
-keymap("n", "<C-s>", ":w<cr>", opts)
-keymap("x", "<C-s>", "<ESC>:w<cr>", opts)
-keymap("n", "<C-c>", ":lua require('utils.functions').smart_close()<cr>", opts)
+Map("n", "<C-s>", ":w<cr>")
+Map("n", "<C-s>", ":w<cr>")
+Map("x", "<C-s>", "<ESC>:w<cr>")
+Map("n", "<C-c>", ":lua require('utils.functions').smart_close()<cr>")
 
 -- Next Prev occurences
-keymap("n", "&", "£", opts)
-vim.keymap.set("n", ".", function()
+Map("n", "&", "£")
+Map("n", ".", function()
 	vim.api.nvim_feedkeys(":", "n", false)
-end, opts)
+end)
 
 -- Resize with arrows
-keymap("n", "<C-S-Up>", ":resize +2<cr>", opts)
-keymap("n", "<C-S-Down>", ":resize -2<cr>", opts)
-keymap("n", "<C-S-Right>", ":vertical resize +2<cr>", opts)
-keymap("n", "<C-S-Left>", ":vertical resize -2<cr>", opts)
+Map("n", "<C-S-Up>", ":resize +2<cr>")
+Map("n", "<C-S-Down>", ":resize -2<cr>")
+Map("n", "<C-S-Right>", ":vertical resize +2<cr>")
+Map("n", "<C-S-Left>", ":vertical resize -2<cr>")
 
 -- Navigate buffers
-keymap("n", "<S-h>", ":BufSurfBack<cr>", { silent = true })
-keymap("n", "<S-l>", ":BufSurfForward<cr>", { silent = true })
+Map("n", "<S-h>", ":BufSurfBack<cr>")
+Map("n", "<S-l>", ":BufSurfForward<cr>")
 
 -- Moves
-keymap("n", "<C-d>", "<C-d>zz", opts)
-keymap("n", "<C-u>", "<C-u>zz", opts)
-keymap("n", "<C-f>", "<C-f>zz", opts)
-keymap("n", "<C-b>", "<C-b>zz", opts)
+Map("n", "<C-d>", "<C-d>zz")
+Map("n", "<C-u>", "<C-u>zz")
+Map("n", "<C-f>", "<C-f>zz")
+Map("n", "<C-b>", "<C-b>zz")
 
-keymap("i", "<C-k>", "<Up>", opts)
-keymap("i", "<C-j>", "<Down>", opts)
+Map("i", "<C-k>", "<Up>")
+Map("i", "<C-j>", "<Down>")
 
 -- Indentation --
-keymap("v", "<Tab>", ">gv", opts)
-keymap("v", "<S-Tab>", "<gv", opts)
-keymap("i", "<S-Tab>", "<C-d>", opts)
+Map("v", "<Tab>", ">gv")
+Map("v", "<S-Tab>", "<gv")
+Map("i", "<S-Tab>", "<C-d>")
 
 -- Visual Block --
 
 -- Select and paste
-keymap("v", "p", '"_dp', opts)
-keymap("v", "P", '"_dP', opts)
-keymap("x", "p", '"_dp', opts)
-keymap("x", "P", '"_dP', opts)
+Map("v", "p", '"_dp')
+Map("v", "P", '"_dP')
+Map("x", "p", '"_dp')
+Map("x", "P", '"_dP')
 
 -- Align multiple lines together
-keymap("x", "A", "J", opts)
+Map("x", "A", "J")
 
 -- Move text up and down
-keymap("x", "K", ":move '<-2<cr>gv-gv", opts)
-keymap("x", "J", ":move '>+1<cr>gv-gv", opts)
+Map("x", "K", ":move '<-2<cr>gv-gv")
+Map("x", "J", ":move '>+1<cr>gv-gv")
 
 -- Navigator
-keymap("n", "<C-h>", ":NavigatorLeft<cr>", opts)
-keymap("n", "<C-l>", ":NavigatorRight<cr>", opts)
-keymap("n", "<C-k>", ":NavigatorUp<cr>", opts)
-keymap("n", "<C-j>", ":NavigatorDown<cr>", opts)
-keymap("n", "<C-p>", ":NavigatorPrevious<cr>", opts)
+Map("n", "<C-h>", ":NavigatorLeft<cr>")
+Map("n", "<C-l>", ":NavigatorRight<cr>")
+Map("n", "<C-k>", ":NavigatorUp<cr>")
+Map("n", "<C-j>", ":NavigatorDown<cr>")
+Map("n", "<C-p>", ":NavigatorPrevious<cr>")

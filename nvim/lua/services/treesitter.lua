@@ -1,4 +1,4 @@
-local ts_libs = {
+local languages = {
 	"astro",
 	"bash",
 	"css",
@@ -30,20 +30,23 @@ return {
 		vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
 			once = true,
 			callback = function()
+				local treesitter = require("nvim-treesitter")
+				treesitter.install(languages):wait(300000)
+
 				local configs = require("nvim-treesitter.configs")
 				configs.setup({
 					fold = {
 						enable = true,
 					},
-					ensure_installed = ts_libs, -- one of "all", "maintained" (parsers with maintainers), or a list of languages
-					sync_install = true, -- install languages synchronously (only applied to `ensure_installed`)
-					ignore_install = { "" }, -- List of parsers to ignore installing
+					ensure_installed = languages,
+					sync_install = true,
+					ignore_install = { "" },
 					autopairs = {
 						enable = true,
 					},
 					highlight = {
 						enable = true, -- false will disable the whole extension
-						disable = function(lang, bufnr)
+						disable = function(_, bufnr)
 							return vim.api.nvim_buf_line_count(bufnr) > 50000
 						end,
 						additional_vim_regex_highlighting = false,
