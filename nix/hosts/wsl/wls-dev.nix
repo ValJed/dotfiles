@@ -6,6 +6,7 @@
     pkgs.bun
 
     # LSP
+    pkgs.tree-sitter
     pkgs.vscode-langservers-extracted
     pkgs.typescript-language-server
     pkgs.vue-language-server

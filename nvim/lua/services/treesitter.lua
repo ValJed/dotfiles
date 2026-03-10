@@ -1,4 +1,4 @@
-local languages = {
+local parsers = {
 	"astro",
 	"bash",
 	"css",
@@ -13,11 +13,41 @@ local languages = {
 	"scss",
 	"sql",
 	"tsx",
+	"typescript",
 	"vim",
 	"vue",
 	"yaml",
-	"typescript",
+	"graphql",
+	"zsh",
 }
+
+local function set_keymaps()
+	local select = require("nvim-treesitter-textobjects.select")
+	local function keymap(mapping, action, desc)
+		Map({ "v", "x", "o" }, mapping, function()
+			select.select_textobject(action, "textobjects")
+		end, { desc = desc })
+	end
+
+	keymap("a=", "@assignment.outer", "Outside assignment")
+	keymap("i=", "@assignment.inner", "Inside assignment")
+	keymap("r=", "@assignment.rhs", "Right side of assignment")
+	keymap("a:", "@property.outer", "Outside property")
+	keymap("i:", "@property.inner", "Inside property")
+	keymap("r:", "@property.rhs", "Right side of property")
+	keymap("ap", "@parameter.outer", "Outside parameter")
+	keymap("ip", "@parameter.inner", "Inside parameter")
+	keymap("ai", "@conditional.outer", "Outside conditional")
+	keymap("ii", "@conditional.inner", "Inside conditional")
+	keymap("al", "@loop.outer", "Outside loop")
+	keymap("il", "@loop.inner", "Inside loop")
+	keymap("af", "@call.outer", "Outside function call")
+	keymap("if", "@call.inner", "Inside function call")
+	keymap("am", "@function.outer", "Outside function definition")
+	keymap("im", "@function.inner", "Inside function definition")
+	keymap("ac", "@class.outer", "Outside class")
+	keymap("ic", "@class.inner", "Inside class")
+end
 
 return {
 	pack = function()
@@ -27,91 +57,17 @@ return {
 		})
 	end,
 	setup = function()
-		vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
-			once = true,
-			callback = function()
-				local treesitter = require("nvim-treesitter")
-				treesitter.install(languages):wait(300000)
+		local alreadyInstalled = require("nvim-treesitter.config").get_installed()
+		local parsersToInstall = vim.iter(parsers)
+			:filter(function(parser)
+				return not vim.tbl_contains(alreadyInstalled, parser)
+			end)
+			:totable()
 
-				local configs = require("nvim-treesitter.configs")
-				configs.setup({
-					fold = {
-						enable = true,
-					},
-					ensure_installed = languages,
-					sync_install = true,
-					ignore_install = { "" },
-					autopairs = {
-						enable = true,
-					},
-					highlight = {
-						enable = true, -- false will disable the whole extension
-						disable = function(_, bufnr)
-							return vim.api.nvim_buf_line_count(bufnr) > 50000
-						end,
-						additional_vim_regex_highlighting = false,
-					},
-					indent = { enable = true, disable = { "yaml" } },
-					incremental_selection = {
-						enable = true,
-						keymaps = {
-							init_selection = "<C-space>", -- set to `false` to disable one of the mappings
-							node_incremental = "<C-space>",
-							scope_incremental = "<C-s>",
-							node_decremental = "<bs>",
-						},
-					},
-					textobjects = {
-						select = {
-							enable = true,
-							lookahead = true,
-							keymaps = {
-								-- You can use the capture groups defined in textobjects.scm
-								["a="] = { query = "@assignment.outer", desc = "Select outer part of an assignment" },
-								["i="] = { query = "@assignment.inner", desc = "Select inner part of an assignment" },
-								--[[ ["l="] = { query = "@assignment.lhs", desc = "Select left hand side of an assignment" }, ]]
-								["r="] = { query = "@assignment.rhs", desc = "Select right hand side of an assignment" },
+		if #parsersToInstall > 0 then
+			require("nvim-treesitter").install(parsersToInstall)
+		end
 
-								-- works for javascript/typescript files (custom capture I created in after/queries/ecma/textobjects.scm)
-								["a:"] = { query = "@property.outer", desc = "Select outer part of an object property" },
-								["i:"] = { query = "@property.inner", desc = "Select inner part of an object property" },
-								--[[ ["l:"] = { query = "@property.lhs", desc = "Select left part of an object property" }, ]]
-								["r:"] = { query = "@property.rhs", desc = "Select right part of an object property" },
-
-								["aa"] = {
-									query = "@parameter.outer",
-									desc = "Select outer part of a parameter/argument",
-								},
-								["ia"] = {
-									query = "@parameter.inner",
-									desc = "Select inner part of a parameter/argument",
-								},
-
-								["ai"] = { query = "@conditional.outer", desc = "Select outer part of a conditional" },
-								["ii"] = { query = "@conditional.inner", desc = "Select inner part of a conditional" },
-
-								["al"] = { query = "@loop.outer", desc = "Select outer part of a loop" },
-								["il"] = { query = "@loop.inner", desc = "Select inner part of a loop" },
-
-								["af"] = { query = "@call.outer", desc = "Select outer part of a function call" },
-								["if"] = { query = "@call.inner", desc = "Select inner part of a function call" },
-
-								["am"] = {
-									query = "@function.outer",
-									desc = "Select outer part of a method/function definition",
-								},
-								["im"] = {
-									query = "@function.inner",
-									desc = "Select inner part of a method/function definition",
-								},
-
-								["ac"] = { query = "@class.outer", desc = "Select outer part of a class" },
-								["ic"] = { query = "@class.inner", desc = "Select inner part of a class" },
-							},
-						},
-					},
-				})
-			end,
-		})
+		set_keymaps()
 	end,
 }

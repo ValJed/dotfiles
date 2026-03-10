@@ -20,6 +20,7 @@
     pkgs.erlang
 
     # LSP
+    pkgs.tree-sitter
     pkgs.rust-analyzer
     pkgs.rustfmt
     pkgs.eslint_d

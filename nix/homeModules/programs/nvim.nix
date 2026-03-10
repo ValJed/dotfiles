@@ -17,7 +17,7 @@
       -- mark netrw as loaded so it's not loaded at all.
       vim.g.loaded_netrwPlugin = 1
 
-      require("globals")
+      require("utils.globals")
       require("options")
       require("keymaps")
 
