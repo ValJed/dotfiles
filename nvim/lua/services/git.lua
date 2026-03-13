@@ -59,5 +59,31 @@ return {
 				col = 1,
 			},
 		})
+
+		local mode = "n"
+
+		Map(mode, "<leader>gg", ":LazyGit<cr>", { desc = "LazyGit" })
+		Map(mode, "<leader>gj", ":Gitsigns next_hunk<cr>", { desc = "Next Hunk" })
+		Map(mode, "<leader>gk", ":Gitsigns prev_hunk<cr>", { desc = "Prev Hunk" })
+		Map(mode, "<leader>gl", ":Gitsigns blame_line<cr>", { desc = "Blame Line" })
+		Map(mode, "<leader>gb", ":GitBlame<cr>", { desc = "Blame" })
+		Map(mode, "<leader>gp", ":Gitsigns preview_hunk<cr>", { desc = "Preview Hunk" })
+		Map(mode, "<leader>gr", ":Gitsigns reset_hunk<cr>", { desc = "Reset Hunk" })
+		Map(mode, "<leader>gR", ":Gitsigns reset_buffer<cr>", { desc = "Reset Buffer" })
+		Map(mode, "<leader>gs", ":Gitsigns stage_hunk<cr>", { desc = "Stage Hunk" })
+		Map(mode, "<leader>gu", ":Gitsigns undo_stage_hunk<cr>", { desc = "Undo Stage Hunk" })
+		Map(mode, "<leader>go", ":Telescope git_status<cr>", { desc = "Open changed file" })
+		Map(mode, "<leader>gB", ":Telescope git_branches<cr>", { desc = "Checkout branch" })
+		Map(mode, "<leader>gc", ":Telescope git_commits<cr>", { desc = "Checkout commit" })
+		Map(mode, "<leader>gC", ":Telescope git_bcommits<cr>", { desc = "Checkout commit (for current file)" })
+		Map(mode, "<leader>gD", ":lua require('git.diff').open()<cr>", { desc = "Git Diff" })
+		Map(mode, "<leader>gD", ":lua require('git.diff').close()<cr>", { desc = "Git Diff Close" })
+		Map(mode, "<leader>gO", ":lua require('git.browse').pull_request()<cr>", { desc = "Open Pull Request" })
+		Map(
+			mode,
+			"<leader>gP",
+			":lua require('git.browse').create_pull_request()<cr>",
+			{ desc = "Create Pull Request" }
+		)
 	end,
 }
