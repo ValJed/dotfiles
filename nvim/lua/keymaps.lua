@@ -1,3 +1,29 @@
+-- Modes
+--   normal_mode = "n",
+--   insert_mode = "i",
+--   visual_mode = "v",
+--   visual_block_mode = "x",
+--   term_mode = "t",
+--   command_mode = "c",
+
+local wk = require("which-key")
+wk.setup({
+	preset = "helix",
+	icons = {
+		rules = {
+			{ pattern = "find", icon = "", color = vim.g.icon_color },
+			{ pattern = "color", icon = "", color = vim.g.icon_color },
+			{ pattern = "workspaces", icon = "", color = vim.g.icon_color },
+			{ pattern = "marks", icon = "", color = vim.g.icon_color },
+			{ pattern = "toggle", icon = "", color = vim.g.icon_color },
+			{ pattern = "file", icon = "", color = vim.g.icon_color },
+			{ pattern = "pause", icon = "", color = vim.g.icon_color },
+			{ pattern = "play", icon = "", color = vim.g.icon_color },
+			{ pattern = "quit", icon = "󰈆", color = vim.g.icon_color },
+		},
+	},
+})
+
 --Remap space as leader key
 Map("", "<Space>", "<Nop>")
 
@@ -22,17 +48,46 @@ vim.g.maplocalleader = " "
 --   term_mode = "t",
 --   command_mode = "c",
 
+local utils = require("utils.functions")
+
 -- Basic
 Map("n", "<C-s>", ":w<cr>")
 Map("n", "<C-s>", ":w<cr>")
 Map("x", "<C-s>", "<ESC>:w<cr>")
-Map("n", "<C-c>", ":lua require('utils.functions').smart_close()<cr>")
+Map("n", "<C-c>", function()
+	utils.smart_close(true)
+end)
+
+-- Notifications
+Map("n", "<leader>n", function()
+	vim.cmd("Telescope notify")
+end, { desc = "Notifications", icon = "󰎟" })
+
+-- Zen
+Map("n", "<leader>z", function()
+	vim.cmd("ZenMode")
+end, { desc = "Zen Mode", icon = "󱅻" })
+
+-- Dashboard
+Map("n", "<leader>;", function()
+	vim.cmd("Alpha")
+end, { desc = "Dashboard", icon = "󰠚" })
 
 -- Next Prev occurences
 Map("n", "&", "£")
 Map("n", ".", function()
 	vim.api.nvim_feedkeys(":", "n", false)
 end)
+
+-- Split
+MapGroup("Split", "<leader>s", "󰨑")
+Map("n", "<leader>sh", function()
+	vim.cmd("split")
+end, { desc = "Split Horizontally" })
+
+Map("n", "<leader>sv", function()
+	vim.cmd("vsplit")
+end, { desc = "Split Vertically" })
 
 -- Resize with arrows
 Map("n", "<C-S-Up>", ":resize +2<cr>")

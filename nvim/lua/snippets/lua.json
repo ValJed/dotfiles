@@ -5,5 +5,31 @@
       "print(vim.inspect(${1}))"
     ],
     "description": "Vim Inspect"
+  },
+  "Function": {
+    "prefix": "fn",
+    "body": [
+      "function $1($2)",
+      "\t${3}",
+      "end"
+    ],
+    "description": "Function"
+  },
+
+  "FunctionAnonymous": {
+    "prefix": "fna",
+    "body": [
+      "function($1)",
+      "\t${2}",
+      "end"
+    ],
+    "description": "Function Anonymous"
+  },
+  "Local": {
+    "prefix": "l",
+    "body": [
+      "local ${1} = ${2}"
+    ],
+    "description": "Local"
   }
 }

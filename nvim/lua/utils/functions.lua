@@ -1,10 +1,16 @@
 local M = {}
 
-function M.load_services(folder)
-	local pattern = vim.fn.stdpath("config") .. "/lua/" .. folder .. "/*.lua"
+local load_after_plugins = function()
+	require("utils.globals")
+	require("keymaps")
+	require("options")
+end
+
+function M.load_modules()
+	local pattern = vim.fn.stdpath("config") .. "/lua/modules/*.lua"
 	local modules = {}
 	for _, file in ipairs(vim.fn.glob(pattern, true, true)) do
-		local name = folder .. "." .. vim.fn.fnamemodify(file, ":t:r")
+		local name = "modules." .. vim.fn.fnamemodify(file, ":t:r")
 		local ok, mod = pcall(require, name)
 		if ok then
 			table.insert(modules, mod)
@@ -18,9 +24,14 @@ function M.load_services(folder)
 			mod.pack()
 		end
 	end
-
+	load_after_plugins()
 	for _, mod in ipairs(modules) do
-		if type(mod.setup) == "function" then
+		if mod.prioritize and type(mod.setup) == "function" then
+			mod.setup()
+		end
+	end
+	for _, mod in ipairs(modules) do
+		if not mod.prioritize and type(mod.setup) == "function" then
 			mod.setup()
 		end
 	end

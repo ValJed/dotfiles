@@ -1,3 +1,13 @@
+local set_mapping = function()
+	MapGroup("DB", "<leader>D", "")
+	Map("n", "<leader>Dt", function()
+		vim.cmd("DBUIToggle")
+	end, { desc = "Toggle UI" })
+	Map("n", "<leader>Db", function()
+		vim.cmd("DBUIFindBuffer")
+	end, { desc = "Find buffer" })
+end
+
 return {
 	pack = function()
 		vim.pack.add({
@@ -7,6 +17,8 @@ return {
 		})
 	end,
 	setup = function()
+		set_mapping()
+
 		vim.api.nvim_create_autocmd("CmdUndefined", {
 			pattern = { "DBUI", "DBUIToggle", "DBUIAddConnection", "DBUIFindBuffer" },
 			once = true, -- only trigger once, then the real commands take over

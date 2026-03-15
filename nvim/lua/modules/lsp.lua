@@ -85,14 +85,6 @@ return {
 			format_on_save = true,
 			formatters = {
 				biome = {
-					--[[ cwd = util.root_file({ ]]
-					--[[ 	".eslintrc", ]]
-					--[[ 	".eslintrc.json", ]]
-					--[[ 	".eslintrc.js", ]]
-					--[[ 	".eslintrc.yml", ]]
-					--[[ 	".eslintrc.yaml", ]]
-					--[[ 	"eslint.config.js", ]]
-					--[[ }), ]]
 					require_cwd = true,
 				},
 				prettierd = {
@@ -111,5 +103,51 @@ return {
 				},
 			},
 		})
+
+		MapGroup("LSP", "<leader>l", "")
+		Map("n", "gd", vim.lsp.buf.definition, { desc = "Definition" })
+		Map("n", "gi", vim.lsp.buf.implementation, { desc = "Implementation" })
+		Map("n", "gp", function()
+			vim.cmd("Lspsaga peek_definition")
+		end, { desc = "Peek definition" })
+		Map("n", "gr", function()
+			vim.cmd("Telescope lsp_references")
+		end, { desc = "Find references" })
+		Map("n", "gs", vim.lsp.buf.hover, { desc = "Signature" })
+		Map("n", "gh", function()
+			vim.cmd("Lspsaga hover_doc")
+		end, { desc = "Hover doc" })
+		Map("n", "gj", vim.diagnostic.goto_next, { desc = "Next diagnostic" })
+		Map("n", "gk", vim.diagnostic.goto_prev, { desc = "Prev diagnostic" })
+
+		Map("n", "<leader>lo", function()
+			vim.cmd("Lspsaga outline")
+		end, { desc = "Outline" })
+		Map("n", "<leader>la", function()
+			vim.cmd("Lspsaga code_action")
+		end, { desc = "Code action" })
+		Map("n", "<leader>ld", function()
+			vim.diagnostic.open_float({ border = "rounded" })
+		end, { desc = "Line diagnostic" })
+		Map("n", "<leader>lD", function()
+			vim.cmd("Lspsaga show_buf_diagnostics")
+		end, { desc = "Buffer diagnostics" })
+		Map("n", "<leader>lw", function()
+			vim.cmd("Lspsaga show_workspace_diagnostics")
+		end, { desc = "Diagnostics" })
+		Map("n", "<leader>lR", vim.lsp.buf.references, { desc = "References" })
+		Map("n", "<leader>li", function()
+			vim.cmd("checkhealth vim.lsp")
+		end, { desc = "Info" })
+		Map("n", "<leader>ll", vim.lsp.codelens.run, { desc = "CodeLens action" })
+		Map("n", "<leader>lr", function()
+			vim.cmd("Lspsaga rename")
+		end, { desc = "Rename" })
+		Map("n", "<leader>ls", function()
+			vim.cmd("Telescope lsp_document_symbols")
+		end, { desc = "Document symbols" })
+		Map("n", "<leader>lf", function()
+			vim.cmd("Telescope quickfix")
+		end, { desc = "Telescope quickfix" })
 	end,
 }

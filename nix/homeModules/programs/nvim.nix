@@ -16,12 +16,9 @@
       vim.g.db_ui_use_nerd_fonts = 1
       -- mark netrw as loaded so it's not loaded at all.
       vim.g.loaded_netrwPlugin = 1
+      vim.g.icon_color = "red"
 
-      require("utils.globals")
-      require("options")
-      require("keymaps")
-
-      require("utils.functions").load_services("services")
+      require("utils.functions").load_modules()
       require("autocmd")
     '';
   };

@@ -4,6 +4,32 @@ local js_based_languages = {
 	"vue",
 }
 
+local set_mapping = function(dap, dapui)
+	MapGroup("Debug", "<leader>b", "")
+	local mode = "n"
+	Map(mode, "<leader>bt", function()
+		dap.toggle_breakpoint()
+	end, { desc = "Toggle breakpoint" })
+	Map(mode, "<leader>bb", dap.step_back, { desc = "Step back" })
+	Map(mode, "<leader>bc", dap.continue, { desc = "Continue" })
+	Map(mode, "<leader>bC", dap.run_to_cursor, { desc = "Run to cursor" })
+	Map(mode, "<leader>bd", dap.disconnect, { desc = "Disconnect" })
+	Map(mode, "<leader>bg", dap.session, { desc = "Get session" })
+	Map(mode, "<leader>bi", dap.step_into, { desc = "Step into" })
+	Map(mode, "<leader>bo", dap.step_over, { desc = "Step over" })
+	Map(mode, "<leader>bu", dap.step_out, { desc = "Step out" })
+	Map(mode, "<leader>bp", dap.pause, { desc = "Pause" })
+	Map(mode, "<leader>br", dap.repl.toggle, { desc = "Toggle repl" })
+	Map(mode, "<leader>bs", dap.continue, { desc = "Start" })
+	Map(mode, "<leader>bq", dap.close, { desc = "Quit" })
+	Map(mode, "<leader>bU", function()
+		dapui.toggle({ reset = true })
+	end, { desc = "Toggle UI" })
+	Map(mode, "<leader>be", function()
+		dapui.eval(nil, { enter = true })
+	end, { desc = "Eval" })
+end
+
 return {
 	pack = function()
 		vim.pack.add({
@@ -124,5 +150,7 @@ return {
 		dap.listeners.before.event_exited.dapui_config = function()
 			dapui.close()
 		end
+
+		set_mapping(dap, dapui)
 	end,
 }
