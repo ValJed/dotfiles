@@ -1,4 +1,5 @@
 {
+  config,
   pkgs,
   lib,
   user,
@@ -32,6 +33,13 @@
 
   services.gpg-agent = {
     enable = true;
+  };
+
+  home.file = {
+    ".config/tridactyl" = {
+      source = config.lib.file.mkOutOfStoreSymlink "/home/${user}/dotfiles/tridactyl";
+      recursive = true;
+    };
   };
 
   programs.zsh = {
