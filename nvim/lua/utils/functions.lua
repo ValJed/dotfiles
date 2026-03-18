@@ -26,12 +26,12 @@ function M.load_modules()
 	end
 	load_after_plugins()
 	for _, mod in ipairs(modules) do
-		if mod.prioritize and type(mod.setup) == "function" then
+		if type(mod.setup) == "function" then
 			mod.setup()
 		end
 	end
 	for _, mod in ipairs(modules) do
-		if not mod.prioritize and type(mod.setup) == "function" then
+		if type(mod.setup) == "function" then
 			mod.setup()
 		end
 	end
