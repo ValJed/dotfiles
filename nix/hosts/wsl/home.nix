@@ -86,6 +86,7 @@
       export ZVM_SYSTEM_CLIPBOARD_ENABLED=true
       export TERM=xterm-256color
       export COLORTERM=truecolor
+      export SHELL="zsh"
 
       export PATH=$HOME/.local/bin:$PATH
       export PATH=$HOME/.cargo/bin:$PATH
