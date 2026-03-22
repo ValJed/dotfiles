@@ -46,7 +46,11 @@
       package = config.boot.kernelPackages.nvidiaPackages.production;
     };
   };
-  services.ollama.package = pkgs.ollama-cuda;
+
+  services.ollama = {
+    enable = true;
+    ollama.package = pkgs.ollama-cuda;
+  };
 
   environment.sessionVariables = {
     #Hint electron apps to use wayland
