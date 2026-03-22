@@ -55,8 +55,11 @@ Map("n", "<C-s>", ":w<cr>")
 Map("n", "<C-s>", ":w<cr>")
 Map("x", "<C-s>", "<ESC>:w<cr>")
 Map("n", "<C-c>", function()
-	utils.smart_close(true)
+	utils.smart_close(false)
 end)
+Map("n", "<leader>q", function()
+	utils.smart_close(true)
+end, { desc = "Quit", icon = "󰠜" })
 
 -- Notifications
 Map("n", "<leader>n", function()
