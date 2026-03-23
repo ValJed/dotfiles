@@ -4,20 +4,17 @@
 }:
 pkgs.rustPlatform.buildRustPackage rec {
   pname = "tomato";
-  version = "v1.0.0";
-
+  version = "v1.1.0";
   src = pkgs.fetchFromGitHub {
     owner = "ValJed";
     repo = pname;
     rev = version;
-    hash = "sha256-2ERqEtTQ25muKjoJgMPb9wjpPkoof5yBptgAmOTpItc=";
+    hash = "sha256-0a8RRqIHsgorY+esUGf4h76JbFDM7EO9XzTGe3/jaa4=";
   };
-
-  cargoHash = "sha256-pGX8CdkVZu+XYUIfiU21BxVGP36yv5fwZ0MNm4QSl+M=";
-
+  cargoHash = "sha256-Gyb6lxnamfsL7X+KHRlDKhSKIJ/UaPe5Rlfd7VvItk0=";
   meta = {
     description = "Task manager";
-    homepage = "https://github.com/ValJed/task";
+    homepage = "https://github.com/ValJed/tomato";
     license = lib.licenses.unlicense;
     maintainers = [];
   };
