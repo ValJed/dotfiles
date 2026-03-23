@@ -16,7 +16,6 @@ in {
     ../programs/bat.nix
     ../programs/btop.nix
     ../programs/fzf.nix
-    ../programs/git.nix
     ../programs/nvim.nix
     ../programs/opencode.nix
     ../programs/pass.nix

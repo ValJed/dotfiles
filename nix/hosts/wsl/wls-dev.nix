@@ -1,14 +1,8 @@
-{...}: let
-  pkgs = import (builtins.fetchGit {
-    # Descriptive name to make the store path easier to identify
-    name = "typescript";
-    url = "https://github.com/NixOS/nixpkgs/";
-    ref = "refs/heads/nixpkgs-unstable";
-    rev = "67b4bf1df4ae54d6866d78ccbd1ac7e8a8db8b73";
-  }) {};
-
-  typescript = pkgs.typescript;
-in {
+{
+  pkgs,
+  lib,
+  ...
+}: {
   home.packages = [
     # Node
     pkgs.nodejs_22
@@ -28,11 +22,12 @@ in {
     pkgs.pyright
     pkgs.black
     pkgs.taplo
-    typescript
     pkgs.vscode-js-debug
     pkgs.alejandra
     pkgs.tailwindcss-language-server
     pkgs.biome
+    # Installed through pnpm
+    # pkgs.typescript
 
     # Databases
     # pkgs.lazysql

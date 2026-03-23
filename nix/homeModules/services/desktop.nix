@@ -2,8 +2,10 @@
   record = import ../scripts/record.nix {inherit pkgs;};
 in {
   imports = [
+    ../programs/discord.nix
     ../programs/dunst.nix
     ../programs/firefox.nix
+    ../programs/git.nix
     ../programs/gtk.nix
     ../programs/hyprland.nix
     ../programs/hyprlock.nix
@@ -13,7 +15,6 @@ in {
     ../programs/spotify.nix
     ../programs/swappy.nix
     ../programs/waybar.nix
-    ../programs/discord.nix
     ./virt.nix
   ];
 
