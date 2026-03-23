@@ -49,7 +49,7 @@
 
   services.ollama = {
     enable = true;
-    ollama.package = pkgs.ollama-cuda;
+    package = pkgs.ollama-cuda;
   };
 
   environment.sessionVariables = {
