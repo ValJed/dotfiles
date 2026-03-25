@@ -15,6 +15,7 @@ local lsp_servers = {
 	"astro",
 	"pyright",
 	"tailwindcss",
+	"biome",
 }
 
 return {
