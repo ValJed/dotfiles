@@ -149,6 +149,12 @@
           border: none;
       }
 
+      .modules-left #workspaces button.urgent {
+          border-bottom: none;
+          background-color: inherit;
+          color: @base08;
+      }
+
       .modules-left #workspaces button:hover {
         color: @base05;
         background: inherit;
