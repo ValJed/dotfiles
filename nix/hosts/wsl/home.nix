@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ../../homeModules/services/terminal.nix
+    ./wls-terminal.nix
     ./wls-dev.nix
   ];
 
@@ -104,6 +104,8 @@
       # FZF
       export FZF_TMUX=1
       export FZF_TMUX_OPTS='-p80%,60%'
+
+      source ~/env
     '';
   };
 
