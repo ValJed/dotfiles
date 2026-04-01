@@ -32,5 +32,6 @@ in {
     pkgs.tealdeer
     pkgs.tokei
     pkgs.zoxide
+    pkgs.git-subrepo
   ];
 }
