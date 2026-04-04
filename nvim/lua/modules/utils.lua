@@ -31,5 +31,10 @@ return {
 		Map("n", "<leader>dg", function()
 			require("neogen").generate()
 		end, { desc = "Generate doc" })
+
+		MapGroup("Packages", "<leader>p", "")
+		Map("n", "<leader>pu", function()
+			vim.pack.update()
+		end, { desc = "Update Packages" })
 	end,
 }
