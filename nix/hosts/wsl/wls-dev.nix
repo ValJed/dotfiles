@@ -5,7 +5,7 @@
 }: {
   home.packages = [
     # Node
-    pkgs.nodejs_22
+    pkgs.fnm
     pkgs.pnpm_10
     pkgs.bun
 

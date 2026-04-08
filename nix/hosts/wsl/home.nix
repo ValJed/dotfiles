@@ -69,6 +69,7 @@
             eval "$(starship init zsh)"
           }
         eval "$(zoxide init --cmd cd zsh)"
+        eval "$(fnm env --use-on-cd --shell zsh)"
 
         alias -s json=jless
         alias -s js=nvim
@@ -76,6 +77,7 @@
         alias -s ts=nvim
         alias -s vue=nvim
         alias -s html=nvim
+
 
         # Not sure it's needed
       . ~/.nix-profile/etc/profile.d/nix.sh
@@ -95,6 +97,8 @@
       export PATH=$HOME/.cargo/bin:$PATH
       export PATH=$HOME/.npm-global/bin:$PATH
       export PATH=$HOME/.pnpm-global:$PATH
+      export PATH=$HOME/.pnpm-global:$PATH
+      export PATH="$HOME/.local/share/fnm:$PATH"
       export PATH=/opt/stagecoach/bin:$PATH
       export PATH=/opt/ops-tools/bin:$PATH
 
