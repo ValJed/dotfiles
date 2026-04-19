@@ -13,7 +13,6 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
   };
 
   outputs = {
@@ -27,7 +26,6 @@
       user,
       nixpkgs,
       home-manager,
-      neovim-nightly,
     }:
       nixpkgs.lib.nixosSystem {
         specialArgs = {
@@ -47,7 +45,6 @@
               extraSpecialArgs = {
                 hostname = hostname;
                 user = user;
-                neovim-nightly = neovim-nightly;
               };
             };
           }
@@ -60,14 +57,12 @@
         user = "jed";
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
-        neovim-nightly = inputs.neovim-nightly-overlay;
       };
       desktop = mkNixosConfig {
         hostname = "desktop";
         user = "jed";
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
-        neovim-nightly = inputs.neovim-nightly-overlay;
       };
     };
     homeConfigurations = {
@@ -80,7 +75,6 @@
         extraSpecialArgs = {
           hostname = "wsl";
           user = "jeudyv";
-          neovim-nightly = inputs.neovim-nightly-overlay;
         };
       };
     };

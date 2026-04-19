@@ -1,13 +1,10 @@
 {
-  neovim-nightly,
   user,
-  pkgs,
   config,
   ...
 }: {
   programs.neovim = {
     enable = true;
-    package = neovim-nightly.packages.${pkgs.stdenv.hostPlatform.system}.default;
     defaultEditor = true;
     extraLuaPackages = luajitPackages: [
       luajitPackages.inspect
