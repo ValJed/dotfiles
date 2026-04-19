@@ -36,5 +36,8 @@ return {
 		Map("n", "<leader>pu", function()
 			vim.pack.update()
 		end, { desc = "Update Packages" })
+		Map("n", "<leader>pl", function()
+			vim.pack.update(nil, { offline = true })
+		end)
 	end,
 }

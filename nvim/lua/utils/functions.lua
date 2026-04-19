@@ -19,17 +19,22 @@ function M.load_modules()
 		end
 	end
 
+	-- Init
+	for _, mod in ipairs(modules) do
+		if type(mod.init) == "function" then
+			mod.init()
+		end
+	end
+
+	-- Pack
 	for _, mod in ipairs(modules) do
 		if type(mod.pack) == "function" then
 			mod.pack()
 		end
 	end
 	load_after_plugins()
-	for _, mod in ipairs(modules) do
-		if type(mod.setup) == "function" then
-			mod.setup()
-		end
-	end
+
+	-- Setup
 	for _, mod in ipairs(modules) do
 		if type(mod.setup) == "function" then
 			mod.setup()
