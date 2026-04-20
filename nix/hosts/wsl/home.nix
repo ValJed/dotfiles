@@ -47,40 +47,29 @@
 
   programs.zsh = {
     initContent = ''
-        zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
-        zstyle ':completion:*' list-colors '$\{s.:. LS_COLORS\}'
-        zstyle ':completion:*' menu no
-        zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
-        zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+      zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
+      zstyle ':completion:*' list-colors '$\{s.:. LS_COLORS\}'
+      zstyle ':completion:*' menu no
+      zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+      zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-        # keybinds
-        bindkey '^F' autosuggest-accept
+      # keybinds
+      bindkey '^F' autosuggest-accept
 
-        zvm_after_init_commands+=(
-          "bindkey '^b' history-search-backward"
-          "bindkey '^n' history-search-forward"
-          "bindkey '^C' fzf-cd-widget"
-          "bindkey '^E' fzf-file-widget"
-          "bindkey '^R' fzf-history-widget"
-        )
+      zvm_after_init_commands+=(
+        "bindkey '^b' history-search-backward"
+        "bindkey '^n' history-search-forward"
+        "bindkey '^C' fzf-cd-widget"
+        "bindkey '^E' fzf-file-widget"
+        "bindkey '^R' fzf-history-widget"
+      )
 
-        type starship_zle-keymap-select >/dev/null || \
-          {
-            eval "$(starship init zsh)"
-          }
-        eval "$(zoxide init --cmd cd zsh)"
-        eval "$(fnm env --use-on-cd --shell zsh)"
-
-        alias -s json=jless
-        alias -s js=nvim
-        alias -s rs=nvim
-        alias -s ts=nvim
-        alias -s vue=nvim
-        alias -s html=nvim
-
-
-        # Not sure it's needed
-      . ~/.nix-profile/etc/profile.d/nix.sh
+      alias -s json=jless
+      alias -s js=nvim
+      alias -s rs=nvim
+      alias -s ts=nvim
+      alias -s vue=nvim
+      alias -s html=nvim
     '';
     envExtra = ''
       export EDITOR="nvim"
@@ -101,6 +90,8 @@
       export PATH="$HOME/.local/share/fnm:$PATH"
       export PATH=/opt/stagecoach/bin:$PATH
       export PATH=/opt/ops-tools/bin:$PATH
+
+      export NODE_OPTIONS="--max-old-space-size=4096"
 
       # zsh-vi-mode
       export ZVM_KEYTIMEOUT=0.1
