@@ -103,8 +103,6 @@
       export PATH=$HOME/.cargo/bin:$PATH
       export PATH=$HOME/.npm-global/bin:$PATH
       export PATH=$HOME/.pnpm-global:$PATH
-      export PATH=/opt/stagecoach/bin:$PATH
-      export PATH=/opt/ops-tools/bin:$PATH
 
       # zsh-vi-mode
       export ZVM_KEYTIMEOUT=0.1
@@ -115,7 +113,7 @@
     '';
     shellAliases = {
       nixos-switch = "sudo nixos-rebuild --flake ~/dotfiles/nix#${hostname} switch";
-      hm-switch = "home-manager --flake ~/dotfiles/nix#${hostname} switch";
+      hm-switch = "home-manager --flake ~/dotfiles/nix#${hostname} switch -b backup";
 
       # Basics
       aliases = "print -rl -- $\{(k)aliases\}";
