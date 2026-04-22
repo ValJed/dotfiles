@@ -64,6 +64,8 @@
         "bindkey '^R' fzf-history-widget"
       )
 
+      eval "$(fnm env --use-on-cd --shell zsh)"
+
       alias -s json=jless
       alias -s js=nvim
       alias -s rs=nvim
