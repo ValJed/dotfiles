@@ -19,11 +19,10 @@ quickmark m https://mail.proton.me/inbox
 quickmark M https://mail.google.com/mail/u/0/#inbox
 quickmark c https://www.google.fr/maps 
 quickmark C https://calendar.proton.me
-quickmark b https://www.helios.do/ 
+quickmark b https://www.credit-agricole.fr/ca-des-savoie/particulier/acceder-a-mes-comptes.html
 quickmark q https://app.qonto.com/signin
 quickmark d https://drive.proton.me
 quickmark L http://locahost:3000
-quickmark n https://www.notion.so/apostrophetechnologies/Platform-Support-Backlog-Refinement-Feb-12-CycleYe-190371d0f99b80dfa166ec0c9f4529f0
 quickmark r https://www.reddit.com/
 
 set searchurls.d https://duckduckgo.com/html?q=%s

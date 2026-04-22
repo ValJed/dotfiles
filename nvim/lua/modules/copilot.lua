@@ -10,26 +10,25 @@ return {
 		require("codecompanion").setup({})
 
 		MapGroup("Copilot", "<leader>C", "󰚩")
+
 		Map("n", "<leader>CC", function()
-			vim.cmd("CodeCompanion")
+			vim.cmd("CodeCompanionChat")
 		end, { desc = "Chat" })
+
 		Map("v", "<leader>Ce", function()
-			vim.cmd("CodeCompanionExplain")
-		end, { desc = "Explain Selection" })
+			vim.cmd("CodeCompanion explain the selected code")
+		end, { desc = "Explain Code" })
+
+		Map("v", "<leader>CW", function()
+			vim.cmd("CodeCompanion explain the selected error")
+		end, { desc = "Explain Error" })
+
 		Map("v", "<leader>Cf", function()
-			vim.cmd("CodeCompanionFix")
-		end, { desc = "Fix Selection" })
+			vim.cmd("CodeCompanion fix the selected code")
+		end, { desc = "Fix Code" })
+
 		Map("n", "<leader>Cc", function()
-			vim.cmd("CodeCompanionCommit")
+			vim.cmd("CodeCompanion generates commit message for staged code")
 		end, { desc = "Generate Commit Message" })
-		Map("n", "<leader>CS", function()
-			vim.cmd("CodeCompanionCommitStaged")
-		end, { desc = "Generate Commit Message for Staged" })
-		Map("n", "<leader>CR", function()
-			vim.cmd("CodeCompanionReset")
-		end, { desc = "Reset Chat" })
-		Map("n", "<leader>CD", function()
-			vim.cmd("CodeCompanionDebugInfo")
-		end, { desc = "Debug Info" })
 	end,
 }
