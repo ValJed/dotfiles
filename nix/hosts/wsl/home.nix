@@ -47,6 +47,10 @@
 
   programs.zsh = {
     initContent = ''
+      if [ -f $HOME/.nix-profile/etc/profile.d/nix-daemon.sh ]; then
+        . $HOME/.nix-profile/etc/profile.d/nix-daemon.sh
+      fi
+
       zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'
       zstyle ':completion:*' list-colors '$\{s.:. LS_COLORS\}'
       zstyle ':completion:*' menu no
@@ -90,8 +94,6 @@
       export PATH=$HOME/.pnpm-global:$PATH
       export PATH=$HOME/.pnpm-global:$PATH
       export PATH="$HOME/.local/share/fnm:$PATH"
-      export PATH=/opt/stagecoach/bin:$PATH
-      export PATH=/opt/ops-tools/bin:$PATH
 
       export NODE_OPTIONS="--max-old-space-size=4096"
 
