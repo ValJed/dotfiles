@@ -11,4 +11,4 @@ end
 vim.cmd("WorkspacesSyncDir")
 vim.api.nvim_exec([[ autocmd DirChanged * silent execute luaeval("GetTmuxCommand()") ]], false)
 vim.api.nvim_exec([[ autocmd ExitPre * silent execute luaeval("GetTmuxCommand(true)") ]], false)
---[[ vim.cmd("Copilot disable") ]]
+-- vim.apo.nvim_exec([[ vim.cmd("Copilot disable") ]], false)

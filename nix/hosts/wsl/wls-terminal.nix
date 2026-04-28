@@ -15,6 +15,7 @@ in {
     ../../homeModules/programs/tmux.nix
     ../../homeModules/programs/yazi.nix
     ../../homeModules/programs/zsh.nix
+    ./podman.nix
   ];
 
   home.packages = [
@@ -33,7 +34,5 @@ in {
     pkgs.tokei
     pkgs.zoxide
     pkgs.git-subrepo
-    pkgs.podman
-    pkgs.podman-compose # if you ever need compose
   ];
 }
