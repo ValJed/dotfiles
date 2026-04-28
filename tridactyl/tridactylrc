@@ -43,6 +43,7 @@ set searchurls.ytc https://www.youtube.com/#ysm-group-title=Code
 set searchurls.yts https://www.youtube.com/#ysm-group-title=Science
 set searchurls.ytp https://www.youtube.com/#ysm-group-title=Philosophy
 set searchurls.yth https://www.youtube.com/#ysm-group-title=History
+set searchurls.ytl https://www.youtube.com/playlist?list=WL 
 set searchurls.rd https://www.reddit.com/search/?q=%s
 set searchurls.cl https://claude.ai/chat
 set searchurls.regie https://lescuyer.h2i.fr/log_client.php 
