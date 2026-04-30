@@ -26,7 +26,9 @@
     pkgs.alejandra
     pkgs.tailwindcss-language-server
     pkgs.biome
+    pkgs.yaml-language-server
     pkgs.gitlab-runner
+
     # Installed through pnpm
     # pkgs.typescript
 

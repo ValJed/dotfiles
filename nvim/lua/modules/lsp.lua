@@ -16,6 +16,7 @@ local lsp_servers = {
 	"pyright",
 	"tailwindcss",
 	"biome",
+	"yamlls",
 }
 
 return {
@@ -75,6 +76,7 @@ return {
 				python = { "black" },
 				toml = { "taplo" },
 				graphql = { "biome" },
+				yaml = { "yamlls" },
 				--[[ yaml = function(bufnr) ]]
 				--[[ 	local filepath = vim.api.nvim_buf_get_name(bufnr) ]]
 				--[[ 	-- Only format YAML files in .github/workflows/ ]]

@@ -44,6 +44,7 @@
     pkgs.vscode-js-debug
     pkgs.alejandra
     pkgs.tailwindcss-language-server
+    pkgs.yaml-language-server
 
     # Databases
     # pkgs.lazysql
