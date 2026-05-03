@@ -40,6 +40,7 @@ in {
     pkgs.tealdeer
     pkgs.tokei
     pkgs.zoxide
+    pkgs.ncdu
     task
     tomato
   ];
