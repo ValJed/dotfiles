@@ -27,6 +27,7 @@ quickmark r https://www.reddit.com/
 
 set searchurls.d https://duckduckgo.com/html?q=%s
 set searchurls.g https://www.google.com/search?q=%s 
+set searchurls.q https://www.qwant.com/?l=fr&q=%s&t=web
 set searchurls.nx https://search.nixos.org/packages?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=%s
 set searchurls.nxo https://search.nixos.org/options?channel=unstable&from=0&size=50&sort=relevance&type=packages&query=%s
 set searchurls.nxh https://home-manager-options.extranix.com/?query=%s&release=master 

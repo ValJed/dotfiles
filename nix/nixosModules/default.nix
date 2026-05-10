@@ -3,10 +3,11 @@
     ./services/dev.nix
     ./services/displayManager.nix
     ./services/kanata.nix
-    ./services/stylix.nix
-    ./services/virtualization.nix
     ./services/mouse.nix
     ./services/omnissa.nix
+    ./services/stylix.nix
+    ./services/tor.nix
+    ./services/virtualization.nix
   ];
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nix.settings.download-buffer-size = 524288000;
