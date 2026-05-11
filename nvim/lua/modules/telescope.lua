@@ -117,7 +117,7 @@ return {
 			vim.cmd("Telescope find_files")
 		end, { desc = "Find file" })
 		Map(mode, "<leader>fh", function()
-			vim.cmd("Telescope find_files hidden=true")
+			builtin.find_files({ hidden = true, no_ignore = true })
 		end, { desc = "Find hidden files" })
 		Map(mode, "<leader>fg", function()
 			builtin.live_grep({ additional_args = { "--hidden" } })

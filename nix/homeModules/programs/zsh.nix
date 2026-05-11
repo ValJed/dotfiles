@@ -150,11 +150,7 @@
       dtf = "cd ~/dotfiles/ && $EDITOR";
 
       # Binaries
-      pm = "$HOME/Documents/tools/postman/Postman";
-      robo = "$HOME/Documents/tools/robo3t/bin/robo3t";
-      tor = "$HOME/Documents/tools/tor && ./start-tor-browser.desktop";
       dc = "docker-compose";
-      patator = "$HOME/Documents/tools/hacking/patator/patator.py";
       np = "~/apps/ops-tools/bin/np";
       monero = "/home/val/Documents/monero/monero-wallet-gui";
 
