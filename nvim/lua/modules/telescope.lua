@@ -9,6 +9,7 @@ return {
 		local telescope = require("telescope")
 		local actions = require("telescope.actions")
 		local state = require("telescope.actions.state")
+		local builtin = require("telescope.builtin")
 
 		local commits_picker_config = {
 			mappings = {
@@ -109,11 +110,8 @@ return {
 
 		local mode = "n"
 		MapGroup("Find", "<leader>f", "")
-		Map(mode, "<leader>fs", function()
-			vim.cmd("Telescope live_grep_string")
-		end, { desc = "Grep string" })
 		Map(mode, "<leader>fc", function()
-			require("telescope.builtin").colorscheme({ enable_preview = true })
+			builtin.colorscheme({ enable_preview = true })
 		end, { desc = "Color schemes" })
 		Map(mode, "<leader>ff", function()
 			vim.cmd("Telescope find_files")
@@ -122,7 +120,7 @@ return {
 			vim.cmd("Telescope find_files hidden=true")
 		end, { desc = "Find hidden files" })
 		Map(mode, "<leader>fg", function()
-			vim.cmd("Telescope live_grep")
+			builtin.live_grep({ additional_args = { "--hidden" } })
 		end, { desc = "Grep" })
 		Map(mode, "<leader>ft", function()
 			vim.cmd("Telescope help_tags")
