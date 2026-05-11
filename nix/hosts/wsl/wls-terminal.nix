@@ -3,6 +3,14 @@
   lib,
   ...
 }: let
+  task = import ../../homeModules/scripts/task.nix {
+    inherit pkgs;
+    inherit lib;
+  };
+  tomato = import ../../homeModules/scripts/tomato.nix {
+    inherit pkgs;
+    inherit lib;
+  };
 in {
   imports = [
     ../../homeModules/programs/bat.nix
@@ -15,6 +23,7 @@ in {
     ../../homeModules/programs/tmux.nix
     ../../homeModules/programs/yazi.nix
     ../../homeModules/programs/zsh.nix
+
     ./podman.nix
   ];
 
@@ -34,5 +43,8 @@ in {
     pkgs.tokei
     pkgs.zoxide
     pkgs.git-subrepo
+
+    tomato
+    task
   ];
 }

@@ -28,6 +28,7 @@
     pkgs.biome
     pkgs.yaml-language-server
     pkgs.gitlab-runner
+    pkgs.awscli2
 
     # Installed through pnpm
     # pkgs.typescript
