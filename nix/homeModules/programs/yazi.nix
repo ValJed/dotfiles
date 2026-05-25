@@ -60,11 +60,11 @@
             use = "pdf";
           }
           {
-            name = "*.zip";
+            url = "*.zip";
             use = "zip";
           }
           {
-            name = "*.tar.gz";
+            url = "*.tar.gz";
             use = "tar_gz";
           }
           {
