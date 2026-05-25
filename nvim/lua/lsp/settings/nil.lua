@@ -1,0 +1,5 @@
+return {
+	nix = {
+		autoArchive = true,
+	},
+}
