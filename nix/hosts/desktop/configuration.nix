@@ -28,10 +28,10 @@
   programs.gamemode.enable = true;
 
   environment.systemPackages = with pkgs; [
+    # bottles
     mangohud
-    protonup-ng
-    bottles
     obs-studio
+    protonup-ng
   ];
 
   services.xserver.videoDrivers = ["nvidia"];
