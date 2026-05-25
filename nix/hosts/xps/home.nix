@@ -6,7 +6,12 @@
   wayland.windowManager.hyprland = {
     settings = {
       monitor = [
-        ",preferred,auto,1.6"
+        {
+          output = "";
+          mode = "preferred";
+          position = "auto";
+          scale = 1.6;
+        }
       ];
     };
   };
