@@ -12,6 +12,8 @@
       pkgs.tridactyl-native
     ];
 
+    languagePacks = ["en-US" "fr"];
+
     profiles = {
       default = {
         isDefault = true;
