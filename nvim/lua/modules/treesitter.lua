@@ -19,6 +19,7 @@ local parsers = {
 	"yaml",
 	"graphql",
 	"zsh",
+	"nix",
 }
 
 local function set_keymaps()
