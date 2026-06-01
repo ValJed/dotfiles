@@ -29,6 +29,7 @@
     pkgs.yaml-language-server
     pkgs.gitlab-runner
     pkgs.awscli2
+    pkgs.rtk
 
     # Installed through pnpm
     # pkgs.typescript
