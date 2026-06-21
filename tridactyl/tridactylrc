@@ -1,3 +1,5 @@
+unbind d
+
 bind j scrollline 5
 bind k scrollline -5
 bind --mode=ex <C-j> ex.next_completion
@@ -48,6 +50,7 @@ set searchurls.ytl https://www.youtube.com/playlist?list=WL
 set searchurls.rd https://www.reddit.com/search/?q=%s
 set searchurls.cl https://claude.ai/chat
 set searchurls.regie https://lescuyer.h2i.fr/log_client.php 
+set searchurls.doc https://www.doctolib.fr
 
 set searchurls.aposc https://github.com/search?q=repo%3Aapostrophecms%2Fapostrophe%20%s&type=code 
 set searchurls.aposr https://github.com/orgs/apostrophecms/repositories?q=%s

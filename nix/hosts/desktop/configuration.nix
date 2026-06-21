@@ -45,13 +45,13 @@
     };
   };
 
-  services.ollama = {
-    enable = true;
-    package = pkgs.ollama-cuda;
-  };
+  # services.ollama = {
+  #   enable = true;
+  #   package = pkgs.ollama-cuda;
+  # };
 
   environment.sessionVariables = {
-    #Hint electron apps to use wayland
+    # Hint electron apps to use wayland
     STEAM_EXTRA_COMPAT_TOOLS_PATHS = "/home/${user}/.steam/root/compatibilitytools.d";
   };
 

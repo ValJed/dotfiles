@@ -93,10 +93,10 @@ Map("n", "<leader>sv", function()
 end, { desc = "Split Vertically" })
 
 -- Resize with arrows
-Map("n", "<C-S-Up>", ":resize +2<cr>")
-Map("n", "<C-S-Down>", ":resize -2<cr>")
-Map("n", "<C-S-Right>", ":vertical resize +2<cr>")
-Map("n", "<C-S-Left>", ":vertical resize -2<cr>")
+Map("n", "<C-S-Up>", ":resize +6<cr>")
+Map("n", "<C-S-Down>", ":resize -6<cr>")
+Map("n", "<C-S-Right>", ":vertical resize +6<cr>")
+Map("n", "<C-S-Left>", ":vertical resize -6<cr>")
 
 -- Navigate buffers
 Map("n", "<S-h>", ":BufSurfBack<cr>")

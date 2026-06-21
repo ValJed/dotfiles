@@ -2,6 +2,7 @@
   description = "flake for main";
 
   inputs = {
+    # nixpkgs-ollama.url = "github:NixOS/nixpkgs/8c3cede7ddc26bd659d2d383b5610efbd2c7a16e";
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
