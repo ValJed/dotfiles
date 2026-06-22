@@ -42,16 +42,13 @@ return {
 
 						["<C-j>"] = actions.move_selection_next,
 						["<C-k>"] = actions.move_selection_previous,
-						["<Down>"] = actions.move_selection_next,
-						["<Up>"] = actions.move_selection_previous,
 
 						["<CR>"] = actions.select_default,
 						["<C-h>"] = actions.select_horizontal,
 						["<C-v>"] = actions.select_vertical,
-						["<C-t>"] = actions.select_tab,
 
-						["K"] = actions.preview_scrolling_up,
-						["J"] = actions.preview_scrolling_down,
+						["<Up>"] = actions.preview_scrolling_up,
+						["<Down>"] = actions.preview_scrolling_down,
 						["<C-u>"] = actions.results_scrolling_up,
 						["<C-d>"] = actions.results_scrolling_down,
 
@@ -69,7 +66,6 @@ return {
 						["<CR>"] = actions.select_default,
 						["<C-h>"] = actions.select_horizontal,
 						["<C-v>"] = actions.select_vertical,
-						["<C-t>"] = actions.select_tab,
 
 						["<Tab>"] = actions.toggle_selection + actions.move_selection_worse,
 						["<S-Tab>"] = actions.toggle_selection + actions.move_selection_better,
@@ -79,14 +75,14 @@ return {
 						["j"] = actions.move_selection_next,
 						["k"] = actions.move_selection_previous,
 
-						["<Down>"] = actions.move_selection_next,
-						["<Up>"] = actions.move_selection_previous,
 						["gg"] = actions.move_to_top,
 						["M"] = actions.move_to_middle,
 						["G"] = actions.move_to_bottom,
 
 						["K"] = actions.preview_scrolling_up,
 						["J"] = actions.preview_scrolling_down,
+						["<Up>"] = actions.preview_scrolling_up,
+						["<Down>"] = actions.preview_scrolling_down,
 						["<C-u>"] = actions.results_scrolling_up,
 						["<C-d>"] = actions.results_scrolling_down,
 
