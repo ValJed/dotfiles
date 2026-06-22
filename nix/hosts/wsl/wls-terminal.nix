@@ -17,7 +17,7 @@ in {
     ../../homeModules/programs/btop.nix
     ../../homeModules/programs/fzf.nix
     ../../homeModules/programs/nvim.nix
-    ../../homeModules/programs/opencode.nix
+    ../../homeModules/programs/llm.nix
     ../../homeModules/programs/pass.nix
     ../../homeModules/programs/starship.nix
     ../../homeModules/programs/tmux.nix

@@ -17,7 +17,7 @@ in {
     ../programs/btop.nix
     ../programs/fzf.nix
     ../programs/nvim.nix
-    ../programs/opencode.nix
+    ../programs/llm.nix
     ../programs/pass.nix
     ../programs/starship.nix
     ../programs/tmux.nix

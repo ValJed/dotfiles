@@ -1,8 +1,14 @@
 {
   description = "flake for main";
 
+  nixConfig = {
+    extra-substituters = ["https://cache.numtide.com"];
+    extra-trusted-public-keys = ["niks3.numtide.com-1:DTx8wZduET09hRmMtKdQDxNNthLQETkc/yaX7M4qK0g="];
+  };
+
   inputs = {
     # nixpkgs-ollama.url = "github:NixOS/nixpkgs/8c3cede7ddc26bd659d2d383b5610efbd2c7a16e";
+    llm-agents.url = "github:numtide/llm-agents.nix";
     nixpkgs = {
       url = "github:NixOS/nixpkgs/nixos-unstable";
     };
@@ -34,6 +40,7 @@
           user = user;
         };
         modules = [
+          {nixpkgs.overlays = [inputs.llm-agents.overlays.default];}
           stylix.nixosModules.stylix
           ./hosts/${hostname}/configuration.nix
           home-manager.nixosModules.home-manager
@@ -68,7 +75,10 @@
     };
     homeConfigurations = {
       wsl = home-manager.lib.homeManagerConfiguration {
-        pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
+        pkgs = import inputs.nixpkgs {
+          system = "x86_64-linux";
+          overlays = [inputs.llm-agents.overlays.default];
+        };
         modules = [
           stylix.homeModules.stylix
           ./hosts/wsl/home.nix
