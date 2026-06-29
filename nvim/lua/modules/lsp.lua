@@ -17,6 +17,7 @@ local lsp_servers = {
 	"tailwindcss",
 	"biome",
 	"yamlls",
+	"org",
 }
 
 return {
