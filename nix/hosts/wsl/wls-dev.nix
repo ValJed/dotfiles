@@ -31,6 +31,8 @@
     pkgs.awscli2
     pkgs.rtk
 
+    pkgs.kubectl
+
     # Installed through pnpm
     # pkgs.typescript
 
