@@ -41,12 +41,14 @@ set searchurls.npm https://www.npmjs.com/search?q=%s
 set searchurls.w https://en.wikipedia.org/wiki/%s 
 set searchurls.ms https://www.messenger.com
 set searchurls.yt https://www.youtube.com/results?search_query=%s
+set searchurls.ytl https://www.youtube.com/playlist?list=WL 
+set searchurls.yta https://www.youtube.com/#ysm-group-title=Agora
 set searchurls.ytm https://www.youtube.com/#ysm-group-title=Media
 set searchurls.ytc https://www.youtube.com/#ysm-group-title=Code
 set searchurls.yts https://www.youtube.com/#ysm-group-title=Science
-set searchurls.ytp https://www.youtube.com/#ysm-group-title=Philosophy
+set searchurls.ytp https://www.youtube.com/#ysm-group-title=Philo
 set searchurls.yth https://www.youtube.com/#ysm-group-title=History
-set searchurls.ytl https://www.youtube.com/playlist?list=WL 
+set searchurls.yte https://www.youtube.com/#ysm-group-title=Entertainment
 set searchurls.rd https://www.reddit.com/search/?q=%s
 set searchurls.cl https://claude.ai/chat
 set searchurls.regie https://lescuyer.h2i.fr/log_client.php 
