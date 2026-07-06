@@ -32,6 +32,7 @@
     pkgs.rtk
 
     pkgs.kubectl
+    pkgs.k9s
 
     # Installed through pnpm
     # pkgs.typescript
