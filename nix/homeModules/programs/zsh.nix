@@ -67,21 +67,16 @@
       zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
       zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
-      # keybinds
-      bindkey '^F' autosuggest-accept
-
       zvm_after_init_commands+=(
+        "bindkey '^F' autosuggest-accept"
         "bindkey '^b' history-search-backward"
         "bindkey '^n' history-search-forward"
         "bindkey '^C' fzf-cd-widget"
         "bindkey '^E' fzf-file-widget"
         "bindkey '^R' fzf-history-widget"
+        "eval \"\$(starship init zsh)\""
       )
 
-      type starship_zle-keymap-select >/dev/null || \
-        {
-          eval "$(starship init zsh)"
-        }
       eval "$(zoxide init --cmd cd zsh)"
 
       alias -s json=jless
