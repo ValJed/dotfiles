@@ -63,7 +63,7 @@ return {
 			formatters_by_ft = {
 				nix = { "alejandra" },
 				lua = { "stylua" },
-				rust = { "rustfmt", lsp_format = "fallback" },
+				rust = { "rustfmt" },
 				javascript = { "biome", "eslint_d", "prettierd" },
 				typescript = { "biome", "eslint_d", "prettierd" },
 				typescriptreact = { "biome", "eslint_d", "prettierd" },

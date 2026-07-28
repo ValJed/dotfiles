@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  rustfmt-nightly = pkgs.callPackage "${pkgs.path}/pkgs/development/compilers/rust/rustfmt.nix" {
+    asNightly = true;
+  };
+in {
   imports = [
     ../programs/ci.nix
   ];
@@ -22,7 +26,7 @@
     # LSP
     pkgs.tree-sitter
     pkgs.rust-analyzer
-    pkgs.rustfmt
+    rustfmt-nightly
     pkgs.eslint_d
     pkgs.prettierd
     pkgs.vscode-langservers-extracted
