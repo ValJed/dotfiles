@@ -21,7 +21,7 @@ in {
 
     # Gleam
     pkgs.gleam
-    pkgs.erlang
+    pkgs.beamPackages.erlang
 
     # LSP
     pkgs.tree-sitter
