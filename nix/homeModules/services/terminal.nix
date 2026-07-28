@@ -16,12 +16,15 @@ in {
     ../programs/bat.nix
     ../programs/btop.nix
     ../programs/fzf.nix
-    ../programs/nvim.nix
+    ../programs/herdr.nix
     ../programs/llm.nix
+    ../programs/nvim.nix
     ../programs/pass.nix
     ../programs/starship.nix
     ../programs/tmux.nix
+    ../programs/tuicr.nix
     ../programs/yazi.nix
+    ../programs/zsh.nix
     ../programs/zsh.nix
   ];
 
