@@ -40,7 +40,7 @@
           user = user;
         };
         modules = [
-          {nixpkgs.overlays = [inputs.llm-agents.overlays.default];}
+          {nixpkgs.overlays = [inputs.llm-agents.overlays.shared-nixpkgs];}
           stylix.nixosModules.stylix
           ./hosts/${hostname}/configuration.nix
           home-manager.nixosModules.home-manager
