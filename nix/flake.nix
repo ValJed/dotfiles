@@ -77,7 +77,7 @@
       wsl = home-manager.lib.homeManagerConfiguration {
         pkgs = import inputs.nixpkgs {
           system = "x86_64-linux";
-          overlays = [inputs.llm-agents.overlays.default];
+          overlays = [inputs.llm-agents.overlays.shared-nixpkgs];
         };
         modules = [
           stylix.homeModules.stylix
