@@ -16,14 +16,15 @@ in {
     ../../homeModules/programs/bat.nix
     ../../homeModules/programs/btop.nix
     ../../homeModules/programs/fzf.nix
-    ../../homeModules/programs/nvim.nix
+    ../../homeModules/programs/herdr.nix
     ../../homeModules/programs/llm.nix
+    ../../homeModules/programs/nvim.nix
     ../../homeModules/programs/pass.nix
     ../../homeModules/programs/starship.nix
     ../../homeModules/programs/tmux.nix
+    ../../homeModules/programs/tuicr.nix
     ../../homeModules/programs/yazi.nix
     ../../homeModules/programs/zsh.nix
-
     ./podman.nix
   ];
 
@@ -43,6 +44,7 @@ in {
     pkgs.tokei
     pkgs.zoxide
     pkgs.git-subrepo
+    # pkgs.graphify
 
     tomato
     task
