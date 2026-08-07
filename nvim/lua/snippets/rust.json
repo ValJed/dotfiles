@@ -107,10 +107,19 @@
     ],
     "description": "Use"
   },
-  "Function": {
+  "Function Return": {
     "prefix": "fn",
     "body": [
       "fn ${1}(${2}) -> ${3} {",
+      "\t${4}",
+      "}"
+    ],
+    "description": "Function With Return Type"
+  },
+  "Function": {
+    "prefix": "fnv",
+    "body": [
+      "fn ${1}(${2}) {",
       "\t${4}",
       "}"
     ],
@@ -122,5 +131,17 @@
       "format!(\"${1:HERE}\")"
     ],
     "description": "Format"
+  },
+  "Test": {
+    "prefix": "test",
+    "body": [
+      "#[cfg(test)]",
+      "mod tests {",
+      "\tuse super::*;",
+      "",
+      "\t#[test]",
+      "\t${1}",
+      "}"
+    ]
   }
 }
