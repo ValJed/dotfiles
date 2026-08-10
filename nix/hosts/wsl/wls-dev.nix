@@ -30,6 +30,7 @@
     pkgs.gitlab-runner
     pkgs.awscli2
     pkgs.rtk
+    pkgs.vendir
 
     pkgs.kubectl
     pkgs.k9s
