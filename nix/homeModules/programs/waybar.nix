@@ -31,6 +31,7 @@
         # Modules configuration
         "hyprland/workspaces" = {
           disable-scroll = true;
+          on-click = "activate";
           all-outputs = true;
           warp-on-scroll = false;
           format = "{icon}";
