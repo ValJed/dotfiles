@@ -30,6 +30,15 @@
       source = ../../../zsh/completions;
       recursive = true;
     };
+    ".local/share/zsh/functions/nix-diff".text = ''
+      nix-diff() {
+        if [[ $# -ne 2 ]]; then
+          echo "Usage: nix-generations-diff <old-gen> <new-gen>" >&2
+          return 1
+        fi
+        nix store diff-closures "/nix/var/nix/profiles/system-''${1}-link" "/nix/var/nix/profiles/system-''${2}-link"
+      }
+    '';
   };
 
   programs.zsh = {
@@ -53,7 +62,7 @@
       saveNoDups = true;
     };
     completionInit = ''
-      fpath+=($HOME/.local/share/zsh/completions $HOME/.local/share/zsh/vendor-completions)
+      fpath+=($HOME/.local/share/zsh/completions $HOME/.local/share/zsh/vendor-completions $HOME/.local/share/zsh/functions)
       autoload -U compinit && compinit
 
       # Sourcing plugins
@@ -109,6 +118,7 @@
     shellAliases = {
       nixos-switch = "sudo nixos-rebuild --flake ~/dotfiles/nix#${hostname} switch";
       hm-switch = "home-manager --flake ~/dotfiles/nix#${hostname} switch -b backup";
+      nix-generations = "sudo nix-env --list-generations --profile /nix/var/nix/profiles/system";
 
       # Basics
       aliases = "print -rl -- $\{(k)aliases\}";
