@@ -19,6 +19,7 @@ quickmark y https://www.youtube.com
 quickmark g https://github.com/ValJed
 quickmark m https://mail.proton.me/inbox
 quickmark M https://mail.google.com/mail/u/0/#inbox
+quickmark M https://www.messenger.com
 quickmark c https://www.google.fr/maps 
 quickmark C https://calendar.proton.me
 quickmark b https://www.credit-agricole.fr/ca-des-savoie/particulier/acceder-a-mes-comptes.html
@@ -65,4 +66,3 @@ blacklistadd localhost:*
 blacklistadd https://meet.google.com
 blacklistadd https://figma.com
 blacklistadd https://linkedin.com
-

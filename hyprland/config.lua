@@ -12,7 +12,7 @@ local exec = hl.dsp.exec_cmd
 -- ─── Autostart ────────────────────────────────────────────────────────────────
 
 hl.on("hyprland.start", function()
-	hl.exec_cmd("wbg ~/dotfiles/assets/wallpaper.png")
+	-- hl.exec_cmd("wbg ~/dotfiles/assets/wallpaper.png")
 	hl.exec_cmd("dunst")
 	hl.exec_cmd("waybar")
 	hl.exec_cmd("nm-applet --indicator")

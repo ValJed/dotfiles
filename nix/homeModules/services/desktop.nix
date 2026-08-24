@@ -23,7 +23,7 @@ in {
 
     # Desktop
     pkgs.dconf-editor
-    pkgs.wbg
+    # pkgs.wbg
     pkgs.adwaita-qt
     pkgs.rose-pine-hyprcursor
   ];

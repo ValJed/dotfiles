@@ -94,6 +94,8 @@
       alias -s ts=nvim
       alias -s vue=nvim
       alias -s html=nvim
+
+      autoload -Uz nix-diff
     '';
     envExtra = ''
       export EDITOR="nvim"
