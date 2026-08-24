@@ -3,6 +3,8 @@
 
   wayland.windowManager.hyprland = {
     enable = true;
+    systemd.enable = false;
+
     # Use global package
     package = null;
     portalPackage = null;
