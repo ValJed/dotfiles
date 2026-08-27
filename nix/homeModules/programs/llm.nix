@@ -6,5 +6,6 @@
 
   programs.pi-coding-agent = {
     enable = true;
+    # keybindings = { };
   };
 }

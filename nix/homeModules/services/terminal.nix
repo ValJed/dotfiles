@@ -20,11 +20,11 @@ in {
     ../programs/llm.nix
     ../programs/nvim.nix
     ../programs/pass.nix
+    ../programs/podman.nix
     ../programs/starship.nix
     ../programs/tmux.nix
     ../programs/tuicr.nix
     ../programs/yazi.nix
-    ../programs/zsh.nix
     ../programs/zsh.nix
   ];
 
