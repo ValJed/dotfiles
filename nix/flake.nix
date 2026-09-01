@@ -20,12 +20,14 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    disko.url = "github:nix-community/disko";
   };
 
   outputs = {
     nixpkgs,
     home-manager,
     stylix,
+    disko,
     ...
   } @ inputs: let
     mkNixosConfig = {
@@ -71,6 +73,29 @@
         user = "jed";
         nixpkgs = inputs.nixpkgs;
         home-manager = inputs.home-manager;
+      };
+      vps = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+          hostname = "vps";
+          user = "jed";
+        };
+        modules = [
+          disko.nixosModules.disko
+          ./hosts/vps/configuration.nix
+          home-manager.nixosModules.home-manager
+          {
+            home-manager = {
+              useGlobalPkgs = true;
+              useUserPackages = true;
+              users.jed = ./hosts/vps/home.nix;
+              backupFileExtension = "backup";
+              extraSpecialArgs = {
+                hostname = "vps";
+                user = "jed";
+              };
+            };
+          }
+        ];
       };
     };
     homeConfigurations = {
