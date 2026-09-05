@@ -95,6 +95,7 @@
     easyeffects
     pinta
     keymapp
+    vim
 
     # Tools
     wev

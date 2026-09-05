@@ -82,19 +82,19 @@
         modules = [
           disko.nixosModules.disko
           ./hosts/vps/configuration.nix
-          home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              users.jed = ./hosts/vps/home.nix;
-              backupFileExtension = "backup";
-              extraSpecialArgs = {
-                hostname = "vps";
-                user = "jed";
-              };
-            };
-          }
+          # home-manager.nixosModules.home-manager
+          # {
+          #   home-manager = {
+          #     useGlobalPkgs = true;
+          #     useUserPackages = true;
+          #     users.jed = ./hosts/vps/home.nix;
+          #     backupFileExtension = "backup";
+          #     extraSpecialArgs = {
+          #       hostname = "vps";
+          #       user = "jed";
+          #     };
+          #   };
+          # }
         ];
       };
     };
