@@ -16,6 +16,7 @@ in {
     ../programs/bat.nix
     ../programs/btop.nix
     ../programs/fzf.nix
+    ../programs/gpg.nix
     ../programs/herdr.nix
     ../programs/llm.nix
     ../programs/nvim.nix
