@@ -21,6 +21,7 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
     disko.url = "github:nix-community/disko";
+    sops-nix.url = "github:Mic92/sops-nix";
   };
 
   outputs = {
@@ -28,6 +29,7 @@
     home-manager,
     stylix,
     disko,
+    sops-nix,
     ...
   } @ inputs: let
     mkNixosConfig = {
@@ -81,6 +83,7 @@
         };
         modules = [
           disko.nixosModules.disko
+          sops-nix.nixosModules.sops
           ./hosts/vps/configuration.nix
           # home-manager.nixosModules.home-manager
           # {
