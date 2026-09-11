@@ -13,10 +13,9 @@ return {
 				org = {
 					org_insert_todo_heading = "<leader>ot",
 					org_insert_todo_heading_respect_content = "<leader>oT",
-					-- org_insert_heading = "<leader>oh",
 					org_insert_heading_respect_content = "<leader>oh",
 					org_schedule = "<leader>os",
-					org_set_tags_command = "<leader>oT",
+					org_set_tags_command = "<leader>om",
 				},
 			},
 		})

@@ -25,6 +25,7 @@
     BROWSER = "";
     EDITOR = "nvim";
     ZSH_TMUX_CONFIG = "$HOME/.config/tmux/tmux.conf";
+    KUBECONFIG = "$HOME/.config/kube/kube.yaml";
   };
 
   home.sessionPath = [
