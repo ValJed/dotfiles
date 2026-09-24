@@ -5,6 +5,9 @@
     pkgs.pnpm_10
     pkgs.bun
 
+    # Python
+    pkgs.pipx
+
     # LSP
     pkgs.tree-sitter
     pkgs.vscode-langservers-extracted
