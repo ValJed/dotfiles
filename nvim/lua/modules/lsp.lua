@@ -18,6 +18,7 @@ local lsp_servers = {
 	"biome",
 	"yamlls",
 	"org",
+	"robotcode",
 }
 
 return {

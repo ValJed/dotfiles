@@ -20,6 +20,7 @@ local parsers = {
 	"graphql",
 	"zsh",
 	"nix",
+	"robot",
 }
 
 local function set_keymaps()

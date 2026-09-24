@@ -7,6 +7,8 @@ function GetTmuxCommand(set_default)
 	return "!tmux rename-window " .. cur_dir
 end
 
+vim.filetype.add({ extension = { resource = "robot" } })
+
 -- Format on save
 vim.cmd("WorkspacesSyncDir")
 vim.api.nvim_exec([[ autocmd DirChanged * silent execute luaeval("GetTmuxCommand()") ]], false)
