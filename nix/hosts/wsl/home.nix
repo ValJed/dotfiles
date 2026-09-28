@@ -10,6 +10,8 @@
     ./wls-dev.nix
   ];
 
+  nixpkgs.config.allowUnfree = true;
+
   home.username = "${user}";
   home.homeDirectory = "/home/${user}";
 

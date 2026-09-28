@@ -8,4 +8,8 @@
     enable = true;
     # keybindings = { };
   };
+
+  programs.claude-code = {
+    enable = true;
+  };
 }
