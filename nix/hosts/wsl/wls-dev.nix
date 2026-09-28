@@ -7,6 +7,7 @@
 
     # Python
     pkgs.pipx
+    # pkgs.conda
 
     # LSP
     pkgs.tree-sitter

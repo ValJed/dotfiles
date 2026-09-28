@@ -70,6 +70,12 @@ return {
 			require("nvim-treesitter").install(parsersToInstall)
 		end
 
+		vim.api.nvim_create_autocmd("FileType", {
+			callback = function()
+				pcall(vim.treesitter.start)
+			end,
+		})
+
 		set_keymaps()
 	end,
 }
