@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{...}: {
   services.caddy = {
     enable = true;
     virtualHosts."cloud.valjed.dev".extraConfig = ''

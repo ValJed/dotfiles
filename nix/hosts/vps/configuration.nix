@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     ./disk-config.nix
     ./services/couchdb.nix
+    ./services/caddy.nix
   ];
 
   nixpkgs.config.allowUnfree = true;
@@ -76,6 +77,7 @@
     jq
     git
     curl
+    python3
   ];
 
   programs.neovim = {
