@@ -1,6 +1,6 @@
 {...}: {
   programs.herdr = {
-    enable = true;
+    enable = false;
     settings = {
       keys = {
         prefix = "ctrl+b";
