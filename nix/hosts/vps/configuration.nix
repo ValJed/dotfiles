@@ -84,6 +84,12 @@
     defaultSopsFormat = "yaml";
   };
 
+  # Virtualisation
+
+  virtualisation.docker = {
+    enable = true;
+  };
+
   # Programs
 
   programs.gnupg.agent = {
