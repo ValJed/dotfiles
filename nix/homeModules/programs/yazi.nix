@@ -11,49 +11,49 @@
       mgr = {
         show_hidden = true;
       };
-      opener = {
+      oopener = {
         play = [
           {
-            run = ''vlc "$@"'';
+            run = ''vlc %s'';
             orphan = true;
           }
         ];
         pdf = [
           {
-            run = ''zathura "$@"'';
+            run = ''zathura %s'';
             desc = "Zathura";
             orphan = true;
           }
           {
-            run = ''firefox "$@"'';
+            run = ''firefox %s'';
             desc = "Firefox";
             orphan = true;
           }
         ];
         zip = [
           {
-            run = ''unzip "$1" -d "''${1%.*}"'';
+            run = ''f=%s1; unzip "$f" -d "''${f%%.*}"'';
             desc = "Extract to folder";
           }
         ];
         tar_gz = [
           {
-            run = ''tar -xzf "$1"'';
+            run = ''tar -xzf %s1'';
             desc = "Extract here";
           }
         ];
         image = [
           {
-            run = ''gthumb "$1"'';
+            run = ''gthumb %s1'';
             desc = "Gthumb";
           }
           {
-            run = ''pinta "$@"'';
+            run = ''pinta %s'';
             desc = "Pinta";
           }
         ];
       };
-      open = {
+      pen = {
         prepend_rules = [
           {
             mime = "application/pdf";
