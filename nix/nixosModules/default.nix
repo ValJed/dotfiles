@@ -1,4 +1,16 @@
-{pkgs, ...}: {
+{pkgs, ...}: let
+  keymappPkgs =
+    import (builtins.fetchGit {
+      # Descriptive name to make the store path easier to identify
+      name = "keymapp";
+      url = "https://github.com/NixOS/nixpkgs/";
+      ref = "refs/heads/nixpkgs-unstable";
+      rev = "3e2cf88148e732abc1d259286123e06a9d8c964a";
+    }) {
+      system = pkgs.stdenv.hostPlatform.system;
+      config.allowUnfree = true;
+    };
+in {
   imports = [
     ./services/dev.nix
     ./services/displayManager.nix
@@ -96,7 +108,7 @@
     vlc
     easyeffects
     pinta
-    keymapp
+    keymappPkgs.keymapp
     vim
 
     # Tools
