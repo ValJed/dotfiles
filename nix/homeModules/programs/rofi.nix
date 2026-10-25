@@ -11,7 +11,7 @@
       pkgs.rofi-emoji
     ];
 
-    extraConfig = {
+    settings = {
       kb-row-up = "Up,Control+k";
       kb-row-down = "Down,Control+j";
       kb-accept-entry = "Control+m,Return,KP_Enter";
