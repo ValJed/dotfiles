@@ -32,6 +32,7 @@
     mangohud
     obs-studio
     protonup-ng
+    blender
   ];
 
   services.xserver.videoDrivers = ["nvidia"];
