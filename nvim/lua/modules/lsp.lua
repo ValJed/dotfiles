@@ -19,6 +19,7 @@ local lsp_servers = {
 	"yamlls",
 	"org",
 	"robotcode",
+	"tofu_ls",
 }
 
 return {

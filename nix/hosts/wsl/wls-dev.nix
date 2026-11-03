@@ -27,6 +27,8 @@
     pkgs.tailwindcss-language-server
     pkgs.biome
     pkgs.yaml-language-server
+    pkgs.tofu-ls
+
     pkgs.gitlab-runner
     pkgs.awscli2
     pkgs.rtk

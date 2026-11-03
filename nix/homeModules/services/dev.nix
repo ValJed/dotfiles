@@ -49,6 +49,7 @@ in {
     pkgs.alejandra
     pkgs.tailwindcss-language-server
     pkgs.yaml-language-server
+    pkgs.tofu-ls
 
     # Databases
     # pkgs.lazysql
