@@ -33,6 +33,7 @@
     pkgs.awscli2
     pkgs.rtk
     pkgs.vendir
+    pkgs.vault
 
     pkgs.kubectl
     pkgs.k9s
