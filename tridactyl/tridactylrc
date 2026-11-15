@@ -54,6 +54,8 @@ set searchurls.rd https://www.reddit.com/search/?q=%s
 set searchurls.cl https://claude.ai/chat
 set searchurls.regie https://lescuyer.h2i.fr/log_client.php 
 set searchurls.doc https://www.doctolib.fr
+set searchurls.mp https://meteo-parapente.com/v5/#/45.8419,6.2133,11
+set searchurls.mb https://www.meteoblue.com/fr/meteo/semaine/annecy_france_3037543
 
 set searchurls.aposc https://github.com/search?q=repo%3Aapostrophecms%2Fapostrophe%20%s&type=code 
 set searchurls.aposr https://github.com/orgs/apostrophecms/repositories?q=%s

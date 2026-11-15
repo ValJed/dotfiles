@@ -33,6 +33,7 @@
     obs-studio
     protonup-ng
     blender
+    lmms
   ];
 
   services.xserver.videoDrivers = ["nvidia"];
