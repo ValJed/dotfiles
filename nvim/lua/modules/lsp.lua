@@ -20,6 +20,7 @@ local lsp_servers = {
 	"org",
 	"robotcode",
 	"tofu_ls",
+	"clangd",
 }
 
 return {

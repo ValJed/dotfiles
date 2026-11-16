@@ -50,6 +50,8 @@ in {
     pkgs.tailwindcss-language-server
     pkgs.yaml-language-server
     pkgs.tofu-ls
+    pkgs.clang-tools
+    pkgs.clippy
 
     # Databases
     # pkgs.lazysql
@@ -67,6 +69,8 @@ in {
   home.sessionVariables = {
     TS_LIB = "${pkgs.typescript}/lib/node_modules/typescript/lib";
     VUE_LS = "${pkgs.vue-language-server}/lib/language-tools/packages/language-server";
+    GCC_PATH = "${pkgs.gcc}/bin/*";
+    CLANG_PATH = "${pkgs.clang}/bin/*";
 
     # Cypress
     # CYPRESS_INSTALL_BINARY = 0;
