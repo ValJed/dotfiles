@@ -27,6 +27,7 @@ in {
     ../programs/tuicr.nix
     ../programs/yazi.nix
     ../programs/zsh.nix
+    ../programs/k9s.nix
   ];
 
   home.packages = [

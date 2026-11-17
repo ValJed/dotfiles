@@ -35,8 +35,6 @@
     pkgs.vendir
     pkgs.vault
 
-    pkgs.kubectl
-    pkgs.k9s
     pkgs.opentofu
 
     # Installed through pnpm
