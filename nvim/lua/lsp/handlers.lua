@@ -50,7 +50,9 @@ M.setup = function()
 
 			-- Document highlight on cursor hold
 			if client.server_capabilities.documentHighlightProvider then
-				local group = vim.api.nvim_create_augroup("lsp_document_highlight_" .. buffer, { clear = true })
+				local group = vim.api.nvim_create_augroup("lsp_document_highlight_" .. buffer, {
+					clear = true,
+				})
 				vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
 					buffer = buffer,
 					group = group,
