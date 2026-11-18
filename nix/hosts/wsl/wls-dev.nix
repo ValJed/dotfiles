@@ -34,7 +34,7 @@
     pkgs.rtk
     pkgs.vendir
     pkgs.vault
-
+    pkgs.rancher
     pkgs.opentofu
 
     # Installed through pnpm
