@@ -7,10 +7,10 @@
     inherit pkgs;
     inherit lib;
   };
-  tomato = import ../scripts/tomato.nix {
-    inherit pkgs;
-    inherit lib;
-  };
+  # tomato = import ../scripts/tomato.nix {
+  #   inherit pkgs;
+  #   inherit lib;
+  # };
 in {
   imports = [
     ../programs/bat.nix
@@ -47,6 +47,6 @@ in {
     pkgs.zoxide
     pkgs.ncdu
     task
-    tomato
+    # tomato
   ];
 }

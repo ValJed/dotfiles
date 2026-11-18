@@ -7,10 +7,10 @@
     inherit pkgs;
     inherit lib;
   };
-  tomato = import ../../homeModules/scripts/tomato.nix {
-    inherit pkgs;
-    inherit lib;
-  };
+  # tomato = import ../../homeModules/scripts/tomato.nix {
+  #   inherit pkgs;
+  #   inherit lib;
+  # };
 in {
   imports = [
     ../../homeModules/programs/bat.nix
@@ -47,7 +47,7 @@ in {
     pkgs.git-subrepo
     # pkgs.graphify
 
-    tomato
+    # tomato
     task
   ];
 }
