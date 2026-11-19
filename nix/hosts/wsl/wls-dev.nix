@@ -41,6 +41,7 @@
     # pkgs.typescript
 
     # Databases
+    pkgs.postgresql
     # pkgs.lazysql
     # pkgs.rainfrog
     # pkgs.mongosh
