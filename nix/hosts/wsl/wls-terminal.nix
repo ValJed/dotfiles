@@ -26,7 +26,7 @@ in {
     ../../homeModules/programs/yazi.nix
     ../../homeModules/programs/zsh.nix
     ../../homeModules/programs/k9s.nix
-    ./podman.nix
+    ../../homeModules/programs/podman.nix
   ];
 
   home.packages = [
